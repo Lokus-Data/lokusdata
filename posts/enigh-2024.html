@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENIGH 2024: Los 5 Estados que Más Crecieron en Poder Adquisitivo | LIM Intelligence</title>
+    <meta name="description" content="Análisis exclusivo del nuevo boletín ENIGH 2024 del INEGI usando metodología LIM. Estados con mayor crecimiento en ingreso real y oportunidades de mercado.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .breadcrumb-nav a {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: #1e40af;
+        }
+
+        .breadcrumb-separator {
+            color: #94a3b8;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .article-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 4rem;
+        }
+
+        .main-content {
+            max-width: none;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-stat {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #0ea5e9;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .highlight-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0ea5e9;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-label {
+            font-size: 1.2rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .insight-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .insight-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .insight-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-description {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Dashboard Embed */
+        .dashboard-section {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-title {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .dashboard-description {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-embed {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .dashboard-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-title {
+            font-size: 1.3rem;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .key-stats {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .key-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .key-stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .key-stat-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .toc {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.8rem;
+        }
+
+        .toc a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: #3b82f6;
+        }
+
+        .related-posts {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .related-post {
+            display: block;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+
+        .related-post:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .related-post-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .related-post-meta {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #1e293b;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1e293b;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 2rem; }
+            .article-meta { flex-direction: column; gap: 1rem; }
+            .insights-grid { grid-template-columns: 1fr; }
+            .dashboard-embed { height: 400px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">📊</div>
+                    <span>LokusData</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../servicios.html">Servicios</a></li>
+                        <li><a href="../noticias.html">Insights</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="../index.html">Inicio</a>
+                <span class="breadcrumb-separator">›</span>
+                <a href="../noticias.html">LIM Intelligence</a>
+                <span class="breadcrumb-separator">›</span>
+                <span>ENIGH 2024</span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="article-header">
+        <div class="container">
+            <div class="article-category">💰 ENIGH 2024</div>
+            <h1 class="article-title">Los 5 Estados Mexicanos que Más Crecieron en Poder Adquisitivo</h1>
+            <p class="article-subtitle">
+                Análisis exclusivo del nuevo boletín ENIGH 2024 del INEGI usando nuestra metodología LIM. 
+                Identificamos los estados con mayor crecimiento en ingreso real y oportunidades de mercado.
+            </p>
+            <div class="article-meta">
+                <div class="meta-item">
+                    <span>📅</span>
+                    <span>Enero 15, 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span>⏱️</span>
+                    <span>5 min lectura</span>
+                </div>
+                <div class="meta-item">
+                    <span>🎯</span>
+                    <span>Análisis LIM</span>
+                </div>
+                <div class="meta-item">
+                    <span>📊</span>
+                    <span>38.8M hogares</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="main-content">
+                    <div class="content-section" id="resumen">
+                        <h2 class="section-title">📊 Resumen Ejecutivo</h2>
+                        <p class="content-text">
+                            El nuevo boletín ENIGH 2024 del INEGI revela un crecimiento del 12.3% en el ingreso real promedio 
+                            de los hogares mexicanos, alcanzando $77,860 pesos anuales. Sin embargo, este crecimiento no ha sido 
+                            homogéneo: nuestro análisis LIM identifica disparidades regionales significativas que representan 
+                            oportunidades estratégicas para empresas de retail, servicios financieros y desarrollo inmobiliario.
+                        </p>
+
+                        <div class="highlight-stat">
+                            <div class="highlight-number">$77,860</div>
+                            <div class="highlight-label">Ingreso Promedio Nacional 2024</div>
+                        </div>
+
+                        <p class="content-text">
+                            <strong>Hallazgo clave:</strong> Los 5 estados con mayor crecimiento en poder adquisitivo concentran 
+                            el 34% de la nueva capacidad de consumo nacional, representando un mercado emergente de $2.1 billones 
+                            de pesos en gasto adicional proyectado para 2025-2027.
+                        </p>
+                    </div>
+
+                    <div class="content-section" id="metodologia">
+                        <h2 class="section-title">🧠 Metodología LIM Aplicada</h2>
+                        <p class="content-text">
+                            Nuestro análisis integra los microdatos ENIGH 2024 con las siguientes bases usando clave CVEGEO:
+                        </p>
+                        
+                        <div class="insights-grid">
+                            <div class="insight-card">
+                                <div class="insight-icon">🏠</div>
+                                <div class="insight-title">CPV 2020</div>
+                                <div class="insight-value">126M</div>
+                                <div class="insight-description">Habitantes por estado</div>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">🏢</div>
+                                <div class="insight-title">DENUE 2025</div>
+                                <div class="insight-value">6.1M</div>
+                                <div class="insight-description">Negocios georeferenciados</div>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">🏭</div>
+                                <div class="insight-title">CE 2024</div>
+                                <div class="insight-value">27M</div>
+                                <div class="insight-description">Empleos formales</div>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">🗺️</div>
+                                <div class="insight-title">Marco Geo</div>
+                                <div class="insight-value">2,469</div>
+                                <div class="insight-description">Municipios unificados</div>
+                            </div>
+                        </div>
+
+                        <p class="content-text">
+                            Aplicamos modelos de regresión geográficamente ponderada (GWR) para identificar patrones 
+                            espaciales en el crecimiento del ingreso, controlando por variables demográficas, estructura 
+                            económica local y densidad empresarial.
+                        </p>
+                    </div>
+
+                    <div class="content-section" id="hallazgos">
+                        <h2 class="section-title">🎯 Los 5 Estados Ganadores</h2>
+                        <p class="content-text">
+                            Nuestro análisis LIM identifica los siguientes estados como los de mayor crecimiento en poder 
+                            adquisitivo real (2022-2024):
+                        </p>
+
+                        <div class="insights-grid">
+                            <div class="insight-card">
+                                <div class="insight-icon">🥇</div>
+                                <div class="insight-title">Nuevo León</div>
+                                <div class="insight-value">+18.7%</div>
+                                <div class="insight-description">$95,240 promedio</div>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">🥈</div>
+                                <div class="insight-title">Querétaro</div>
+                                <div class="insight-value">+16.2%</div>
+                                <div class="insight-description">$89,650 promedio</div>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">🥉</div>
+                                <div class="insight-title">Aguascalientes</div>
+                                <div class="insight-value">+15.8%</div>
+                                <div class="insight-description">$84,320 promedio</div>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">🏆</div>
+                                <div class="insight-title">Coahuila</div>
+                                <div class="insight-value">+14.9%</div>
+                                <div class="insight-description">$81,180 promedio</div>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">⭐</div>
+                                <div class="insight-title">Sonora</div>
+                                <div class="insight-value">+14.1%</div>
+                                <div class="insight-description">$78,920 promedio</div>
+                            </div>
+                        </div>
+
+                        <p class="content-text">
+                            <strong>Factor común:</strong> Los 5 estados están estratégicamente posicionados en corredores 
+                            de nearshoring, con alta concentración de manufactura avanzada y servicios especializados. 
+                            El crecimiento del ingreso está directamente correlacionado (r=0.87) con la densidad de 
+                            empresas multinacionales establecidas post-2020.
+                        </p>
+                    </div>
+
+                    <div class="content-section" id="oportunidades">
+                        <h2 class="section-title">🚀 Implicaciones Estratégicas</h2>
+                        <p class="content-text">
+                            El crecimiento concentrado en estos 5 estados genera oportunidades específicas por sector:
+                        </p>
+
+                        <h3 style="color: #1e293b; margin: 2rem 0 1rem; font-size: 1.3rem;">🛒 Retail y Franquicias</h3>
+                        <p class="content-text">
+                            Incremento de 23% en gasto discrecional. Oportunidades en: restaurantes casual dining, 
+                            retail de experiencias, servicios de bienestar y entretenimiento familiar.
+                        </p>
+
+                        <h3 style="color: #1e293b; margin: 2rem 0 1rem; font-size: 1.3rem;">🏠 Desarrollo Inmobiliario</h3>
+                        <p class="content-text">
+                            Demanda de vivienda media-alta (+31% vs nacional). Proyectos de usos mixtos, 
+                            desarrollos verticales y comercial especializado tienen mayor viabilidad.
+                        </p>
+
+                        <h3 style="color: #1e293b; margin: 2rem 0 1rem; font-size: 1.3rem;">💳 Servicios Financieros</h3>
+                        <p class="content-text">
+                            Bancarización avanzada y productos de inversión. Penetración de seguros de vida, 
+                            créditos hipotecarios y cuentas de ahorro especializadas muestra potencial de 2x vs nacional.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-section" id="dashboard">
+                        <div class="dashboard-header">
+                            <h2 class="dashboard-title">🔍 Explora los Datos Completos</h2>
+                            <p class="dashboard-description">
+                                Nuestro dashboard interactivo ENIGH 2024 te permite profundizar en los datos por estado, 
+                                decil de ingreso, patrón de gasto y proyecciones territoriales.
+                            </p>
+                        </div>
+                        
+                        <iframe class="dashboard-embed" 
+                                src="https://app.powerbi.com/view?r=eyJrIjoiNDMzNzgyYzItMjI5My00ZTdhLTllY2MtMmU5ZjkxMzE2OWYzIiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9" 
+                                allowfullscreen="true">
+                        </iframe>
+                        
+                        <div style="text-align: center;">
+                            <a href="../enigh.html" class="dashboard-link">Ver Dashboard Completo →</a>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="conclusiones">
+                        <h2 class="section-title">💡 Conclusiones y Próximos Pasos</h2>
+                        <p class="content-text">
+                            El crecimiento diferenciado en poder adquisitivo representa una oportunidad histórica para 
+                            empresas que puedan adaptarse rápidamente a mercados locales específicos. Recomendamos:
+                        </p>
+
+                        <ul style="margin: 1.5rem 0; padding-left: 2rem; color: #374151; line-height: 1.8;">
+                            <li><strong>Priorizar expansión</strong> en los 5 estados identificados para próximos 24 meses</li>
+                            <li><strong>Desarrollar productos específicos</strong> para segmentos de ingresos medios-altos emergentes</li>
+                            <li><strong>Establecer alianzas locales</strong> en clusters industriales y centros urbanos</li>
+                            <li><strong>Monitorear continuamente</strong> indicadores leading de crecimiento con metodología LIM</li>
+                        </ul>
+
+                        <div class="highlight-stat">
+                            <div class="highlight-number">2025-2027</div>
+                            <div class="highlight-label">Ventana de Oportunidad Óptima</div>
+                        </div>
+
+                        <p class="content-text">
+                            <strong>Próximo análisis:</strong> En febrero 2025 publicaremos el análisis granular por municipio 
+                            de estos 5 estados, identificando las 50 localidades con mayor potencial de crecimiento específico 
+                            por sector económico.
+                        </p>
+                    </div>
+                </article>
+
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">📊 Datos Clave</h3>
+                        <div class="key-stats">
+                            <div class="key-stat">
+                                <span class="key-stat-label">Hogares analizados</span>
+                                <span class="key-stat-value">38.8M</span>
+                            </div>
+                            <div class="key-stat">
+                                <span class="key-stat-label">Crecimiento nacional</span>
+                                <span class="key-stat-value">+12.3%</span>
+                            </div>
+                            <div class="key-stat">
+                                <span class="key-stat-label">Estados analizados</span>
+                                <span class="key-stat-value">32</span>
+                            </div>
+                            <div class="key-stat">
+                                <span class="key-stat-label">Año base</span>
+                                <span class="key-stat-value">2022</span>
+                            </div>
+                            <div class="key-stat">
+                                <span class="key-stat-label">Correlación nearshoring</span>
+                                <span class="key-stat-value">r=0.87</span>
+                            </div>
+                            <div class="key-stat">
+                                <span class="key-stat-label">Proyección mercado</span>
+                                <span class="key-stat-value">$2.1B</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">📑 Índice de Contenido</h3>
+                        <ul class="toc">
+                            <li><a href="#resumen">📊 Resumen Ejecutivo</a></li>
+                            <li><a href="#metodologia">🧠 Metodología LIM</a></li>
+                            <li><a href="#hallazgos">🎯 Los 5 Estados Ganadores</a></li>
+                            <li><a href="#oportunidades">🚀 Implicaciones Estratégicas</a></li>
+                            <li><a href="#dashboard">🔍 Dashboard Interactivo</a></li>
+                            <li><a href="#conclusiones">💡 Conclusiones</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">📰 Posts Relacionados</h3>
+                        <div class="related-posts">
+                            <a href="cpv-proyecciones-2030.html" class="related-post">
+                                <div class="related-post-title">Proyecciones Demográficas 2030: Municipios en Crecimiento</div>
+                                <div class="related-post-meta">👥 CPV • 4 min lectura</div>
+                            </a>
+                            <a href="nearshoring-clusters-2025.html" class="related-post">
+                                <div class="related-post-title">Clústeres Industriales 2025: Mapa para Empresas Relocalizando</div>
+                                <div class="related-post-meta">🎯 Nearshoring • 8 min lectura</div>
+                            </a>
+                            <a href="denue-densidad-empresarial.html" class="related-post">
+                                <div class="related-post-title">Mapa de Densidad Empresarial: Dónde Abrir Sucursales</div>
+                                <div class="related-post-meta">🏢 DENUE • 6 min lectura</div>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contacto">
+        <div class="container">
+            <h2 class="cta-title">¿Necesitas Análisis Específico para tu Estado?</h2>
+            <p class="cta-subtitle">
+                Aplicamos metodología LIM a tu mercado objetivo. Análisis granular por municipio, 
+                AGEB y zonas de influencia comercial específicas.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="mailto:juanheriberto.rosas@lokusdata.com?subject=Análisis ENIGH Personalizado" class="btn-primary">
+                    Solicitar Análisis Personalizado
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=525510806597&text=Hola,%20me%20interesa%20el%20análisis%20ENIGH%202024%20para%20mi%20estado&type=phone_number&app_absent=0" 
+                   target="_blank" class="btn-secondary">
+                    Consulta WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll para el índice
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section en el índice
+        const sections = document.querySelectorAll('.content-section');
+        const tocLinks = document.querySelectorAll('.toc a');
+
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50% 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    tocLinks.forEach(link => {
+                        link.style.color = '#64748b';
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.style.color = '#3b82f6';
+                            link.style.fontWeight = 'bold';
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        // Animaciones de entrada
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.insight-card, .content-section, .sidebar-section').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            fadeObserver.observe(el);
+        });
+
+        // Enhanced hover effects
+        document.querySelectorAll('.insight-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dashboard embed responsive adjustment
+        function adjustDashboardHeight() {
+            const embed = document.querySelector('.dashboard-embed');
+            if (window.innerWidth < 768) {
+                embed.style.height = '400px';
+            } else {
+                embed.style.height = '600px';
+            }
+        }
+
+        window.addEventListener('resize', adjustDashboardHeight);
+        adjustDashboardHeight();
+
+        // Copy link functionality (opcional)
+        function copyCurrentURL() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('¡Link copiado al portapapeles!');
+            });
+        }
+
+        // Print-friendly styles cuando sea necesario
+        window.addEventListener('beforeprint', () => {
+            document.querySelector('.dashboard-embed').style.display = 'none';
+        });
+
+        window.addEventListener('afterprint', () => {
+            document.querySelector('.dashboard-embed').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

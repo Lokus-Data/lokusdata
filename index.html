@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LokusData - Inteligencia Geoespacial con Datos INEGI</title>
+    <meta name="description" content="La primera plataforma mexicana que integra TODAS las bases oficiales del INEGI con IA avanzada. Metodología LIM para decisiones estratégicas basadas en datos.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header mejorado con nuevo logo */
+        header {
+            background: #2c3441;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* NUEVO LOGO ACTUALIZADO */
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #8b7cf8 0%, #6366f1 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(139, 124, 248, 0.3);
+        }
+
+        .logo-pin {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            position: relative;
+        }
+
+        .logo-pin::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #4ecdc4;
+            border-radius: 50%;
+        }
+
+        .logo-network {
+            position: absolute;
+            bottom: -3px;
+            left: 8px;
+            right: 8px;
+            height: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-network::before,
+        .logo-network::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: #4ecdc4;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: normal;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: rgba(139, 124, 248, 0.2);
+            transform: translateY(-2px);
+        }
+
+        nav .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #1e293b;
+            min-width: 280px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            z-index: 1000;
+            top: 100%;
+            border-radius: 12px;
+            margin-top: 0.5rem;
+            border: 1px solid rgba(139, 124, 248, 0.2);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(139, 124, 248, 0.1);
+        }
+
+        /* TICKER DINÁMICO MEJORADO */
+        .live-ticker {
+            background: linear-gradient(90deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 1rem 0;
+            overflow: hidden;
+            border-bottom: 3px solid #8b7cf8;
+            white-space: nowrap;
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            align-items: center;
+            animation: scroll-ticker 45s linear infinite;
+        }
+
+        @keyframes scroll-ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-content {
+            display: flex;
+            padding-right: 60px;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 4rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .ticker-label {
+            color: #8b7cf8;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .ticker-value {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        .ticker-icon {
+            margin-right: 0.6rem;
+            font-size: 1.3rem;
+        }
+
+        /* Hero Section mejorada */
+        .hero-section {
+            background: linear-gradient(135deg, #2c3441 0%, #1e293b 50%, #0f172a 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(139,124,248,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(78,205,196,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(251,191,36,0.1)"/></svg>');
+            animation: float 25s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-30px) rotate(360deg); }
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+            background: linear-gradient(135deg, #ffffff 0%, #8b7cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            color: #4ecdc4;
+            font-weight: 600;
+        }
+
+        .hero-section p {
+            font-size: 1.4rem;
+            max-width: 950px;
+            margin: 0 auto 3.5rem;
+            opacity: 0.85;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #1e293b;
+            padding: 1.3rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.15rem;
+            box-shadow: 0 12px 35px rgba(251, 191, 36, 0.3);
+            transition: all 0.3s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(251, 191, 36, 0.4);
+        }
+
+        .hero-cta-secondary {
+            background: transparent;
+            border: 2px solid #8b7cf8;
+            color: #8b7cf8;
+            padding: 1.3rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.15rem;
+            transition: all 0.3s;
+        }
+
+        .hero-cta-secondary:hover {
+            background: #8b7cf8;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        /* Sección de servicios principales mejorada */
+        .services-preview {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .services-preview h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #1e293b;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+        }
+
+        .services-preview-subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s;
+            border-top: 5px solid;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-card.marco { border-top-color: #8b7cf8; }
+        .service-card.censo { border-top-color: #ef4444; }
+        .service-card.denue { border-top-color: #fbbf24; }
+        .service-card.enigh { border-top-color: #22c55e; }
+        .service-card.ageb { border-top-color: #3b82f6; }
+        .service-card.lim { border-top-color: #a855f7; }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-bottom: 1.2rem;
+            font-weight: bold;
+        }
+
+        .service-description {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .service-link {
+            color: #8b7cf8;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        /* Estadísticas en tiempo real mejoradas */
+        .stats-section {
+            background: linear-gradient(135deg, #8b7cf8 0%, #6366f1 100%);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2.5rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* SECCIÓN DE CONTACTO MEJORADA */
+        .contact-section {
+            background: #1e293b;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .contact-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(139, 124, 248, 0.1);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(139, 124, 248, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            background: rgba(139, 124, 248, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #4ecdc4;
+        }
+
+        .contact-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #8b7cf8;
+        }
+
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin: 0.5rem 0;
+            padding: 0.8rem 1.5rem;
+            background: rgba(139, 124, 248, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-card a:hover {
+            background: #8b7cf8;
+            transform: translateY(-2px);
+        }
+
+        /* Footer mejorado */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1.5rem;
+            color: #8b7cf8;
+            font-size: 1.2rem;
+        }
+
+        .footer-column a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+
+        .footer-column a:hover {
+            color: #4ecdc4;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.8rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            nav ul { flex-direction: column; gap: 0.5rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .ticker-wrapper { animation-duration: 25s; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-pin"></div>
+                        <div class="logo-network"></div>
+                    </div>
+                    <div>
+                        <div class="logo-text">LokusData</div>
+                        <div class="logo-tagline">DATOS QUE IMPULSAN TU ÉXITO</div>
+                    </div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li class="dropdown">
+                            <a href="servicios/servicios.html">Servicios ▼</a>
+                            <div class="dropdown-content">
+                                <a href="servicios/marco-geoestadistico.html">🗺️ Marco Geoestadístico</a>
+                                <a href="servicios/censos-economicos.html">🏭 Censos Económicos</a>
+                                <a href="servicios/denue.html">📍 DENUE</a>
+                                <a href="servicios/enigh.html">💰 ENIGH</a>
+                                <a href="servicios/ageb-localidades.html">🎯 AGEBs</a>
+                                <a href="servicios/solucion-integral.html">🚀 Solución LIM</a>
+                            </div>
+                        </li>
+                        <li><a href="noticias/">Insights</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- TICKER DINÁMICO CON DATOS EN TIEMPO REAL -->
+    <div class="live-ticker">
+        <div class="ticker-wrapper">
+            <div class="ticker-content">
+                <span class="ticker-item">
+                    <span class="ticker-icon">📊</span>
+                    <span class="ticker-label">CENSOS 2024:</span>
+                    <span class="ticker-value">Datos Disponibles</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">🏢</span>
+                    <span class="ticker-label">UNIDADES ECONÓMICAS:</span>
+                    <span class="ticker-value">6.37M Activas</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">📈</span>
+                    <span class="ticker-label">NUEVOS NEGOCIOS:</span>
+                    <span class="ticker-value">+247,831 (6 meses)</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">🗺️</span>
+                    <span class="ticker-label">AGEBs PROCESADAS:</span>
+                    <span class="ticker-value">47,837</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">👥</span>
+                    <span class="ticker-label">POBLACIÓN ANALIZADA:</span>
+                    <span class="ticker-value">126M Habitantes</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">🤖</span>
+                    <span class="ticker-label">METODOLOGÍA LIM:</span>
+                    <span class="ticker-value">98% Precisión</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">🔄</span>
+                    <span class="ticker-label">ÚLTIMA ACTUALIZACIÓN:</span>
+                    <span class="ticker-value">Enero 2025</span>
+                </span>
+            </div>
+            <!-- Duplicado para efecto continuo -->
+            <div class="ticker-content">
+                <span class="ticker-item">
+                    <span class="ticker-icon">📊</span>
+                    <span class="ticker-label">CENSOS 2024:</span>
+                    <span class="ticker-value">Datos Disponibles</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">🏢</span>
+                    <span class="ticker-label">UNIDADES ECONÓMICAS:</span>
+                    <span class="ticker-value">6.37M Activas</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">📈</span>
+                    <span class="ticker-label">NUEVOS NEGOCIOS:</span>
+                    <span class="ticker-value">+247,831 (6 meses)</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">🗺️</span>
+                    <span class="ticker-label">AGEBs PROCESADAS:</span>
+                    <span class="ticker-value">47,837</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">👥</span>
+                    <span class="ticker-label">POBLACIÓN ANALIZADA:</span>
+                    <span class="ticker-value">126M Habitantes</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">🤖</span>
+                    <span class="ticker-label">METODOLOGÍA LIM:</span>
+                    <span class="ticker-value">98% Precisión</span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon">🔄</span>
+                    <span class="ticker-label">ÚLTIMA ACTUALIZACIÓN:</span>
+                    <span class="ticker-value">Enero 2025</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Inteligencia Geoespacial con Datos INEGI</h1>
+            <p class="hero-subtitle">El Sistema de Inteligencia Territorial más Avanzado de México</p>
+            <p>Transformamos los datos oficiales del INEGI en decisiones estratégicas precisas mediante IA avanzada y análisis geoespacial de última generación.</p>
+            <div class="hero-buttons">
+                <a href="servicios/servicios.html" class="hero-cta">Explorar Dashboards</a>
+                <a href="#contacto" class="hero-cta-secondary">Solicitar Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-preview">
+        <div class="container">
+            <h2>Bases de Datos Integradas</h2>
+            <p class="services-preview-subtitle">Acceso completo a todas las fuentes oficiales del INEGI con visualización interactiva y metodología LIM propietaria</p>
+            
+            <div class="services-grid">
+                <a href="servicios/marco-geoestadistico.html" class="service-card marco">
+                    <div class="service-icon">🗺️</div>
+                    <h3 class="service-title">Marco Geoestadístico</h3>
+                    <p class="service-description">Sistema de referencia territorial con 32 entidades, 2,469 municipios y 47,837 AGEBs.</p>
+                    <span class="service-link">Ver Dashboard →</span>
+                </a>
+
+                <a href="servicios/censos-economicos.html" class="service-card censo">
+                    <div class="service-icon">🏭</div>
+                    <h3 class="service-title">Censos Económicos 2024</h3>
+                    <p class="service-description">Estructura productiva completa: 6.37M unidades económicas, 27.1M empleados.</p>
+                    <span class="service-link">Analizar Sectores →</span>
+                </a>
+
+                <a href="servicios/denue.html" class="service-card denue">
+                    <div class="service-icon">📍</div>
+                    <h3 class="service-title">DENUE 2025</h3>
+                    <p class="service-description">Directorio con 6M+ negocios georreferenciados, actualizado semestralmente.</p>
+                    <span class="service-link">Mapear Negocios →</span>
+                </a>
+
+                <a href="servicios/enigh.html" class="service-card enigh">
+                    <div class="service-icon">💰</div>
+                    <h3 class="service-title">ENIGH 2024</h3>
+                    <p class="service-description">Ingresos y gastos de hogares, patrones de consumo por región.</p>
+                    <span class="service-link">Ver Patrones →</span>
+                </a>
+
+                <a href="servicios/ageb-localidades.html" class="service-card ageb">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">AGEBs y Localidades</h3>
+                    <p class="service-description">Análisis hiperlocal con máxima granularidad territorial.</p>
+                    <span class="service-link">Explorar →</span>
+                </a>
+
+                <a href="servicios/solucion-integral.html" class="service-card lim">
+                    <div class="service-icon">🚀</div>
+                    <h3 class="service-title">Solución Integral LIM</h3>
+                    <p class="service-description">Metodología propietaria que integra todas las bases con IA avanzada.</p>
+                    <span class="service-link">Conocer LIM →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">126M+</div>
+                    <div class="stat-label">Habitantes Analizados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6.37M</div>
+                    <div class="stat-label">Unidades Económicas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">47,837</div>
+                    <div class="stat-label">AGEBs Procesadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Precisión Predictiva</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN DE CONTACTO -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2 class="contact-title">Conecta con LokusData</h2>
+            <p class="contact-subtitle">Descubre cómo la inteligencia geoespacial puede transformar tu organización</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h4>WhatsApp Business</h4>
+                    <a href="https://api.whatsapp.com/send/?phone=525510806597&text&type=phone_number&app_absent=0" target="_blank">
+                        Consulta Inmediata
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h4>Correo Ejecutivo</h4>
+                    <a href="mailto:juanheriberto.rosas@lokusdata.com">
+                        juanheriberto.rosas@lokusdata.com
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🔧</div>
+                    <h4>Desarrollo y APIs</h4>
+                    <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank">
+                        Ver en GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Dashboards INEGI</h4>
+                    <a href="servicios/marco-geoestadistico.html">Marco Geoestadístico</a>
+                    <a href="servicios/censos-economicos.html">Censos Económicos</a>
+                    <a href="servicios/denue.html">DENUE</a>
+                    <a href="servicios/enigh.html">ENIGH</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Soluciones</h4>
+                    <a href="servicios/solucion-integral.html">Metodología LIM</a>
+                    <a href="#">Nearshoring</a>
+                    <a href="#">Retail Intelligence</a>
+                    <a href="#">Política Pública</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Recursos</h4>
+                    <a href="noticias/index.html">Insights</a>
+                    <a href="#">Casos de Éxito</a>
+                    <a href="#">Documentación</a>
+                    <a href="#">APIs</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto Directo</h4>
+                    <a href="mailto:juanheriberto.rosas@lokusdata.com">Email Ejecutivo</a>
+                    <a href="https://api.whatsapp.com/send/?phone=525510806597&text&type=phone_number&app_absent=0" target="_blank">WhatsApp Business</a>
+                    <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LokusData. Inteligencia Geoespacial Avanzada para México. | Datos que impulsan tu éxito</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
