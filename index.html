@@ -24,22 +24,22 @@
         }
     </script>
 
-    <!-- Google Analytics 4 (GA4) - Reemplazar G-XXXXXXXXXX con tu Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCQHS6GXFE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-VCQHS6GXFE');
     </script>
 
-    <!-- Google Ads Conversion Tracking - Reemplazar AW-XXXXXXXXXX con tu Conversion ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17620097832"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'AW-XXXXXXXXXX');
+        gtag('config', 'AW-17620097832');
     </script>
 
     <!-- Funciones para rastrear conversiones -->
@@ -47,7 +47,9 @@
         // Función para rastrear clics en "Crear cuenta gratis" (LokusAnalytics)
         function trackLokusAnalyticsSignup() {
             gtag('event', 'conversion', {
-                'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL_1',
+                'send_to': 'AW-17620097832/assYCKeEiqYbEKi29dFB',
+                'value': 50.0,
+                'currency': 'MXN',
                 'event_callback': function() {
                     console.log('Conversión registrada: Signup LokusAnalytics');
                 }
@@ -57,7 +59,9 @@
         // Función para rastrear envío de formulario de contacto
         function trackContactForm() {
             gtag('event', 'conversion', {
-                'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL_2',
+                'send_to': 'AW-17620097832/_vYpCPewjqYbEKi29dFB',
+                'value': 30.0,
+                'currency': 'MXN',
                 'event_callback': function() {
                     console.log('Conversión registrada: Formulario de contacto');
                 }
@@ -65,9 +69,12 @@
         }
 
         // Función para rastrear clics en "Solicitar cotización"
+        // NOTA: Crea esta conversión en Google Ads y reemplaza CONVERSION_LABEL_3
         function trackQuoteRequest() {
             gtag('event', 'conversion', {
-                'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL_3',
+                'send_to': 'AW-17620097832/CONVERSION_LABEL_3',
+                'value': 100.0,
+                'currency': 'MXN',
                 'event_callback': function() {
                     console.log('Conversión registrada: Solicitud de cotización');
                 }
