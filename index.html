@@ -24,13 +24,55 @@
         }
     </script>
 
-    <!-- Google Analytics (reemplazar con tu ID) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+    <!-- Google Analytics 4 (GA4) - Reemplazar G-XXXXXXXXXX con tu Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-        // window.dataLayer = window.dataLayer || [];
-        // function gtag(){dataLayer.push(arguments);}
-        // gtag('js', new Date());
-        // gtag('config', 'G-XXXXXXXXXX');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Google Ads Conversion Tracking - Reemplazar AW-XXXXXXXXXX con tu Conversion ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-XXXXXXXXXX');
+    </script>
+
+    <!-- Funciones para rastrear conversiones -->
+    <script>
+        // Función para rastrear clics en "Crear cuenta gratis" (LokusAnalytics)
+        function trackLokusAnalyticsSignup() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL_1',
+                'event_callback': function() {
+                    console.log('Conversión registrada: Signup LokusAnalytics');
+                }
+            });
+        }
+
+        // Función para rastrear envío de formulario de contacto
+        function trackContactForm() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL_2',
+                'event_callback': function() {
+                    console.log('Conversión registrada: Formulario de contacto');
+                }
+            });
+        }
+
+        // Función para rastrear clics en "Solicitar cotización"
+        function trackQuoteRequest() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL_3',
+                'event_callback': function() {
+                    console.log('Conversión registrada: Solicitud de cotización');
+                }
+            });
+        }
     </script>
 </head>
 <body class="bg-gray-50">
@@ -391,6 +433,7 @@
                     </ul>
 
                     <a href="#contacto"
+                       onclick="trackQuoteRequest()"
                        class="block w-full bg-gray-800 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-gray-900 transition">
                         Solicitar cotización
                     </a>
@@ -447,6 +490,7 @@
 
                     <a href="https://lokusanalytics-bzg0g9ddcshpgraw.westus-01.azurewebsites.net/register"
                        target="_blank"
+                       onclick="trackLokusAnalyticsSignup()"
                        class="block w-full bg-white text-blue-600 text-center px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                         Crear cuenta gratis
                     </a>
@@ -499,6 +543,7 @@
                     </ul>
 
                     <a href="#contacto"
+                       onclick="trackQuoteRequest()"
                        class="block w-full bg-purple-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
                         Agendar consultoría
                     </a>
@@ -564,6 +609,7 @@
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://lokusanalytics-bzg0g9ddcshpgraw.westus-01.azurewebsites.net/register"
                            target="_blank"
+                           onclick="trackLokusAnalyticsSignup()"
                            class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-center hover:bg-blue-700 transition">
                             Crear cuenta gratis
                         </a>
@@ -659,6 +705,7 @@
 
                     <a href="https://lokusanalytics-bzg0g9ddcshpgraw.westus-01.azurewebsites.net/register"
                        target="_blank"
+                       onclick="trackLokusAnalyticsSignup()"
                        class="block w-full bg-gray-800 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-gray-900 transition">
                         Empezar gratis
                     </a>
@@ -717,6 +764,7 @@
 
                     <a href="https://lokusanalytics-bzg0g9ddcshpgraw.westus-01.azurewebsites.net/register"
                        target="_blank"
+                       onclick="trackLokusAnalyticsSignup()"
                        class="block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
                         Empezar ahora
                     </a>
@@ -766,6 +814,7 @@
 
                     <a href="https://lokusanalytics-bzg0g9ddcshpgraw.westus-01.azurewebsites.net/register"
                        target="_blank"
+                       onclick="trackLokusAnalyticsSignup()"
                        class="block w-full bg-gray-800 text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-gray-900 transition">
                         Empezar ahora
                     </a>
@@ -863,7 +912,7 @@
             </div>
 
             <!-- Netlify Form -->
-            <form name="contact" method="POST" data-netlify="true" class="bg-gray-50 rounded-2xl shadow-xl p-8">
+            <form name="contact" method="POST" data-netlify="true" onsubmit="trackContactForm()" class="bg-gray-50 rounded-2xl shadow-xl p-8">
                 <input type="hidden" name="form-name" value="contact">
 
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
