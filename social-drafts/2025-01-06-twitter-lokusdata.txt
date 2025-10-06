@@ -1,0 +1,13 @@
+🚀 Nuevo en el blog de @LokusData
+
+📊 LokusData: Democratizando el Acceso a Datos Oficiales
+
+El problema no es la falta de datos en México. INEGI, CONAPO y SHCP generan información excelente sobre los 2,464 municipios.
+
+El problema es acceder a ellos.
+
+Estado → Municipio → Análisis. Así de simple.
+
+👉 Conoce la plataforma: https://lokusdata.com/blog/articulos/2025-01-06-lokusdata-plataforma.html
+
+#DatosINEGI #CONAPO #México #SaaS #DataDriven #LokusData

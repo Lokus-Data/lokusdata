@@ -5,8 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Paradoja Estadística Mexicana: Datos Excelentes, Acceso Terrible | Lokus Data Blog</title>
     <meta name="description" content="México tiene datos estadísticos excepcionales, pero acceder a ellos es una pesadilla. Descubre cómo esta paradoja afecta la competitividad nacional y qué hacer al respecto.">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -14,13 +30,21 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="../../index.html" class="text-2xl font-bold text-purple-600">Lokus Data</a>
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
+                        <span class="text-2xl font-bold text-primary">
+                            Lokus<span class="text-gray-900">Data</span>
+                        </span>
+                    </a>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-purple-600 transition">Servicios</a>
-                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-purple-600 transition">LokusAnalytics</a>
-                    <a href="../../blog.html" class="text-gray-700 hover:text-purple-600 transition">Blog</a>
-                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-purple-600 transition">Contacto</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
+                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
+                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
+                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                    <a href="https://app.lokusdata.com" target="_blank" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition">
+                        Ir a la App
+                    </a>
                 </div>
             </div>
         </div>

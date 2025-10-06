@@ -1,5 +1,18 @@
 [
   {
+    "title": "LokusData: La Plataforma que Democratiza el Acceso a los Datos Oficiales de México",
+    "slug": "lokusdata-plataforma",
+    "date": "2025-01-06",
+    "author": "Juan Heriberto Rosas",
+    "category": "Tecnología",
+    "categoryColor": "indigo",
+    "image": "",
+    "excerpt": "Descubre cómo LokusData transforma el acceso a datos oficiales de INEGI, CONAPO y SHCP en análisis inteligente. Estado → Municipio → Análisis en minutos.",
+    "url": "blog/articulos/2025-01-06-lokusdata-plataforma.html",
+    "readTime": "15 min",
+    "featured": true
+  },
+  {
     "title": "La Paradoja Estadística Mexicana: Datos Excelentes, Acceso Terrible",
     "slug": "paradoja-estadistica-mexicana",
     "date": "2025-01-06",
