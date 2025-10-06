@@ -1,5 +1,18 @@
 [
   {
+    "title": "Por qué la Inteligencia Artificial es el Futuro del Análisis de Datos Empresariales",
+    "slug": "ia-futuro-analisis-datos",
+    "date": "2025-01-06",
+    "author": "Juan Heriberto Rosas",
+    "category": "Tecnología",
+    "categoryColor": "purple",
+    "image": "",
+    "excerpt": "Descubre cómo la IA está transformando datos oficiales de INEGI, CONAPO y SHCP en ventaja competitiva para empresas mexicanas. Análisis municipal en segundos, no en semanas.",
+    "url": "blog/articulos/2025-01-06-ia-futuro-analisis-datos.html",
+    "readTime": "10 min",
+    "featured": true
+  },
+  {
     "title": "Resultados de la Encuesta Nacional de Ingresos y Gastos de los Hogares 2024",
     "slug": "enigh-2024",
     "date": "2024-10-02",
@@ -10,6 +23,6 @@
     "excerpt": "Análisis de los principales hallazgos de la ENIGH 2024: distribución del ingreso, patrones de gasto y desigualdad en México.",
     "url": "blog/articulos/enigh-2024.html",
     "readTime": "8 min",
-    "featured": true
+    "featured": false
   }
 ]
