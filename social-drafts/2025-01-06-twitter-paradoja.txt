@@ -1,0 +1,11 @@
+🔍 Nuevo análisis en el blog de @LokusData
+
+📊 La Paradoja Estadística Mexicana
+
+México tiene datos excepcionales del INEGI, CONAPO y SHCP sobre los 2,464 municipios. El problema no es la calidad—es excelente. El problema es que acceder a ellos es una pesadilla.
+
+Gastamos más en acceder a datos públicos que lo que costó generarlos.
+
+👉 Lee el análisis completo: https://lokusdata.com/blog/articulos/2025-01-06-paradoja-estadistica-mexicana.html
+
+#DatosINEGI #MéxicoCompetitivo #OpenData #CONAPO #SHCP #Economía
