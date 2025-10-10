@@ -171,6 +171,31 @@
                 <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
                     Integramos datos oficiales de México (INEGI, CONAPO, CONEVAL, Hacienda) con tus datos. Crea plataformas de análisis que responden a las preguntas específicas de cada decisor.
                 </p>
+
+                <!-- Video de presentación (YouTube Lite - Optimizado) -->
+                <div class="max-w-4xl mx-auto mb-8">
+                    <div class="youtube-lite relative rounded-lg overflow-hidden shadow-2xl cursor-pointer"
+                         style="padding-bottom: 56.25%; height: 0;"
+                         data-video-id="Q1F-35r-5PQ"
+                         onclick="loadYouTubeVideo(this)">
+                        <!-- Thumbnail del video -->
+                        <img
+                            src="https://img.youtube.com/vi/Q1F-35r-5PQ/maxresdefault.jpg"
+                            alt="Presentación Lokus Data"
+                            class="absolute top-0 left-0 w-full h-full object-cover"
+                            loading="lazy">
+
+                        <!-- Botón de play -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 hover:bg-opacity-30 transition">
+                            <div class="bg-red-600 hover:bg-red-700 transition rounded-full p-5 shadow-2xl transform hover:scale-110">
+                                <svg class="w-16 h-16 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://app.lokusdata.com"
                        target="_blank"
@@ -1422,6 +1447,23 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // YouTube Lite - Cargar video solo cuando se hace clic
+        function loadYouTubeVideo(element) {
+            const videoId = element.getAttribute('data-video-id');
+            const iframe = document.createElement('iframe');
+
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&color=white&iv_load_policy=3&autoplay=1`);
+            iframe.setAttribute('title', 'Presentación Lokus Data');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.className = 'absolute top-0 left-0 w-full h-full';
+
+            // Reemplazar el contenido con el iframe
+            element.innerHTML = '';
+            element.appendChild(iframe);
+        }
     </script>
 </body>
 </html>
