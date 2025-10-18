@@ -1,5 +1,18 @@
 [
   {
+    "title": "Microsoft Fabric: La Solución Perfecta para la Plataforma Central de Inteligencia del CNI",
+    "slug": "microsoft-fabric-cni",
+    "date": "2025-10-18",
+    "author": "Juan Heriberto Rosas",
+    "category": "Tecnología",
+    "categoryColor": "indigo",
+    "image": "",
+    "excerpt": "Descubre cómo Microsoft Fabric puede transformar la Plataforma Central de Inteligencia del CNI: análisis en tiempo real, IA integrada y capacidad de procesar datos masivos en segundos.",
+    "url": "blog/articulos/2025-10-18-microsoft-fabric-cni.html",
+    "readTime": "18 min",
+    "featured": true
+  },
+  {
     "title": "LokusData: La Plataforma que Democratiza el Acceso a los Datos Oficiales de México",
     "slug": "lokusdata-plataforma",
     "date": "2025-01-06",
