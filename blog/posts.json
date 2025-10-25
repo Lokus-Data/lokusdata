@@ -1,5 +1,18 @@
 [
   {
+    "title": "Auditar al 0.02% vs. Monitorear al 100%: La Revolución Digital que el SAT Necesita",
+    "slug": "sat-modernizacion-fabric",
+    "date": "2025-10-25",
+    "author": "Juan Heriberto Rosas",
+    "category": "Tecnología",
+    "categoryColor": "indigo",
+    "image": "",
+    "excerpt": "Cómo Microsoft Fabric puede transformar la fiscalización del SAT: de 16,200 auditorías anuales al monitoreo continuo de 66 millones de contribuyentes en tiempo real.",
+    "url": "blog/articulos/2025-10-25-sat-modernizacion-fabric.html",
+    "readTime": "25 min",
+    "featured": true
+  },
+  {
     "title": "Microsoft Fabric: La Solución Perfecta para la Plataforma Central de Inteligencia del CNI",
     "slug": "microsoft-fabric-cni",
     "date": "2025-10-18",
