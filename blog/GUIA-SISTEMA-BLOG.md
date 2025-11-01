@@ -36,8 +36,11 @@ Tú: "Claude, crea un post sobre análisis de CONAPO
 
 1. ✅ Creo el archivo HTML en `blog/articulos/2025-01-06-analisis-conapo.html`
 2. ✅ Agrego entrada al `blog/posts.json`
-3. ✅ Genero borradores para redes sociales
-4. ✅ El blog.html automáticamente muestra el nuevo post
+3. ✅ **CRÍTICO: Agrego el artículo a la página principal (index.html)**
+   - Lo pongo como primero de los 3 artículos destacados
+   - Remuevo el artículo más antiguo para mantener solo 3
+4. ✅ Genero borradores para redes sociales (LinkedIn y Twitter/X)
+5. ✅ El blog.html automáticamente muestra el nuevo post
 
 ### Paso 3: Subes a GitHub
 
@@ -52,6 +55,28 @@ git push
 
 - En 1-2 minutos tu post está en vivo
 - Newsletter form funciona automáticamente
+
+---
+
+## 🚨 POR QUÉ ES CRÍTICO AGREGAR ARTÍCULOS A index.html
+
+**IMPORTANTE:** Cada nuevo artículo DEBE aparecer en la página principal (index.html), no solo en blog.html.
+
+### ¿Por qué?
+
+1. **El tráfico principal llega a lokusdata.com**, no directamente al blog
+2. **Los visitantes NO saben que hay nuevo contenido** si solo está en el blog
+3. **Los artículos destacados en home generan clicks** y visibilidad inmediata
+4. **Mantener 3 artículos recientes** muestra que el sitio está activo y actualizado
+
+### Proceso automático:
+
+Cuando publiques un artículo nuevo, YO automáticamente:
+1. ✅ Lo agrego como **primero** de los 3 artículos destacados en index.html
+2. ✅ Remuevo el artículo más antiguo (para mantener solo 3)
+3. ✅ El blog.html muestra TODOS los artículos vía posts.json
+
+**NUNCA olvides este paso.** Sin esto, los visitantes de la home no verán el nuevo contenido.
 
 ---
 
