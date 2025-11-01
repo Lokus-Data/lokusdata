@@ -56,6 +56,30 @@ git push
 - En 1-2 minutos tu post está en vivo
 - Newsletter form funciona automáticamente
 
+### Paso 5: 🚨 PUBLICAR EN REDES SOCIALES (CRÍTICO - NO OMITIR)
+
+**IMPORTANTE:** Los borradores están listos en `social-drafts/`, pero NO se publican automáticamente.
+
+Debes SIEMPRE publicar en:
+
+1. **LinkedIn:**
+   - Abre `social-drafts/linkedin-[fecha]-[slug].txt`
+   - Copia TODO el contenido
+   - Pega en LinkedIn
+   - Publica
+   - ⏱️ Tiempo: 1 minuto
+
+2. **Twitter/X:**
+   - Abre `social-drafts/twitter-x-[fecha]-[slug].txt`
+   - Usa el hilo completo (10 tweets) O el tweet único
+   - Publica
+   - ⏱️ Tiempo: 2 minutos
+
+**Total: 3 minutos para difundir tu contenido a miles de personas.**
+
+❌ Sin redes sociales = El artículo no tendrá visibilidad
+✅ Con redes sociales = Tráfico inmediato + engagement + posicionamiento
+
 ---
 
 ## 🚨 POR QUÉ ES CRÍTICO AGREGAR ARTÍCULOS A index.html
@@ -215,7 +239,33 @@ Si algo no funciona:
 
 ## ✨ RESUMEN
 
-**Antes:** 15-20 min para publicar un post manualmente
-**Ahora:** 2 minutos (solo darme el texto)
+**Proceso completo para publicar un artículo:**
+
+1. ✅ Darme el contenido del artículo (2 min)
+2. ✅ Yo creo HTML + actualizo posts.json + agrego a index.html + genero borradores redes (automático)
+3. ✅ Hacer git push (30 segundos)
+4. ✅ **PUBLICAR EN LINKEDIN Y TWITTER/X** usando los borradores (3 min) - **NO OMITIR**
+
+**Tiempo total: 5-6 minutos vs. 15-20 minutos antes**
+
+---
+
+## 🚨 CHECKLIST FINAL (NO OLVIDAR NADA):
+
+Cada vez que publiques un artículo, verifica:
+
+- [ ] Artículo HTML creado en `blog/articulos/`
+- [ ] Entrada agregada a `blog/posts.json`
+- [ ] Artículo agregado a `index.html` (primero de 3 destacados)
+- [ ] Artículo más antiguo removido de `index.html`
+- [ ] Borradores LinkedIn creados en `social-drafts/`
+- [ ] Borradores Twitter/X creados en `social-drafts/`
+- [ ] Git commit y push realizados
+- [ ] **Artículo PUBLICADO en LinkedIn**
+- [ ] **Artículo PUBLICADO en Twitter/X**
+
+**Si falta alguno de estos pasos, el proceso NO está completo.**
+
+---
 
 **¿Listo para publicar tu primer post? 🚀**
