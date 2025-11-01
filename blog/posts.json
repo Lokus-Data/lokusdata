@@ -1,5 +1,18 @@
 [
   {
+    "title": "México: El Momento de Crecer",
+    "slug": "mexico-momento-crecer",
+    "date": "2025-11-01",
+    "author": "Juan Heriberto Rosas",
+    "category": "Economía",
+    "categoryColor": "green",
+    "image": "",
+    "excerpt": "Cómo la adopción de IA, robótica y Big Data puede transformar la economía mexicana y aprovechar la ventana histórica del nearshoring para alcanzar un crecimiento del 4-5% anual.",
+    "url": "blog/articulos/2025-11-01-mexico-momento-crecer.html",
+    "readTime": "20 min",
+    "featured": true
+  },
+  {
     "title": "Auditar al 0.02% vs. Monitorear al 100%: La Revolución Digital que el SAT Necesita",
     "slug": "sat-modernizacion-fabric",
     "date": "2025-10-25",

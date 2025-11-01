@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>México: El Momento de Crecer - Lokus Data</title>
+    <meta name="description" content="Análisis profundo de cómo México puede aprovechar nearshoring, IA, robótica y Big Data para transformar su economía y alcanzar un crecimiento del 4-5% anual.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
+                        <span class="text-2xl font-bold text-primary">
+                            Lokus<span class="text-gray-900">Data</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
+                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
+                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
+                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
+                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back to blog -->
+            <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary mb-8 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver al blog
+            </a>
+
+            <!-- Article metadata -->
+            <div class="mb-8">
+                <div class="flex items-center text-sm text-gray-500 mb-4">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    1 de noviembre de 2025
+                    <span class="mx-2">•</span>
+                    <span>20 min de lectura</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    México: El Momento de Crecer
+                </h1>
+
+                <p class="text-xl text-gray-600">
+                    Cómo la adopción de IA, robótica y Big Data puede transformar la economía mexicana y aprovechar la ventana histórica del nearshoring.
+                </p>
+            </div>
+
+            <!-- Featured Image Placeholder -->
+            <div class="mb-8 bg-gradient-to-br from-green-500 to-green-700 rounded-xl h-96 flex items-center justify-center">
+                <div class="text-white text-center">
+                    <svg class="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                    <p class="text-2xl font-bold">MÉXICO: EL MOMENTO DE CRECER</p>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none">
+
+                <!-- SECCIÓN I -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-8 mb-4">I. PANORAMA ECONÓMICO ACTUAL: LA ALERTA ROJA</h2>
+
+                <p class="text-gray-700 mb-6">
+                    El Instituto Nacional de Estadística y Geografía (INEGI) informó que la economía mexicana registró un <strong>retroceso de 0.3%</strong> en el tercer trimestre de 2025, marcando la primera contracción anual desde el primer trimestre de 2021.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">La radiografía sectorial es preocupante:</h3>
+
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>Las <strong>actividades secundarias</strong> (industria y manufacturas) cayeron <strong>1.5% trimestral y 2.9% anual</strong>, afectadas por la debilidad en la demanda de Estados Unidos y los altos costos de insumos energéticos</li>
+                    <li>Las <strong>actividades terciarias</strong> (servicios) mostraron un leve avance de <strong>0.1% trimestral y 1.0% anual</strong></li>
+                    <li>Solo las <strong>actividades primarias</strong> ofrecen un respiro: agricultura, ganadería y pesca crecieron <strong>3.2% trimestral</strong></li>
+                </ul>
+
+                <div class="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>El resultado:</strong> La economía registra un crecimiento acumulado de apenas <strong>0.2%</strong> en los primeros 9 meses de 2025, muy por debajo de las metas. Las proyecciones anticipan que México podría cerrar el año con un crecimiento de entre <strong>0.3% y 0.5%</strong>, muy por debajo del <strong>2.5%</strong> previsto en el Paquete Económico 2025.
+                    </p>
+                </div>
+
+                <!-- SECCIÓN II -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">II. LA ESTRUCTURA EMPRESARIAL MEXICANA: POTENCIAL SIN EXPLOTAR</h2>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Un país de PyMEs con un sector manufacturero estratégico</h3>
+
+                <p class="text-gray-700 mb-6">
+                    México tiene una economía donde el sector de servicios representa el <strong>59.90% del PIB</strong> y el <strong>64.3% de la fuerza laboral</strong>, seguido por el sector industrial con el <strong>31.14% del PIB</strong> y el <strong>24.70% de la fuerza laboral</strong>.
+                </p>
+
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>El corazón productivo:</strong> Las industrias manufactureras son el sector más grande de la economía mexicana (<strong>21.7% del PIB</strong>) y además es el principal generador de valor agregado.
+                    </p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">La realidad empresarial</h3>
+
+                <p class="text-gray-700 mb-4">México cuenta con <strong>6,058,548 establecimientos</strong>, con una distribución reveladora:</p>
+
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li><strong>95.1%</strong> son microempresas</li>
+                    <li><strong>3.5%</strong> pequeñas</li>
+                    <li><strong>0.7%</strong> medianas</li>
+                    <li><strong>0.7%</strong> grandes</li>
+                </ul>
+
+                <p class="text-gray-700 mb-6">
+                    Las PyMEs generan <strong>más del 52% del Producto Interno Bruto (PIB)</strong> y generan el <strong>72% del empleo formal</strong>.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">La brecha digital: el talón de Aquiles</h3>
+
+                <div class="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>Aquí está el problema crítico:</strong> Solo <strong>22.3%</strong> de las microempresas utiliza equipo de cómputo, mientras que las pequeñas, medianas y grandes registraron <strong>86.2%, 92.8% y 94.5%</strong> respectivamente.
+                    </p>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    Esta brecha tecnológica en el <strong>95% de las empresas</strong> que constituyen la columna vertebral económica del país es un lastre para el crecimiento.
+                </p>
+
+                <!-- SECCIÓN III -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">III. LA REVOLUCIÓN TECNOLÓGICA: CÓMO EL MUNDO ESTÁ CRECIENDO</h2>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">A. Robótica y Automatización: El Nuevo Motor Industrial</h3>
+
+                <p class="text-gray-700 mb-4">
+                    El mercado global de robótica industrial se valoró en <strong>17.78 mil millones de dólares</strong> en 2024 y se proyecta que crezca a una tasa del <strong>13.3% anual</strong> entre 2025 y 2034.
+                </p>
+
+                <p class="text-gray-700 mb-4"><strong>Los líderes globales:</strong></p>
+
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li><strong>China</strong> es el mercado más grande para la robótica industrial, con más de la mitad de todas las instalaciones de robot industrial. El gasto de China está siendo impulsado por rápidos crecimientos en industrialización, aumento de costos laborales y políticas gubernamentales como "Made in China 2025"</li>
+                    <li><strong>India</strong> ha pasado del puesto 10 al 7 a nivel global en instalaciones de robots, lo que representa un aumento del 59%, respaldado por políticas estratégicas como Make in India</li>
+                </ul>
+
+                <div class="bg-green-50 border-l-4 border-green-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>Los resultados son contundentes:</strong> Las empresas que implementen la automatización total podrían reducir costos operativos hasta en un <strong>30%</strong>.
+                    </p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">B. Inteligencia Artificial: Redefiniendo la Productividad</h3>
+
+                <p class="text-gray-700 mb-4"><strong>El impacto es monumental:</strong></p>
+
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>La IA generativa podría aportar hasta <strong>0.7 puntos porcentuales adicionales</strong> al crecimiento anual de la productividad en Estados Unidos durante la próxima década</li>
+                    <li>La inteligencia artificial representará el <strong>3.5% del PIB mundial en 2030</strong>, con un impacto económico global acumulado de <strong>19.9 billones de dólares</strong></li>
+                </ul>
+
+                <p class="text-gray-700 mb-6">
+                    En fábricas inteligentes, la IA permite que los robots manejen una mayor variabilidad en los procesos productivos. La robótica se está integrando con tecnologías como la IA, el 5G, el análisis de Big Data y el cloud computing, permitiendo que los robots no solo ejecuten tareas, sino que también aprendan, se adapten y optimicen procesos en tiempo real.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">C. Big Data y Ciencia de Datos: Inteligencia para Decidir</h3>
+
+                <p class="text-gray-700 mb-6">
+                    Según IDC, 2025 será el año en que se generen más de <strong>175 zettabytes de información</strong>, y el mercado de IA en Big Data moverá más de <strong>243,700 millones de dólares</strong>.
+                </p>
+
+                <p class="text-gray-700 mb-4"><strong>Aplicaciones transformadoras:</strong></p>
+
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li><strong>En manufactura:</strong> segmentación de clientes, promociones personalizadas, control de cadena de suministro y analítica predictiva en mantenimiento de productos</li>
+                    <li><strong>En agricultura inteligente:</strong> análisis de datos de sensores IoT para predecir necesidad de riego o fertilización con precisión, optimizando el uso de recursos y aumentando la productividad</li>
+                </ul>
+
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>La tendencia es clara:</strong> Para 2025, se prevé que más del <strong>60% de las organizaciones</strong> integren IA en sus estrategias de datos.
+                    </p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">D. Robots Colaborativos: Humanos y Máquinas Juntos</h3>
+
+                <p class="text-gray-700 mb-6">
+                    Los robots "co-workers" no buscan sustituir a los trabajadores, sino trabajar junto a ellos, manejando tareas repetitivas o de alta precisión mientras los humanos se concentran en actividades estratégicas.
+                </p>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>El mensaje es claro:</strong> En China casi todas las empresas manufactureras quieren automatizarse. Saben que los tiempos de la mano de obra barata se han terminado. Saben que necesitan robots para sobrevivir, y los están integrando mucho más rápido que el resto del mundo.
+                    </p>
+                </div>
+
+                <!-- SECCIÓN IV -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">IV. MÉXICO PUEDE Y DEBE: VENTAJAS INCOMPARABLES</h2>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">La oportunidad del nearshoring</h3>
+
+                <p class="text-gray-700 mb-6">
+                    Durante el primer trimestre de 2025 México captó <strong>21,373 millones de dólares de Inversión Extranjera Directa (IED)</strong>, destacándose el repunte de nuevas inversiones que se duplicaron respecto al año anterior.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">¿Por qué México?</h3>
+
+                <p class="text-gray-700 mb-6">
+                    México ha destacado gracias a tratados de libre comercio como el T-MEC, mano de obra calificada y competitiva con costos menores que en Estados Unidos, y una ubicación geográfica privilegiada que permite una logística eficiente.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    Sectores como <strong>autopartes, electrodomésticos, dispositivos médicos, muebles y componentes electrónicos</strong> podrían beneficiarse al captar órdenes de producción que antes se realizaban en China.
+                </p>
+
+                <div class="bg-green-50 border-l-4 border-green-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>Incluso con aranceles, México sigue siendo competitivo:</strong> Producir en México resulta más barato gracias a los costos laborales, infraestructura y experiencia en manufactura.
+                    </p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Lo que México PUEDE hacer</h3>
+
+                <h4 class="text-xl font-bold text-gray-900 mt-6 mb-3">1. Modernizar el sector manufacturero con tecnología</h4>
+                <p class="text-gray-700 mb-4">
+                    México tiene las industrias manufactureras como el sector más grande (21.7% del PIB) y el principal generador de valor agregado. Con automatización e IA, este sector podría:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>Reducir costos operativos hasta 30%</li>
+                    <li>Aumentar productividad mediante mantenimiento predictivo</li>
+                    <li>Competir con los mejores del mundo</li>
+                </ul>
+
+                <h4 class="text-xl font-bold text-gray-900 mt-6 mb-3">2. Digitalizar masivamente a las PyMEs</h4>
+                <p class="text-gray-700 mb-6">
+                    Con las PyMEs generando más del 52% del PIB pero solo 22% de microempresas usando computadoras, el potencial es enorme. Programas de digitalización podrían aumentar eficiencia operativa, mejorar acceso a mercados e incrementar supervivencia empresarial.
+                </p>
+
+                <h4 class="text-xl font-bold text-gray-900 mt-6 mb-3">3. Convertirse en líder de agricultura inteligente</h4>
+                <p class="text-gray-700 mb-6">
+                    El sector primario creció 3.2% trimestral. Con tecnologías de precisión y análisis de datos, México podría multiplicar esta productividad.
+                </p>
+
+                <h4 class="text-xl font-bold text-gray-900 mt-6 mb-3">4. Aprovechar la posición geográfica única</h4>
+                <p class="text-gray-700 mb-6">
+                    Los programas de diferimiento de aranceles como el IMMEX y el PROSEC impulsan la competitividad al disminuir costos de producción. Combinados con tecnología avanzada, México sería imbatible.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Lo que México DEBE hacer</h3>
+
+                <div class="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>Es ahora o nunca.</strong> Esta es la segunda oportunidad para aprovechar la relocalización de empresas. El nearshoring ya se daba por perdido, muchos decían goodbye, pero tenemos un segundo aire.
+                    </p>
+                </div>
+
+                <h4 class="text-xl font-bold text-gray-900 mt-6 mb-3">Las acciones urgentes:</h4>
+
+                <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-3">
+                    <li><strong>Inversión masiva en infraestructura tecnológica:</strong> México necesita garantizar suficiente energía eléctrica, confiable y limpia; agilizar los trámites en parques industriales, aduanas y permisos; y desarrollar una plataforma nacional de trazabilidad</li>
+                    <li><strong>Programa nacional de adopción tecnológica para PyMEs:</strong> Con incentivos fiscales, capacitación y financiamiento accesible para que el 95% de empresas se suba al tren de la digitalización</li>
+                    <li><strong>Reforma educativa enfocada en tecnología:</strong> El FMI recomienda adoptar reformas estructurales en mercados laborales, educación, regulación y competencia, así como políticas que impulsen la digitalización, los avances tecnológicos y la adopción de inteligencia artificial para elevar la productividad</li>
+                    <li><strong>Alianzas público-privadas para adopción de IA y robótica:</strong> Facilitar que empresas manufactureras implementen automatización con apoyo gubernamental</li>
+                    <li><strong>Aprovechar el momento geopolítico:</strong> La fabricación mexicana goza de preferencia arancelaria bajo el T-MEC, además de cercanía geográfica, tiempos de entrega cortos y un ecosistema industrial ya consolidado</li>
+                </ol>
+
+                <!-- SECCIÓN V -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">V. CONCLUSIÓN: EL IMPERATIVO DEL CAMBIO</h2>
+
+                <p class="text-gray-700 mb-6">
+                    Los números no mienten: <strong>0.2% de crecimiento acumulado es inaceptable</strong> para un país con el potencial de México.
+                </p>
+
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6">
+                    <p class="text-gray-800 mb-4">
+                        <strong>La ecuación es simple:</strong>
+                    </p>
+                    <p class="text-gray-800 font-semibold text-center">
+                        Ventajas naturales (ubicación, T-MEC, costos) + Adopción tecnológica (IA, robótica, Big Data) = Crecimiento exponencial
+                    </p>
+                </div>
+
+                <p class="text-gray-700 mb-4"><strong>Los líderes mundiales lo están haciendo:</strong></p>
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>China automatizándose a velocidad récord</li>
+                    <li>India multiplicando sus instalaciones de robots por 6</li>
+                    <li>Estados Unidos apostando por la IA para ganar 0.7 puntos de productividad</li>
+                </ul>
+
+                <p class="text-gray-700 mb-6"><strong>México no puede quedarse atrás.</strong></p>
+
+                <p class="text-gray-700 mb-4">El país tiene:</p>
+                <ul class="list-none text-gray-700 mb-6 space-y-2">
+                    <li>✅ La ubicación geográfica perfecta</li>
+                    <li>✅ Los tratados comerciales necesarios</li>
+                    <li>✅ La infraestructura industrial existente</li>
+                    <li>✅ El capital humano</li>
+                    <li>✅ Las PyMEs que generan 52% del PIB</li>
+                </ul>
+
+                <div class="bg-green-50 border-l-4 border-green-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>Lo único que falta es la decisión de actuar.</strong>
+                    </p>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    Para retomar una trayectoria de crecimiento sostenido, es fundamental que el Plan México se traduzca en más inversión, especialmente a través de esquemas de coinversión público-privada que fortalezcan las capacidades productivas de largo plazo.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    El mensaje es claro: <strong>México puede crecer al 4-5% anual o más.</strong> México debe aprovechar este momento histórico. Las herramientas tecnológicas existen. Las ventajas competitivas están ahí. Solo falta voluntad política y acción coordinada.
+                </p>
+
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-8 my-8 text-center">
+                    <p class="text-2xl font-bold mb-2">El momento es ahora.</p>
+                    <p class="text-xl">La historia juzgará si México aprovechó o desperdició esta oportunidad única.</p>
+                </div>
+
+                <!-- Fuentes -->
+                <div class="bg-gray-100 rounded-lg p-6 my-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fuentes</h3>
+                    <p class="text-sm text-gray-700">
+                        INEGI (2025), México ¿cómo vamos?, Federación Internacional de Robótica, IDC, FMI, Intercam, Proyectos México, Konfio, BBVA, Senado de la República, Global Market Insights, Interempresas, The Thing, Infobae, IT User, Fundación Innovación Bankinter, Impacto TIC, Uma, Hopla! Tech, IEBS Business School, IESE Business School, Real Estate Market, Universidad Panamericana, El Imparcial, Gtisusa.
+                    </p>
+                </div>
+
+                <!-- CTA interno -->
+                <div class="bg-gray-100 rounded-lg p-6 my-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">¿Tu empresa necesita datos para tomar decisiones estratégicas?</h3>
+                    <p class="text-gray-700 mb-4">
+                        Con LokusAnalytics puedes realizar consultas específicas sobre datos económicos, demográficos y sectoriales de México usando inteligencia artificial.
+                    </p>
+                    <a href="https://app.lokusdata.com"
+                       target="_blank"
+                       class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition">
+                        Prueba LokusAnalytics gratis
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Article footer -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <div class="flex items-center justify-between">
+                    <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary transition">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Volver al blog
+                    </a>
+                    <div class="text-sm text-gray-500">
+                        Compartir en redes sociales próximamente
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                Analiza datos INEGI con inteligencia artificial
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                LokusAnalytics te permite hacer consultas personalizadas sobre economía, demografía, censos y más
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.lokusdata.com/register"
+                   target="_blank"
+                   class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Registrarse Gratis
+                </a>
+                <a href="../../index.html#contacto"
+                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
+                    <p class="text-sm">
+                        Transformamos datos en decisiones estratégicas
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html#servicios" class="hover:text-white transition">Consultoría</a></li>
+                        <li><a href="../../index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>analytics@lokusdata.com</li>
+                        <li>+52 55 2272 7458</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2025 Lokus Data. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
