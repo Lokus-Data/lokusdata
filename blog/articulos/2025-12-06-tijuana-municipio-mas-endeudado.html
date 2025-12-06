@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tijuana: Radiografía del Municipio Más Endeudado de México - Lokus Data</title>
+    <meta name="description" content="Un análisis de las finanzas públicas 2024 de Tijuana basado en datos del INEGI. Descubre por qué el municipio fronterizo enfrenta un momento crítico con más del 20% de sus ingresos provenientes de deuda.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
+                        <span class="text-2xl font-bold text-primary">
+                            Lokus<span class="text-gray-900">Data</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
+                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
+                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
+                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
+                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back to blog -->
+            <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary mb-8 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver al blog
+            </a>
+
+            <!-- Article metadata -->
+            <div class="mb-8">
+                <div class="flex items-center text-sm text-gray-500 mb-4">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    6 de diciembre de 2025
+                    <span class="mx-2">•</span>
+                    <span>10 min de lectura</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Tijuana: Radiografía del Municipio Más Endeudado de México
+                </h1>
+
+                <p class="text-xl text-gray-600">
+                    Un análisis de las finanzas públicas 2024 basado en datos del INEGI
+                </p>
+            </div>
+
+            <!-- Featured Image Placeholder -->
+            <div class="mb-8 bg-gradient-to-br from-red-500 to-red-800 rounded-xl h-96 flex items-center justify-center">
+                <div class="text-white text-center">
+                    <svg class="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <p class="text-2xl font-bold">Finanzas Municipales 2024</p>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none">
+
+                <div class="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>Dato clave:</strong> Este analisis fue realizado con la plataforma <a href="https://app.lokusdata.com" target="_blank" class="text-primary hover:text-secondary">app.lokusdata.com</a>, que permite acceder a datos oficiales de INEGI de manera rapida y sencilla.
+                    </p>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">1. Panorama General: Las Finanzas de Tijuana en 2024</h2>
+
+                <p class="text-gray-700 mb-6 text-lg">
+                    Tijuana, la ciudad fronteriza más grande de México, maneja en 2024 un presupuesto de <strong>$14,559 millones de pesos</strong>, cifra que representa un crecimiento acumulado del 89.85% desde 2019. Este incremento casi duplica el presupuesto en apenas cinco años, pero ¿es esto señal de prosperidad o de alarma?
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    La respuesta está en los detalles. Mientras el presupuesto crece, también lo hace la rigidez financiera del municipio. <strong>Más del 72% de cada peso que ingresa ya tiene destino fijo</strong> antes de poder invertirse en nuevas obras o programas. Esta situación coloca a Tijuana en una encrucijada: crecer con deuda o estancarse por falta de flexibilidad.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">2. ¿De Dónde Viene el Dinero?</h2>
+
+                <p class="text-gray-700 mb-6">
+                    La estructura de ingresos de Tijuana revela una dependencia preocupante de fuentes externas. Las participaciones federales aportan el <strong>34.46% del total ($5,016 millones)</strong>, es decir, más de un tercio del presupuesto depende de decisiones tomadas en la Ciudad de México.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    El segundo componente más grande es revelador: el <strong>financiamiento representa el 20.04% ($2,918 millones)</strong>. Esto significa que una quinta parte de los ingresos proviene de deuda. En tercer lugar están los impuestos locales con apenas 18.69% ($2,721 millones), evidenciando la limitada capacidad del municipio para generar recursos propios.
+                </p>
+
+                <!-- Tabla de Ingresos -->
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Fuente de Ingreso</th>
+                                <th class="px-6 py-3 text-right text-sm font-semibold text-gray-900">Monto</th>
+                                <th class="px-6 py-3 text-right text-sm font-semibold text-gray-900">Porcentaje</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Participaciones Federales</td>
+                                <td class="px-6 py-4 text-right text-gray-700 font-semibold">$5,016 millones</td>
+                                <td class="px-6 py-4 text-right text-gray-700">34.46%</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700">Financiamiento (Deuda)</td>
+                                <td class="px-6 py-4 text-right text-red-600 font-semibold">$2,918 millones</td>
+                                <td class="px-6 py-4 text-right text-red-600 font-semibold">20.04%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Impuestos Locales</td>
+                                <td class="px-6 py-4 text-right text-gray-700 font-semibold">$2,721 millones</td>
+                                <td class="px-6 py-4 text-right text-gray-700">18.69%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">3. ¿A Dónde Se Va el Dinero?</h2>
+
+                <p class="text-gray-700 mb-6">
+                    El destino del gasto municipal cuenta una historia de rigidez presupuestal. Los servicios personales (nómina y prestaciones) consumen el <strong>38.21% del presupuesto total: $5,562 millones</strong>. Es decir, casi cuatro de cada diez pesos se destinan a pagar a los trabajadores del gobierno municipal.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    Los servicios generales (luz, arrendamientos, mantenimiento) representan otro 17.94%, mientras que el servicio de la deuda pública absorbe el 15.91%. Estos tres rubros suman el <strong>72.06% del presupuesto</strong>, dejando menos de 28 centavos de cada peso para inversión en infraestructura, programas sociales o contingencias.
+                </p>
+
+                <div class="bg-gray-100 rounded-lg p-6 my-8">
+                    <p class="text-gray-800 font-semibold text-lg">
+                        Solo 28 centavos de cada peso pueden destinarse a inversión, programas sociales o contingencias. El resto ya tiene destino fijo.
+                    </p>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">4. El Elefante en la Sala: La Deuda Pública</h2>
+
+                <div class="bg-red-100 border-l-4 border-red-600 p-6 my-6">
+                    <p class="text-2xl font-bold text-red-800 mb-2">+4,308%</p>
+                    <p class="text-gray-800">
+                        <strong>Incremento en amortización de deuda 2024</strong>
+                    </p>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    El dato más alarmante del análisis financiero de Tijuana es el comportamiento de su deuda pública. En 2023, el municipio destinó $51.9 millones a amortización de deuda. En 2024, esa cifra se disparó a <strong>$2,292 millones</strong>, un incremento de más de 4,300%.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    Esta explosión en el pago de deuda tiene varias lecturas posibles: puede tratarse de vencimientos programados de financiamientos anteriores, una reestructuración de pasivos, o la decisión de liquidar compromisos acumulados. Lo que es innegable es que este nivel de gasto en deuda (<strong>$2,315 millones incluyendo intereses</strong>) representa el 15.91% del presupuesto total, restando capacidad para atender otras necesidades.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    La volatilidad en este rubro es extrema: el coeficiente de variación alcanza el <strong>120.79%</strong>, indicando que los pagos de deuda han sido impredecibles y dificultan cualquier planeación financiera de mediano plazo.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">5. Señales de Alerta: Riesgos para la Sostenibilidad</h2>
+
+                <p class="text-gray-700 mb-6">
+                    El análisis revela múltiples focos rojos para las finanzas tijuanenses. El déficit presupuestal creció <strong>3,810% entre 2020 y 2024</strong>, pasando de $74 millones a casi $2,918 millones. Esta brecha entre ingresos propios y gastos se ha cubierto sistemáticamente con financiamiento, generando un círculo vicioso de endeudamiento.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    La volatilidad general de las finanzas (24.68%) complica la planeación presupuestal. Los ingresos fluctúan significativamente de un año a otro, pero los gastos fijos —especialmente nómina y deuda— son inamovibles. Esta asimetría genera tensión financiera permanente y reduce la capacidad de respuesta ante emergencias o proyectos estratégicos.
+                </p>
+
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li><strong>Déficit presupuestal:</strong> Creció 3,810% entre 2020 y 2024</li>
+                    <li><strong>Volatilidad financiera:</strong> 24.68% de variación general</li>
+                    <li><strong>Deuda como % de ingresos:</strong> 20.04% proviene de financiamiento</li>
+                    <li><strong>Rigidez presupuestal:</strong> 72% del gasto es inflexible</li>
+                </ul>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">6. ¿Hay Salida? Recomendaciones para el Futuro</h2>
+
+                <p class="text-gray-700 mb-6">
+                    A pesar del panorama complejo, existen rutas de acción para mejorar la salud financiera del municipio:
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Fortalecer ingresos propios</h3>
+                <p class="text-gray-700 mb-6">
+                    Con solo 18.69% de ingresos provenientes de impuestos locales, hay amplio margen para mejorar la recaudación. Modernizar sistemas de cobro, actualizar padrones y combatir la evasión fiscal podrían incrementar significativamente la autonomía financiera.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Reestructurar la deuda</h3>
+                <p class="text-gray-700 mb-6">
+                    Renegociar plazos y tasas de interés permitiría distribuir los pagos de manera más uniforme, evitando picos como el observado en 2024 y liberando recursos para inversión.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Optimizar el gasto en personal</h3>
+                <p class="text-gray-700 mb-6">
+                    Sin afectar servicios esenciales, la digitalización de procesos y la revisión de estructuras administrativas podrían generar eficiencias que liberen recursos actualmente comprometidos en nómina.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Crear fondos de estabilización</h3>
+                <p class="text-gray-700 mb-6">
+                    Ante la alta volatilidad de ingresos, reservar recursos en años favorables permitiría amortiguar caídas y mantener la continuidad de servicios y proyectos.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Conclusión</h2>
+
+                <p class="text-gray-700 mb-6">
+                    Tijuana enfrenta un momento crítico en su historia financiera. El crecimiento del presupuesto no ha venido acompañado de mayor autonomía ni flexibilidad. Por el contrario, la dependencia de transferencias federales y el peso de la deuda limitan las opciones del gobierno municipal.
+                </p>
+
+                <p class="text-gray-700 mb-6 text-xl font-semibold">
+                    Las decisiones que se tomen en los próximos años determinarán si la ciudad logra equilibrar sus finanzas o si profundiza una espiral de endeudamiento que comprometa su futuro.
+                </p>
+
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6">
+                    <p class="text-gray-800 text-sm">
+                        <strong>Fuente:</strong> Finanzas Públicas Municipales - INEGI | <strong>Análisis:</strong> Lokus Data | <strong>Fecha:</strong> Diciembre 2025
+                    </p>
+                </div>
+
+                <div class="bg-gray-100 rounded-lg p-6 my-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">¿Quieres analizar las finanzas de tu municipio?</h3>
+                    <p class="text-gray-700 mb-4">
+                        Con LokusAnalytics puedes acceder a datos oficiales del INEGI y generar análisis como este en minutos. Prueba la plataforma que usamos para crear este artículo.
+                    </p>
+                    <a href="https://app.lokusdata.com/register"
+                       target="_blank"
+                       class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition">
+                        Probar LokusAnalytics Gratis
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Article footer -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <div class="flex items-center justify-between">
+                    <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary transition">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Volver al blog
+                    </a>
+                    <div class="text-sm text-gray-500">
+                        Compartir en redes sociales próximamente
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-red-600 to-red-800 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                Analiza las finanzas de cualquier municipio de México
+            </h2>
+            <p class="text-xl text-red-100 mb-8">
+                LokusAnalytics te da acceso a datos oficiales del INEGI en segundos
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.lokusdata.com/register"
+                   target="_blank"
+                   class="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Prueba LokusAnalytics
+                </a>
+                <a href="../../index.html#contacto"
+                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-600 transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
+                    <p class="text-sm">
+                        Transformamos datos en decisiones estratégicas
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html#servicios" class="hover:text-white transition">Consultoría</a></li>
+                        <li><a href="../../index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>analytics@lokusdata.com</li>
+                        <li>+52 55 2272 7458</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2025 Lokus Data. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
