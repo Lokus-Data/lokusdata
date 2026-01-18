@@ -42,10 +42,24 @@
         gtag('config', 'AW-17620097832');
     </script>
 
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+      ttq.load('D5MIMSJC77UALNU7I3OG');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
     <!-- Funciones para rastrear conversiones -->
     <script>
         // Función para rastrear clics en "Crear cuenta gratis" (LokusAnalytics)
         function trackLokusAnalyticsSignup() {
+            // Google Ads
             gtag('event', 'conversion', {
                 'send_to': 'AW-17620097832/assYCKeEiqYbEKi29dFB',
                 'value': 50.0,
@@ -54,10 +68,13 @@
                     console.log('Conversión registrada: Signup LokusAnalytics');
                 }
             });
+            // TikTok Pixel
+            ttq.track('CompleteRegistration');
         }
 
         // Función para rastrear envío de formulario de contacto
         function trackContactForm() {
+            // Google Ads
             gtag('event', 'conversion', {
                 'send_to': 'AW-17620097832/_vYpCPewjqYbEKi29dFB',
                 'value': 30.0,
@@ -66,10 +83,13 @@
                     console.log('Conversión registrada: Formulario de contacto');
                 }
             });
+            // TikTok Pixel
+            ttq.track('Lead');
         }
 
         // Función para rastrear clics en "Solicitar cotización"
         function trackQuoteRequest() {
+            // Google Ads
             gtag('event', 'conversion', {
                 'send_to': 'AW-17620097832/0Zt6CI-ZiqYbEKi29dFB',
                 'value': 100.0,
@@ -78,6 +98,13 @@
                     console.log('Conversión registrada: Solicitud de cotización');
                 }
             });
+            // TikTok Pixel
+            ttq.track('ClickButton');
+        }
+
+        // Función para rastrear contacto (WhatsApp/Email)
+        function trackContact() {
+            ttq.track('Contact');
         }
     </script>
 </head>
@@ -1375,7 +1402,7 @@
                             </svg>
                         </div>
                         <p class="text-sm text-gray-600 font-semibold">Email</p>
-                        <a href="mailto:analytics@lokusdata.com" class="text-blue-600 hover:text-blue-700">analytics@lokusdata.com</a>
+                        <a href="mailto:analytics@lokusdata.com" class="text-blue-600 hover:text-blue-700" onclick="trackContact();">analytics@lokusdata.com</a>
                     </div>
                     <!-- Phone -->
                     <div class="text-center">
@@ -1385,7 +1412,7 @@
                             </svg>
                         </div>
                         <p class="text-sm text-gray-600 font-semibold">WhatsApp</p>
-                        <a href="https://wa.me/525522813975" target="_blank" class="text-green-600 hover:text-green-700">+52 55 2281 3975</a>
+                        <a href="https://wa.me/525522813975" target="_blank" class="text-green-600 hover:text-green-700" onclick="trackContact();">+52 55 2281 3975</a>
                     </div>
                     <!-- Location -->
                     <div class="text-center">
@@ -1531,7 +1558,7 @@
                     <h4 class="font-semibold mb-4">Contacto</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li>analytics@lokusdata.com</li>
-                        <li><a href="https://wa.me/525522813975" target="_blank" class="hover:text-green-400">+52 55 2281 3975</a></li>
+                        <li><a href="https://wa.me/525522813975" target="_blank" class="hover:text-green-400" onclick="trackContact();">+52 55 2281 3975</a></li>
                         <li>Ciudad de México</li>
                     </ul>
                 </div>
