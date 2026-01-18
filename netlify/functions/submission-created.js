@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 // TikTok Events API Configuration for LOKUSDATA
-const TIKTOK_PIXEL_ID = 'D5MIMSJC77UALNU7I3OG';
+const TIKTOK_PIXEL_ID = 'D5MLR7RC77U1B68M5N80';
 const TIKTOK_API_URL = 'https://business-api.tiktok.com/open_api/v1.3/event/track/';
 
 // Hash function for PII (TikTok requires SHA256)
