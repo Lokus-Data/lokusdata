@@ -49,7 +49,7 @@
       var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-      ttq.load('D5MIMSJC77UALNU7I3OG');
+      ttq.load('D5MLR7RC77U1B68M5N80');
       ttq.page();
     }(window, document, 'ttq');
     </script>
@@ -57,6 +57,12 @@
 
     <!-- Funciones para rastrear conversiones -->
     <script>
+        // TikTok Pixel - ViewContent (se ejecuta al cargar la página)
+        ttq.track('ViewContent', {
+            content_name: 'Lokus Data - Página Principal',
+            content_type: 'landing_page'
+        });
+
         // Función para rastrear clics en "Crear cuenta gratis" (LokusAnalytics)
         function trackLokusAnalyticsSignup() {
             // Google Ads
@@ -69,7 +75,11 @@
                 }
             });
             // TikTok Pixel
-            ttq.track('CompleteRegistration');
+            ttq.track('CompleteRegistration', {
+                value: 50.0,
+                currency: 'MXN',
+                content_name: 'LokusAnalytics Signup'
+            });
         }
 
         // Función para rastrear envío de formulario de contacto
@@ -84,7 +94,11 @@
                 }
             });
             // TikTok Pixel
-            ttq.track('Lead');
+            ttq.track('Lead', {
+                value: 100.0,
+                currency: 'MXN',
+                content_name: 'Formulario de Contacto'
+            });
         }
 
         // Función para rastrear clics en "Solicitar cotización"
@@ -99,12 +113,20 @@
                 }
             });
             // TikTok Pixel
-            ttq.track('ClickButton');
+            ttq.track('ClickButton', {
+                value: 100.0,
+                currency: 'MXN',
+                content_name: 'Solicitar Cotización'
+            });
         }
 
         // Función para rastrear contacto (WhatsApp/Email)
         function trackContact() {
-            ttq.track('Contact');
+            ttq.track('Contact', {
+                value: 50.0,
+                currency: 'MXN',
+                content_name: 'Contacto WhatsApp/Email'
+            });
         }
     </script>
 </head>
