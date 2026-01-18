@@ -67,8 +67,9 @@ exports.handler = async (event) => {
             referrer: ''
           },
           properties: {
+            content_id: 'contact_form',
+            content_type: 'product',
             content_name: formName || 'contact-form',
-            content_type: 'lead_form',
             currency: 'MXN',
             value: 100
           }

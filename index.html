@@ -59,8 +59,9 @@
     <script>
         // TikTok Pixel - ViewContent (se ejecuta al cargar la página)
         ttq.track('ViewContent', {
-            content_name: 'Lokus Data - Página Principal',
-            content_type: 'landing_page'
+            content_id: 'lokusdata_home',
+            content_type: 'product',
+            content_name: 'Lokus Data - Página Principal'
         });
 
         // Función para rastrear clics en "Crear cuenta gratis" (LokusAnalytics)
@@ -76,9 +77,11 @@
             });
             // TikTok Pixel
             ttq.track('CompleteRegistration', {
+                content_id: 'lokusanalytics_signup',
+                content_type: 'product',
+                content_name: 'LokusAnalytics Signup',
                 value: 50.0,
-                currency: 'MXN',
-                content_name: 'LokusAnalytics Signup'
+                currency: 'MXN'
             });
         }
 
@@ -95,9 +98,11 @@
             });
             // TikTok Pixel
             ttq.track('Lead', {
+                content_id: 'contact_form',
+                content_type: 'product',
+                content_name: 'Formulario de Contacto',
                 value: 100.0,
-                currency: 'MXN',
-                content_name: 'Formulario de Contacto'
+                currency: 'MXN'
             });
         }
 
@@ -114,18 +119,22 @@
             });
             // TikTok Pixel
             ttq.track('ClickButton', {
+                content_id: 'quote_request',
+                content_type: 'product',
+                content_name: 'Solicitar Cotización',
                 value: 100.0,
-                currency: 'MXN',
-                content_name: 'Solicitar Cotización'
+                currency: 'MXN'
             });
         }
 
         // Función para rastrear contacto (WhatsApp/Email)
         function trackContact() {
             ttq.track('Contact', {
+                content_id: 'whatsapp_contact',
+                content_type: 'product',
+                content_name: 'Contacto WhatsApp/Email',
                 value: 50.0,
-                currency: 'MXN',
-                content_name: 'Contacto WhatsApp/Email'
+                currency: 'MXN'
             });
         }
     </script>
