@@ -1,5 +1,8 @@
 [build]
   functions = "netlify/functions"
 
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "TIKTOK_PIXEL_ID"
+
 [functions]
   node_bundler = "esbuild"
