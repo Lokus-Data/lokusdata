@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipios Automotrices de México: ¿Quién Está Más Expuesto? - Lokus Data</title>
+    <meta name="description" content="Análisis comparativo de vulnerabilidad económica en los 5 principales municipios automotrices de México. Censo Económico 2024 revela quién depende más de las armadoras.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
+                        <span class="text-2xl font-bold text-primary">
+                            Lokus<span class="text-gray-900">Data</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
+                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
+                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
+                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
+                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back to blog -->
+            <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary mb-8 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver al blog
+            </a>
+
+            <!-- Article metadata -->
+            <div class="mb-8">
+                <div class="flex items-center text-sm text-gray-500 mb-4">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    25 de enero de 2026
+                    <span class="mx-2">•</span>
+                    <span>12 min de lectura</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Municipios Automotrices de México: ¿Quién Está Más Expuesto?
+                </h1>
+
+                <p class="text-xl text-gray-600">
+                    Análisis Comparativo de Vulnerabilidad Económica | Censo Económico 2024
+                </p>
+            </div>
+
+            <!-- Featured Image Placeholder -->
+            <div class="mb-8 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-xl h-96 flex items-center justify-center">
+                <div class="text-white text-center">
+                    <svg class="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                    </svg>
+                    <p class="text-2xl font-bold">5 Municipios Automotrices</p>
+                    <p class="text-lg opacity-80">Vulnerabilidad Comparada | Censo 2024</p>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-8 mb-4">Introducción: El Mapa de la Industria Automotriz Municipal</h2>
+                <p class="text-gray-700 mb-6">
+                    México tiene cinco grandes polos de ensamble automotriz distribuidos en el territorio nacional. Cada uno alberga plantas de las principales armadoras globales:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Municipio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Estado</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Armadora principal</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Ramos Arizpe</td>
+                                <td class="px-6 py-4 text-gray-700">Coahuila</td>
+                                <td class="px-6 py-4 text-gray-700">General Motors</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Silao de la Victoria</td>
+                                <td class="px-6 py-4 text-gray-700">Guanajuato</td>
+                                <td class="px-6 py-4 text-gray-700">General Motors</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Hermosillo</td>
+                                <td class="px-6 py-4 text-gray-700">Sonora</td>
+                                <td class="px-6 py-4 text-gray-700">Ford</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-gray-700">Volkswagen, Audi</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-gray-700">Nissan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    Los despidos de GM en Ramos Arizpe plantean una pregunta crucial: <strong>¿qué tan vulnerable es cada municipio a decisiones corporativas de las armadoras?</strong> El Censo Económico 2024 permite comparar su grado de dependencia del sector automotriz.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">1. Dimensión del Sector Automotriz por Municipio</h2>
+                <p class="text-gray-700 mb-6">
+                    <strong>Empleos en fabricación de equipo de transporte (336):</strong>
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Municipio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Empresas</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Remuneraciones (MDP)</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Producción (MDP)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Ramos Arizpe</td>
+                                <td class="px-6 py-4 text-gray-700">59</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">53,303</td>
+                                <td class="px-6 py-4 text-gray-700">13,887</td>
+                                <td class="px-6 py-4 text-gray-700">358,283</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Silao</td>
+                                <td class="px-6 py-4 text-gray-700">70</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">45,606</td>
+                                <td class="px-6 py-4 text-gray-700">11,464</td>
+                                <td class="px-6 py-4 text-gray-700">264,393</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-gray-700">59</td>
+                                <td class="px-6 py-4 text-gray-700">31,494</td>
+                                <td class="px-6 py-4 text-gray-700">6,475</td>
+                                <td class="px-6 py-4 text-gray-700">221,507</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Hermosillo</td>
+                                <td class="px-6 py-4 text-gray-700">36</td>
+                                <td class="px-6 py-4 text-gray-700">19,268</td>
+                                <td class="px-6 py-4 text-gray-700">4,952</td>
+                                <td class="px-6 py-4 text-gray-700">150,077</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-gray-700">41</td>
+                                <td class="px-6 py-4 text-gray-700">10,737</td>
+                                <td class="px-6 py-4 text-gray-700">2,665</td>
+                                <td class="px-6 py-4 text-gray-700">25,809</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    <strong>Ramos Arizpe lidera en empleo automotriz absoluto</strong> con más de 53 mil trabajadores, seguido de cerca por Silao. Puebla, sorprendentemente, tiene el menor empleo en el sector 336 de los cinco municipios comparados.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">2. El Indicador Clave: Concentración y Vulnerabilidad</h2>
+                <p class="text-gray-700 mb-6">
+                    La cifra absoluta de empleos no cuenta toda la historia. Lo que determina la vulnerabilidad es <strong>qué porcentaje del empleo municipal depende del sector automotriz</strong>:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Municipio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Empleo total</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Empleo 336</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">% Dependencia</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Nivel de riesgo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Ramos Arizpe</td>
+                                <td class="px-6 py-4 text-gray-700">119,331</td>
+                                <td class="px-6 py-4 text-gray-700">53,303</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">44.7%</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">CRÍTICO</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Silao</td>
+                                <td class="px-6 py-4 text-gray-700">108,853</td>
+                                <td class="px-6 py-4 text-gray-700">45,606</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">41.9%</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">CRÍTICO</td>
+                            </tr>
+                            <tr class="bg-yellow-50">
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-gray-700">284,729</td>
+                                <td class="px-6 py-4 text-gray-700">31,494</td>
+                                <td class="px-6 py-4 text-yellow-600 font-semibold">11.1%</td>
+                                <td class="px-6 py-4 text-yellow-600 font-semibold">MODERADO</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-6 py-4 text-gray-700">Hermosillo</td>
+                                <td class="px-6 py-4 text-gray-700">285,409</td>
+                                <td class="px-6 py-4 text-gray-700">19,268</td>
+                                <td class="px-6 py-4 text-green-600">6.8%</td>
+                                <td class="px-6 py-4 text-green-600">BAJO</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-gray-700">427,588</td>
+                                <td class="px-6 py-4 text-gray-700">10,737</td>
+                                <td class="px-6 py-4 text-green-600">2.5%</td>
+                                <td class="px-6 py-4 text-green-600">MUY BAJO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+                    <p class="text-gray-800 font-semibold mb-2">El contraste es dramático:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li><strong>Ramos Arizpe y Silao</strong> tienen casi la mitad de su empleo total concentrado en el sector automotriz. Un shock en la industria —como los despidos de GM— sacude a todo el municipio.</li>
+                        <li><strong>Aguascalientes</strong> muestra diversificación moderada: aunque Nissan es importante, el municipio tiene otras actividades económicas significativas.</li>
+                        <li><strong>Hermosillo y Puebla</strong> son ciudades grandes con economías diversificadas. Ford en Hermosillo y VW/Audi en Puebla son empleadores importantes, pero representan una fracción menor del empleo total.</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">3. La Trampa de la Especialización Manufacturera</h2>
+                <p class="text-gray-700 mb-6">
+                    La vulnerabilidad de Ramos Arizpe y Silao no solo está en el sector automotriz, sino en la <strong>doble concentración</strong>:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Municipio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">% Manufactura en empleo</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">% Sector 336 en manufactura</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Ramos Arizpe</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">82.2%</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">54.3%</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Silao</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">67.9%</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">61.7%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-gray-700">26.5%</td>
+                                <td class="px-6 py-4 text-gray-700">41.7%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Hermosillo</td>
+                                <td class="px-6 py-4 text-gray-700">22.8%</td>
+                                <td class="px-6 py-4 text-gray-700">29.6%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-gray-700">18.1%</td>
+                                <td class="px-6 py-4 text-gray-700">13.9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    En Ramos Arizpe, el <strong>82% del empleo es manufacturero</strong>, y de esa manufactura, <strong>el 54% es automotriz</strong>. Es una economía construida casi exclusivamente alrededor de una industria.
+                </p>
+                <p class="text-gray-700 mb-6">
+                    Silao presenta un patrón similar: alta dependencia manufacturera (68%) con altísima concentración automotriz dentro de la manufactura (62%).
+                </p>
+                <p class="text-gray-700 mb-6">
+                    En contraste, Puebla tiene una economía terciaria desarrollada (comercio, servicios, gobierno) que absorbe el 82% de su empleo, dejando solo el 18% en manufactura.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">4. Productividad y Remuneraciones: No Todo es Tamaño</h2>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Municipio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Remuneración promedio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Productividad (VA/persona)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Ramos Arizpe</td>
+                                <td class="px-6 py-4 text-gray-700">$260,532</td>
+                                <td class="px-6 py-4 text-gray-700">$1,884,749</td>
+                            </tr>
+                            <tr class="bg-emerald-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Hermosillo</td>
+                                <td class="px-6 py-4 text-gray-700">$256,990</td>
+                                <td class="px-6 py-4 text-emerald-600 font-bold">$3,818,964</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Silao</td>
+                                <td class="px-6 py-4 text-gray-700">$251,364</td>
+                                <td class="px-6 py-4 text-gray-700">$1,644,995</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-gray-700">$248,181</td>
+                                <td class="px-6 py-4 text-gray-700">$1,065,609</td>
+                            </tr>
+                            <tr class="bg-yellow-50">
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-yellow-600 font-semibold">$205,600</td>
+                                <td class="px-6 py-4 text-gray-700">$3,291,402</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    <strong>Hermosillo lidera en productividad</strong> con casi $3.82 millones de valor agregado por trabajador, el doble que Ramos Arizpe. Esto sugiere que la planta de Ford en Hermosillo produce vehículos de mayor valor agregado o con mayor integración vertical.
+                </p>
+                <p class="text-gray-700 mb-6">
+                    <strong>Aguascalientes tiene la remuneración más baja</strong> ($205,600) a pesar de tener alta productividad, lo que podría indicar mayor presión sobre costos laborales en las plantas de Nissan.
+                </p>
+                <p class="text-gray-700 mb-6">
+                    Ramos Arizpe paga bien ($260,532) pero tiene productividad intermedia, un perfil típico de plantas de ensamble tradicional.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">5. La Cadena de Proveeduría: El Multiplicador del Riesgo</h2>
+                <p class="text-gray-700 mb-6">
+                    <strong>Empleos en fabricación de autopartes (3363):</strong>
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Municipio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Empresas</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Empleos autopartes</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Silao</td>
+                                <td class="px-6 py-4 text-gray-700">64</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">37,443</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-gray-700 font-semibold">Ramos Arizpe</td>
+                                <td class="px-6 py-4 text-gray-700">56</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">~37,380*</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-gray-700">42</td>
+                                <td class="px-6 py-4 text-gray-700">14,991</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Hermosillo</td>
+                                <td class="px-6 py-4 text-gray-700">20</td>
+                                <td class="px-6 py-4 text-gray-700">11,984</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-gray-700">36</td>
+                                <td class="px-6 py-4 text-gray-700">10,650</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-500 mb-6">*Dato estimado por diferencia (confidencial en censo).</p>
+
+                <p class="text-gray-700 mb-6">
+                    <strong>Silao y Ramos Arizpe tienen ecosistemas de proveeduría casi idénticos</strong> con más de 37 mil empleos cada uno en autopartes. Esto amplifica el riesgo: cuando la ensambladora reduce producción, decenas de proveedores Tier 1 y Tier 2 sufren el impacto.
+                </p>
+                <p class="text-gray-700 mb-6">
+                    Hermosillo, con solo 20 empresas de autopartes y 12 mil empleos, tiene un ecosistema de proveeduría más pequeño, lo que paradójicamente podría significar que más componentes se importan (menor integración local pero también menor efecto cascada ante shocks).
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">6. Simulación: ¿Qué Pasaría si Cada Municipio Pierde 1,900 Empleos?</h2>
+                <p class="text-gray-700 mb-6">
+                    Aplicando los despidos de GM Ramos Arizpe a cada municipio:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Municipio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Empleos 336</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">-1,900 empleos</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Impacto en sector</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Impacto en municipio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Ramos Arizpe</td>
+                                <td class="px-6 py-4 text-gray-700">53,303</td>
+                                <td class="px-6 py-4 text-gray-700">51,403</td>
+                                <td class="px-6 py-4 text-gray-700">-3.6%</td>
+                                <td class="px-6 py-4 text-red-600 font-semibold">-1.6%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Silao</td>
+                                <td class="px-6 py-4 text-gray-700">45,606</td>
+                                <td class="px-6 py-4 text-gray-700">43,706</td>
+                                <td class="px-6 py-4 text-gray-700">-4.2%</td>
+                                <td class="px-6 py-4 text-red-600 font-semibold">-1.7%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-gray-700">31,494</td>
+                                <td class="px-6 py-4 text-gray-700">29,594</td>
+                                <td class="px-6 py-4 text-gray-700">-6.0%</td>
+                                <td class="px-6 py-4 text-gray-700">-0.7%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Hermosillo</td>
+                                <td class="px-6 py-4 text-gray-700">19,268</td>
+                                <td class="px-6 py-4 text-gray-700">17,368</td>
+                                <td class="px-6 py-4 text-gray-700">-9.9%</td>
+                                <td class="px-6 py-4 text-gray-700">-0.7%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-gray-700">10,737</td>
+                                <td class="px-6 py-4 text-gray-700">8,837</td>
+                                <td class="px-6 py-4 text-yellow-600 font-semibold">-17.7%</td>
+                                <td class="px-6 py-4 text-green-600">-0.4%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6">
+                    <p class="text-gray-800 font-semibold mb-2">Paradoja de la concentración:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>En Puebla, 1,900 despidos serían el 17.7% del sector automotriz local, pero solo 0.4% del empleo municipal.</li>
+                        <li>En Ramos Arizpe, los mismos 1,900 despidos son solo 3.6% del sector, pero 1.6% del empleo municipal.</li>
+                    </ul>
+                    <p class="text-gray-800 mt-4">
+                        <strong>El tamaño del sector protege el impacto relativo dentro del sector, pero la concentración amplifica el impacto en la economía local.</strong>
+                    </p>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">7. Ranking de Vulnerabilidad: ¿Quién Debería Preocuparse Más?</h2>
+                <p class="text-gray-700 mb-6">
+                    Considerando todos los factores analizados:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Rank</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Municipio</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Vulnerabilidad</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Factores de riesgo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-2xl">1</td>
+                                <td class="px-6 py-4 text-gray-900 font-bold">Ramos Arizpe</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">CRÍTICA</td>
+                                <td class="px-6 py-4 text-gray-700">44.7% dependencia, 82% manufactura, GM con problemas de EV</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-6 py-4 text-2xl">2</td>
+                                <td class="px-6 py-4 text-gray-900 font-bold">Silao</td>
+                                <td class="px-6 py-4 text-red-600 font-bold">CRÍTICA</td>
+                                <td class="px-6 py-4 text-gray-700">41.9% dependencia, 62% de manufactura es automotriz, también GM</td>
+                            </tr>
+                            <tr class="bg-yellow-50">
+                                <td class="px-6 py-4 text-2xl">3</td>
+                                <td class="px-6 py-4 text-gray-700">Aguascalientes</td>
+                                <td class="px-6 py-4 text-yellow-600 font-semibold">MODERADA</td>
+                                <td class="px-6 py-4 text-gray-700">11% dependencia, pero remuneraciones bajas presionan competitividad</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-6 py-4 text-2xl">4</td>
+                                <td class="px-6 py-4 text-gray-700">Hermosillo</td>
+                                <td class="px-6 py-4 text-green-600">BAJA</td>
+                                <td class="px-6 py-4 text-gray-700">6.8% dependencia, alta productividad, economía diversificada</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-6 py-4 text-2xl">5</td>
+                                <td class="px-6 py-4 text-gray-700">Puebla</td>
+                                <td class="px-6 py-4 text-green-600">MUY BAJA</td>
+                                <td class="px-6 py-4 text-gray-700">2.5% dependencia, gran economía urbana diversificada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Conclusiones: Lecciones para la Política Industrial</h2>
+
+                <div class="space-y-4 mb-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>1. Ramos Arizpe y Silao son casos de estudio de sobre-especialización.</strong> Municipios pequeños que crecieron alrededor de una sola industria enfrentan riesgos existenciales cuando esa industria se contrae.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>2. El tamaño de la ciudad importa.</strong> Puebla y Hermosillo, como ciudades grandes con economías diversificadas, pueden absorber shocks automotrices sin colapsar. Sus sectores de servicios, comercio y gobierno actúan como amortiguadores.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>3. La cadena de proveeduría amplifica el riesgo.</strong> Ramos Arizpe y Silao no solo tienen ensambladoras: tienen ecosistemas completos de 56-64 empresas de autopartes con 37+ mil empleos cada uno. Un recorte en la ensambladora se multiplica hacia abajo.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>4. La productividad no garantiza estabilidad.</strong> Hermosillo tiene la mayor productividad, pero eso no la hace inmune a decisiones corporativas de Ford. Lo que la protege es la diversificación económica.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>5. La transición eléctrica afectará desigualmente.</strong> Los municipios con plantas de GM (Ramos Arizpe, Silao) enfrentan la incertidumbre de la estrategia de electrificación de la empresa. Los municipios con Nissan, Ford o VW enfrentan sus propias transiciones con diferentes tiempos y estrategias.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-teal-50 border-l-4 border-teal-600 p-6 my-6">
+                    <p class="text-gray-800 text-lg">
+                        <strong>El caso de GM Ramos Arizpe no es un evento aislado: es un adelanto de lo que podría ocurrir en cualquier municipio híper-especializado cuando las condiciones de mercado cambian.</strong>
+                    </p>
+                </div>
+
+                <div class="bg-gray-200 rounded-lg p-4 my-8 text-sm text-gray-600">
+                    <p><strong>Fuente:</strong> Censo Económico 2024, INEGI</p>
+                    <p><strong>Municipios:</strong> 05027 (Ramos Arizpe), 11037 (Silao), 26030 (Hermosillo), 21114 (Puebla), 01001 (Aguascalientes)</p>
+                    <p><strong>Fecha de análisis:</strong> Enero 2026</p>
+                </div>
+
+                <div class="bg-gray-100 rounded-lg p-6 my-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">¿Necesitas análisis personalizados del Censo Económico?</h3>
+                    <p class="text-gray-700 mb-4">
+                        Con LokusAnalytics puedes realizar consultas específicas sobre datos del Censo Económico cruzados con información demográfica, económica y territorial de tu región de interés.
+                    </p>
+                    <a href="https://app.lokusdata.com"
+                       target="_blank"
+                       class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition">
+                        Prueba LokusAnalytics gratis
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Article footer -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <div class="flex items-center justify-between">
+                    <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary transition">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Volver al blog
+                    </a>
+                    <div class="text-sm text-gray-500">
+                        Compartir en redes sociales proximamente
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-emerald-600 to-teal-800 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                Analiza datos INEGI con inteligencia artificial
+            </h2>
+            <p class="text-xl text-emerald-100 mb-8">
+                LokusAnalytics te permite hacer consultas personalizadas sobre el Censo Económico, ENIGH, CONAPO, Censos y más
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.lokusdata.com/register"
+                   target="_blank"
+                   class="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Registrarse Gratis
+                </a>
+                <a href="../../index.html#contacto"
+                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
+                    <p class="text-sm">
+                        Transformamos datos en decisiones estrategicas
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html#servicios" class="hover:text-white transition">Consultoria</a></li>
+                        <li><a href="../../index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>analytics@lokusdata.com</li>
+                        <li>+52 55 2281 3975</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
