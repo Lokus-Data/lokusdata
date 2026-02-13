@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Brecha Invisible: Radiograf&iacute;a de G&eacute;nero en la Econom&iacute;a Mexicana - Lokus Data</title>
+    <meta name="description" content="12 millones de mujeres en la econom&iacute;a formal mexicana. Sectores masculinizados pagan 62% m&aacute;s. 6.5 millones trabajan sin sueldo. Censo Econ&oacute;mico 2024.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
+                        <span class="text-2xl font-bold text-primary">
+                            Lokus<span class="text-gray-900">Data</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
+                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
+                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
+                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
+                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back to blog -->
+            <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary mb-8 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver al blog
+            </a>
+
+            <!-- Article metadata -->
+            <div class="mb-8">
+                <div class="flex items-center text-sm text-gray-500 mb-4">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    13 de febrero de 2026
+                    <span class="mx-2">&bull;</span>
+                    <span>20 min de lectura</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    La Brecha Invisible
+                </h1>
+
+                <p class="text-xl text-gray-600">
+                    Radiograf&iacute;a de G&eacute;nero en la Econom&iacute;a Mexicana | Censo Econ&oacute;mico 2024
+                </p>
+            </div>
+
+            <!-- Featured Image Placeholder -->
+            <div class="mb-8 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-xl h-96 flex items-center justify-center">
+                <div class="text-white text-center">
+                    <div class="text-8xl mb-4">&#9878;&#65039;</div>
+                    <p class="text-2xl font-bold">La Brecha Invisible</p>
+                    <p class="text-lg opacity-80">G&eacute;nero y Econom&iacute;a | Censo 2024</p>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none">
+
+                <!-- SECCION 1: Panorama -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-8 mb-4">El Panorama: 12 Millones de Mujeres en la Econom&iacute;a Formal</h2>
+                <p class="text-gray-700 mb-6">
+                    El Censo Econ&oacute;mico 2024 registra <strong>27.97 millones de personas ocupadas</strong> en establecimientos productivos de M&eacute;xico. De ellas, <strong>12.07 millones son mujeres</strong> (43.2%) y 15.9 millones son hombres (56.8%).
+                </p>
+                <p class="text-gray-700 mb-6">
+                    Pero detr&aacute;s de este n&uacute;mero aparentemente equilibrado se esconden profundas asimetr&iacute;as: d&oacute;nde trabajan las mujeres, cu&aacute;nto ganan, y cu&aacute;ntas de ellas trabajan sin recibir un peso.
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Indicador</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Total de empleos</td>
+                                <td class="px-4 py-3 text-right text-gray-700">27,965,433</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-900 font-bold">Mujeres ocupadas</td>
+                                <td class="px-4 py-3 text-right text-gray-900 font-bold">12,069,881 (43.2%)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Hombres ocupados</td>
+                                <td class="px-4 py-3 text-right text-gray-700">15,895,552 (56.8%)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Personal remunerado</td>
+                                <td class="px-4 py-3 text-right text-gray-700">20,598,507 (73.6%)</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-4 py-3 text-gray-900 font-bold">Personal NO remunerado</td>
+                                <td class="px-4 py-3 text-right text-gray-900 font-bold">6,551,999 (23.4%)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SECCION 2: Segregación por sectores -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El Mapa de la Segregaci&oacute;n: Sectores de Mujeres, Sectores de Hombres</h2>
+                <p class="text-gray-700 mb-6">
+                    La econom&iacute;a mexicana est&aacute; profundamente segregada por g&eacute;nero. Hay sectores donde las mujeres dominan, y otros donde apenas existen.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Los 5 sectores m&aacute;s feminizados</h3>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-purple-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Sector</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">&#127891; Educaci&oacute;n</td>
+                                <td class="px-4 py-3 text-right text-gray-700">776,869</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">63.9%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$140,787</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">&#127973; Salud y asistencia social</td>
+                                <td class="px-4 py-3 text-right text-gray-700">871,560</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">60.3%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$74,820</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">&#127869; Alojamiento y alimentos</td>
+                                <td class="px-4 py-3 text-right text-gray-700">3,016,803</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">55.7%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$58,893</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">&#128722; Comercio al por menor</td>
+                                <td class="px-4 py-3 text-right text-gray-700">6,840,541</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">52.4%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$71,275</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">&#127974; Servicios financieros</td>
+                                <td class="px-4 py-3 text-right text-gray-700">647,493</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">52.4%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$397,995</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Los 5 sectores m&aacute;s masculinizados</h3>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-blue-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Sector</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700">&#9935; Miner&iacute;a</td>
+                                <td class="px-4 py-3 text-right text-gray-700">166,978</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">12.6%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$275,638</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">&#127959; Construcci&oacute;n</td>
+                                <td class="px-4 py-3 text-right text-gray-700">711,553</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">14.4%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$138,356</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700">&#128667; Transporte y almacenamiento</td>
+                                <td class="px-4 py-3 text-right text-gray-700">1,273,482</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">18.5%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$163,368</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">&#127806; Agricultura y pesca</td>
+                                <td class="px-4 py-3 text-right text-gray-700">242,812</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">19.0%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$51,318</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700">&#9889; Energ&iacute;a el&eacute;ctrica</td>
+                                <td class="px-4 py-3 text-right text-gray-700">231,195</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">23.1%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$173,346</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        La segregaci&oacute;n es extrema: en <strong>autotransporte de carga</strong> solo el 9.9% son mujeres; en <strong>guarder&iacute;as</strong> son el 93.3%.
+                    </p>
+                </div>
+
+                <!-- SECCION 3: Brecha salarial -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">La Brecha Salarial: &iquest;Pagan Menos los Sectores Feminizados?</h2>
+                <p class="text-gray-700 mb-6">
+                    Aqu&iacute; est&aacute; el hallazgo m&aacute;s revelador del an&aacute;lisis:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Tipo de sector</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">N&uacute;m. sectores</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n promedio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-900 font-bold">Feminizados (&ge;50% mujeres)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">5</td>
+                                <td class="px-4 py-3 text-right text-gray-700">12.2 millones</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">$148,754</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Mixtos (30-50% mujeres)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">8</td>
+                                <td class="px-4 py-3 text-right text-gray-700">13.1 millones</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$123,177</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-900 font-bold">Masculinizados (&lt;30% mujeres)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">6</td>
+                                <td class="px-4 py-3 text-right text-gray-700">2.8 millones</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">$241,114</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+                    <p class="text-gray-800 text-lg">
+                        <strong>Los sectores masculinizados pagan 62% m&aacute;s que los feminizados.</strong>
+                    </p>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    Pero la historia no es tan simple. Miremos los extremos:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Sector</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700">Direcci&oacute;n de grupos empresariales</td>
+                                <td class="px-4 py-3 text-right text-gray-700">27.2%</td>
+                                <td class="px-4 py-3 text-right text-gray-900 font-bold">$644,661</td>
+                                <td class="px-4 py-3 text-blue-700">Masculinizado</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Servicios financieros</td>
+                                <td class="px-4 py-3 text-right text-gray-700">52.4%</td>
+                                <td class="px-4 py-3 text-right text-gray-900 font-bold">$397,995</td>
+                                <td class="px-4 py-3 text-purple-700">Feminizado</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700">Extracci&oacute;n de petr&oacute;leo</td>
+                                <td class="px-4 py-3 text-right text-gray-700">14.9%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$657,614</td>
+                                <td class="px-4 py-3 text-blue-700">Masculinizado</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Alojamiento y alimentos</td>
+                                <td class="px-4 py-3 text-right text-gray-700">55.7%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$58,893</td>
+                                <td class="px-4 py-3 text-purple-700">Feminizado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    Los <strong>servicios financieros</strong> son un sector feminizado que paga muy bien. Pero son la excepci&oacute;n: la mayor&iacute;a de sectores donde dominan las mujeres (educaci&oacute;n, salud, comercio, restaurantes) tienen remuneraciones bajas o medianas.
+                </p>
+
+                <!-- SECCION 4: Trabajo no remunerado -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El Trabajo Invisible: 6.5 Millones Sin Sueldo</h2>
+                <p class="text-gray-700 mb-6">
+                    Una de cada cuatro personas ocupadas en M&eacute;xico <strong>trabaja sin remuneraci&oacute;n</strong>: son familiares que apoyan en negocios, propietarios que no se pagan salario formal, o trabajadores en condiciones de explotaci&oacute;n.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">&iquest;D&oacute;nde est&aacute; el trabajo no remunerado?</h3>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Sector</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% No remunerado</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-red-50">
+                                <td class="px-4 py-3 text-gray-700">Otros servicios</td>
+                                <td class="px-4 py-3 text-right text-gray-700">1,680,016</td>
+                                <td class="px-4 py-3 text-right text-red-700 font-bold">53.2%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">35.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Comercio al por menor</td>
+                                <td class="px-4 py-3 text-right text-gray-700">6,840,541</td>
+                                <td class="px-4 py-3 text-right text-red-700 font-bold">42.3%</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">52.4%</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-4 py-3 text-gray-700">Agricultura</td>
+                                <td class="px-4 py-3 text-right text-gray-700">242,812</td>
+                                <td class="px-4 py-3 text-right text-red-700 font-bold">37.0%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">19.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Salud y asistencia</td>
+                                <td class="px-4 py-3 text-right text-gray-700">871,560</td>
+                                <td class="px-4 py-3 text-right text-red-700 font-bold">36.1%</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">60.3%</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="px-4 py-3 text-gray-700">Alojamiento y alimentos</td>
+                                <td class="px-4 py-3 text-right text-gray-700">3,016,803</td>
+                                <td class="px-4 py-3 text-right text-red-700 font-bold">33.8%</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">55.7%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-6">
+                    <p class="text-gray-800">
+                        El comercio al por menor tiene <strong>2.9 millones de trabajadores no remunerados</strong>, la mayor&iacute;a en tienditas familiares donde la esposa, los hijos o los abuelos atienden sin sueldo formal.
+                    </p>
+                </div>
+
+                <!-- SECCION 5: Trampa del micronegocio -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">La Trampa del Micronegocio: 50% Mujeres, 55% Sin Sueldo</h2>
+                <p class="text-gray-700 mb-6">
+                    El an&aacute;lisis por tama&ntilde;o de empresa revela una realidad brutal:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Tama&ntilde;o</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% No remunerado</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-red-50">
+                                <td class="px-4 py-3 text-gray-900 font-bold">Micro (0-10)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">11,575,621</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">50.0%</td>
+                                <td class="px-4 py-3 text-right text-red-700 font-bold">54.6%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$39,818</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Peque&ntilde;a (11-50)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">4,219,345</td>
+                                <td class="px-4 py-3 text-right text-gray-700">41.7%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">4.0%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$119,141</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Mediana (51-250)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">4,144,399</td>
+                                <td class="px-4 py-3 text-right text-gray-700">37.1%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">1.2%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$164,950</td>
+                            </tr>
+                            <tr class="bg-emerald-50">
+                                <td class="px-4 py-3 text-gray-900 font-bold">Grande (251+)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">8,026,068</td>
+                                <td class="px-4 py-3 text-right text-gray-700">37.1%</td>
+                                <td class="px-4 py-3 text-right text-emerald-700 font-bold">0.1%</td>
+                                <td class="px-4 py-3 text-right text-emerald-700 font-bold">$227,657</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="bg-red-50 border-l-4 border-red-600 p-6">
+                        <p class="text-gray-900 font-bold mb-2">En las microempresas:</p>
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                            <li>&bull; Las mujeres son exactamente la mitad (50%)</li>
+                            <li>&bull; Pero el 54.6% trabaja sin remuneraci&oacute;n</li>
+                            <li>&bull; Las que s&iacute; cobran ganan $39,818 al a&ntilde;o</li>
+                        </ul>
+                    </div>
+                    <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6">
+                        <p class="text-gray-900 font-bold mb-2">En las empresas grandes:</p>
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                            <li>&bull; Las mujeres son el 37% (menor participaci&oacute;n)</li>
+                            <li>&bull; Virtualmente todas cobran (solo 0.1% sin sueldo)</li>
+                            <li>&bull; Ganan $227,657 promedio (5.7x m&aacute;s que en micro)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-teal-50 border-l-4 border-teal-600 p-6 my-6">
+                    <p class="text-gray-800 text-lg">
+                        <strong>La paradoja:</strong> Las mujeres tienen mayor participaci&oacute;n donde peores son las condiciones laborales.
+                    </p>
+                </div>
+
+                <!-- SECCION 6: Extremos -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Los Extremos: Actividades 90% Mujeres vs 90% Hombres</h2>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Actividades casi exclusivamente femeninas</h3>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-purple-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Actividad</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Guarder&iacute;as</td>
+                                <td class="px-4 py-3 text-right text-gray-700">52,624</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">93.3%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$82,825</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Preescolar</td>
+                                <td class="px-4 py-3 text-right text-gray-700">63,341</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">87.7%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$89,176</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Bordado y deshilado</td>
+                                <td class="px-4 py-3 text-right text-gray-700">45,450</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">81.7%</td>
+                                <td class="px-4 py-3 text-right text-red-600 font-bold">$16,382</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Lencer&iacute;a (comercio)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">19,756</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">80.8%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$46,606</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Primarias privadas</td>
+                                <td class="px-4 py-3 text-right text-gray-700">42,286</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">76.9%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$105,820</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Actividades casi exclusivamente masculinas</h3>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-blue-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Actividad</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700">Transporte pasajeros (otro)</td>
+                                <td class="px-4 py-3 text-right text-gray-700">9,252</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">4.8%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$106,207</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Autotransporte agr&iacute;cola</td>
+                                <td class="px-4 py-3 text-right text-gray-700">2,650</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">5.4%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$139,227</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700">Transporte materiales construcci&oacute;n</td>
+                                <td class="px-4 py-3 text-right text-gray-700">11,763</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">5.6%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$126,037</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Pesca de t&uacute;nidos</td>
+                                <td class="px-4 py-3 text-right text-gray-700">4,158</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">5.7%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$104,951</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700">Transporte urbano pasajeros</td>
+                                <td class="px-4 py-3 text-right text-gray-700">112,118</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">6.2%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$154,798</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        El patr&oacute;n es claro: <strong>cuidar ni&ntilde;os es trabajo de mujeres; manejar camiones es trabajo de hombres.</strong> La segregaci&oacute;n ocupacional reproduce estereotipos de g&eacute;nero del siglo pasado.
+                    </p>
+                </div>
+
+                <!-- SECCION 7: Geografía -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Geograf&iacute;a de la Desigualdad: &iquest;D&oacute;nde Participan M&aacute;s las Mujeres?</h2>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Estados con mayor participaci&oacute;n femenina</h3>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Estado</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-yellow-50">
+                                <td class="px-4 py-3 text-gray-900 font-bold">&#129351; Oaxaca</td>
+                                <td class="px-4 py-3 text-right text-gray-700">612,999</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">52.6%</td>
+                                <td class="px-4 py-3 text-right text-red-600">$52,450</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-900 font-bold">&#129352; Guerrero</td>
+                                <td class="px-4 py-3 text-right text-gray-700">468,411</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">50.3%</td>
+                                <td class="px-4 py-3 text-right text-red-600">$49,741</td>
+                            </tr>
+                            <tr class="bg-yellow-50">
+                                <td class="px-4 py-3 text-gray-900 font-bold">&#129353; Tlaxcala</td>
+                                <td class="px-4 py-3 text-right text-gray-700">268,002</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">48.4%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$71,561</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Michoac&aacute;n</td>
+                                <td class="px-4 py-3 text-right text-gray-700">832,096</td>
+                                <td class="px-4 py-3 text-right text-gray-700">47.8%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$72,808</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Morelos</td>
+                                <td class="px-4 py-3 text-right text-gray-700">378,904</td>
+                                <td class="px-4 py-3 text-right text-gray-700">47.6%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$93,240</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Nayarit</td>
+                                <td class="px-4 py-3 text-right text-gray-700">256,320</td>
+                                <td class="px-4 py-3 text-right text-gray-700">47.4%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$81,207</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Estados con menor participaci&oacute;n femenina</h3>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Estado</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Nuevo Le&oacute;n</td>
+                                <td class="px-4 py-3 text-right text-gray-700">1,925,137</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">36.9%</td>
+                                <td class="px-4 py-3 text-right text-emerald-600 font-bold">$169,432</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Tabasco</td>
+                                <td class="px-4 py-3 text-right text-gray-700">356,746</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">38.8%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$116,687</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Coahuila</td>
+                                <td class="px-4 py-3 text-right text-gray-700">984,646</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">39.5%</td>
+                                <td class="px-4 py-3 text-right text-emerald-600 font-bold">$152,656</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-4 py-3 text-gray-700 font-semibold">Campeche</td>
+                                <td class="px-4 py-3 text-right text-gray-700">193,656</td>
+                                <td class="px-4 py-3 text-right text-blue-700 font-bold">39.6%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$113,784</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        <strong>La paradoja geogr&aacute;fica:</strong> Los estados m&aacute;s pobres (Oaxaca, Guerrero) tienen la mayor participaci&oacute;n femenina, pero las peores remuneraciones. Los estados industriales del norte (Nuevo Le&oacute;n, Coahuila) tienen menor participaci&oacute;n femenina pero mejores salarios.
+                    </p>
+                    <p class="text-gray-700 mt-3">
+                        &iquest;Por qu&eacute;? En econom&iacute;as de subsistencia, las mujeres <strong>deben</strong> trabajar en changarros familiares, muchas veces sin sueldo. En econom&iacute;as industriales, los trabajos mejor pagados (manufactura, miner&iacute;a, transporte) est&aacute;n dominados por hombres.
+                    </p>
+                </div>
+
+                <!-- SECCION 8: Rostros del trabajo feminizado -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Los Rostros del Trabajo Feminizado</h2>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <p class="text-gray-900 font-bold mb-1">&#128135; Salones de belleza y peluquer&iacute;as</p>
+                        <p class="text-sm text-gray-600">416,405 empleos &middot; 71.8% mujeres</p>
+                        <p class="text-red-600 font-bold text-lg">$17,940 anuales</p>
+                        <p class="text-xs text-gray-500">15.8% del salario m&iacute;nimo</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <p class="text-gray-900 font-bold mb-1">&#128118; Guarder&iacute;as</p>
+                        <p class="text-sm text-gray-600">52,624 empleos &middot; 93.3% mujeres</p>
+                        <p class="text-yellow-600 font-bold text-lg">$82,825 anuales</p>
+                        <p class="text-xs text-gray-500">73% del salario m&iacute;nimo</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <p class="text-gray-900 font-bold mb-1">&#129658; Enfermer&iacute;a a domicilio</p>
+                        <p class="text-sm text-gray-600">1,239 empleos &middot; 71.0% mujeres</p>
+                        <p class="text-emerald-600 font-bold text-lg">$223,263 anuales</p>
+                        <p class="text-xs text-gray-500">Casi 2x salario m&iacute;nimo</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <p class="text-gray-900 font-bold mb-1">&#129463; Consultorios dentales</p>
+                        <p class="text-sm text-gray-600">143,442 empleos &middot; 61.7% mujeres</p>
+                        <p class="text-red-600 font-bold text-lg">$37,998 anuales</p>
+                        <p class="text-xs text-gray-500">33% del salario m&iacute;nimo</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 md:col-span-2">
+                        <p class="text-gray-900 font-bold mb-1">&#127978; Tiendas de abarrotes</p>
+                        <p class="text-sm text-gray-600">1,191,398 empleos &middot; 57.7% mujeres</p>
+                        <p class="text-red-600 font-bold text-lg">$9,400 anuales</p>
+                        <p class="text-xs text-gray-500">8.3% del salario m&iacute;nimo</p>
+                    </div>
+                </div>
+
+                <div class="bg-teal-50 border-l-4 border-teal-600 p-6 my-6">
+                    <p class="text-gray-800">
+                        El trabajo de cuidado &mdash;cuidar ni&ntilde;os, cuidar enfermos, cuidar la apariencia, cuidar la alimentaci&oacute;n familiar&mdash; est&aacute; <strong>feminizado y devaluado</strong>.
+                    </p>
+                </div>
+
+                <!-- SECCION 9: Manufactura -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Manufactura: Las Maquilas Donde S&iacute; Hay Mujeres</h2>
+                <p class="text-gray-700 mb-6">
+                    No toda la manufactura es masculina. Algunos subsectores tienen alta participaci&oacute;n femenina:
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Subsector</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Productos textiles</td>
+                                <td class="px-4 py-3 text-right text-gray-700">108,710</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">65.2%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$68,772</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Prendas de vestir</td>
+                                <td class="px-4 py-3 text-right text-gray-700">296,915</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">58.5%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$96,152</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Equipo m&eacute;dico</td>
+                                <td class="px-4 py-3 text-right text-gray-700">212,561</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">54.6%</td>
+                                <td class="px-4 py-3 text-right text-emerald-600 font-bold">$217,992</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Componentes electr&oacute;nicos</td>
+                                <td class="px-4 py-3 text-right text-gray-700">247,502</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">53.0%</td>
+                                <td class="px-4 py-3 text-right text-emerald-600 font-bold">$251,098</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Cosm&eacute;ticos</td>
+                                <td class="px-4 py-3 text-right text-gray-700">25,927</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">53.8%</td>
+                                <td class="px-4 py-3 text-right text-emerald-600 font-bold">$201,529</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                    Las mujeres est&aacute;n en la manufactura ligera (textiles, electr&oacute;nica, equipo m&eacute;dico), no en la pesada (acero, metales, maquinaria). Y en la manufactura feminizada, las remuneraciones son mejores que en servicios: una trabajadora en componentes electr&oacute;nicos gana <strong>$251,098</strong>, m&aacute;s del doble que una en comercio.
+                </p>
+
+                <!-- SECCION 10: Educación -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Educaci&oacute;n: El Sector M&aacute;s Feminizado, Pero con Matices</h2>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900">Nivel educativo</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Empleos</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">% Mujeres</th>
+                                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900">Remuneraci&oacute;n</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Preescolar</td>
+                                <td class="px-4 py-3 text-right text-gray-700">63,341</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">87.7%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$89,176</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Primaria</td>
+                                <td class="px-4 py-3 text-right text-gray-700">42,286</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">76.9%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$105,820</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Escuelas combinadas</td>
+                                <td class="px-4 py-3 text-right text-gray-700">253,605</td>
+                                <td class="px-4 py-3 text-right text-purple-700 font-bold">71.9%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$143,325</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">Secundaria general</td>
+                                <td class="px-4 py-3 text-right text-gray-700">15,180</td>
+                                <td class="px-4 py-3 text-right text-gray-700">63.4%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$125,571</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="px-4 py-3 text-gray-700">Media superior</td>
+                                <td class="px-4 py-3 text-right text-gray-700">35,330</td>
+                                <td class="px-4 py-3 text-right text-gray-700">56.8%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$106,290</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">T&eacute;cnica superior</td>
+                                <td class="px-4 py-3 text-right text-gray-700">4,590</td>
+                                <td class="px-4 py-3 text-right text-gray-700">55.6%</td>
+                                <td class="px-4 py-3 text-right text-gray-700">$93,204</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-6">
+                    <p class="text-gray-800">
+                        El patr&oacute;n es claro: <strong>a menor nivel educativo, m&aacute;s feminizaci&oacute;n.</strong> Las maestras de preescolar son 88% mujeres y ganan $89,176. Conforme sube el nivel, baja el porcentaje de mujeres.
+                    </p>
+                </div>
+
+                <!-- SECCION 11: Conclusiones -->
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Conclusiones: La Econom&iacute;a de la Desigualdad</h2>
+
+                <div class="space-y-4 mb-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>1. 12 millones de mujeres</strong> trabajan en la econom&iacute;a formal mexicana, pero est&aacute;n concentradas en sectores que pagan menos.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>2. La brecha salarial es estructural:</strong> los sectores masculinizados pagan 62% m&aacute;s en promedio que los feminizados.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>3. 6.5 millones de personas trabajan sin sueldo,</strong> y la mayor&iacute;a son mujeres en micronegocios familiares (tienditas, fondas, talleres).
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>4. La paradoja de la pobreza:</strong> los estados m&aacute;s pobres (Oaxaca, Guerrero) tienen la mayor participaci&oacute;n femenina, pero en trabajos precarios.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>5. El techo de cristal empieza abajo:</strong> las mujeres son 50% en microempresas pero solo 37% en grandes empresas.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>6. El trabajo de cuidado est&aacute; devaluado:</strong> guarder&iacute;as, salones de belleza, tiendas de abarrotes &mdash;los trabajos &ldquo;de mujeres&rdquo;&mdash; pagan menos que los trabajos &ldquo;de hombres&rdquo;.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-gray-800">
+                            <strong>7. La segregaci&oacute;n es extrema:</strong> hay actividades 93% femeninas (guarder&iacute;as) y actividades 95% masculinas (transporte de carga).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 my-6">
+                    <p class="text-gray-800 text-lg font-bold">
+                        La econom&iacute;a mexicana no es neutral al g&eacute;nero: reproduce, perpet&uacute;a y amplifica las desigualdades.
+                    </p>
+                </div>
+
+                <div class="bg-gray-200 rounded-lg p-4 my-8 text-sm text-gray-600">
+                    <p><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI</p>
+                    <p><strong>Universo:</strong> 28 millones de empleos en 5.47 millones de establecimientos</p>
+                    <p><strong>Fecha de an&aacute;lisis:</strong> Febrero 2026</p>
+                </div>
+
+                <div class="bg-gray-100 rounded-lg p-6 my-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">&iquest;Necesitas an&aacute;lisis personalizados del Censo Econ&oacute;mico?</h3>
+                    <p class="text-gray-700 mb-4">
+                        Con LokusAnalytics puedes realizar consultas espec&iacute;ficas sobre datos del Censo Econ&oacute;mico cruzados con informaci&oacute;n demogr&aacute;fica, econ&oacute;mica y territorial de tu regi&oacute;n de inter&eacute;s.
+                    </p>
+                    <a href="https://app.lokusdata.com"
+                       target="_blank"
+                       class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition">
+                        Prueba LokusAnalytics gratis
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Article footer -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <div class="flex items-center justify-between">
+                    <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary transition">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Volver al blog
+                    </a>
+                    <div class="text-sm text-gray-500">
+                        Compartir en redes sociales proximamente
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-emerald-600 to-teal-800 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                Analiza datos INEGI con inteligencia artificial
+            </h2>
+            <p class="text-xl text-emerald-100 mb-8">
+                LokusAnalytics te permite hacer consultas personalizadas sobre el Censo Econ&oacute;mico, ENIGH, CONAPO, Censos y m&aacute;s
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.lokusdata.com/register"
+                   target="_blank"
+                   class="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Registrarse Gratis
+                </a>
+                <a href="../../index.html#contacto"
+                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
+                    <p class="text-sm">
+                        Transformamos datos en decisiones estrategicas
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html#servicios" class="hover:text-white transition">Consultoria</a></li>
+                        <li><a href="../../index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>analytics@lokusdata.com</li>
+                        <li>+52 55 2281 3975</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
