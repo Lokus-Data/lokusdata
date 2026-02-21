@@ -93,6 +93,17 @@
                 <p class="mt-4 text-gray-600">Cargando artículos...</p>
             </div>
 
+            <!-- Pagination -->
+            <div id="pagination" class="hidden mt-12">
+                <div class="flex items-center justify-between border-t border-gray-200 pt-6">
+                    <!-- Info texto -->
+                    <p id="pagination-info" class="text-sm text-gray-600"></p>
+
+                    <!-- Controles -->
+                    <nav id="pagination-controls" class="flex items-center space-x-1" aria-label="Paginación"></nav>
+                </div>
+            </div>
+
             <!-- Empty state -->
             <div id="empty-state" class="text-center py-12 hidden">
                 <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -262,8 +273,10 @@
         });
     </script>
 
-    <!-- Blog Posts Loader -->
+    <!-- Blog Posts Loader con Paginación -->
     <script>
+        const POSTS_PER_PAGE = 9;
+
         // Mapeo de colores de categorías
         const categoryColors = {
             'blue': 'from-blue-500 to-blue-700',
@@ -272,7 +285,8 @@
             'red': 'from-red-500 to-red-700',
             'yellow': 'from-yellow-500 to-yellow-700',
             'indigo': 'from-indigo-500 to-indigo-700',
-            'pink': 'from-pink-500 to-pink-700'
+            'pink': 'from-pink-500 to-pink-700',
+            'emerald': 'from-emerald-500 to-emerald-700'
         };
 
         // Íconos SVG por categoría
@@ -283,6 +297,16 @@
             'Tecnología': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>',
             'default': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>'
         };
+
+        // Estado global
+        let allPosts = [];
+
+        // Leer página actual desde URL
+        function getCurrentPage() {
+            const params = new URLSearchParams(window.location.search);
+            const page = parseInt(params.get('page')) || 1;
+            return Math.max(1, page);
+        }
 
         // Función para formatear fecha
         function formatDate(dateString) {
@@ -337,9 +361,91 @@
             `;
         }
 
+        // Renderizar página
+        function renderPage(page) {
+            const grid = document.getElementById('articles-grid');
+            const paginationContainer = document.getElementById('pagination');
+            const paginationInfo = document.getElementById('pagination-info');
+            const paginationControls = document.getElementById('pagination-controls');
+
+            const totalPosts = allPosts.length;
+            const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+
+            // Validar página
+            if (page > totalPages) page = totalPages;
+            if (page < 1) page = 1;
+
+            // Slice de posts para esta página
+            const start = (page - 1) * POSTS_PER_PAGE;
+            const end = start + POSTS_PER_PAGE;
+            const pagePosts = allPosts.slice(start, end);
+
+            // Renderizar artículos
+            grid.innerHTML = pagePosts.map(post => createArticleCard(post)).join('');
+
+            // Si solo hay 1 página, no mostrar paginación
+            if (totalPages <= 1) {
+                paginationContainer.classList.add('hidden');
+                return;
+            }
+
+            // Mostrar paginación
+            paginationContainer.classList.remove('hidden');
+
+            // Info: "Mostrando 1-9 de 24 artículos"
+            const showing_start = start + 1;
+            const showing_end = Math.min(end, totalPosts);
+            paginationInfo.textContent = `Mostrando ${showing_start}-${showing_end} de ${totalPosts} artículos`;
+
+            // Construir controles
+            let controlsHTML = '';
+
+            // Botón Anterior
+            if (page > 1) {
+                controlsHTML += `
+                    <a href="?page=${page - 1}" class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition" data-page="${page - 1}">
+                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                        Anterior
+                    </a>`;
+            }
+
+            // Números de página
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === page) {
+                    controlsHTML += `
+                        <span class="px-4 py-2 text-sm font-bold text-white bg-primary rounded-lg">${i}</span>`;
+                } else {
+                    controlsHTML += `
+                        <a href="?page=${i}" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition" data-page="${i}">${i}</a>`;
+                }
+            }
+
+            // Botón Siguiente
+            if (page < totalPages) {
+                controlsHTML += `
+                    <a href="?page=${page + 1}" class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition" data-page="${page + 1}">
+                        Siguiente
+                        <svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>`;
+            }
+
+            paginationControls.innerHTML = controlsHTML;
+
+            // Click handlers para navegación sin recarga completa
+            paginationControls.querySelectorAll('a[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetPage = parseInt(this.dataset.page);
+                    history.pushState(null, '', `?page=${targetPage}`);
+                    renderPage(targetPage);
+                    // Scroll al inicio del grid
+                    document.getElementById('articles-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+        }
+
         // Cargar posts desde posts.json
         async function loadPosts() {
-            const grid = document.getElementById('articles-grid');
             const loadingState = document.getElementById('loading-state');
             const emptyState = document.getElementById('empty-state');
 
@@ -350,20 +456,19 @@
                     throw new Error('No se pudo cargar posts.json');
                 }
 
-                const posts = await response.json();
+                allPosts = await response.json();
 
                 // Ocultar loading
                 loadingState.classList.add('hidden');
 
-                if (posts.length === 0) {
-                    // Mostrar empty state
+                if (allPosts.length === 0) {
                     emptyState.classList.remove('hidden');
                 } else {
                     // Ordenar posts por fecha (más recientes primero)
-                    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-                    // Generar HTML para cada post
-                    grid.innerHTML = posts.map(post => createArticleCard(post)).join('');
+                    // Renderizar página actual
+                    renderPage(getCurrentPage());
                 }
 
             } catch (error) {
@@ -372,6 +477,13 @@
                 emptyState.classList.remove('hidden');
             }
         }
+
+        // Manejar navegación del browser (back/forward)
+        window.addEventListener('popstate', function() {
+            if (allPosts.length > 0) {
+                renderPage(getCurrentPage());
+            }
+        });
 
         // Cargar posts cuando la página se carga
         document.addEventListener('DOMContentLoaded', loadPosts);
