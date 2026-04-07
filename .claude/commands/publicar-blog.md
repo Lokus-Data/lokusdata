@@ -127,6 +127,7 @@ Después de actualizar `posts.json` y crear el HTML, ejecutar:
 cd "C:\paginas\LOKUSDATA"
 node scripts/inject-tracking.js   # inyecta GA4 + Ads + JSON-LD en el post nuevo
 node scripts/seo-build.js --ping  # regenera sitemap.xml y pingea Google IndexNow
+node scripts/google-ads-publish.js 2>/dev/null || echo "(Google Ads omitido — falta .env, ver docs/GOOGLE-ADS-SETUP.md)"
 ```
 
 Esto:
