@@ -119,7 +119,23 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
 - Solo 3-5 hashtags
 - Ir al grano
 
-### 6. Git commit y push
+### 6. SEO automático (OBLIGATORIO antes del commit)
+
+Después de actualizar `posts.json` y crear el HTML, ejecutar:
+
+```bash
+cd "C:\paginas\LOKUSDATA"
+node scripts/inject-tracking.js   # inyecta GA4 + Ads + JSON-LD en el post nuevo
+node scripts/seo-build.js --ping  # regenera sitemap.xml y pingea Google IndexNow
+```
+
+Esto:
+- Mete tracking de GA4 (G-VCQHS6GXFE) y Google Ads (AW-17620097832) en el HTML
+- Inyecta JSON-LD Article schema (rich snippets)
+- Regenera `sitemap.xml`
+- Avisa a Google vía IndexNow → indexación en horas, no semanas
+
+### 7. Git commit y push
 
 ```bash
 cd "C:\paginas\LOKUSDATA"
@@ -133,6 +149,8 @@ git push origin main
 - [ ] HTML creado en blog/articulos/
 - [ ] posts.json actualizado (entrada al inicio)
 - [ ] index.html actualizado (3 artículos, nuevo primero)
+- [ ] `node scripts/inject-tracking.js` ejecutado
+- [ ] `node scripts/seo-build.js --ping` ejecutado
 - [ ] Borrador LinkedIn con emojis y 15+ hashtags
 - [ ] Borrador Twitter/X UN solo tweet
 - [ ] Git commit y push completado
