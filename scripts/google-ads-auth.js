@@ -1,30 +1,23 @@
 #!/usr/bin/env node
 /**
  * One-time OAuth helper para obtener el GOOGLE_ADS_REFRESH_TOKEN.
- *
- * Prerequisitos en .env:
- *   GOOGLE_ADS_CLIENT_ID
- *   GOOGLE_ADS_CLIENT_SECRET
+ * Usa loopback redirect (http://127.0.0.1:PORT) — el flujo OOB fue deprecado
+ * por Google en octubre 2022.
  *
  * Uso:
  *   node scripts/google-ads-auth.js
- *
- * Pasos que hace el script:
- *   1. Imprime una URL de autorización de Google
- *   2. Tú la abres en el navegador y autorizas con la cuenta de Google Ads
- *   3. Google te da un código → lo pegas en la terminal
- *   4. El script intercambia el código por un refresh_token y lo imprime
- *   5. Tú copias el refresh_token a .env como GOOGLE_ADS_REFRESH_TOKEN
  */
 
 require('dotenv').config();
+const http = require('http');
 const https = require('https');
-const readline = require('readline');
-const { URLSearchParams } = require('url');
+const { exec } = require('child_process');
+const { URLSearchParams, URL } = require('url');
 
 const CLIENT_ID = process.env.GOOGLE_ADS_CLIENT_ID;
 const CLIENT_SECRET = process.env.GOOGLE_ADS_CLIENT_SECRET;
-const REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'; // OOB flow (manual copy/paste)
+const PORT = 53682; // puerto arbitrario alto
+const REDIRECT_URI = `http://127.0.0.1:${PORT}`;
 const SCOPE = 'https://www.googleapis.com/auth/adwords';
 
 if (!CLIENT_ID || !CLIENT_SECRET) {
@@ -41,47 +34,79 @@ const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?${new URLSearchPar
   prompt: 'consent',
 })}`;
 
-console.log('\n📋 PASO 1 — Abre esta URL en tu navegador y autoriza con la cuenta de Google Ads:\n');
-console.log(authUrl);
-console.log('\n📋 PASO 2 — Google te dará un código. Pégalo abajo:\n');
-
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-rl.question('Código de autorización: ', code => {
-  rl.close();
+function exchangeCode(code) {
   const body = new URLSearchParams({
-    code: code.trim(),
+    code,
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
     redirect_uri: REDIRECT_URI,
     grant_type: 'authorization_code',
   }).toString();
 
-  const req = https.request({
-    hostname: 'oauth2.googleapis.com',
-    path: '/token',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Content-Length': Buffer.byteLength(body),
-    },
-  }, res => {
-    let data = '';
-    res.on('data', c => data += c);
-    res.on('end', () => {
-      try {
-        const json = JSON.parse(data);
-        if (json.refresh_token) {
-          console.log('\n✅ ¡Listo! Copia esto a tu .env:\n');
-          console.log(`GOOGLE_ADS_REFRESH_TOKEN=${json.refresh_token}\n`);
-        } else {
-          console.error('\n❌ No se recibió refresh_token. Respuesta:', json);
-        }
-      } catch (e) {
-        console.error('Error parseando respuesta:', data);
-      }
+  return new Promise((resolve, reject) => {
+    const req = https.request({
+      hostname: 'oauth2.googleapis.com',
+      path: '/token',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Length': Buffer.byteLength(body),
+      },
+    }, res => {
+      let data = '';
+      res.on('data', c => data += c);
+      res.on('end', () => {
+        try { resolve(JSON.parse(data)); } catch (e) { reject(new Error(data)); }
+      });
     });
+    req.on('error', reject);
+    req.write(body);
+    req.end();
   });
-  req.on('error', e => console.error('Error HTTP:', e.message));
-  req.write(body);
-  req.end();
+}
+
+const server = http.createServer(async (req, res) => {
+  try {
+    const url = new URL(req.url, REDIRECT_URI);
+    const code = url.searchParams.get('code');
+    const error = url.searchParams.get('error');
+    if (error) {
+      res.writeHead(400, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(`<h1>Error: ${error}</h1>`);
+      console.error('❌ OAuth error:', error);
+      server.close();
+      process.exit(1);
+    }
+    if (!code) {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
+    const json = await exchangeCode(code);
+    if (json.refresh_token) {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(`<h1>✅ Listo</h1><p>Ya puedes cerrar esta pestaña y volver a la terminal.</p>`);
+      console.log('\n✅ ¡Listo! Refresh token obtenido. Copia esto a tu .env:\n');
+      console.log(`GOOGLE_ADS_REFRESH_TOKEN=${json.refresh_token}\n`);
+    } else {
+      res.writeHead(500, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(`<pre>${JSON.stringify(json, null, 2)}</pre>`);
+      console.error('\n❌ Sin refresh_token. Respuesta:', json);
+    }
+  } catch (e) {
+    console.error('Error:', e.message);
+  } finally {
+    setTimeout(() => server.close(), 500);
+  }
+});
+
+server.listen(PORT, '127.0.0.1', () => {
+  console.log('\n📋 Abre esta URL en tu navegador y autoriza:\n');
+  console.log(authUrl);
+  console.log(`\n⏳ Esperando la redirección a ${REDIRECT_URI} ...\n`);
+  // Intentar abrir automáticamente
+  const cmd = process.platform === 'win32' ? `start "" "${authUrl}"`
+    : process.platform === 'darwin' ? `open "${authUrl}"`
+    : `xdg-open "${authUrl}"`;
+  exec(cmd, () => {});
 });
