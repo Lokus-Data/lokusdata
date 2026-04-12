@@ -5,3 +5,4 @@ node_modules/
 .DS_Store
 nul
 scripts/.ads-published.json
+docs/GOOGLE-ADS-SETUP.md
