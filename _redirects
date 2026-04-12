@@ -1,0 +1,16 @@
+# Rutas viejas del sitio anterior → páginas actuales
+/noticias              /blog.html                                  301
+/noticias/             /blog.html                                  301
+/solucion-integral     /                                           301
+/servicios/solucion-integral    /                                  301
+/servicios/marco-geoestadistico /                                  301
+/servicios/denue       /                                           301
+/servicios/enigh       /blog/articulos/enigh-2024.html             301
+/servicios/ageb-localidades     /                                  301
+/denue                 /                                           301
+/enigh                 /blog/articulos/enigh-2024.html             301
+
+# URLs de blog sin extensión .html → con extensión
+/blog/articulos/2025-12-19-radiografia-economia-mexicana-censo-economico-2024  /blog/articulos/2025-12-19-radiografia-economia-mexicana-censo-economico-2024.html  301
+/blog/articulos/2025-01-06-fin-reportes-anuales  /blog/articulos/2025-01-06-fin-reportes-anuales.html  301
+/blog/articulos/2025-01-06-lokusdata-plataforma  /blog/articulos/2025-01-06-lokusdata-plataforma.html  301
