@@ -47,9 +47,24 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
   "excerpt": "Resumen de 2-3 líneas",
   "url": "blog/articulos/YYYY-MM-DD-slug.html",
   "readTime": "X min",
-  "featured": true
+  "featured": true,
+  "keywords": [
+    "búsqueda real 1 con ubicación si aplica",
+    "búsqueda real 2",
+    "búsqueda real 3",
+    "búsqueda real 4",
+    "búsqueda real 5",
+    "búsqueda real 6"
+  ]
 }
 ```
+
+**IMPORTANTE sobre keywords:**
+- Mínimo 5, máximo 6 keywords por post
+- Deben ser búsquedas que la gente realmente haría en Google (ej: "deuda pública Tijuana", "industria automotriz Ciudad Juárez")
+- NO extraer palabras sueltas del slug — eso genera basura como "267000 empleos pausa" que nadie busca
+- Incluir ubicación geográfica + tema cuando aplique (ej: "nearshoring frontera norte México")
+- El script google-ads-publish.js las usa directamente como keywords de Google Ads con match type PHRASE
 
 ### 3. Actualizar index.html
 
@@ -149,6 +164,7 @@ git push origin main
 
 - [ ] HTML creado en blog/articulos/
 - [ ] posts.json actualizado (entrada al inicio)
+- [ ] posts.json tiene campo `keywords` con 5-6 búsquedas reales (NO palabras del slug)
 - [ ] index.html actualizado (3 artículos, nuevo primero)
 - [ ] `node scripts/inject-tracking.js` ejecutado
 - [ ] `node scripts/seo-build.js --ping` ejecutado

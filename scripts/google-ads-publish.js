@@ -93,7 +93,86 @@ function pickPosts(posts, { slug, all, published }) {
   return [posts[0]]; // último publicado
 }
 
-async function publishOne(post, { dryRun, customer, adGroupResource, published }) {
+const STOP_WORDS = new Set([
+  'de','la','el','en','y','a','que','los','las','un','una','del','al',
+  'para','con','por','lo','mas','no','es','se','sin','como','sus',
+]);
+
+function buildKeywords(post) {
+  // Usar keywords de posts.json si existen (búsquedas reales, no generadas del slug)
+  if (Array.isArray(post.keywords) && post.keywords.length > 0) {
+    return post.keywords;
+  }
+
+  // Fallback: generación automática (solo si no hay keywords en posts.json)
+  console.warn(`  ⚠️  Post "${post.slug}" sin campo keywords en posts.json — usando fallback automático`);
+  const slugWords = (post.slug || '').split('-').filter(w => w.length > 2 && !STOP_WORDS.has(w));
+  const cat = (post.category || '').toLowerCase();
+  const phrases = [];
+  if (slugWords.length >= 3) phrases.push(slugWords.slice(0, 3).join(' '));
+  if (slugWords.length >= 2) phrases.push(slugWords.slice(0, 2).join(' '));
+  if (cat && cat !== 'análisis') {
+    phrases.push(`${cat} méxico`);
+    phrases.push(`análisis ${cat}`);
+  }
+  if (cat === 'análisis') {
+    phrases.push('análisis datos méxico');
+  }
+  phrases.push('datos económicos méxico');
+  phrases.push('inteligencia de datos');
+  const seen = new Set();
+  return phrases.filter(kw => {
+    const k = kw.toLowerCase().trim();
+    if (!k || seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+}
+
+async function addKeywords(customer, adGroupResource, post) {
+  const keywords = buildKeywords(post);
+  let kwErrors = 0;
+  for (const kw of keywords) {
+    try {
+      const kwResult = await customer.adGroupCriteria.create([{
+        ad_group: adGroupResource,
+        keyword: { text: kw, match_type: 'PHRASE' },
+        status: 'ENABLED',
+      }]);
+      if (!kwResult.results?.length) {
+        throw new Error(`API devolvió resultado vacío para keyword "${kw}"`);
+      }
+      console.log(`  🔑 Keyword: ${kw}`);
+    } catch (e) {
+      // keyword duplicada o inválida — registrar pero continuar con las demás
+      kwErrors++;
+      console.error(`  ❌ Keyword "${kw}": ${e.errors?.[0]?.message || e.message}`);
+    }
+  }
+  if (kwErrors === keywords.length && keywords.length > 0) {
+    throw new Error(`Todas las keywords fallaron (${kwErrors}/${keywords.length})`);
+  }
+  if (kwErrors > 0) {
+    console.warn(`  ⚠️  ${kwErrors}/${keywords.length} keywords fallaron`);
+  }
+}
+
+async function createAdGroup(customer, campaignResource, name) {
+  const result = await customer.adGroups.create([{
+    campaign: campaignResource,
+    name,
+    status: 'ENABLED',
+    type: 'SEARCH_STANDARD',
+    cpc_bid_micros: 10_000_000, // $10 MXN default CPC (campaign budget controls spend)
+  }]);
+  const resourceName = result.results?.[0]?.resource_name;
+  if (!resourceName) {
+    throw new Error(`Fallo al crear ad group "${name}": API devolvió resultado vacío`);
+  }
+  return resourceName;
+}
+
+async function publishOne(post, { dryRun, customer, campaignResource, published }) {
   const finalUrl = `${SITE}/${post.url}`;
 
   const headlines = buildHeadlines(post);
@@ -115,6 +194,12 @@ async function publishOne(post, { dryRun, customer, adGroupResource, published }
     return { ok: true, dryRun: true };
   }
 
+  // Crear un ad group dedicado para este post (límite: 3 RSAs por ad group)
+  const adGroupName = truncate(`Blog: ${post.title}`, 255);
+  console.log(`  📂 Creando ad group: ${adGroupName}`);
+  const adGroupResource = await createAdGroup(customer, campaignResource, adGroupName);
+  console.log(`  📂 Ad group: ${adGroupResource}`);
+
   const operation = {
     create: {
       ad_group: adGroupResource,
@@ -131,10 +216,15 @@ async function publishOne(post, { dryRun, customer, adGroupResource, published }
 
   try {
     const result = await customer.adGroupAds.create([operation.create]);
-    const resourceName = result.results?.[0]?.resource_name || 'unknown';
+    const resourceName = result.results?.[0]?.resource_name;
+    if (!resourceName) {
+      throw new Error('API devolvió resultado vacío al crear el anuncio');
+    }
     console.log(`  ✅ Creado: ${resourceName}`);
+    await addKeywords(customer, adGroupResource, post);
     published[post.slug] = {
       resource_name: resourceName,
+      ad_group: adGroupResource,
       created_at: new Date().toISOString(),
       url: finalUrl,
     };
@@ -164,7 +254,7 @@ async function main() {
 
   console.log(`📦 ${targets.length} post(s) a procesar${all ? ' (modo backfill)' : ''}`);
 
-  let customer = null, adGroupResource = null;
+  let customer = null, campaignResource = null;
   if (!dryRun) {
     const required = [
       'GOOGLE_ADS_DEVELOPER_TOKEN',
@@ -172,7 +262,7 @@ async function main() {
       'GOOGLE_ADS_CLIENT_SECRET',
       'GOOGLE_ADS_REFRESH_TOKEN',
       'GOOGLE_ADS_CUSTOMER_ID',
-      'GOOGLE_ADS_AD_GROUP_ID',
+      'GOOGLE_ADS_CAMPAIGN_ID',
     ];
     const missing = required.filter(k => !process.env[k]);
     if (missing.length) {
@@ -193,14 +283,14 @@ async function main() {
       login_customer_id: process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID || undefined,
       refresh_token: process.env.GOOGLE_ADS_REFRESH_TOKEN,
     });
-    adGroupResource = `customers/${process.env.GOOGLE_ADS_CUSTOMER_ID}/adGroups/${process.env.GOOGLE_ADS_AD_GROUP_ID}`;
+    campaignResource = `customers/${process.env.GOOGLE_ADS_CUSTOMER_ID}/campaigns/${process.env.GOOGLE_ADS_CAMPAIGN_ID}`;
   }
 
   let ok = 0, fail = 0;
   for (let i = 0; i < targets.length; i++) {
     const post = targets[i];
     console.log(`\n[${i + 1}/${targets.length}] ${post.title}`);
-    const r = await publishOne(post, { dryRun, customer, adGroupResource, published });
+    const r = await publishOne(post, { dryRun, customer, campaignResource, published });
     if (r.ok) ok++; else fail++;
     // pequeño delay para no saturar la API en backfill
     if (all && i < targets.length - 1) await new Promise(r => setTimeout(r, 1000));
