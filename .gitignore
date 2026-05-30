@@ -6,3 +6,5 @@ node_modules/
 nul
 scripts/.ads-published.json
 docs/GOOGLE-ADS-SETUP.md
+
+.claude/worktrees/
