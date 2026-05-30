@@ -41,6 +41,19 @@ function truncate(str, max) {
   return str.slice(0, max - 1).trimEnd() + '…';
 }
 
+// Google Ads rechaza texto con símbolos desbalanceados (policy SYMBOLS / PROHIBITED).
+// Caso típico: cortar "empleos (+10.7%)" en un punto deja "(+10" con paréntesis abierto.
+// Si los paréntesis no están balanceados, se eliminan todos (no aportan en un anuncio).
+function sanitizeAdText(str) {
+  if (!str) return str;
+  const opens = (str.match(/\(/g) || []).length;
+  const closes = (str.match(/\)/g) || []).length;
+  if (opens !== closes) {
+    str = str.replace(/[()]/g, '').replace(/\s+/g, ' ').trim();
+  }
+  return str;
+}
+
 function dedupe(arr) {
   const seen = new Set();
   return arr.filter(s => {
@@ -67,7 +80,7 @@ function buildHeadlines(post) {
     'Datos para decisiones',
     'Reportes con datos reales',
   ];
-  return dedupe(candidates).slice(0, 12);
+  return dedupe(candidates.map(sanitizeAdText)).slice(0, 12);
 }
 
 function buildDescriptions(post) {
@@ -78,7 +91,7 @@ function buildDescriptions(post) {
     truncate(`${post.title}. Análisis con datos oficiales del INEGI.`, 90),
     'Inteligencia de datos para gobiernos, empresas y cámaras. Lee el análisis.',
   ];
-  return dedupe(candidates).slice(0, 4);
+  return dedupe(candidates.map(sanitizeAdText)).slice(0, 4);
 }
 
 function pickPosts(posts, { slug, all, published }) {
@@ -158,6 +171,18 @@ async function addKeywords(customer, adGroupResource, post) {
 }
 
 async function createAdGroup(customer, campaignResource, name) {
+  // Idempotente: si ya existe un ad group con este nombre (p. ej. de una corrida
+  // previa que falló al crear el anuncio), se reutiliza en vez de fallar.
+  const existing = await customer.query(`
+    SELECT ad_group.resource_name
+    FROM ad_group
+    WHERE ad_group.name = '${name.replace(/'/g, "\\'")}'
+    LIMIT 1
+  `);
+  if (existing.length && existing[0].ad_group?.resource_name) {
+    console.log('  ♻️  Ad group ya existía, se reutiliza');
+    return existing[0].ad_group.resource_name;
+  }
   const result = await customer.adGroups.create([{
     campaign: campaignResource,
     name,

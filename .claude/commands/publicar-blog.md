@@ -142,7 +142,7 @@ Después de actualizar `posts.json` y crear el HTML, ejecutar:
 cd "C:\paginas\LOKUSDATA"
 node scripts/inject-tracking.js   # inyecta GA4 + Ads + JSON-LD en el post nuevo
 node scripts/seo-build.js --ping  # regenera sitemap.xml y pingea Google IndexNow
-node scripts/google-ads-publish.js 2>/dev/null || echo "(Google Ads omitido — falta .env, ver docs/GOOGLE-ADS-SETUP.md)"
+node scripts/google-ads-publish.js   # crea el anuncio en Google Ads (NO ocultar stderr)
 ```
 
 Esto:
@@ -150,15 +150,30 @@ Esto:
 - Inyecta JSON-LD Article schema (rich snippets)
 - Regenera `sitemap.xml`
 - Avisa a Google vía IndexNow → indexación en horas, no semanas
+- Crea Responsive Search Ad + keywords en Google Ads
+
+**IMPORTANTE — Google Ads (no repetir errores pasados):**
+- **NUNCA** uses `2>/dev/null` ni `|| echo` al correr `google-ads-publish.js`. Eso oculta los errores reales de la API. Corre el comando limpio y LEE la salida completa.
+- El script termina con `🎯 Resumen: X OK, Y fallos`. Si `Y > 0`, **NO está hecho** — hay que ver el error y resolverlo, no darlo por omitido.
+- Si falta `.env`, el script lo dice explícitamente (`❌ Faltan variables en .env`). Solo en ese caso es "omitido"; cualquier otro fallo se arregla.
+- El script ya es idempotente: si reintentas, reutiliza el ad group existente (no lo dupliques manualmente).
+- Causa de fallo conocida (resuelta): Google Ads rechaza texto con **símbolos desbalanceados** (policy `SYMBOLS`/`PROHIBITED`), p. ej. un `(` sin cerrar. El script ya sanea esto, pero si vuelve a aparecer un rechazo por `SYMBOLS`, revisa headlines/descriptions por paréntesis o símbolos sueltos.
 
 ### 7. Git commit y push
 
 ```bash
 cd "C:\paginas\LOKUSDATA"
-git add .
+# Agregar SOLO los archivos del post — NO usar `git add .` ni `git add -A`:
+# eso arrastra basura como .claude/worktrees/ (repos embebidos) al commit.
+git add blog/ index.html sitemap.xml social-drafts/ scripts/.ads-published.json
+git status   # verificar que NO se cuele nada de .claude/ antes de commitear
 git commit -m "Nuevo post: [Título del artículo]"
 git push origin main
 ```
+
+**IMPORTANTE — git (no repetir errores pasados):**
+- **NUNCA** uses `git add .` ni `git add -A`. Agrega rutas explícitas (las de arriba).
+- Antes del commit, corre `git status` y confirma que no aparezca nada bajo `.claude/`. Si aparece `.claude/worktrees/`, NO lo commitees (ya está en `.gitignore`).
 
 ## Checklist final (verificar todo antes de terminar)
 
@@ -168,9 +183,11 @@ git push origin main
 - [ ] index.html actualizado (3 artículos, nuevo primero)
 - [ ] `node scripts/inject-tracking.js` ejecutado
 - [ ] `node scripts/seo-build.js --ping` ejecutado
+- [ ] `node scripts/google-ads-publish.js` ejecutado y terminó en `X OK, 0 fallos` (sin `2>/dev/null`)
 - [ ] Borrador LinkedIn con emojis y 15+ hashtags
 - [ ] Borrador Twitter/X UN solo tweet
-- [ ] Git commit y push completado
+- [ ] `git status` revisado: nada de `.claude/` en el commit
+- [ ] Git commit (rutas explícitas, NO `git add .`) y push completado
 
 ## Respuesta al usuario
 
