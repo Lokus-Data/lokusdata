@@ -56,39 +56,88 @@ ${all.map(u => `  <url>
   return all.map(u => u.loc);
 }
 
-function pingIndexNow(urls) {
+const delay = ms => new Promise(r => setTimeout(r, ms));
+
+// Devuelve el código HTTP de una URL (HEAD). 0 si no responde.
+function httpStatus(url) {
+  return new Promise(resolve => {
+    const req = https.request(url, { method: 'HEAD', timeout: 8000 }, res => {
+      res.resume();
+      resolve(res.statusCode);
+    });
+    req.on('timeout', () => { req.destroy(); resolve(0); });
+    req.on('error', () => resolve(0));
+    req.end();
+  });
+}
+
+// Espera a que una URL responda 2xx/3xx, reintentando (cubre el lag de
+// despliegue de GitHub Pages tras el push). Devuelve el último código visto.
+async function waitForLive(url, tries = 6, delayMs = 5000) {
+  let code = 0;
+  for (let i = 1; i <= tries; i++) {
+    code = await httpStatus(url);
+    if (code >= 200 && code < 400) return code;
+    if (i < tries) {
+      console.log(`   ⏳ ${url} → HTTP ${code}; reintento ${i}/${tries - 1} en ${delayMs / 1000}s`);
+      await delay(delayMs);
+    }
+  }
+  return code;
+}
+
+async function pingIndexNow(urls) {
+  // Verificar que cada URL esté viva (HTTP 200) ANTES de avisar a buscadores.
+  // Evita pingear URLs que aún no desplegaron (404), lo cual resta SEO.
+  const live = [];
+  for (const url of urls) {
+    const code = await waitForLive(url);
+    if (code >= 200 && code < 400) {
+      live.push(url);
+    } else {
+      console.warn(`⚠️  Omitida (no responde 200 tras reintentos): ${url} → HTTP ${code}`);
+    }
+  }
+  if (!live.length) {
+    console.warn('⚠️  Ninguna URL viva; no se pingea IndexNow.');
+    return;
+  }
+
   const host = 'lokusdata.com';
   const body = JSON.stringify({
     host,
     key: INDEXNOW_KEY,
     keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`,
-    urlList: urls,
+    urlList: live,
   });
-  const req = https.request({
-    hostname: 'api.indexnow.org',
-    path: '/IndexNow',
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
-  }, res => {
-    console.log(`🔔 IndexNow ping: HTTP ${res.statusCode} (${urls.length} URLs)`);
-    res.on('data', () => {});
+  await new Promise(resolve => {
+    const req = https.request({
+      hostname: 'api.indexnow.org',
+      path: '/IndexNow',
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
+    }, res => {
+      console.log(`🔔 IndexNow ping: HTTP ${res.statusCode} (${live.length}/${urls.length} URLs vivas)`);
+      res.on('data', () => {});
+      res.on('end', resolve);
+    });
+    req.on('error', e => { console.error('IndexNow error:', e.message); resolve(); });
+    req.write(body);
+    req.end();
   });
-  req.on('error', e => console.error('IndexNow error:', e.message));
-  req.write(body);
-  req.end();
   // Nota: el ping de sitemap a Google (google.com/ping?sitemap=) fue
   // deprecado por Google en 2024 y siempre devuelve 404, así que se eliminó.
   // Google descubre el sitemap vía Search Console + robots.txt; IndexNow
   // (Bing/Yandex) cubre la indexación rápida.
 }
 
-function main() {
+async function main() {
   const args = process.argv.slice(2);
   const posts = loadPosts();
   const urls = buildSitemap(posts);
   if (args.includes('--ping')) {
     const specific = args.filter(a => a.startsWith('http'));
-    pingIndexNow(specific.length ? specific : urls);
+    await pingIndexNow(specific.length ? specific : urls);
   }
 }
 

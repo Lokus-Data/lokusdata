@@ -141,7 +141,7 @@ Después de actualizar `posts.json` y crear el HTML, ejecutar:
 ```bash
 cd "C:\paginas\LOKUSDATA"
 node scripts/inject-tracking.js   # inyecta GA4 + Ads + JSON-LD en el post nuevo
-node scripts/seo-build.js --ping  # regenera sitemap.xml y pingea Google IndexNow
+node scripts/seo-build.js         # SOLO regenera sitemap.xml (sin ping todavía)
 node scripts/google-ads-publish.js   # crea el anuncio en Google Ads (NO ocultar stderr)
 ```
 
@@ -149,8 +149,13 @@ Esto:
 - Mete tracking de GA4 (G-VCQHS6GXFE) y Google Ads (AW-17620097832) en el HTML
 - Inyecta JSON-LD Article schema (rich snippets)
 - Regenera `sitemap.xml`
-- Avisa a Google vía IndexNow → indexación en horas, no semanas
 - Crea Responsive Search Ad + keywords en Google Ads
+
+**El ping de IndexNow se hace DESPUÉS del push (paso 7).** Antes del push el post
+nuevo aún no está desplegado en GitHub Pages (responde 404), y avisarle a los
+buscadores de una URL muerta resta SEO. `seo-build.js --ping <url>` ahora verifica
+que la URL responda HTTP 200 (reintentando hasta ~30s mientras despliega) antes de
+pingear; las que no respondan 200 se omiten con un `⚠️`.
 
 **IMPORTANTE — Google Ads (no repetir errores pasados):**
 - **NUNCA** uses `2>/dev/null` ni `|| echo` al correr `google-ads-publish.js`. Eso oculta los errores reales de la API. Corre el comando limpio y LEE la salida completa.
@@ -169,6 +174,10 @@ git add blog/ index.html sitemap.xml social-drafts/ scripts/.ads-published.json
 git status   # verificar que NO se cuele nada de .claude/ antes de commitear
 git commit -m "Nuevo post: [Título del artículo]"
 git push origin main
+
+# DESPUÉS del push: pingear IndexNow con la URL del post nuevo.
+# El script espera a que GitHub Pages la despliegue (HTTP 200) y entonces pingea.
+node scripts/seo-build.js --ping https://lokusdata.com/blog/articulos/YYYY-MM-DD-slug.html
 ```
 
 **IMPORTANTE — git (no repetir errores pasados):**
@@ -182,12 +191,13 @@ git push origin main
 - [ ] posts.json tiene campo `keywords` con 5-6 búsquedas reales (NO palabras del slug)
 - [ ] index.html actualizado (3 artículos, nuevo primero)
 - [ ] `node scripts/inject-tracking.js` ejecutado
-- [ ] `node scripts/seo-build.js --ping` ejecutado
+- [ ] `node scripts/seo-build.js` ejecutado (regenera sitemap antes del commit)
 - [ ] `node scripts/google-ads-publish.js` ejecutado y terminó en `X OK, 0 fallos` (sin `2>/dev/null`)
 - [ ] Borrador LinkedIn con emojis y 15+ hashtags
 - [ ] Borrador Twitter/X UN solo tweet
 - [ ] `git status` revisado: nada de `.claude/` en el commit
 - [ ] Git commit (rutas explícitas, NO `git add .`) y push completado
+- [ ] DESPUÉS del push: `node scripts/seo-build.js --ping <url-del-post>` terminó en `IndexNow ping: HTTP 200` (no `⚠️ Omitida`)
 
 ## Respuesta al usuario
 
