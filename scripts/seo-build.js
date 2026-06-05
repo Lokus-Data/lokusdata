@@ -76,11 +76,10 @@ function pingIndexNow(urls) {
   req.on('error', e => console.error('IndexNow error:', e.message));
   req.write(body);
   req.end();
-
-  // Ping a Google sitemap (legacy pero sigue funcionando para algunos)
-  https.get(`https://www.google.com/ping?sitemap=${encodeURIComponent(SITE + '/sitemap.xml')}`, res => {
-    console.log(`🔔 Google sitemap ping: HTTP ${res.statusCode}`);
-  }).on('error', () => {});
+  // Nota: el ping de sitemap a Google (google.com/ping?sitemap=) fue
+  // deprecado por Google en 2024 y siempre devuelve 404, así que se eliminó.
+  // Google descubre el sitemap vía Search Console + robots.txt; IndexNow
+  // (Bing/Yandex) cubre la indexación rápida.
 }
 
 function main() {
