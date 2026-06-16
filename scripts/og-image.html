@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1200px; height:630px; overflow:hidden; }
+  .card {
+    width:1200px; height:630px; position:relative;
+    background:#0A1626;
+    font-family:'Space Grotesk',sans-serif; color:#F6F3EC;
+    padding:72px 80px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  /* glow + contornos cartográficos */
+  .card::before {
+    content:''; position:absolute; inset:0;
+    background:
+      radial-gradient(120% 90% at 88% -10%, rgba(232,163,61,.22), transparent 55%),
+      radial-gradient(100% 80% at -8% 115%, rgba(59,130,246,.16), transparent 55%);
+  }
+  .card::after {
+    content:''; position:absolute; inset:0;
+    background:
+      repeating-radial-gradient(circle at 84% 22%, rgba(255,255,255,.055) 0 1px, transparent 1px 52px),
+      repeating-radial-gradient(circle at 10% 88%, rgba(255,255,255,.045) 0 1px, transparent 1px 64px);
+  }
+  .layer { position:relative; z-index:2; }
+  .top { display:flex; align-items:center; justify-content:space-between; }
+  .brand { display:flex; align-items:center; gap:16px; }
+  .brand img { width:54px; height:54px; }
+  .brand .wm { font-size:34px; font-weight:700; letter-spacing:-.5px; }
+  .brand .wm b { color:#E8A33D; font-weight:700; }
+  .coord { font-family:'JetBrains Mono',monospace; font-size:15px; letter-spacing:.14em;
+           color:rgba(246,243,236,.42); text-align:right; line-height:1.7; }
+  .kicker { display:flex; align-items:center; gap:14px; margin-bottom:26px; }
+  .kicker .bar { width:42px; height:3px; background:#E8A33D; }
+  .kicker .lbl { font-family:'JetBrains Mono',monospace; font-size:16px; letter-spacing:.18em;
+                 text-transform:uppercase; color:#E8A33D; }
+  h1 { font-size:62px; line-height:1.05; font-weight:700; letter-spacing:-1px; max-width:1000px; }
+  h1 .amber { color:#E8A33D; }
+  .sources { display:flex; align-items:center; gap:30px; font-size:22px; font-weight:600;
+             color:rgba(246,243,236,.62); }
+  .sources .dot { width:8px; height:8px; border-radius:50%; }
+  .bottom { display:flex; align-items:center; justify-content:space-between; }
+  .prods { display:flex; gap:22px; align-items:center; }
+  .chip { font-family:'JetBrains Mono',monospace; font-size:15px; letter-spacing:.06em;
+          display:flex; align-items:center; gap:9px; color:rgba(246,243,236,.7); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="layer top">
+      <div class="brand">
+        <img src="../images/lokus-logo.png" alt="">
+        <span class="wm">Lokus<b>Data</b></span>
+      </div>
+      <div class="coord">19.4326° N · 99.1332° W<br>MX / DATA GRID</div>
+    </div>
+
+    <div class="layer">
+      <div class="kicker"><span class="bar"></span><span class="lbl">Lokus Data Platform</span></div>
+      <h1>La infraestructura de datos de México,<br><span class="amber">convertida en decisiones.</span></h1>
+    </div>
+
+    <div class="layer bottom">
+      <div class="sources">
+        <span>INEGI</span><span>·</span><span>CONAPO</span><span>·</span><span>SHCP</span><span>·</span><span>SNIIM</span>
+      </div>
+      <div class="prods">
+        <span class="chip"><span style="width:9px;height:9px;border-radius:50%;background:#E8A33D;display:inline-block"></span>Biz</span>
+        <span class="chip"><span style="width:9px;height:9px;border-radius:50%;background:#3B82F6;display:inline-block"></span>Analytics</span>
+        <span class="chip"><span style="width:9px;height:9px;border-radius:50%;background:#2FA86A;display:inline-block"></span>Agro</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
