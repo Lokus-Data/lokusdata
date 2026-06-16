@@ -310,19 +310,26 @@
     <script>
         const POSTS_PER_PAGE = 9;
 
-        // Acento de etiqueta por color de categoría (texto)
-        const categoryAccent = {
-            'blue': 'text-analytics', 'green': 'text-agro', 'emerald': 'text-agro',
-            'purple': 'text-biz', 'red': 'text-biz', 'yellow': 'text-biz',
-            'indigo': 'text-analytics', 'pink': 'text-biz'
+        // Identidad visual por CATEGORÍA (acento + ícono) para el placeholder de marca.
+        // Se manda por categoría, no por categoryColor (que es 23/40 emerald y saldría todo verde).
+        const ICONS = {
+            // gráfica de barras — Análisis
+            analisis: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 19V10m5 9V5m5 14v-7m5 7V8"/>',
+            // monedas — Economía
+            economia: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 8c-3.314 0-6-1.343-6-3s2.686-3 6-3 6 1.343 6 3-2.686 3-6 3zm6-3v6c0 1.657-2.686 3-6 3s-6-1.343-6-3V5m12 6c0 1.657-2.686 3-6 3s-6-1.343-6-3m12 0v6c0 1.657-2.686 3-6 3s-6-1.343-6-3v-6"/>',
+            // chip — Tecnología
+            tecnologia: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2M7 7h10v10H7z"/>',
+            // documento — default
+            default: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 13h6m-6 4h6m2 4H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/>'
         };
-        // Header con degradado cuando el post no tiene imagen
-        const categoryColors = {
-            'blue': 'from-analytics to-ink2', 'green': 'from-agro to-ink2',
-            'purple': 'from-biz to-ink2', 'red': 'from-biz to-ink2',
-            'yellow': 'from-biz to-ink2', 'indigo': 'from-analytics to-ink2',
-            'pink': 'from-biz to-ink2', 'emerald': 'from-agro to-ink2'
+        const categoryMeta = {
+            'Análisis':   { hex:'#E8A33D', text:'text-biz',       icon: ICONS.analisis   },
+            'Economía':   { hex:'#2FA86A', text:'text-agro',      icon: ICONS.economia   },
+            'Tecnología': { hex:'#3B82F6', text:'text-analytics', icon: ICONS.tecnologia }
         };
+        function metaFor(cat) {
+            return categoryMeta[cat] || { hex:'#E8A33D', text:'text-biz', icon: ICONS.default };
+        }
 
         let allPosts = [];
 
@@ -340,21 +347,25 @@
         }
 
         function createArticleCard(post) {
-            const colorClass = categoryColors[post.categoryColor] || categoryColors['blue'];
-            const accent = categoryAccent[post.categoryColor] || 'text-biz';
+            const m = metaFor(post.category);
 
             return `
                 <article class="card-rise bg-paper rounded-2xl border border-ink/10 overflow-hidden flex flex-col">
                     ${post.image ? `
                         <img src="${post.image}" alt="${post.title}" class="w-full h-44 object-cover">
                     ` : `
-                        <div class="h-44 bg-gradient-to-br ${colorClass} flex items-end p-5 topo-lines">
-                            <h3 class="font-display text-xl font-bold text-paper">${post.category}</h3>
+                        <div class="relative h-44 bg-gradient-to-br from-ink2 to-ink overflow-hidden">
+                            <div class="absolute inset-0 topo-lines opacity-70"></div>
+                            <div class="absolute inset-0" style="background: radial-gradient(58% 78% at 50% 40%, ${m.hex}26, transparent 70%)"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:${m.hex}">${m.icon}</svg>
+                            </div>
+                            <div class="absolute bottom-4 left-5 mono text-[11px] coord uppercase ${m.text}">${post.category} · MX</div>
                         </div>
                     `}
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex items-center gap-2 mono text-[11px] coord uppercase text-ink/45 mb-3">
-                            <span class="${accent}">${post.category}</span>
+                            <span class="${m.text}">${post.category}</span>
                             <span>·</span>
                             <span>${formatDate(post.date)}</span>
                             ${post.readTime ? `<span>·</span><span>${post.readTime}</span>` : ''}
