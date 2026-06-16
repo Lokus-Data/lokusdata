@@ -3,51 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Lokus Data</title>
-    <meta name="description" content="Artículos sobre análisis de datos INEGI, tendencias demográficas y económicas de México">
+    <title>Blog — Lokus Data | Inteligencia de datos de México</title>
+    <meta name="description" content="Análisis sobre la economía mexicana con datos oficiales (INEGI, CONAPO, SHCP, Censo Económico): manufactura, territorio, sectores y oportunidades de inversión.">
+
+    <!-- LOKUS-SEO-V1 -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Lokus Data">
+    <link rel="canonical" href="https://lokusdata.com/blog.html">
+    <link rel="icon" type="image/png" href="images/lokus-logo.png">
+    <link rel="apple-touch-icon" href="images/lokus-logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lokus Data">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Blog — Lokus Data | Inteligencia de datos de México">
+    <meta property="og:description" content="Análisis sobre la economía mexicana con datos oficiales: manufactura, territorio, sectores y oportunidades de inversión.">
+    <meta property="og:url" content="https://lokusdata.com/blog.html">
+    <meta property="og:image" content="https://lokusdata.com/images/og-lokusdata.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Lokus Data — La infraestructura de datos de México, convertida en decisiones">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lokusdata">
+    <meta name="twitter:title" content="Blog — Lokus Data | Inteligencia de datos de México">
+    <meta name="twitter:description" content="Análisis sobre la economía mexicana con datos oficiales de México.">
+    <meta name="twitter:image" content="https://lokusdata.com/images/og-lokusdata.png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
                     colors: {
-                        primary: '#2563eb',
-                        secondary: '#1e40af',
+                        ink: '#0A1626', ink2: '#0F2238',
+                        paper: '#F6F3EC', bone: '#EDE8DD',
+                        biz: '#E8A33D', analytics: '#3B82F6', agro: '#2FA86A',
+                        primary: '#3B82F6', secondary: '#1e40af', accent: '#E8A33D',
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-gray-50">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1,h2,h3,.font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .topo { background-image:
+            radial-gradient(120% 90% at 80% -10%, rgba(232,163,61,.10), transparent 55%),
+            radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.10), transparent 55%); }
+        .topo-lines { background-image:
+            repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+            repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px); }
+        .grid-ticks { background-image:
+            linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px; }
+        .coord { letter-spacing: .12em; }
+        .card-rise { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+        .card-rise:hover { transform: translateY(-6px); }
+        ::selection { background: #E8A33D; color: #0A1626; }
+        html { scroll-behavior: smooth; }
+    </style>
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCQHS6GXFE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VCQHS6GXFE');
+    </script>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <img src="images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
-                        <span class="text-2xl font-bold text-primary">
-                            Lokus<span class="text-gray-900">Data</span>
-                        </span>
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="images/lokus-logo.png" alt="Lokus Data" class="h-9 w-9">
+                    <span class="text-xl font-display font-bold tracking-tight">
+                        Lokus<span class="text-biz">Data</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="index.html#motor" class="hover:text-ink transition">El motor</a>
+                    <a href="blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="index.html#servicios" class="hover:text-ink transition">A medida</a>
+                    <a href="index.html#contacto" class="hover:text-ink transition">Contacto</a>
+                    <a href="index.html#productos"
+                       class="bg-ink text-paper px-5 py-2 rounded-full hover:bg-ink2 transition font-semibold">
+                        Entrar
                     </a>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
-                    <a href="index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
-                    <a href="index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
-                    <a href="blog.html" class="text-primary font-semibold">Blog</a>
-                    <a href="index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
-                </div>
-
-                <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary">
+                    <button id="mobile-menu-btn" class="text-ink" aria-label="Menú">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -56,209 +125,173 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">Inicio</a>
-                <a href="index.html#servicios" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">Servicios</a>
-                <a href="index.html#lokusanalytics" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">LokusAnalytics</a>
-                <a href="blog.html" class="block px-3 py-2 bg-blue-100 text-primary font-semibold">Blog</a>
-                <a href="index.html#contacto" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">Contacto</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="index.html#motor" class="block px-3 py-2 rounded hover:bg-bone">El motor</a>
+                <a href="blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="index.html#servicios" class="block px-3 py-2 rounded hover:bg-bone">A medida</a>
+                <a href="index.html#contacto" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
             </div>
         </div>
     </nav>
 
-    <!-- Header -->
-    <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-4">Blog de Lokus Data</h1>
-            <p class="text-xl text-blue-100 max-w-2xl mx-auto">
-                Análisis, tendencias y casos de uso sobre datos demográficos y económicos de México
+    <!-- ============ HEADER ============ -->
+    <section class="relative bg-ink text-paper overflow-hidden topo">
+        <div class="absolute inset-0 topo-lines opacity-60"></div>
+        <div class="absolute top-6 right-6 hidden sm:block mono text-[11px] text-paper/30 coord text-right leading-relaxed">
+            <div>BLOG · MX</div><div>DATA → LECTURA</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 relative z-10">
+            <div class="flex items-center gap-3 mb-5">
+                <span class="h-px w-8 bg-biz"></span>
+                <span class="mono text-xs coord text-biz uppercase">Inteligencia abierta</span>
+            </div>
+            <h1 class="font-display font-bold text-4xl sm:text-6xl leading-[1.04] max-w-3xl">
+                Del dato oficial a la <span class="text-biz">lectura de negocio.</span>
+            </h1>
+            <p class="mt-6 text-lg text-paper/70 max-w-2xl leading-relaxed">
+                Análisis sobre la economía mexicana con cifras del INEGI, CONAPO, SHCP y el
+                Censo Económico: manufactura, territorio, sectores y dónde está la oportunidad.
             </p>
         </div>
     </section>
 
-    <!-- Blog Articles -->
-    <section class="py-16">
+    <!-- ============ ARTÍCULOS ============ -->
+    <section class="py-16 bg-paper">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- Articles Grid (Cargado dinámicamente) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
-                <!-- Los artículos se cargan automáticamente desde posts.json -->
-            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7" id="articles-grid"></div>
 
-            <!-- Loading state -->
+            <!-- Loading -->
             <div id="loading-state" class="text-center py-12">
-                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-                <p class="mt-4 text-gray-600">Cargando artículos...</p>
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-biz"></div>
+                <p class="mt-4 text-ink/50 mono text-sm coord uppercase">Cargando artículos…</p>
             </div>
 
             <!-- Pagination -->
             <div id="pagination" class="hidden mt-12">
-                <div class="flex items-center justify-between border-t border-gray-200 pt-6">
-                    <!-- Info texto -->
-                    <p id="pagination-info" class="text-sm text-gray-600"></p>
-
-                    <!-- Controles -->
+                <div class="flex items-center justify-between border-t border-ink/10 pt-6 flex-wrap gap-4">
+                    <p id="pagination-info" class="text-sm text-ink/55 mono"></p>
                     <nav id="pagination-controls" class="flex items-center space-x-1" aria-label="Paginación"></nav>
                 </div>
             </div>
 
-            <!-- Empty state -->
+            <!-- Empty -->
             <div id="empty-state" class="text-center py-12 hidden">
-                <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">No hay artículos publicados</h3>
-                <p class="text-gray-600">Pronto publicaremos nuevos análisis y casos de estudio</p>
+                <h3 class="font-display text-2xl font-bold text-ink mb-2">No hay artículos publicados</h3>
+                <p class="text-ink/55">Pronto publicaremos nuevos análisis y casos de estudio.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- Newsletter Subscription -->
-    <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-16">
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="bg-bone grid-ticks py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <div class="bg-paper rounded-3xl border border-ink/10 p-8 md:p-12">
                 <div class="text-center mb-8">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                        📬 Recibe nuestros análisis en tu correo
+                    <span class="mono text-xs coord uppercase text-ink/50">Newsletter</span>
+                    <h2 class="font-display font-bold text-3xl text-ink mt-3 mb-3">
+                        Recibe nuestros análisis en tu correo
                     </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Suscríbete al newsletter y recibe análisis exclusivos, casos de estudio y actualizaciones de LokusAnalytics
+                    <p class="text-lg text-ink/60 max-w-2xl mx-auto">
+                        Análisis exclusivos, casos de estudio y novedades de la Lokus Data Platform.
                     </p>
                 </div>
 
-                <!-- Netlify Form -->
+                <!-- Netlify Form (preservado) -->
                 <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-xl mx-auto">
-                    <!-- Honeypot -->
                     <input type="hidden" name="form-name" value="newsletter">
-                    <p class="hidden">
-                        <label>No llenes esto: <input name="bot-field" /></label>
-                    </p>
+                    <p class="hidden"><label>No llenes esto: <input name="bot-field" /></label></p>
 
                     <div class="grid md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nombre</label>
-                            <input type="text" id="name" name="name" required
-                                   class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition"
-                                   placeholder="Tu nombre">
+                            <label for="name" class="block text-sm font-semibold text-ink/70 mb-2">Nombre</label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre"
+                                   class="w-full px-4 py-3 rounded-lg border border-ink/15 bg-bone focus:ring-2 focus:ring-biz focus:border-transparent outline-none transition">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required
-                                   class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition"
-                                   placeholder="tu@email.com">
+                            <label for="email" class="block text-sm font-semibold text-ink/70 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com"
+                                   class="w-full px-4 py-3 rounded-lg border border-ink/15 bg-bone focus:ring-2 focus:ring-biz focus:border-transparent outline-none transition">
                         </div>
                     </div>
 
                     <button type="submit"
-                            class="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-blue-900 transition transform hover:scale-105 shadow-lg">
-                        Suscribirme al Newsletter
+                            class="w-full bg-ink text-paper px-8 py-4 rounded-full font-semibold text-lg hover:bg-ink2 transition">
+                        Suscribirme al newsletter
                     </button>
-
-                    <p class="text-center text-sm text-gray-500 mt-4">
-                        🔒 Sin spam. Cancela cuando quieras. Enviamos máximo 2 emails al mes.
+                    <p class="text-center text-sm text-ink/45 mt-4">
+                        🔒 Sin spam. Cancela cuando quieras. Máximo 2 correos al mes.
                     </p>
                 </form>
-
-                <!-- Benefits -->
-                <div class="grid md:grid-cols-3 gap-6 mt-12">
-                    <div class="text-center">
-                        <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-1">Análisis Exclusivos</h4>
-                        <p class="text-sm text-gray-600">Contenido premium sobre datos INEGI</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-full mb-3">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-1">Casos de Estudio</h4>
-                        <p class="text-sm text-gray-600">Ejemplos reales de análisis</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-3">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-                            </svg>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-1">Novedades</h4>
-                        <p class="text-sm text-gray-600">Actualizaciones de LokusAnalytics</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">
-                ¿Quieres análisis personalizados de datos INEGI?
+    <!-- ============ CTA ============ -->
+    <section class="bg-ink text-paper py-16 topo relative overflow-hidden">
+        <div class="absolute inset-0 topo-lines opacity-50"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="font-display font-bold text-3xl sm:text-4xl mb-4">
+                ¿Quieres este análisis para tu territorio o sector?
             </h2>
-            <p class="text-xl text-blue-100 mb-8">
-                Prueba LokusAnalytics gratis o solicita una consultoría personalizada
+            <p class="text-lg text-paper/70 mb-8">
+                Explora los productos de la Lokus Data Platform o pídenos un estudio a medida.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://app.lokusdata.com"
-                   target="_blank"
-                   class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
-                    Probar LokusAnalytics
+                <a href="index.html#productos"
+                   class="bg-biz text-ink px-8 py-4 rounded-full font-semibold text-lg hover:brightness-105 transition">
+                    Ver los productos
                 </a>
                 <a href="index.html#contacto"
-                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition">
+                   class="border border-paper/25 text-paper px-8 py-4 rounded-full font-semibold text-lg hover:bg-paper/10 transition">
                     Contactar
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-ink text-paper/70 py-14 border-t border-paper/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
-                    <p class="text-sm">
-                        Transformamos datos en decisiones estratégicas
-                    </p>
+                    <h3 class="text-2xl font-display font-bold mb-3 text-paper">Lokus<span class="text-biz">Data</span></h3>
+                    <p class="text-sm leading-relaxed">La infraestructura de datos de México, convertida en decisiones.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <h4 class="font-display font-semibold mb-4 text-paper">Productos</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="index.html#servicios" class="hover:text-white transition">Consultoría</a></li>
-                        <li><a href="index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
-                        <li><a href="index.html#servicios" class="hover:text-white transition">Plataformas Personalizadas</a></li>
+                        <li><a href="https://plataforma.lokusdata.com" target="_blank" class="hover:text-biz">Lokus Biz</a></li>
+                        <li><a href="https://app.lokusdata.com" target="_blank" class="hover:text-analytics">LokusAnalytics</a></li>
+                        <li><a href="https://www.agropreciosmx.com" target="_blank" class="hover:text-agro">AgroPrecios 🌽</a></li>
+                        <li><a href="index.html#servicios" class="hover:text-paper">Soluciones a medida</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <h4 class="font-display font-semibold mb-4 text-paper">Recursos</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                        <li><a href="blog.html" class="hover:text-paper">Blog</a></li>
+                        <li><a href="index.html#motor" class="hover:text-paper">El motor de datos</a></li>
+                        <li><a href="index.html#contacto" class="hover:text-paper">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <h4 class="font-display font-semibold mb-4 text-paper">Contacto</h4>
                     <ul class="space-y-2 text-sm">
-                        <li>analytics@lokusdata.com</li>
-                        <li>+52 55 2272 7458</li>
+                        <li><a href="mailto:juanheriberto.rosas@lokusdata.com" class="hover:text-paper">juanheriberto.rosas@lokusdata.com</a></li>
+                        <li>Ciudad de México</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-                <p>&copy; 2025 Lokus Data. Todos los derechos reservados.</p>
+            <div class="border-t border-paper/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex space-x-6 text-sm">
+                    <a href="https://app.lokusdata.com/legal/privacidad" target="_blank" class="hover:text-paper">Privacidad</a>
+                    <a href="https://app.lokusdata.com/legal/terminos" target="_blank" class="hover:text-paper">Términos</a>
+                </div>
+                <p class="text-sm mono coord">&copy; 2026 LOKUS DATA · MÉXICO</p>
             </div>
         </div>
     </footer>
@@ -267,48 +300,38 @@
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link =>
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+        );
     </script>
 
     <!-- Blog Posts Loader con Paginación -->
     <script>
         const POSTS_PER_PAGE = 9;
 
-        // Mapeo de colores de categorías
+        // Acento de etiqueta por color de categoría (texto)
+        const categoryAccent = {
+            'blue': 'text-analytics', 'green': 'text-agro', 'emerald': 'text-agro',
+            'purple': 'text-biz', 'red': 'text-biz', 'yellow': 'text-biz',
+            'indigo': 'text-analytics', 'pink': 'text-biz'
+        };
+        // Header con degradado cuando el post no tiene imagen
         const categoryColors = {
-            'blue': 'from-blue-500 to-blue-700',
-            'green': 'from-green-500 to-green-700',
-            'purple': 'from-purple-500 to-purple-700',
-            'red': 'from-red-500 to-red-700',
-            'yellow': 'from-yellow-500 to-yellow-700',
-            'indigo': 'from-indigo-500 to-indigo-700',
-            'pink': 'from-pink-500 to-pink-700',
-            'emerald': 'from-emerald-500 to-emerald-700'
+            'blue': 'from-analytics to-ink2', 'green': 'from-agro to-ink2',
+            'purple': 'from-biz to-ink2', 'red': 'from-biz to-ink2',
+            'yellow': 'from-biz to-ink2', 'indigo': 'from-analytics to-ink2',
+            'pink': 'from-biz to-ink2', 'emerald': 'from-agro to-ink2'
         };
 
-        // Íconos SVG por categoría
-        const categoryIcons = {
-            'Economía': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>',
-            'Demografía': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>',
-            'Análisis': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>',
-            'Tecnología': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>',
-            'default': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>'
-        };
-
-        // Estado global
         let allPosts = [];
 
-        // Leer página actual desde URL
         function getCurrentPage() {
             const params = new URLSearchParams(window.location.search);
             const page = parseInt(params.get('page')) || 1;
             return Math.max(1, page);
         }
 
-        // Función para formatear fecha
         function formatDate(dateString) {
             const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
                           'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
@@ -316,44 +339,37 @@
             return `${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`;
         }
 
-        // Función para crear tarjeta de artículo
         function createArticleCard(post) {
             const colorClass = categoryColors[post.categoryColor] || categoryColors['blue'];
-            const icon = categoryIcons[post.category] || categoryIcons['default'];
+            const accent = categoryAccent[post.categoryColor] || 'text-biz';
 
             return `
-                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-1">
+                <article class="card-rise bg-paper rounded-2xl border border-ink/10 overflow-hidden flex flex-col">
                     ${post.image ? `
-                        <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-44 object-cover">
                     ` : `
-                        <div class="h-48 bg-gradient-to-br ${colorClass} flex items-center justify-center">
-                            <div class="text-white text-center p-6">
-                                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    ${icon}
-                                </svg>
-                                <h3 class="text-2xl font-bold">${post.category}</h3>
-                            </div>
+                        <div class="h-44 bg-gradient-to-br ${colorClass} flex items-end p-5 topo-lines">
+                            <h3 class="font-display text-xl font-bold text-paper">${post.category}</h3>
                         </div>
                     `}
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
-                            </svg>
-                            ${formatDate(post.date)}
-                            ${post.readTime ? `<span class="mx-2">•</span><span>${post.readTime} de lectura</span>` : ''}
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mono text-[11px] coord uppercase text-ink/45 mb-3">
+                            <span class="${accent}">${post.category}</span>
+                            <span>·</span>
+                            <span>${formatDate(post.date)}</span>
+                            ${post.readTime ? `<span>·</span><span>${post.readTime}</span>` : ''}
                         </div>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                        <h2 class="font-display text-xl font-semibold text-ink mb-3 leading-snug">
                             ${post.title}
                         </h2>
-                        <p class="text-gray-600 mb-4">
+                        <p class="text-ink/60 text-sm mb-5 flex-1 leading-relaxed">
                             ${post.excerpt}
                         </p>
                         <a href="${post.url}"
-                           class="inline-flex items-center text-primary font-semibold hover:text-secondary transition">
+                           class="inline-flex items-center gap-2 font-semibold text-ink hover:text-biz transition mt-auto">
                             Leer más
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
                         </a>
                     </div>
@@ -361,7 +377,6 @@
             `;
         }
 
-        // Renderizar página
         function renderPage(page) {
             const grid = document.getElementById('articles-grid');
             const paginationContainer = document.getElementById('pagination');
@@ -371,59 +386,47 @@
             const totalPosts = allPosts.length;
             const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
 
-            // Validar página
             if (page > totalPages) page = totalPages;
             if (page < 1) page = 1;
 
-            // Slice de posts para esta página
             const start = (page - 1) * POSTS_PER_PAGE;
             const end = start + POSTS_PER_PAGE;
             const pagePosts = allPosts.slice(start, end);
 
-            // Renderizar artículos
             grid.innerHTML = pagePosts.map(post => createArticleCard(post)).join('');
 
-            // Si solo hay 1 página, no mostrar paginación
             if (totalPages <= 1) {
                 paginationContainer.classList.add('hidden');
                 return;
             }
 
-            // Mostrar paginación
             paginationContainer.classList.remove('hidden');
 
-            // Info: "Mostrando 1-9 de 24 artículos"
             const showing_start = start + 1;
             const showing_end = Math.min(end, totalPosts);
             paginationInfo.textContent = `Mostrando ${showing_start}-${showing_end} de ${totalPosts} artículos`;
 
-            // Construir controles
             let controlsHTML = '';
 
-            // Botón Anterior
             if (page > 1) {
                 controlsHTML += `
-                    <a href="?page=${page - 1}" class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition" data-page="${page - 1}">
+                    <a href="?page=${page - 1}" class="px-3 py-2 text-sm font-medium text-ink/70 bg-paper border border-ink/15 rounded-lg hover:bg-bone transition" data-page="${page - 1}">
                         <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                         Anterior
                     </a>`;
             }
 
-            // Números de página
             for (let i = 1; i <= totalPages; i++) {
                 if (i === page) {
-                    controlsHTML += `
-                        <span class="px-4 py-2 text-sm font-bold text-white bg-primary rounded-lg">${i}</span>`;
+                    controlsHTML += `<span class="px-4 py-2 text-sm font-bold text-paper bg-ink rounded-lg">${i}</span>`;
                 } else {
-                    controlsHTML += `
-                        <a href="?page=${i}" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition" data-page="${i}">${i}</a>`;
+                    controlsHTML += `<a href="?page=${i}" class="px-4 py-2 text-sm font-medium text-ink/70 bg-paper border border-ink/15 rounded-lg hover:bg-bone transition" data-page="${i}">${i}</a>`;
                 }
             }
 
-            // Botón Siguiente
             if (page < totalPages) {
                 controlsHTML += `
-                    <a href="?page=${page + 1}" class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition" data-page="${page + 1}">
+                    <a href="?page=${page + 1}" class="px-3 py-2 text-sm font-medium text-ink/70 bg-paper border border-ink/15 rounded-lg hover:bg-bone transition" data-page="${page + 1}">
                         Siguiente
                         <svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>`;
@@ -431,46 +434,34 @@
 
             paginationControls.innerHTML = controlsHTML;
 
-            // Click handlers para navegación sin recarga completa
             paginationControls.querySelectorAll('a[data-page]').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetPage = parseInt(this.dataset.page);
                     history.pushState(null, '', `?page=${targetPage}`);
                     renderPage(targetPage);
-                    // Scroll al inicio del grid
                     document.getElementById('articles-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
         }
 
-        // Cargar posts desde posts.json
         async function loadPosts() {
             const loadingState = document.getElementById('loading-state');
             const emptyState = document.getElementById('empty-state');
 
             try {
                 const response = await fetch('blog/posts.json');
-
-                if (!response.ok) {
-                    throw new Error('No se pudo cargar posts.json');
-                }
+                if (!response.ok) throw new Error('No se pudo cargar posts.json');
 
                 allPosts = await response.json();
-
-                // Ocultar loading
                 loadingState.classList.add('hidden');
 
                 if (allPosts.length === 0) {
                     emptyState.classList.remove('hidden');
                 } else {
-                    // Ordenar posts por fecha (más recientes primero)
                     allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                    // Renderizar página actual
                     renderPage(getCurrentPage());
                 }
-
             } catch (error) {
                 console.error('Error cargando posts:', error);
                 loadingState.classList.add('hidden');
@@ -478,14 +469,10 @@
             }
         }
 
-        // Manejar navegación del browser (back/forward)
         window.addEventListener('popstate', function() {
-            if (allPosts.length > 0) {
-                renderPage(getCurrentPage());
-            }
+            if (allPosts.length > 0) renderPage(getCurrentPage());
         });
 
-        // Cargar posts cuando la página se carga
         document.addEventListener('DOMContentLoaded', loadPosts);
     </script>
 
