@@ -8,3 +8,4 @@ scripts/.ads-published.json
 docs/GOOGLE-ADS-SETUP.md
 
 .claude/worktrees/
+*.legacy-backup.html
