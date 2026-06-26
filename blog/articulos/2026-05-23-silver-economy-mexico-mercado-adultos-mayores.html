@@ -6,21 +6,14 @@
     <title>El Mapa de la Silver Economy Mexicana: D&oacute;nde Nace el Mercado de 28 Millones de Adultos Mayores - Lokus Data</title>
     <meta name="description" content="La poblaci&oacute;n 60+ crecer&aacute; 57.3% al 2040 en M&eacute;xico. Quintana Roo (+115.6%), BCS, Quer&eacute;taro, Baja California y Nuevo Le&oacute;n lideran un mercado de 28 millones de consumidores en salud privada, vivienda asistida, retiro y ocio senior.">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#1e40af',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Estilos compilados (Tailwind CLI + sistema cartográfico) -->
+    <link rel="stylesheet" href="../../assets/styles.css">
+
     <!-- LOKUS-SEO-V1 -->
     <link rel="canonical" href="https://lokusdata.com/blog/articulos/2026-05-23-silver-economy-mexico-mercado-adultos-mayores.html">
     <meta property="og:type" content="article">
@@ -71,28 +64,48 @@
 }
     </script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-paper text-ink antialiased">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="../../index.html" class="flex items-center space-x-2">
-                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
-                        <span class="text-2xl font-bold text-primary">
-                            Lokus<span class="text-gray-900">Data</span>
-                        </span>
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <img src="../../images/lokus-logo.png" alt="Lokus Data" class="h-9 w-9">
+                    <span class="text-xl font-display font-bold tracking-tight">
+                        Lokus<span class="text-biz">Data</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="../../index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="../../index.html#motor" class="hover:text-ink transition">El motor</a>
+                    <a href="../../blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="../../index.html#servicios" class="hover:text-ink transition">A medida</a>
+                    <a href="../../index.html#contacto" class="hover:text-ink transition">Contacto</a>
+                    <a href="../../index.html#productos"
+                       class="bg-ink text-paper px-5 py-2 rounded-full hover:bg-ink2 transition font-semibold">
+                        Entrar
                     </a>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../../index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
-                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
-                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
-                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
-                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-ink" aria-label="Menú">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="../../index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="../../index.html#motor" class="block px-3 py-2 rounded hover:bg-bone">El motor</a>
+                <a href="../../blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="../../index.html#servicios" class="block px-3 py-2 rounded hover:bg-bone">A medida</a>
+                <a href="../../index.html#contacto" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
             </div>
         </div>
     </nav>
@@ -102,7 +115,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Back to blog -->
-            <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary mb-8 transition">
+            <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink mb-8 transition">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
@@ -111,7 +124,7 @@
 
             <!-- Article metadata -->
             <div class="mb-8">
-                <div class="flex items-center text-sm text-gray-500 mb-4">
+                <div class="flex items-center text-sm text-ink/50 mb-4">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
                     </svg>
@@ -120,21 +133,21 @@
                     <span>16 min de lectura</span>
                 </div>
 
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-ink mb-4">
                     El Mapa de la Silver Economy Mexicana: D&oacute;nde Nace el Mercado de 28 Millones de Adultos Mayores
                 </h1>
 
-                <p class="text-xl text-gray-600">
+                <p class="text-xl text-ink/60">
                     La poblaci&oacute;n 60+ crecer&aacute; 57.3% al 2040. Los estados ricos lideran la expansi&oacute;n: salud privada, vivienda asistida, ocio senior. Un mercado que apenas despierta y donde la ventana de entrada temprana no estar&aacute; abierta mucho tiempo.
                 </p>
-                <p class="text-lg text-emerald-700 font-semibold mt-2">
+                <p class="text-lg text-agro font-semibold mt-2">
                     An&aacute;lisis | Mercado | Tendencia &mdash; Mayo 2026
                 </p>
             </div>
 
             <!-- Featured Image Placeholder -->
-            <div class="mb-8 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-xl h-96 flex items-center justify-center">
-                <div class="text-white text-center">
+            <div class="mb-8 bg-ink topo rounded-xl h-96 flex items-center justify-center">
+                <div class="text-paper text-center">
                     <div class="text-8xl mb-4">&#128104;&#127995;&#8205;&#129460;</div>
                     <p class="text-2xl font-bold">28 millones de adultos mayores al 2040</p>
                     <p class="text-lg opacity-80">+57.3% en 14 a&ntilde;os | Proyecciones CONAPO 2026-2040</p>
@@ -145,84 +158,84 @@
             <div class="prose prose-lg max-w-none">
 
                 <!-- INTRO -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El panorama: por qu&eacute; este mercado importa ahora</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El panorama: por qu&eacute; este mercado importa ahora</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Hay un mercado de 28 millones de consumidores tomando forma en M&eacute;xico, y la mayor&iacute;a de las empresas todav&iacute;a lo trata como una nota al pie. La poblaci&oacute;n de 60 a&ntilde;os y m&aacute;s pasar&aacute; de <strong>17.8 millones en 2026 a 28.0 millones en 2040</strong> &mdash; un crecimiento de 57.3% en catorce a&ntilde;os, seg&uacute;n las proyecciones del CONAPO. Pero el dato que importa para una estrategia de expansi&oacute;n no es el promedio nacional: es <em>d&oacute;nde</em> crece ese mercado m&aacute;s r&aacute;pido y <em>qui&eacute;n</em> tiene capacidad de pago. Porque ah&iacute;, en el cruce de velocidad y poder adquisitivo, est&aacute; naciendo la silver economy mexicana.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     La silver economy &mdash; el conjunto de bienes y servicios dirigidos a la poblaci&oacute;n mayor &mdash; abarca desde salud privada y farmacia especializada hasta vivienda asistida, turismo senior, servicios financieros para el retiro y ocio. En mercados maduros representa una porci&oacute;n creciente del consumo total. En M&eacute;xico apenas despierta, y eso es precisamente la oportunidad: entrar antes de que el mercado se sature.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     La clave es entender que no todos los mercados senior son iguales. Un adulto mayor en un estado con ingreso trimestral de $48,548 (Guerrero) no representa la misma demanda efectiva que uno en un estado con $117,034 (Nuevo Le&oacute;n), seg&uacute;n la ENIGH 2024. La oportunidad real est&aacute; donde coinciden tres condiciones: el mercado crece r&aacute;pido, es grande, y tiene con qu&eacute; pagar.
                 </p>
 
                 <!-- MAPA DE LA OPORTUNIDAD -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El mapa de la oportunidad: d&oacute;nde crece y d&oacute;nde paga</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El mapa de la oportunidad: d&oacute;nde crece y d&oacute;nde paga</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El liderazgo del crecimiento no est&aacute; donde la intuici&oacute;n lo coloca. El estado con el mercado senior de expansi&oacute;n m&aacute;s acelerada es <strong>Quintana Roo: su poblaci&oacute;n mayor crecer&aacute; 115.6% al 2040</strong> &mdash; pr&aacute;cticamente se duplica, de 185 mil a 399 mil personas. Le siguen Baja California Sur (+91.4%), Quer&eacute;taro (+89.5%), Baja California (+84.1%) y Nuevo Le&oacute;n (+72.5%).
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Estos cinco estados comparten el perfil ideal para una estrategia de entrada temprana: crecen r&aacute;pido, tienen pobreza baja y un consumidor con capacidad de gasto s&oacute;lida.
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Estado</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Crecimiento 60+ 2026-2040</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Mercado 60+ en 2040</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Ingreso trim. (MXN)</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Pobreza</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Estado</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Crecimiento 60+ 2026-2040</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Mercado 60+ en 2040</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Ingreso trim. (MXN)</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Pobreza</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b bg-amber-50"><td class="px-4 py-3 font-semibold text-gray-900">Quintana Roo</td><td class="px-4 py-3 text-right font-bold text-amber-700">+115.6%</td><td class="px-4 py-3 text-right text-gray-700">398,763</td><td class="px-4 py-3 text-right text-gray-700">$88,754</td><td class="px-4 py-3 text-right text-gray-700">17.7%</td></tr>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Baja California Sur</td><td class="px-4 py-3 text-right font-bold text-emerald-700">+91.4%</td><td class="px-4 py-3 text-right text-gray-700">191,592</td><td class="px-4 py-3 text-right text-gray-700">$104,728</td><td class="px-4 py-3 text-right text-gray-700">10.2%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Quer&eacute;taro</td><td class="px-4 py-3 text-right font-bold text-emerald-700">+89.5%</td><td class="px-4 py-3 text-right text-gray-700">585,451</td><td class="px-4 py-3 text-right text-gray-700">$97,615</td><td class="px-4 py-3 text-right text-gray-700">16.3%</td></tr>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Baja California</td><td class="px-4 py-3 text-right font-bold text-emerald-700">+84.1%</td><td class="px-4 py-3 text-right text-gray-700">915,048</td><td class="px-4 py-3 text-right text-gray-700">$101,187</td><td class="px-4 py-3 text-right text-gray-700">9.9%</td></tr>
-                            <tr><td class="px-4 py-3 font-semibold text-gray-900">Nuevo Le&oacute;n</td><td class="px-4 py-3 text-right font-bold text-emerald-700">+72.5%</td><td class="px-4 py-3 text-right text-gray-700">1,417,315</td><td class="px-4 py-3 text-right font-bold text-emerald-700">$117,034</td><td class="px-4 py-3 text-right text-gray-700">10.6%</td></tr>
+                            <tr class="border-b bg-bone"><td class="px-4 py-3 font-semibold text-ink">Quintana Roo</td><td class="px-4 py-3 text-right font-bold text-analytics">+115.6%</td><td class="px-4 py-3 text-right text-ink/75">398,763</td><td class="px-4 py-3 text-right text-ink/75">$88,754</td><td class="px-4 py-3 text-right text-ink/75">17.7%</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Baja California Sur</td><td class="px-4 py-3 text-right font-bold text-agro">+91.4%</td><td class="px-4 py-3 text-right text-ink/75">191,592</td><td class="px-4 py-3 text-right text-ink/75">$104,728</td><td class="px-4 py-3 text-right text-ink/75">10.2%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Quer&eacute;taro</td><td class="px-4 py-3 text-right font-bold text-agro">+89.5%</td><td class="px-4 py-3 text-right text-ink/75">585,451</td><td class="px-4 py-3 text-right text-ink/75">$97,615</td><td class="px-4 py-3 text-right text-ink/75">16.3%</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Baja California</td><td class="px-4 py-3 text-right font-bold text-agro">+84.1%</td><td class="px-4 py-3 text-right text-ink/75">915,048</td><td class="px-4 py-3 text-right text-ink/75">$101,187</td><td class="px-4 py-3 text-right text-ink/75">9.9%</td></tr>
+                            <tr><td class="px-4 py-3 font-semibold text-ink">Nuevo Le&oacute;n</td><td class="px-4 py-3 text-right font-bold text-agro">+72.5%</td><td class="px-4 py-3 text-right text-ink/75">1,417,315</td><td class="px-4 py-3 text-right font-bold text-agro">$117,034</td><td class="px-4 py-3 text-right text-ink/75">10.6%</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-sm text-gray-500 italic mb-6">
+                <p class="text-sm text-ink/50 italic mb-6">
                     Fuente: CONAPO (proyecciones 2026-2040), ENIGH 2024 estatal (ingreso), CONEVAL 2024 (pobreza).
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     La lectura estrat&eacute;gica: estos no son los estados m&aacute;s viejos hoy, sino los que envejecer&aacute;n m&aacute;s r&aacute;pido. Recibieron migraci&oacute;n joven hace dos d&eacute;cadas &mdash; turismo, manufactura de exportaci&oacute;n, calidad de vida &mdash; y esa generaci&oacute;n est&aacute; madurando como cliente senior justo ahora. Quien construya marca, red de distribuci&oacute;n y oferta de servicios en estos territorios esta d&eacute;cada, capturar&aacute; un mercado en plena formaci&oacute;n.
                 </p>
 
                 <!-- EL CONTRASTE -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El contraste que redefine la estrategia: el mercado m&aacute;s grande ya no es el de mayor crecimiento</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El contraste que redefine la estrategia: el mercado m&aacute;s grande ya no es el de mayor crecimiento</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Aqu&iacute; est&aacute; el insight que separa una estrategia de expansi&oacute;n inteligente de una que llega tarde. La Ciudad de M&eacute;xico es hoy el mercado senior m&aacute;s maduro del pa&iacute;s: edad mediana de 37.4 a&ntilde;os (la m&aacute;s alta) y la mayor proporci&oacute;n de poblaci&oacute;n mayor proyectada para 2040 (27.1% de sus habitantes). Pero precisamente porque ya envejeci&oacute;, su crecimiento es de los m&aacute;s lentos: apenas 37.8%.
                 </p>
 
-                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg mb-6">
-                    <p class="text-emerald-900 font-semibold">Insight estrat&eacute;gico</p>
-                    <p class="text-emerald-800">La CDMX es un mercado de <strong>consolidaci&oacute;n y participaci&oacute;n</strong> &mdash; grande, presente, competido. Los estados del norte y el sureste tur&iacute;stico son mercados de <strong>expansi&oacute;n y captura temprana</strong> &mdash; donde la demanda apenas se forma y la competencia a&uacute;n no llega.</p>
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">Insight estrat&eacute;gico</p>
+                    <p class="text-ink">La CDMX es un mercado de <strong>consolidaci&oacute;n y participaci&oacute;n</strong> &mdash; grande, presente, competido. Los estados del norte y el sureste tur&iacute;stico son mercados de <strong>expansi&oacute;n y captura temprana</strong> &mdash; donde la demanda apenas se forma y la competencia a&uacute;n no llega.</p>
                 </div>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Una cadena de farmacias, una aseguradora o un desarrollador de vivienda asistida que solo mire el tama&ntilde;o actual del mercado invertir&aacute; donde la curva se aplana, en lugar de donde despega.
                 </p>
 
                 <!-- CADENA DE VALOR -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">La cadena de valor de la silver economy</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">La cadena de valor de la silver economy</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El mercado senior no es un sector &uacute;nico, sino un ecosistema de eslabones complementarios:
                 </p>
 
-                <ul class="text-gray-700 mb-6 space-y-3 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-3 list-disc pl-6">
                     <li><strong>Salud y farmacia.</strong> Atenci&oacute;n de enfermedades cr&oacute;nico-degenerativas, farmacia especializada, dispositivos m&eacute;dicos, telemedicina geri&aacute;trica. El eslab&oacute;n de mayor demanda y mayor ticket.</li>
                     <li><strong>Vivienda y cuidados.</strong> Vivienda asistida, residencias senior, servicios de cuidado a domicilio. Pr&aacute;cticamente inexistente en los estados de crecimiento acelerado: un mercado virgen.</li>
                     <li><strong>Servicios financieros.</strong> Productos de retiro, seguros de gastos m&eacute;dicos mayores, cr&eacute;ditos adaptados. El alto ingreso del norte (Nuevo Le&oacute;n, BCS, Baja California, todos sobre los $100 mil trimestrales) lo hace especialmente atractivo.</li>
@@ -230,78 +243,78 @@
                 </ul>
 
                 <!-- OPORTUNIDADES Y RIESGOS -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Oportunidades y riesgos</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Oportunidades y riesgos</h2>
 
-                <p class="text-gray-700 mb-4"><strong class="text-emerald-700">La oportunidad principal:</strong> los estados de crecimiento acelerado y alto ingreso (Quintana Roo, BCS, Quer&eacute;taro, Baja California, Nuevo Le&oacute;n) ofrecen un mercado que crece r&aacute;pido, paga bien y todav&iacute;a no est&aacute; saturado de oferta especializada. Es el escenario ideal para una estrategia de entrada temprana con captura de marca.</p>
+                <p class="text-ink/75 mb-4"><strong class="text-agro">La oportunidad principal:</strong> los estados de crecimiento acelerado y alto ingreso (Quintana Roo, BCS, Quer&eacute;taro, Baja California, Nuevo Le&oacute;n) ofrecen un mercado que crece r&aacute;pido, paga bien y todav&iacute;a no est&aacute; saturado de oferta especializada. Es el escenario ideal para una estrategia de entrada temprana con captura de marca.</p>
 
-                <p class="text-gray-700 mb-4"><strong class="text-amber-700">El riesgo a evitar:</strong> asumir que el sur representa mercado equivalente. Estados como Guerrero (ingreso $48,548, pobreza 58.1%) u Oaxaca ($52,025, pobreza 51.6%) tienen poblaciones mayores grandes, pero con demanda efectiva limitada por capacidad de pago. Ah&iacute; el mercado existe en personas, no en pesos &mdash; al menos para oferta privada de valor agregado.</p>
+                <p class="text-ink/75 mb-4"><strong class="text-analytics">El riesgo a evitar:</strong> asumir que el sur representa mercado equivalente. Estados como Guerrero (ingreso $48,548, pobreza 58.1%) u Oaxaca ($52,025, pobreza 51.6%) tienen poblaciones mayores grandes, pero con demanda efectiva limitada por capacidad de pago. Ah&iacute; el mercado existe en personas, no en pesos &mdash; al menos para oferta privada de valor agregado.</p>
 
-                <p class="text-gray-700 mb-6"><strong class="text-red-700">El riesgo de timing:</strong> el mercado de la CDMX ya est&aacute; maduro y competido. Entrar ah&iacute; ahora es competir por participaci&oacute;n, no por crecimiento.</p>
+                <p class="text-ink/75 mb-6"><strong class="text-red-700">El riesgo de timing:</strong> el mercado de la CDMX ya est&aacute; maduro y competido. Entrar ah&iacute; ahora es competir por participaci&oacute;n, no por crecimiento.</p>
 
                 <!-- INSIGHTS PARA LA ACCIÓN -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Insights para la acci&oacute;n</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Insights para la acci&oacute;n</h2>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Sector</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">D&oacute;nde apostar</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Por qu&eacute;</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Sector</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">D&oacute;nde apostar</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Por qu&eacute;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Salud privada y farmacia</td><td class="px-4 py-3 text-gray-700">Quintana Roo, Quer&eacute;taro, Nuevo Le&oacute;n</td><td class="px-4 py-3 text-gray-700">Crecimiento acelerado + capacidad de pago + d&eacute;ficit actual de oferta especializada</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Vivienda asistida y residencias senior</td><td class="px-4 py-3 text-gray-700">Baja California Sur, Baja California</td><td class="px-4 py-3 text-gray-700">Mejor perfil ingreso/clima/crecimiento. Mercado pr&aacute;cticamente inexplorado</td></tr>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Servicios financieros de retiro</td><td class="px-4 py-3 text-gray-700">Nuevo Le&oacute;n, BCS</td><td class="px-4 py-3 text-gray-700">Mayor nivel de ingreso del consumidor mayor</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Turismo y ocio senior</td><td class="px-4 py-3 text-gray-700">Quintana Roo</td><td class="px-4 py-3 text-gray-700">Aprovecha infraestructura tur&iacute;stica existente para pivotar al segmento maduro</td></tr>
-                            <tr><td class="px-4 py-3 font-semibold text-gray-900">Consolidaci&oacute;n a escala</td><td class="px-4 py-3 text-gray-700">CDMX y Estado de M&eacute;xico</td><td class="px-4 py-3 text-gray-700">Edomex sumar&aacute; 1.5 millones de adultos mayores nuevos; volumen absoluto justifica operaciones grandes aunque el crecimiento sea menor</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Salud privada y farmacia</td><td class="px-4 py-3 text-ink/75">Quintana Roo, Quer&eacute;taro, Nuevo Le&oacute;n</td><td class="px-4 py-3 text-ink/75">Crecimiento acelerado + capacidad de pago + d&eacute;ficit actual de oferta especializada</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Vivienda asistida y residencias senior</td><td class="px-4 py-3 text-ink/75">Baja California Sur, Baja California</td><td class="px-4 py-3 text-ink/75">Mejor perfil ingreso/clima/crecimiento. Mercado pr&aacute;cticamente inexplorado</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Servicios financieros de retiro</td><td class="px-4 py-3 text-ink/75">Nuevo Le&oacute;n, BCS</td><td class="px-4 py-3 text-ink/75">Mayor nivel de ingreso del consumidor mayor</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Turismo y ocio senior</td><td class="px-4 py-3 text-ink/75">Quintana Roo</td><td class="px-4 py-3 text-ink/75">Aprovecha infraestructura tur&iacute;stica existente para pivotar al segmento maduro</td></tr>
+                            <tr><td class="px-4 py-3 font-semibold text-ink">Consolidaci&oacute;n a escala</td><td class="px-4 py-3 text-ink/75">CDMX y Estado de M&eacute;xico</td><td class="px-4 py-3 text-ink/75">Edomex sumar&aacute; 1.5 millones de adultos mayores nuevos; volumen absoluto justifica operaciones grandes aunque el crecimiento sea menor</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-lg mb-6">
-                    <p class="text-amber-900 font-semibold">El dato que define la oportunidad</p>
-                    <p class="text-amber-800">Quintana Roo duplicar&aacute; su mercado senior (+115.6%) con un consumidor de $88,754 trimestrales. Es el caso m&aacute;s claro de un nicho que el ruido del turismo joven ha mantenido invisible para los inversionistas tradicionales.</p>
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">El dato que define la oportunidad</p>
+                    <p class="text-ink">Quintana Roo duplicar&aacute; su mercado senior (+115.6%) con un consumidor de $88,754 trimestrales. Es el caso m&aacute;s claro de un nicho que el ruido del turismo joven ha mantenido invisible para los inversionistas tradicionales.</p>
                 </div>
 
                 <!-- CONCLUSIÓN -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Conclusi&oacute;n</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Conclusi&oacute;n</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     M&eacute;xico tiene catorce a&ntilde;os antes de que su mercado senior se duplique, y la ventana de entrada temprana no estar&aacute; abierta mucho tiempo. El mapa de la oportunidad no apunta a donde hay m&aacute;s adultos mayores hoy, sino a donde habr&aacute; muchos m&aacute;s ma&ntilde;ana y con capacidad de pago: <strong>el sureste tur&iacute;stico y el norte industrial</strong>.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     La pregunta para cualquier estrategia de expansi&oacute;n es simple: &iquest;vas a construir presencia donde el mercado despega, o vas a llegar cuando la curva ya se aplan&oacute;?
                 </p>
 
                 <!-- FUENTES -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Fuentes utilizadas</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Fuentes utilizadas</h2>
 
-                <ul class="text-gray-700 mb-6 space-y-2 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-2 list-disc pl-6">
                     <li><strong>CONAPO</strong> (proyecciones 2026-2040): poblaci&oacute;n 60+, edad mediana, proporci&oacute;n de poblaci&oacute;n mayor.</li>
                     <li><strong>ENIGH 2024</strong> (nivel estatal): ingreso corriente promedio trimestral por hogar.</li>
                     <li><strong>CONEVAL 2024</strong>: porcentaje de poblaci&oacute;n en situaci&oacute;n de pobreza estatal.</li>
                     <li>Nivel de an&aacute;lisis: estatal (32 entidades federativas).</li>
                 </ul>
 
-                <p class="text-sm text-gray-500 italic mt-8">
+                <p class="text-sm text-ink/50 italic mt-8">
                     An&aacute;lisis basado en proyecciones CONAPO 2020-2070, ENIGH 2024 y mediciones CONEVAL 2024. Metodolog&iacute;a propia de cruce demogr&aacute;fico-econ&oacute;mico por entidad federativa. Para an&aacute;lisis sectoriales y territoriales con datos oficiales integrados a tu informaci&oacute;n interna, visita lokusdata.com
                 </p>
 
             </div>
 
             <!-- Article footer -->
-            <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="mt-12 pt-8 border-t border-ink/10">
                 <div class="flex items-center justify-between">
-                    <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary transition">
+                    <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink transition">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                         </svg>
                         Volver al blog
                     </a>
-                    <div class="text-sm text-gray-500">
+                    <div class="text-sm text-ink/50">
                         Compartir en redes sociales proximamente
                     </div>
                 </div>
@@ -311,22 +324,22 @@
     </article>
 
     <!-- CTA Section -->
-    <section class="bg-gradient-to-r from-emerald-600 to-teal-800 py-16">
+    <section class="bg-ink topo py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">
+            <h2 class="text-3xl font-bold text-paper mb-4">
                 Analiza datos INEGI con inteligencia artificial
             </h2>
-            <p class="text-xl text-emerald-100 mb-8">
+            <p class="text-xl text-paper/80 mb-8">
                 LokusAnalytics te permite hacer consultas personalizadas sobre el Censo Econ&oacute;mico, ENIGH, CONAPO, Censos y m&aacute;s
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://app.lokusdata.com/register"
                    target="_blank"
-                   class="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                   class="bg-biz text-ink px-8 py-4 rounded-lg font-semibold text-lg hover:bg-bone transition">
                     Registrarse Gratis
                 </a>
                 <a href="../../index.html#contacto"
-                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition">
+                   class="border border-paper/25 text-paper px-8 py-4 rounded-lg font-semibold text-lg hover:bg-paper/10 hover:text-paper transition">
                     Solicitar Demo
                 </a>
             </div>
@@ -334,41 +347,52 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
+    <footer class="bg-ink text-paper/70 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
+                    <h3 class="text-paper text-lg font-bold mb-4">Lokus Data</h3>
                     <p class="text-sm">
                         Transformamos datos en decisiones estrategicas
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <h4 class="text-paper font-semibold mb-4">Servicios</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../../index.html#servicios" class="hover:text-white transition">Consultoria</a></li>
-                        <li><a href="../../index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
+                        <li><a href="../../index.html#servicios" class="hover:text-paper transition">Consultoria</a></li>
+                        <li><a href="../../index.html#lokusanalytics" class="hover:text-paper transition">LokusAnalytics</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <h4 class="text-paper font-semibold mb-4">Recursos</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../../blog.html" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="../../index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                        <li><a href="../../blog.html" class="hover:text-paper transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-paper transition">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <h4 class="text-paper font-semibold mb-4">Contacto</h4>
                     <ul class="space-y-2 text-sm">
                         <li>analytics@lokusdata.com</li>
                         <li>+52 55 2281 3975</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+            <div class="border-t border-paper/10 mt-8 pt-8 text-center text-sm">
                 <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+    <!-- Mobile menu script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link =>
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+            );
+        }
+    </script>
 </body>
 </html>

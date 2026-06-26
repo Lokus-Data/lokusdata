@@ -6,21 +6,14 @@
     <title>D&oacute;nde Crece la Base Manufacturera de M&eacute;xico: el Ranking Completo de las 32 Entidades - Lokus Data</title>
     <meta name="description" content="La manufactura mexicana sum&oacute; 697 mil empleos (+10.7%) entre los Censos Econ&oacute;micos 2019 y 2024. Nuevo Le&oacute;n, Baja California y Edomex concentran el crecimiento; el automotriz lidera con +199 mil plazas. El ranking completo de las 32 entidades.">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#1e40af',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Estilos compilados (Tailwind CLI + sistema cartográfico) -->
+    <link rel="stylesheet" href="../../assets/styles.css">
+
     <!-- LOKUS-SEO-V1 -->
     <link rel="canonical" href="https://lokusdata.com/blog/articulos/2026-05-29-donde-crece-manufactura-mexico-ranking-32-entidades.html">
     <meta property="og:type" content="article">
@@ -71,28 +64,48 @@
 }
     </script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-paper text-ink antialiased">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="../../index.html" class="flex items-center space-x-2">
-                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
-                        <span class="text-2xl font-bold text-primary">
-                            Lokus<span class="text-gray-900">Data</span>
-                        </span>
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <img src="../../images/lokus-logo.png" alt="Lokus Data" class="h-9 w-9">
+                    <span class="text-xl font-display font-bold tracking-tight">
+                        Lokus<span class="text-biz">Data</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="../../index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="../../index.html#motor" class="hover:text-ink transition">El motor</a>
+                    <a href="../../blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="../../index.html#servicios" class="hover:text-ink transition">A medida</a>
+                    <a href="../../index.html#contacto" class="hover:text-ink transition">Contacto</a>
+                    <a href="../../index.html#productos"
+                       class="bg-ink text-paper px-5 py-2 rounded-full hover:bg-ink2 transition font-semibold">
+                        Entrar
                     </a>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../../index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
-                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
-                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
-                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
-                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-ink" aria-label="Menú">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="../../index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="../../index.html#motor" class="block px-3 py-2 rounded hover:bg-bone">El motor</a>
+                <a href="../../blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="../../index.html#servicios" class="block px-3 py-2 rounded hover:bg-bone">A medida</a>
+                <a href="../../index.html#contacto" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
             </div>
         </div>
     </nav>
@@ -102,7 +115,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Back to blog -->
-            <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary mb-8 transition">
+            <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink mb-8 transition">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
@@ -111,7 +124,7 @@
 
             <!-- Article metadata -->
             <div class="mb-8">
-                <div class="flex items-center text-sm text-gray-500 mb-4">
+                <div class="flex items-center text-sm text-ink/50 mb-4">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
                     </svg>
@@ -120,21 +133,21 @@
                     <span>15 min de lectura</span>
                 </div>
 
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-ink mb-4">
                     D&oacute;nde est&aacute; creciendo la base manufacturera de M&eacute;xico: el ranking completo de las 32 entidades
                 </h1>
 
-                <p class="text-xl text-gray-600">
+                <p class="text-xl text-ink/60">
                     Nuevo Le&oacute;n, Baja California y el Estado de M&eacute;xico concentran el crecimiento. El sector automotriz lidera con +199 mil empleos. Pero el ranking completo revela que el nearshoring no est&aacute; donde el discurso lo coloca &mdash;y eso cambia el c&aacute;lculo de d&oacute;nde expandir.
                 </p>
-                <p class="text-lg text-emerald-700 font-semibold mt-2">
+                <p class="text-lg text-agro font-semibold mt-2">
                     An&aacute;lisis | Industria | Mercado &mdash; Mayo 2026
                 </p>
             </div>
 
             <!-- Featured Image Placeholder -->
-            <div class="mb-8 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-xl h-96 flex items-center justify-center">
-                <div class="text-white text-center">
+            <div class="mb-8 bg-ink topo rounded-xl h-96 flex items-center justify-center">
+                <div class="text-paper text-center">
                     <div class="text-8xl mb-4">&#127981;</div>
                     <p class="text-2xl font-bold">697 mil empleos manufactureros nuevos</p>
                     <p class="text-lg opacity-80">+10.7% entre 2019 y 2024 | Censo Econ&oacute;mico INEGI</p>
@@ -145,118 +158,118 @@
             <div class="prose prose-lg max-w-none">
 
                 <!-- INTRO -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El panorama: una industria que sum&oacute; 697 mil empleos</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El panorama: una industria que sum&oacute; 697 mil empleos</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Si tu negocio depende de manufactura &mdash;como proveedor, como inversionista en planta, como operador log&iacute;stico o como desarrollador industrial&mdash; la pregunta no es <em>si</em> M&eacute;xico est&aacute; creciendo, sino <em>d&oacute;nde</em>. Y la respuesta m&aacute;s confiable no est&aacute; en notas de prensa, sino en el Censo Econ&oacute;mico 2024 del INEGI, comparado contra el de 2019.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     La fotograf&iacute;a nacional: la manufactura mexicana pas&oacute; de <strong>6,493,020 a 7,190,294 empleos</strong>, un alza de <strong>697,274 plazas (+10.7%)</strong> en el periodo. Las unidades econ&oacute;micas crecieron de 579,828 a 634,248 (+9.4%) y la producci&oacute;n bruta nominal subi&oacute; 29.9%. Es un mercado en expansi&oacute;n real. Pero el promedio nacional esconde diferencias de hasta 100 mil empleos entre una entidad y otra, y ah&iacute; est&aacute; la inteligencia accionable.
                 </p>
 
                 <!-- MAPA DE LA INDUSTRIA -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Mapa de la industria: el ranking que importa</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Mapa de la industria: el ranking que importa</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Ordenadas las 32 entidades por empleo manufacturero ganado, este es el tablero de oportunidad:
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-3 py-3 text-left font-semibold text-gray-700 border-b">#</th>
-                                <th class="px-3 py-3 text-left font-semibold text-gray-700 border-b">Entidad</th>
-                                <th class="px-3 py-3 text-right font-semibold text-gray-700 border-b">Empleo 2024</th>
-                                <th class="px-3 py-3 text-right font-semibold text-gray-700 border-b">&Delta; Empleo</th>
-                                <th class="px-3 py-3 text-right font-semibold text-gray-700 border-b">&Delta; % Empleo</th>
-                                <th class="px-3 py-3 text-right font-semibold text-gray-700 border-b">&Delta; Unidades</th>
-                                <th class="px-3 py-3 text-right font-semibold text-gray-700 border-b">&Delta; % Prod. (nom.)</th>
+                                <th class="px-3 py-3 text-left font-semibold text-ink/75 border-b">#</th>
+                                <th class="px-3 py-3 text-left font-semibold text-ink/75 border-b">Entidad</th>
+                                <th class="px-3 py-3 text-right font-semibold text-ink/75 border-b">Empleo 2024</th>
+                                <th class="px-3 py-3 text-right font-semibold text-ink/75 border-b">&Delta; Empleo</th>
+                                <th class="px-3 py-3 text-right font-semibold text-ink/75 border-b">&Delta; % Empleo</th>
+                                <th class="px-3 py-3 text-right font-semibold text-ink/75 border-b">&Delta; Unidades</th>
+                                <th class="px-3 py-3 text-right font-semibold text-ink/75 border-b">&Delta; % Prod. (nom.)</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b bg-amber-50"><td class="px-3 py-2 text-gray-700">1</td><td class="px-3 py-2 font-semibold text-gray-900">Nuevo Le&oacute;n</td><td class="px-3 py-2 text-right text-gray-700">652,253</td><td class="px-3 py-2 text-right font-bold text-emerald-700">+103,998</td><td class="px-3 py-2 text-right text-gray-700">+19.0%</td><td class="px-3 py-2 text-right text-gray-700">+2,145</td><td class="px-3 py-2 text-right text-gray-700">+37.7%</td></tr>
-                            <tr class="border-b"><td class="px-3 py-2 text-gray-700">2</td><td class="px-3 py-2 font-semibold text-gray-900">Baja California</td><td class="px-3 py-2 text-right text-gray-700">512,945</td><td class="px-3 py-2 text-right font-bold text-emerald-700">+90,129</td><td class="px-3 py-2 text-right text-gray-700">+21.3%</td><td class="px-3 py-2 text-right text-gray-700">+556</td><td class="px-3 py-2 text-right text-gray-700">+44.9%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-3 py-2 text-gray-700">3</td><td class="px-3 py-2 font-semibold text-gray-900">M&eacute;xico (Edomex)</td><td class="px-3 py-2 text-right text-gray-700">690,782</td><td class="px-3 py-2 text-right font-bold text-emerald-700">+63,858</td><td class="px-3 py-2 text-right text-gray-700">+10.2%</td><td class="px-3 py-2 text-right font-bold text-emerald-700">+11,431</td><td class="px-3 py-2 text-right text-gray-700">+24.1%</td></tr>
-                            <tr class="border-b"><td class="px-3 py-2 text-gray-700">4</td><td class="px-3 py-2 font-semibold text-gray-900">Coahuila</td><td class="px-3 py-2 text-right text-gray-700">462,670</td><td class="px-3 py-2 text-right text-gray-700">+56,758</td><td class="px-3 py-2 text-right text-gray-700">+14.0%</td><td class="px-3 py-2 text-right text-gray-700">+924</td><td class="px-3 py-2 text-right text-gray-700">+37.7%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-3 py-2 text-gray-700">5</td><td class="px-3 py-2 font-semibold text-gray-900">Chihuahua</td><td class="px-3 py-2 text-right text-gray-700">555,376</td><td class="px-3 py-2 text-right text-gray-700">+52,844</td><td class="px-3 py-2 text-right text-gray-700">+10.5%</td><td class="px-3 py-2 text-right text-gray-700">+832</td><td class="px-3 py-2 text-right font-bold text-emerald-700">+58.2%</td></tr>
-                            <tr class="border-b"><td class="px-3 py-2 text-gray-700">6</td><td class="px-3 py-2 font-semibold text-gray-900">Guanajuato</td><td class="px-3 py-2 text-right text-gray-700">550,606</td><td class="px-3 py-2 text-right text-gray-700">+50,957</td><td class="px-3 py-2 text-right text-gray-700">+10.2%</td><td class="px-3 py-2 text-right text-gray-700">+2,157</td><td class="px-3 py-2 text-right text-gray-700">+40.4%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-3 py-2 text-gray-700">7</td><td class="px-3 py-2 font-semibold text-gray-900">Jalisco</td><td class="px-3 py-2 text-right text-gray-700">549,751</td><td class="px-3 py-2 text-right text-gray-700">+42,485</td><td class="px-3 py-2 text-right text-gray-700">+8.4%</td><td class="px-3 py-2 text-right text-gray-700">+807</td><td class="px-3 py-2 text-right text-gray-700">+30.1%</td></tr>
-                            <tr class="border-b"><td class="px-3 py-2 text-gray-700">8</td><td class="px-3 py-2 font-semibold text-gray-900">Quer&eacute;taro</td><td class="px-3 py-2 text-right text-gray-700">262,741</td><td class="px-3 py-2 text-right text-gray-700">+34,197</td><td class="px-3 py-2 text-right text-gray-700">+15.0%</td><td class="px-3 py-2 text-right text-gray-700">+863</td><td class="px-3 py-2 text-right text-gray-700">+40.3%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-3 py-2 text-gray-700">9</td><td class="px-3 py-2 font-semibold text-gray-900">Puebla</td><td class="px-3 py-2 text-right text-gray-700">333,756</td><td class="px-3 py-2 text-right text-gray-700">+33,747</td><td class="px-3 py-2 text-right text-gray-700">+11.2%</td><td class="px-3 py-2 text-right font-bold text-emerald-700">+8,319</td><td class="px-3 py-2 text-right text-gray-700">+17.0%</td></tr>
-                            <tr class="border-b"><td class="px-3 py-2 text-gray-700">10</td><td class="px-3 py-2 font-semibold text-gray-900">San Luis Potos&iacute;</td><td class="px-3 py-2 text-right text-gray-700">217,110</td><td class="px-3 py-2 text-right text-gray-700">+32,405</td><td class="px-3 py-2 text-right text-gray-700">+17.5%</td><td class="px-3 py-2 text-right text-gray-700">+1,008</td><td class="px-3 py-2 text-right text-gray-700">+44.2%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-3 py-2 text-gray-700">11</td><td class="px-3 py-2 font-semibold text-gray-900">Aguascalientes</td><td class="px-3 py-2 text-right text-gray-700">154,287</td><td class="px-3 py-2 text-right text-gray-700">+22,377</td><td class="px-3 py-2 text-right text-gray-700">+17.0%</td><td class="px-3 py-2 text-right text-gray-700">+600</td><td class="px-3 py-2 text-right text-gray-700">+18.9%</td></tr>
-                            <tr class="border-b"><td class="px-3 py-2 text-gray-700">&hellip;</td><td class="px-3 py-2 text-gray-400" colspan="6">&mdash;</td></tr>
-                            <tr class="bg-red-50"><td class="px-3 py-2 text-gray-700">32</td><td class="px-3 py-2 font-semibold text-gray-900">Ciudad de M&eacute;xico</td><td class="px-3 py-2 text-right text-gray-700">323,147</td><td class="px-3 py-2 text-right font-bold text-red-700">-29,354</td><td class="px-3 py-2 text-right text-red-700">-8.3%</td><td class="px-3 py-2 text-right text-red-700">-1,166</td><td class="px-3 py-2 text-right text-gray-700">+9.8%</td></tr>
+                            <tr class="border-b bg-bone"><td class="px-3 py-2 text-ink/75">1</td><td class="px-3 py-2 font-semibold text-ink">Nuevo Le&oacute;n</td><td class="px-3 py-2 text-right text-ink/75">652,253</td><td class="px-3 py-2 text-right font-bold text-agro">+103,998</td><td class="px-3 py-2 text-right text-ink/75">+19.0%</td><td class="px-3 py-2 text-right text-ink/75">+2,145</td><td class="px-3 py-2 text-right text-ink/75">+37.7%</td></tr>
+                            <tr class="border-b"><td class="px-3 py-2 text-ink/75">2</td><td class="px-3 py-2 font-semibold text-ink">Baja California</td><td class="px-3 py-2 text-right text-ink/75">512,945</td><td class="px-3 py-2 text-right font-bold text-agro">+90,129</td><td class="px-3 py-2 text-right text-ink/75">+21.3%</td><td class="px-3 py-2 text-right text-ink/75">+556</td><td class="px-3 py-2 text-right text-ink/75">+44.9%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-3 py-2 text-ink/75">3</td><td class="px-3 py-2 font-semibold text-ink">M&eacute;xico (Edomex)</td><td class="px-3 py-2 text-right text-ink/75">690,782</td><td class="px-3 py-2 text-right font-bold text-agro">+63,858</td><td class="px-3 py-2 text-right text-ink/75">+10.2%</td><td class="px-3 py-2 text-right font-bold text-agro">+11,431</td><td class="px-3 py-2 text-right text-ink/75">+24.1%</td></tr>
+                            <tr class="border-b"><td class="px-3 py-2 text-ink/75">4</td><td class="px-3 py-2 font-semibold text-ink">Coahuila</td><td class="px-3 py-2 text-right text-ink/75">462,670</td><td class="px-3 py-2 text-right text-ink/75">+56,758</td><td class="px-3 py-2 text-right text-ink/75">+14.0%</td><td class="px-3 py-2 text-right text-ink/75">+924</td><td class="px-3 py-2 text-right text-ink/75">+37.7%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-3 py-2 text-ink/75">5</td><td class="px-3 py-2 font-semibold text-ink">Chihuahua</td><td class="px-3 py-2 text-right text-ink/75">555,376</td><td class="px-3 py-2 text-right text-ink/75">+52,844</td><td class="px-3 py-2 text-right text-ink/75">+10.5%</td><td class="px-3 py-2 text-right text-ink/75">+832</td><td class="px-3 py-2 text-right font-bold text-agro">+58.2%</td></tr>
+                            <tr class="border-b"><td class="px-3 py-2 text-ink/75">6</td><td class="px-3 py-2 font-semibold text-ink">Guanajuato</td><td class="px-3 py-2 text-right text-ink/75">550,606</td><td class="px-3 py-2 text-right text-ink/75">+50,957</td><td class="px-3 py-2 text-right text-ink/75">+10.2%</td><td class="px-3 py-2 text-right text-ink/75">+2,157</td><td class="px-3 py-2 text-right text-ink/75">+40.4%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-3 py-2 text-ink/75">7</td><td class="px-3 py-2 font-semibold text-ink">Jalisco</td><td class="px-3 py-2 text-right text-ink/75">549,751</td><td class="px-3 py-2 text-right text-ink/75">+42,485</td><td class="px-3 py-2 text-right text-ink/75">+8.4%</td><td class="px-3 py-2 text-right text-ink/75">+807</td><td class="px-3 py-2 text-right text-ink/75">+30.1%</td></tr>
+                            <tr class="border-b"><td class="px-3 py-2 text-ink/75">8</td><td class="px-3 py-2 font-semibold text-ink">Quer&eacute;taro</td><td class="px-3 py-2 text-right text-ink/75">262,741</td><td class="px-3 py-2 text-right text-ink/75">+34,197</td><td class="px-3 py-2 text-right text-ink/75">+15.0%</td><td class="px-3 py-2 text-right text-ink/75">+863</td><td class="px-3 py-2 text-right text-ink/75">+40.3%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-3 py-2 text-ink/75">9</td><td class="px-3 py-2 font-semibold text-ink">Puebla</td><td class="px-3 py-2 text-right text-ink/75">333,756</td><td class="px-3 py-2 text-right text-ink/75">+33,747</td><td class="px-3 py-2 text-right text-ink/75">+11.2%</td><td class="px-3 py-2 text-right font-bold text-agro">+8,319</td><td class="px-3 py-2 text-right text-ink/75">+17.0%</td></tr>
+                            <tr class="border-b"><td class="px-3 py-2 text-ink/75">10</td><td class="px-3 py-2 font-semibold text-ink">San Luis Potos&iacute;</td><td class="px-3 py-2 text-right text-ink/75">217,110</td><td class="px-3 py-2 text-right text-ink/75">+32,405</td><td class="px-3 py-2 text-right text-ink/75">+17.5%</td><td class="px-3 py-2 text-right text-ink/75">+1,008</td><td class="px-3 py-2 text-right text-ink/75">+44.2%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-3 py-2 text-ink/75">11</td><td class="px-3 py-2 font-semibold text-ink">Aguascalientes</td><td class="px-3 py-2 text-right text-ink/75">154,287</td><td class="px-3 py-2 text-right text-ink/75">+22,377</td><td class="px-3 py-2 text-right text-ink/75">+17.0%</td><td class="px-3 py-2 text-right text-ink/75">+600</td><td class="px-3 py-2 text-right text-ink/75">+18.9%</td></tr>
+                            <tr class="border-b"><td class="px-3 py-2 text-ink/75">&hellip;</td><td class="px-3 py-2 text-paper/60" colspan="6">&mdash;</td></tr>
+                            <tr class="bg-bone"><td class="px-3 py-2 text-ink/75">32</td><td class="px-3 py-2 font-semibold text-ink">Ciudad de M&eacute;xico</td><td class="px-3 py-2 text-right text-ink/75">323,147</td><td class="px-3 py-2 text-right font-bold text-red-700">-29,354</td><td class="px-3 py-2 text-right text-red-700">-8.3%</td><td class="px-3 py-2 text-right text-red-700">-1,166</td><td class="px-3 py-2 text-right text-ink/75">+9.8%</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-sm text-gray-500 italic mb-6">
+                <p class="text-sm text-ink/50 italic mb-6">
                     Fuente: Censo Econ&oacute;mico 2019 y 2024, INEGI. Manufactura (SCIAN 31-33).
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     <strong>El cl&uacute;ster ganador es un corredor, no una franja fronteriza.</strong> El mercado tiende a pensar el nearshoring como un fen&oacute;meno de frontera. Los datos dibujan algo distinto: un corredor que va de <strong>Monterrey al Baj&iacute;o y se extiende al Estado de M&eacute;xico</strong>. Edomex &mdash;tercer lugar nacional en empleo ganado y <strong>primer lugar absoluto en establecimientos nuevos (+11,431)</strong>&mdash; no aparece en la conversaci&oacute;n p&uacute;blica del nearshoring, pero es donde m&aacute;s se densific&oacute; el tejido manufacturero. Para una estrategia de expansi&oacute;n, eso significa que el centro del pa&iacute;s ofrece provedur&iacute;a y ecosistema que el relato fronterizo ignora.
                 </p>
 
-                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg mb-6">
-                    <p class="text-emerald-900 font-semibold">Densidad de plantas vs. tama&ntilde;o de planta: dos tipos de oportunidad</p>
-                    <p class="text-emerald-800">Nuevo Le&oacute;n y Baja California crecieron sobre todo en empleo concentrado en plantas grandes (Baja California sum&oacute; 90 mil empleos con apenas +556 unidades: plantas de gran escala). Edomex y Puebla crecieron en n&uacute;mero de establecimientos (provedur&iacute;a, talleres, empresas medianas). Si buscas instalar una planta ancla, el norte ofrece escala; si buscas integrarte como proveedor a una cadena densa, el centro ofrece m&aacute;s puntos de entrada.</p>
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">Densidad de plantas vs. tama&ntilde;o de planta: dos tipos de oportunidad</p>
+                    <p class="text-ink">Nuevo Le&oacute;n y Baja California crecieron sobre todo en empleo concentrado en plantas grandes (Baja California sum&oacute; 90 mil empleos con apenas +556 unidades: plantas de gran escala). Edomex y Puebla crecieron en n&uacute;mero de establecimientos (provedur&iacute;a, talleres, empresas medianas). Si buscas instalar una planta ancla, el norte ofrece escala; si buscas integrarte como proveedor a una cadena densa, el centro ofrece m&aacute;s puntos de entrada.</p>
                 </div>
 
                 <!-- OPORTUNIDADES Y RIESGOS -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Oportunidades y riesgos por leer con cuidado</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Oportunidades y riesgos por leer con cuidado</h2>
 
-                <p class="text-gray-700 mb-4"><strong class="text-amber-700">El espejismo del sureste.</strong> Campeche (+24.4%), Nayarit (+23.5%), Quintana Roo (+23.3%) y Tabasco (+20.5%) encabezan el crecimiento porcentual. Tentador para quien busca &laquo;mercados emergentes&raquo;. Pero la masa es min&uacute;scula: Campeche pas&oacute; de 17,206 a 21,410 empleos &mdash;el conjunto del sureste no mueve la aguja nacional. Un alto porcentaje sobre una base peque&ntilde;a no construye un ecosistema de provedur&iacute;a. Para inversi&oacute;n manufacturera de escala, estos estados todav&iacute;a no ofrecen la densidad de cadena que s&iacute; dan el norte y el Baj&iacute;o.</p>
+                <p class="text-ink/75 mb-4"><strong class="text-analytics">El espejismo del sureste.</strong> Campeche (+24.4%), Nayarit (+23.5%), Quintana Roo (+23.3%) y Tabasco (+20.5%) encabezan el crecimiento porcentual. Tentador para quien busca &laquo;mercados emergentes&raquo;. Pero la masa es min&uacute;scula: Campeche pas&oacute; de 17,206 a 21,410 empleos &mdash;el conjunto del sureste no mueve la aguja nacional. Un alto porcentaje sobre una base peque&ntilde;a no construye un ecosistema de provedur&iacute;a. Para inversi&oacute;n manufacturera de escala, estos estados todav&iacute;a no ofrecen la densidad de cadena que s&iacute; dan el norte y el Baj&iacute;o.</p>
 
-                <p class="text-gray-700 mb-4"><strong class="text-emerald-700">La salida de la capital.</strong> La Ciudad de M&eacute;xico es la &uacute;nica entidad que perdi&oacute; empleo manufacturero (-29,354) y unidades (-1,166). Para el inversionista, esto no es necesariamente una mala noticia: refleja el encarecimiento del suelo y la migraci&oacute;n natural de la producci&oacute;n hacia el Estado de M&eacute;xico y el Baj&iacute;o. Le&iacute;do como oportunidad, la CDMX se especializa en servicios y dise&ntilde;o, mientras la transformaci&oacute;n f&iacute;sica busca costos m&aacute;s competitivos a una hora de distancia.</p>
+                <p class="text-ink/75 mb-4"><strong class="text-agro">La salida de la capital.</strong> La Ciudad de M&eacute;xico es la &uacute;nica entidad que perdi&oacute; empleo manufacturero (-29,354) y unidades (-1,166). Para el inversionista, esto no es necesariamente una mala noticia: refleja el encarecimiento del suelo y la migraci&oacute;n natural de la producci&oacute;n hacia el Estado de M&eacute;xico y el Baj&iacute;o. Le&iacute;do como oportunidad, la CDMX se especializa en servicios y dise&ntilde;o, mientras la transformaci&oacute;n f&iacute;sica busca costos m&aacute;s competitivos a una hora de distancia.</p>
 
-                <p class="text-gray-700 mb-6"><strong class="text-red-700">Producci&oacute;n que corre m&aacute;s que el empleo.</strong> Chihuahua creci&oacute; +10.5% en empleo pero +58.2% en producci&oacute;n nominal; Campeche, +95.3% en producci&oacute;n. Se&ntilde;al de tecnificaci&oacute;n o de mezcla de producto de mayor valor &mdash;con la advertencia de que la cifra es nominal y no descuenta inflaci&oacute;n. Es un indicio de hacia d&oacute;nde se mueve el valor agregado, &uacute;til para ubicar mercados de bienes de capital y servicios industriales especializados.</p>
+                <p class="text-ink/75 mb-6"><strong class="text-red-700">Producci&oacute;n que corre m&aacute;s que el empleo.</strong> Chihuahua creci&oacute; +10.5% en empleo pero +58.2% en producci&oacute;n nominal; Campeche, +95.3% en producci&oacute;n. Se&ntilde;al de tecnificaci&oacute;n o de mezcla de producto de mayor valor &mdash;con la advertencia de que la cifra es nominal y no descuenta inflaci&oacute;n. Es un indicio de hacia d&oacute;nde se mueve el valor agregado, &uacute;til para ubicar mercados de bienes de capital y servicios industriales especializados.</p>
 
                 <!-- CADENA DE VALOR -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Cadena de valor: el pa&iacute;s cambi&oacute; ropa por autos y chips</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Cadena de valor: el pa&iacute;s cambi&oacute; ropa por autos y chips</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El reacomodo por subsector define qu&eacute; cadenas ofrecen viento a favor y cu&aacute;les enfrentan contracci&oacute;n:
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Subsector SCIAN</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empleo 2024</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">&Delta; Empleo</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">&Delta; %</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Subsector SCIAN</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empleo 2024</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">&Delta; Empleo</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">&Delta; %</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b bg-amber-50"><td class="px-4 py-2 font-semibold text-gray-900">336 Equipo de transporte</td><td class="px-4 py-2 text-right text-gray-700">1,491,778</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+199,406</td><td class="px-4 py-2 text-right text-gray-700">+15.4%</td></tr>
-                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-gray-900">311 Industria alimentaria</td><td class="px-4 py-2 text-right text-gray-700">1,214,261</td><td class="px-4 py-2 text-right text-gray-700">+121,318</td><td class="px-4 py-2 text-right text-gray-700">+11.1%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-2 font-semibold text-gray-900">326 Pl&aacute;stico y hule</td><td class="px-4 py-2 text-right text-gray-700">458,784</td><td class="px-4 py-2 text-right text-gray-700">+76,946</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+20.2%</td></tr>
-                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-gray-900">334 Electr&oacute;nica y c&oacute;mputo</td><td class="px-4 py-2 text-right text-gray-700">453,299</td><td class="px-4 py-2 text-right text-gray-700">+75,674</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+20.0%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-2 font-semibold text-gray-900">333 Maquinaria y equipo</td><td class="px-4 py-2 text-right text-gray-700">233,161</td><td class="px-4 py-2 text-right text-gray-700">+40,584</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+21.1%</td></tr>
-                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-gray-900">315 Prendas de vestir</td><td class="px-4 py-2 text-right text-gray-700">296,915</td><td class="px-4 py-2 text-right font-bold text-red-700">-39,590</td><td class="px-4 py-2 text-right text-red-700">-11.8%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-2 font-semibold text-gray-900">316 Cuero y piel</td><td class="px-4 py-2 text-right text-gray-700">149,609</td><td class="px-4 py-2 text-right font-bold text-red-700">-17,832</td><td class="px-4 py-2 text-right text-red-700">-10.6%</td></tr>
-                            <tr><td class="px-4 py-2 font-semibold text-gray-900">313 Insumos textiles</td><td class="px-4 py-2 text-right text-gray-700">109,528</td><td class="px-4 py-2 text-right text-red-700">-5,474</td><td class="px-4 py-2 text-right text-red-700">-4.8%</td></tr>
+                            <tr class="border-b bg-bone"><td class="px-4 py-2 font-semibold text-ink">336 Equipo de transporte</td><td class="px-4 py-2 text-right text-ink/75">1,491,778</td><td class="px-4 py-2 text-right font-bold text-agro">+199,406</td><td class="px-4 py-2 text-right text-ink/75">+15.4%</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-ink">311 Industria alimentaria</td><td class="px-4 py-2 text-right text-ink/75">1,214,261</td><td class="px-4 py-2 text-right text-ink/75">+121,318</td><td class="px-4 py-2 text-right text-ink/75">+11.1%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-2 font-semibold text-ink">326 Pl&aacute;stico y hule</td><td class="px-4 py-2 text-right text-ink/75">458,784</td><td class="px-4 py-2 text-right text-ink/75">+76,946</td><td class="px-4 py-2 text-right font-bold text-agro">+20.2%</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-ink">334 Electr&oacute;nica y c&oacute;mputo</td><td class="px-4 py-2 text-right text-ink/75">453,299</td><td class="px-4 py-2 text-right text-ink/75">+75,674</td><td class="px-4 py-2 text-right font-bold text-agro">+20.0%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-2 font-semibold text-ink">333 Maquinaria y equipo</td><td class="px-4 py-2 text-right text-ink/75">233,161</td><td class="px-4 py-2 text-right text-ink/75">+40,584</td><td class="px-4 py-2 text-right font-bold text-agro">+21.1%</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-ink">315 Prendas de vestir</td><td class="px-4 py-2 text-right text-ink/75">296,915</td><td class="px-4 py-2 text-right font-bold text-red-700">-39,590</td><td class="px-4 py-2 text-right text-red-700">-11.8%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-2 font-semibold text-ink">316 Cuero y piel</td><td class="px-4 py-2 text-right text-ink/75">149,609</td><td class="px-4 py-2 text-right font-bold text-red-700">-17,832</td><td class="px-4 py-2 text-right text-red-700">-10.6%</td></tr>
+                            <tr><td class="px-4 py-2 font-semibold text-ink">313 Insumos textiles</td><td class="px-4 py-2 text-right text-ink/75">109,528</td><td class="px-4 py-2 text-right text-red-700">-5,474</td><td class="px-4 py-2 text-right text-red-700">-4.8%</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-sm text-gray-500 italic mb-6">
+                <p class="text-sm text-ink/50 italic mb-6">
                     Fuente: Censo Econ&oacute;mico 2019 y 2024, INEGI.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El automotriz (336) es el motor inequ&iacute;voco: casi 200 mil empleos nuevos, la mayor masa de cualquier subsector. A su alrededor crecen los eslabones que lo alimentan &mdash;pl&aacute;stico y hule (326), electr&oacute;nica (334), maquinaria (333)&mdash; todos por encima del 20%. Ese es el mapa de provedur&iacute;a con mayor tracci&oacute;n: quien fabrique componentes, moldes, arneses, electr&oacute;nica de potencia o equipo industrial est&aacute; en la cadena correcta. En el otro extremo, la cadena textil-confecci&oacute;n-cuero perdi&oacute; m&aacute;s de 60 mil empleos: un sector en contracci&oacute;n estructural donde la oportunidad, si existe, est&aacute; en nichos de alto valor, no en volumen.
                 </p>
 
                 <!-- RECOMENDACIONES -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Recomendaciones estrat&eacute;gicas</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Recomendaciones estrat&eacute;gicas</h2>
 
-                <ul class="text-gray-700 mb-6 space-y-3 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-3 list-disc pl-6">
                     <li><strong>Para instalar planta ancla (escala):</strong> el norte &mdash;Nuevo Le&oacute;n, Baja California, Coahuila, Chihuahua&mdash; ofrece plantas grandes, mano de obra manufacturera consolidada y producci&oacute;n de alto valor. La presi&oacute;n competitiva por talento e infraestructura es real; conviene anticipar costos de vivienda, energ&iacute;a y agua.</li>
                     <li><strong>Para integrarse como proveedor (densidad de cadena):</strong> el corredor Baj&iacute;o&ndash;Edomex (Guanajuato, Quer&eacute;taro, San Luis Potos&iacute;, Aguascalientes, Estado de M&eacute;xico) combina crecimiento de empleo con multiplicaci&oacute;n de establecimientos: m&aacute;s puntos de entrada a cadenas automotrices y electr&oacute;nicas maduras.</li>
                     <li><strong>Para apostar por cadena con viento a favor:</strong> equipo de transporte y sus proveedores directos (pl&aacute;stico, electr&oacute;nica, maquinaria). Evitar exposici&oacute;n fuerte a textil-confecci&oacute;n salvo en segmentos premium o de nicho.</li>
@@ -264,16 +277,16 @@
                 </ul>
 
                 <!-- CONCLUSIÓN -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Conclusi&oacute;n</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Conclusi&oacute;n</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El nearshoring mexicano es una oportunidad real de 697 mil empleos nuevos, pero el dinero inteligente lee el ranking completo, no el titular. El crecimiento se concentra en un corredor Monterrey&ndash;Baj&iacute;o&ndash;Estado de M&eacute;xico con el automotriz como locomotora; la capital cede producci&oacute;n; y el sureste, pese a sus porcentajes llamativos, sigue siendo periferia industrial. La diferencia entre expandir donde hay ecosistema y expandir donde solo hay una tasa alta puede ser la diferencia entre una planta que arranca con provedur&iacute;a local y una que importa todo a 1,500 kil&oacute;metros. Los datos del INEGI ya dicen d&oacute;nde est&aacute; cada cosa.
                 </p>
 
                 <!-- DATOS TÉCNICOS -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Datos t&eacute;cnicos</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Datos t&eacute;cnicos</h2>
 
-                <ul class="text-gray-700 mb-6 space-y-2 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-2 list-disc pl-6">
                     <li><strong>Fuente:</strong> Censo Econ&oacute;mico 2019 y 2024, INEGI. Cada censo mide la actividad del a&ntilde;o fiscal previo (CE 2019 &asymp; 2018; CE 2024 &asymp; 2023), justo la ventana de despegue del nearshoring.</li>
                     <li><strong>Sector analizado:</strong> Industrias manufactureras, SCIAN 31-33.</li>
                     <li><strong>Subsectores citados (SCIAN, 3 d&iacute;gitos):</strong> 336 Equipo de transporte; 311 Industria alimentaria; 326 Pl&aacute;stico y hule; 334 Electr&oacute;nica, c&oacute;mputo y comunicaci&oacute;n; 333 Maquinaria y equipo; 315 Prendas de vestir; 316 Cuero y piel; 313 Insumos textiles.</li>
@@ -281,22 +294,22 @@
                     <li><strong>Cobertura:</strong> las 32 entidades federativas; sin confidenciales a nivel sector estatal en el periodo.</li>
                 </ul>
 
-                <p class="text-sm text-gray-500 italic mt-8">
+                <p class="text-sm text-ink/50 italic mt-8">
                     An&aacute;lisis basado en el Censo Econ&oacute;mico 2019 y 2024 del INEGI. Metodolog&iacute;a propia de comparaci&oacute;n intercensal por entidad federativa y subsector SCIAN. Para an&aacute;lisis sectoriales y territoriales con datos oficiales integrados a tu informaci&oacute;n interna, visita lokusdata.com
                 </p>
 
             </div>
 
             <!-- Article footer -->
-            <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="mt-12 pt-8 border-t border-ink/10">
                 <div class="flex items-center justify-between">
-                    <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary transition">
+                    <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink transition">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                         </svg>
                         Volver al blog
                     </a>
-                    <div class="text-sm text-gray-500">
+                    <div class="text-sm text-ink/50">
                         Compartir en redes sociales proximamente
                     </div>
                 </div>
@@ -306,22 +319,22 @@
     </article>
 
     <!-- CTA Section -->
-    <section class="bg-gradient-to-r from-emerald-600 to-teal-800 py-16">
+    <section class="bg-ink topo py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">
+            <h2 class="text-3xl font-bold text-paper mb-4">
                 Analiza datos INEGI con inteligencia artificial
             </h2>
-            <p class="text-xl text-emerald-100 mb-8">
+            <p class="text-xl text-paper/80 mb-8">
                 LokusAnalytics te permite hacer consultas personalizadas sobre el Censo Econ&oacute;mico, ENIGH, CONAPO, Censos y m&aacute;s
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://app.lokusdata.com/register"
                    target="_blank"
-                   class="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                   class="bg-biz text-ink px-8 py-4 rounded-lg font-semibold text-lg hover:bg-bone transition">
                     Registrarse Gratis
                 </a>
                 <a href="../../index.html#contacto"
-                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition">
+                   class="border border-paper/25 text-paper px-8 py-4 rounded-lg font-semibold text-lg hover:bg-paper/10 hover:text-paper transition">
                     Solicitar Demo
                 </a>
             </div>
@@ -329,41 +342,52 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
+    <footer class="bg-ink text-paper/70 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
+                    <h3 class="text-paper text-lg font-bold mb-4">Lokus Data</h3>
                     <p class="text-sm">
                         Transformamos datos en decisiones estrategicas
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <h4 class="text-paper font-semibold mb-4">Servicios</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../../index.html#servicios" class="hover:text-white transition">Consultoria</a></li>
-                        <li><a href="../../index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
+                        <li><a href="../../index.html#servicios" class="hover:text-paper transition">Consultoria</a></li>
+                        <li><a href="../../index.html#lokusanalytics" class="hover:text-paper transition">LokusAnalytics</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <h4 class="text-paper font-semibold mb-4">Recursos</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../../blog.html" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="../../index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                        <li><a href="../../blog.html" class="hover:text-paper transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-paper transition">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <h4 class="text-paper font-semibold mb-4">Contacto</h4>
                     <ul class="space-y-2 text-sm">
                         <li>analytics@lokusdata.com</li>
                         <li>+52 55 2281 3975</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+            <div class="border-t border-paper/10 mt-8 pt-8 text-center text-sm">
                 <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+    <!-- Mobile menu script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link =>
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+            );
+        }
+    </script>
 </body>
 </html>

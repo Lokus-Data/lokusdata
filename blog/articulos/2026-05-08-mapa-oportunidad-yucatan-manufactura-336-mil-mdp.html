@@ -6,21 +6,14 @@
     <title>Mapa de la Oportunidad Yucateca: Manufactura Alimentaria, Textil y Cemento Lideran un Mercado de $336 Mil MDP - Lokus Data</title>
     <meta name="description" content="Yucat&aacute;n mueve $336,146 MDP, emplea a 574,909 personas y tiene 130,438 unidades econ&oacute;micas. Industria alimentaria, prendas de vestir y cemento concentran el m&uacute;sculo industrial. Mapa de oportunidades con datos del Censo Econ&oacute;mico 2024.">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#1e40af',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Estilos compilados (Tailwind CLI + sistema cartográfico) -->
+    <link rel="stylesheet" href="../../assets/styles.css">
+
     <!-- LOKUS-SEO-V1 -->
     <link rel="canonical" href="https://lokusdata.com/blog/articulos/2026-05-08-mapa-oportunidad-yucatan-manufactura-336-mil-mdp.html">
     <meta property="og:type" content="article">
@@ -71,28 +64,48 @@
 }
     </script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-paper text-ink antialiased">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="../../index.html" class="flex items-center space-x-2">
-                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
-                        <span class="text-2xl font-bold text-primary">
-                            Lokus<span class="text-gray-900">Data</span>
-                        </span>
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <img src="../../images/lokus-logo.png" alt="Lokus Data" class="h-9 w-9">
+                    <span class="text-xl font-display font-bold tracking-tight">
+                        Lokus<span class="text-biz">Data</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="../../index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="../../index.html#motor" class="hover:text-ink transition">El motor</a>
+                    <a href="../../blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="../../index.html#servicios" class="hover:text-ink transition">A medida</a>
+                    <a href="../../index.html#contacto" class="hover:text-ink transition">Contacto</a>
+                    <a href="../../index.html#productos"
+                       class="bg-ink text-paper px-5 py-2 rounded-full hover:bg-ink2 transition font-semibold">
+                        Entrar
                     </a>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../../index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
-                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
-                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
-                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
-                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-ink" aria-label="Menú">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="../../index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="../../index.html#motor" class="block px-3 py-2 rounded hover:bg-bone">El motor</a>
+                <a href="../../blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="../../index.html#servicios" class="block px-3 py-2 rounded hover:bg-bone">A medida</a>
+                <a href="../../index.html#contacto" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
             </div>
         </div>
     </nav>
@@ -102,7 +115,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Back to blog -->
-            <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary mb-8 transition">
+            <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink mb-8 transition">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
@@ -111,7 +124,7 @@
 
             <!-- Article metadata -->
             <div class="mb-8">
-                <div class="flex items-center text-sm text-gray-500 mb-4">
+                <div class="flex items-center text-sm text-ink/50 mb-4">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
                     </svg>
@@ -120,21 +133,21 @@
                     <span>17 min de lectura</span>
                 </div>
 
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-ink mb-4">
                     Mapa de la Oportunidad Yucateca: Manufactura Alimentaria, Textil y Cemento Lideran un Mercado de $336 Mil MDP
                 </h1>
 
-                <p class="text-xl text-gray-600">
+                <p class="text-xl text-ink/60">
                     Sectores 311, 315 y 327 concentran el m&uacute;sculo industrial del estado con baja densidad competitiva &mdash; el espacio para entrar est&aacute; abierto.
                 </p>
-                <p class="text-lg text-emerald-700 font-semibold mt-2">
+                <p class="text-lg text-agro font-semibold mt-2">
                     An&aacute;lisis | Mercado Regional | Oportunidad de Inversi&oacute;n &mdash; Mayo 2026
                 </p>
             </div>
 
             <!-- Featured Image Placeholder -->
-            <div class="mb-8 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-xl h-96 flex items-center justify-center">
-                <div class="text-white text-center">
+            <div class="mb-8 bg-ink topo rounded-xl h-96 flex items-center justify-center">
+                <div class="text-paper text-center">
                     <div class="text-8xl mb-4">&#127796;</div>
                     <p class="text-2xl font-bold">$336,146 MDP de producci&oacute;n anual</p>
                     <p class="text-lg opacity-80">130,438 unidades econ&oacute;micas | 574,909 empleos | Censo Econ&oacute;mico 2024</p>
@@ -145,269 +158,269 @@
             <div class="prose prose-lg max-w-none">
 
                 <!-- INTRO -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El sureste mexicano que casi nadie analiza con datos</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El sureste mexicano que casi nadie analiza con datos</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Mientras el Baj&iacute;o y el norte concentran la atenci&oacute;n de los inversionistas y los analistas de nearshoring, el Censo Econ&oacute;mico 2024 del INEGI revela una geograf&iacute;a menos explorada pero con din&aacute;mica propia: <strong>Yucat&aacute;n mueve $336,146 millones de pesos en producci&oacute;n anual, emplea a 574,909 personas y opera con 130,438 unidades econ&oacute;micas.</strong> No es un mercado peque&ntilde;o &mdash; es un mercado mal mapeado.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Este an&aacute;lisis identifica los tres sectores que dominan la actividad industrial yucateca, dimensiona la competencia que existe en cada uno, y se&ntilde;ala d&oacute;nde est&aacute;n los espacios para nuevos jugadores. La conclusi&oacute;n adelantada: Yucat&aacute;n no es el Baj&iacute;o, pero tampoco pretende serlo. Es un mercado de consumo regional con una manufactura ligera consolidada y un cintur&oacute;n conurbado a M&eacute;rida que est&aacute; absorbiendo inversi&oacute;n industrial sin saturar todav&iacute;a la capacidad instalada.
                 </p>
 
                 <!-- EL MERCADO -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El mercado: tama&ntilde;o, din&aacute;mica y posici&oacute;n regional</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El mercado: tama&ntilde;o, din&aacute;mica y posici&oacute;n regional</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El estado de Yucat&aacute;n representa el <strong>2.4% de las unidades econ&oacute;micas del pa&iacute;s y el 2.1% del empleo formal</strong> registrado en el Censo. En el sureste mexicano, ocupa una posici&oacute;n particular: es la econom&iacute;a m&aacute;s diversificada despu&eacute;s de las distorsiones petroleras de Tabasco y Campeche.
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Indicador estatal</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Yucat&aacute;n</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Quintana Roo</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Indicador estatal</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Yucat&aacute;n</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Quintana Roo</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Unidades econ&oacute;micas</td><td class="px-4 py-3 text-right text-gray-700">130,438</td><td class="px-4 py-3 text-right text-gray-700">58,722</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Empleos</td><td class="px-4 py-3 text-right text-gray-700">574,909</td><td class="px-4 py-3 text-right text-gray-700">431,158</td></tr>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Producci&oacute;n (MDP)</td><td class="px-4 py-3 text-right font-bold text-gray-900">$336,146</td><td class="px-4 py-3 text-right text-gray-700">$301,287</td></tr>
-                            <tr><td class="px-4 py-3 font-semibold text-gray-900">Remuneraci&oacute;n promedio</td><td class="px-4 py-3 text-right text-gray-700">$87,009</td><td class="px-4 py-3 text-right text-gray-700">$114,679</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Unidades econ&oacute;micas</td><td class="px-4 py-3 text-right text-ink/75">130,438</td><td class="px-4 py-3 text-right text-ink/75">58,722</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Empleos</td><td class="px-4 py-3 text-right text-ink/75">574,909</td><td class="px-4 py-3 text-right text-ink/75">431,158</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Producci&oacute;n (MDP)</td><td class="px-4 py-3 text-right font-bold text-ink">$336,146</td><td class="px-4 py-3 text-right text-ink/75">$301,287</td></tr>
+                            <tr><td class="px-4 py-3 font-semibold text-ink">Remuneraci&oacute;n promedio</td><td class="px-4 py-3 text-right text-ink/75">$87,009</td><td class="px-4 py-3 text-right text-ink/75">$114,679</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Yucat&aacute;n <strong>supera en producci&oacute;n a Quintana Roo</strong> pese a que este &uacute;ltimo tiene una econom&iacute;a con remuneraciones m&aacute;s altas por su perfil tur&iacute;stico-internacional. Para un inversionista que busca un mercado de consumo regional con base laboral amplia y costos competitivos, los n&uacute;meros yucatecos hablan por s&iacute; mismos.
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">La capital y su cintur&oacute;n industrial</h3>
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">La capital y su cintur&oacute;n industrial</h3>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     M&eacute;rida concentra $220,099 MDP de producci&oacute;n (65.5% del estado), pero la din&aacute;mica m&aacute;s interesante est&aacute; en su periferia conurbada:
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Municipio</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">UE</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empleos</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Producci&oacute;n (MDP)</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empleos/UE</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Municipio</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">UE</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empleos</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Producci&oacute;n (MDP)</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empleos/UE</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">M&eacute;rida</td><td class="px-4 py-3 text-right text-gray-700">50,082</td><td class="px-4 py-3 text-right text-gray-700">320,950</td><td class="px-4 py-3 text-right text-gray-700">$220,099</td><td class="px-4 py-3 text-right text-gray-700">6.4</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Kanas&iacute;n</td><td class="px-4 py-3 text-right text-gray-700">4,960</td><td class="px-4 py-3 text-right text-gray-700">25,560</td><td class="px-4 py-3 text-right text-gray-700">$26,574</td><td class="px-4 py-3 text-right text-gray-700">5.2</td></tr>
-                            <tr class="border-b bg-amber-50"><td class="px-4 py-3 font-semibold text-gray-900">Um&aacute;n</td><td class="px-4 py-3 text-right text-gray-700">2,455</td><td class="px-4 py-3 text-right text-gray-700">22,678</td><td class="px-4 py-3 text-right text-gray-700">$26,446</td><td class="px-4 py-3 text-right font-bold text-amber-700">9.2</td></tr>
-                            <tr><td class="px-4 py-3 font-semibold text-gray-900">Progreso</td><td class="px-4 py-3 text-right text-gray-700">3,745</td><td class="px-4 py-3 text-right text-gray-700">17,491</td><td class="px-4 py-3 text-right text-gray-700">$10,330</td><td class="px-4 py-3 text-right text-gray-700">4.7</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">M&eacute;rida</td><td class="px-4 py-3 text-right text-ink/75">50,082</td><td class="px-4 py-3 text-right text-ink/75">320,950</td><td class="px-4 py-3 text-right text-ink/75">$220,099</td><td class="px-4 py-3 text-right text-ink/75">6.4</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Kanas&iacute;n</td><td class="px-4 py-3 text-right text-ink/75">4,960</td><td class="px-4 py-3 text-right text-ink/75">25,560</td><td class="px-4 py-3 text-right text-ink/75">$26,574</td><td class="px-4 py-3 text-right text-ink/75">5.2</td></tr>
+                            <tr class="border-b bg-bone"><td class="px-4 py-3 font-semibold text-ink">Um&aacute;n</td><td class="px-4 py-3 text-right text-ink/75">2,455</td><td class="px-4 py-3 text-right text-ink/75">22,678</td><td class="px-4 py-3 text-right text-ink/75">$26,446</td><td class="px-4 py-3 text-right font-bold text-analytics">9.2</td></tr>
+                            <tr><td class="px-4 py-3 font-semibold text-ink">Progreso</td><td class="px-4 py-3 text-right text-ink/75">3,745</td><td class="px-4 py-3 text-right text-ink/75">17,491</td><td class="px-4 py-3 text-right text-ink/75">$10,330</td><td class="px-4 py-3 text-right text-ink/75">4.7</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg mb-6">
-                    <p class="text-emerald-900 font-semibold">Um&aacute;n es el dato a observar</p>
-                    <p class="text-emerald-800">9.2 empleados por unidad econ&oacute;mica en promedio &mdash; una m&eacute;trica que indica concentraci&oacute;n de operaciones medianas y grandes, no microempresas. Um&aacute;n y Kanas&iacute;n juntos producen $52,000 MDP &mdash; la cuarta parte de lo que produce M&eacute;rida con apenas el 15% de las empresas. Es un perfil cl&aacute;sico de zona industrial perif&eacute;rica en formaci&oacute;n.</p>
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">Um&aacute;n es el dato a observar</p>
+                    <p class="text-ink">9.2 empleados por unidad econ&oacute;mica en promedio &mdash; una m&eacute;trica que indica concentraci&oacute;n de operaciones medianas y grandes, no microempresas. Um&aacute;n y Kanas&iacute;n juntos producen $52,000 MDP &mdash; la cuarta parte de lo que produce M&eacute;rida con apenas el 15% de las empresas. Es un perfil cl&aacute;sico de zona industrial perif&eacute;rica en formaci&oacute;n.</p>
                 </div>
 
                 <!-- LOS TRES PILARES -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Los tres pilares industriales: d&oacute;nde est&aacute; el m&uacute;sculo</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Los tres pilares industriales: d&oacute;nde est&aacute; el m&uacute;sculo</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El sector manufacturero yucateco aporta $115,857 MDP (34.5% de la producci&oacute;n estatal) y emplea a 126,591 personas. Tres subsectores concentran el grueso del valor:
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">1. Industria alimentaria (SCIAN 311) &mdash; El gigante consolidado</h3>
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">1. Industria alimentaria (SCIAN 311) &mdash; El gigante consolidado</h3>
 
-                <ul class="text-gray-700 mb-6 space-y-2 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-2 list-disc pl-6">
                     <li><strong>4,724 unidades econ&oacute;micas, 33,166 empleos, $59,200 MDP de producci&oacute;n</strong></li>
                     <li>Es el subsector industrial m&aacute;s grande del estado</li>
                     <li>Remuneraci&oacute;n promedio: $110,574 anuales &mdash; ligeramente por debajo del promedio nacional manufactura</li>
                     <li>Mercado interno fuerte: la base de clientes es la regi&oacute;n sureste-Caribe, con consumo tur&iacute;stico amplificado</li>
                 </ul>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     <strong>Lectura para inversi&oacute;n:</strong> Mercado con tejido consolidado pero abierto a especializaci&oacute;n. Los nichos premium (gourmet, org&aacute;nico, regional con denominaci&oacute;n de origen yucateca) tienen baja densidad. La competencia se concentra en producci&oacute;n masiva tradicional.
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">2. Prendas de vestir (SCIAN 315) &mdash; Vestigio con vigencia</h3>
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">2. Prendas de vestir (SCIAN 315) &mdash; Vestigio con vigencia</h3>
 
-                <ul class="text-gray-700 mb-6 space-y-2 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-2 list-disc pl-6">
                     <li><strong>2,704 unidades econ&oacute;micas, 26,142 empleos, $7,467 MDP</strong></li>
                     <li>Remuneraci&oacute;n promedio: $98,625 anuales</li>
                     <li>Heredero de la tradici&oacute;n maquiladora yucateca</li>
                 </ul>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     <strong>Lectura para inversi&oacute;n:</strong> Sector con base laboral capacitada y costos por debajo del Baj&iacute;o. La oportunidad real est&aacute; en migrar de maquila tradicional a confecci&oacute;n de marca propia o nearshoring para retailers norteamericanos que busquen alternativas a la frontera norte.
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">3. Productos minerales no met&aacute;licos (SCIAN 327) &mdash; El motor del cemento y la construcci&oacute;n</h3>
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">3. Productos minerales no met&aacute;licos (SCIAN 327) &mdash; El motor del cemento y la construcci&oacute;n</h3>
 
-                <ul class="text-gray-700 mb-6 space-y-2 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-2 list-disc pl-6">
                     <li><strong>333 unidades econ&oacute;micas, 4,374 empleos, $12,775 MDP</strong></li>
                     <li>Remuneraci&oacute;n promedio: <strong>$170,079 anuales</strong> &mdash; una de las m&aacute;s altas del estado</li>
                     <li>Pocas empresas, alta productividad: el perfil cl&aacute;sico de industria pesada</li>
                 </ul>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     <strong>Lectura para inversi&oacute;n:</strong> Sector de alta barrera de entrada (capital intensivo) pero con margen s&oacute;lido. El crecimiento se vincula directamente al ritmo de obra p&uacute;blica (Tren Maya, Dos Bocas) y privada (turismo, vivienda residencial). Para empresas existentes en el ramo, la expansi&oacute;n a Yucat&aacute;n tiene fundamento de demanda real.
                 </p>
 
                 <!-- GEOGRAFÍA OPORTUNIDAD -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Geograf&iacute;a de la oportunidad: d&oacute;nde est&aacute;n los clientes y los proveedores</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Geograf&iacute;a de la oportunidad: d&oacute;nde est&aacute;n los clientes y los proveedores</h2>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Comercio: el mercado interno yucateco</h3>
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">Comercio: el mercado interno yucateco</h3>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El comercio al por menor (sector 46) genera $54,771 MDP con 46,065 unidades y 146,815 empleos. Es el segundo sector productor del estado. Dentro del comercio mayorista (sector 43, $41,445 MDP), destacan tres ramas:
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Rama</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">UE</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empleos</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Producci&oacute;n (MDP)</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Remuneraci&oacute;n prom.</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Rama</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">UE</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empleos</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Producci&oacute;n (MDP)</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Remuneraci&oacute;n prom.</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Abarrotes y alimentos al por mayor (431)</td><td class="px-4 py-3 text-right text-gray-700">501</td><td class="px-4 py-3 text-right text-gray-700">11,735</td><td class="px-4 py-3 text-right text-gray-700">$14,350</td><td class="px-4 py-3 text-right text-gray-700">$153,407</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Materias primas agr&iacute;colas e industriales (434)</td><td class="px-4 py-3 text-right text-gray-700">2,085</td><td class="px-4 py-3 text-right text-gray-700">12,963</td><td class="px-4 py-3 text-right text-gray-700">$14,062</td><td class="px-4 py-3 text-right text-gray-700">$105,031</td></tr>
-                            <tr><td class="px-4 py-3 font-semibold text-gray-900">Maquinaria y equipo (435)</td><td class="px-4 py-3 text-right text-gray-700">535</td><td class="px-4 py-3 text-right text-gray-700">4,780</td><td class="px-4 py-3 text-right text-gray-700">$9,562</td><td class="px-4 py-3 text-right text-gray-700">$139,272</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Abarrotes y alimentos al por mayor (431)</td><td class="px-4 py-3 text-right text-ink/75">501</td><td class="px-4 py-3 text-right text-ink/75">11,735</td><td class="px-4 py-3 text-right text-ink/75">$14,350</td><td class="px-4 py-3 text-right text-ink/75">$153,407</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Materias primas agr&iacute;colas e industriales (434)</td><td class="px-4 py-3 text-right text-ink/75">2,085</td><td class="px-4 py-3 text-right text-ink/75">12,963</td><td class="px-4 py-3 text-right text-ink/75">$14,062</td><td class="px-4 py-3 text-right text-ink/75">$105,031</td></tr>
+                            <tr><td class="px-4 py-3 font-semibold text-ink">Maquinaria y equipo (435)</td><td class="px-4 py-3 text-right text-ink/75">535</td><td class="px-4 py-3 text-right text-ink/75">4,780</td><td class="px-4 py-3 text-right text-ink/75">$9,562</td><td class="px-4 py-3 text-right text-ink/75">$139,272</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Los <strong>$15,504 MDP de comercio en tiendas de autoservicio (462)</strong> indican una clase media yucateca consolidada con poder de compra. Las cadenas nacionales ya est&aacute;n &mdash; pero el formato de proximidad y especializado tiene espacio.
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Construcci&oacute;n: el sector de los grandes proyectos</h3>
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">Construcci&oacute;n: el sector de los grandes proyectos</h3>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     La construcci&oacute;n aporta $31,319 MDP con apenas 663 unidades econ&oacute;micas y 27,026 empleos. Dentro de este sector:
                 </p>
 
-                <ul class="text-gray-700 mb-6 space-y-2 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-2 list-disc pl-6">
                     <li><strong>Edificaci&oacute;n (236):</strong> 367 UE, 18,874 empleos, $15,490 MDP</li>
                     <li><strong>Obras de ingenier&iacute;a civil (237):</strong> 113 UE, 5,219 empleos, $13,702 MDP &mdash; alta concentraci&oacute;n por proyectos de gran escala</li>
                     <li><strong>Trabajos especializados (238):</strong> 183 UE, 2,933 empleos, $2,127 MDP</li>
                 </ul>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El sector vive de obra p&uacute;blica federal y desarrollos tur&iacute;sticos privados. La oportunidad para nuevos jugadores est&aacute; en obra residencial premium en M&eacute;rida y servicios especializados (cimentaciones, instalaciones, restauraci&oacute;n patrimonial).
                 </p>
 
                 <!-- COMPETENCIA -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Competencia: densidad de mercado por sector</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Competencia: densidad de mercado por sector</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Para dimensionar qu&eacute; tan saturado est&aacute; cada sector en Yucat&aacute;n, vale comparar contra el promedio nacional. La ratio de empleos por unidad econ&oacute;mica es un proxy &uacute;til del tama&ntilde;o promedio de empresa y la concentraci&oacute;n:
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Sector</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">UE en Yucat&aacute;n</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empleos</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empleos/UE</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Sector</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">UE en Yucat&aacute;n</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empleos</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empleos/UE</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Manufactura (31-33)</td><td class="px-4 py-3 text-right text-gray-700">28,587</td><td class="px-4 py-3 text-right text-gray-700">126,591</td><td class="px-4 py-3 text-right text-gray-700">4.4</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Comercio menor (46)</td><td class="px-4 py-3 text-right text-gray-700">46,065</td><td class="px-4 py-3 text-right text-gray-700">146,815</td><td class="px-4 py-3 text-right text-gray-700">3.2</td></tr>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Comercio mayor (43)</td><td class="px-4 py-3 text-right text-gray-700">3,464</td><td class="px-4 py-3 text-right text-gray-700">34,552</td><td class="px-4 py-3 text-right text-gray-700">10.0</td></tr>
-                            <tr class="border-b bg-amber-50"><td class="px-4 py-3 font-semibold text-gray-900">Construcci&oacute;n (23)</td><td class="px-4 py-3 text-right text-gray-700">663</td><td class="px-4 py-3 text-right text-gray-700">27,026</td><td class="px-4 py-3 text-right font-bold text-amber-700">40.8</td></tr>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Restaurantes y hoteles (72)</td><td class="px-4 py-3 text-right text-gray-700">18,960</td><td class="px-4 py-3 text-right text-gray-700">79,604</td><td class="px-4 py-3 text-right text-gray-700">4.2</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Servicios financieros (52)</td><td class="px-4 py-3 text-right text-gray-700">842</td><td class="px-4 py-3 text-right text-gray-700">7,990</td><td class="px-4 py-3 text-right text-gray-700">9.5</td></tr>
-                            <tr><td class="px-4 py-3 font-semibold text-gray-900">Servicios profesionales (54)</td><td class="px-4 py-3 text-right text-gray-700">2,297</td><td class="px-4 py-3 text-right text-gray-700">13,844</td><td class="px-4 py-3 text-right text-gray-700">6.0</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Manufactura (31-33)</td><td class="px-4 py-3 text-right text-ink/75">28,587</td><td class="px-4 py-3 text-right text-ink/75">126,591</td><td class="px-4 py-3 text-right text-ink/75">4.4</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Comercio menor (46)</td><td class="px-4 py-3 text-right text-ink/75">46,065</td><td class="px-4 py-3 text-right text-ink/75">146,815</td><td class="px-4 py-3 text-right text-ink/75">3.2</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Comercio mayor (43)</td><td class="px-4 py-3 text-right text-ink/75">3,464</td><td class="px-4 py-3 text-right text-ink/75">34,552</td><td class="px-4 py-3 text-right text-ink/75">10.0</td></tr>
+                            <tr class="border-b bg-bone"><td class="px-4 py-3 font-semibold text-ink">Construcci&oacute;n (23)</td><td class="px-4 py-3 text-right text-ink/75">663</td><td class="px-4 py-3 text-right text-ink/75">27,026</td><td class="px-4 py-3 text-right font-bold text-analytics">40.8</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Restaurantes y hoteles (72)</td><td class="px-4 py-3 text-right text-ink/75">18,960</td><td class="px-4 py-3 text-right text-ink/75">79,604</td><td class="px-4 py-3 text-right text-ink/75">4.2</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Servicios financieros (52)</td><td class="px-4 py-3 text-right text-ink/75">842</td><td class="px-4 py-3 text-right text-ink/75">7,990</td><td class="px-4 py-3 text-right text-ink/75">9.5</td></tr>
+                            <tr><td class="px-4 py-3 font-semibold text-ink">Servicios profesionales (54)</td><td class="px-4 py-3 text-right text-ink/75">2,297</td><td class="px-4 py-3 text-right text-ink/75">13,844</td><td class="px-4 py-3 text-right text-ink/75">6.0</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     <strong>La construcci&oacute;n tiene un perfil dominado por empresas medianas y grandes (40.8 empleos por unidad)</strong>, lo que indica un mercado profesionalizado pero tambi&eacute;n con espacio de entrada para empresas con capacidad operativa real. El comercio mayorista (10 empleos por UE) muestra una concentraci&oacute;n atractiva para distribuidores con cobertura regional.
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Servicios profesionales y tecnol&oacute;gicos: el espacio en blanco</h3>
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">Servicios profesionales y tecnol&oacute;gicos: el espacio en blanco</h3>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El subsector 5415 (dise&ntilde;o de sistemas de c&oacute;mputo y servicios relacionados) tiene <strong>91 unidades econ&oacute;micas y 1,080 empleos en todo el estado</strong>. Para un inversionista en TI, BPO o nearshoring de servicios, esto es una m&eacute;trica de oportunidad pura: la base laboral existe (UADY, ITM, universidades privadas con egresados anuales), los costos son competitivos respecto a CDMX y Guadalajara, y la competencia local es m&iacute;nima.
                 </p>
 
                 <!-- CADENA DE VALOR -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Cadena de valor: d&oacute;nde est&aacute;n los m&aacute;rgenes</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Cadena de valor: d&oacute;nde est&aacute;n los m&aacute;rgenes</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Para identificar d&oacute;nde una empresa puede capturar valor, conviene mirar la productividad (valor agregado por persona ocupada) en cada subsector:
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Subsector</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Producci&oacute;n (MDP)</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empleos</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Productividad</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">M&aacute;rgen</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Subsector</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Producci&oacute;n (MDP)</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empleos</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Productividad</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">M&aacute;rgen</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Equipo de c&oacute;mputo (334)</td><td class="px-4 py-3 text-right text-gray-700">$1,339</td><td class="px-4 py-3 text-right text-gray-700">844</td><td class="px-4 py-3 text-gray-700">Alta</td><td class="px-4 py-3 font-semibold text-emerald-700">Premium</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Maquinaria y equipo (333)</td><td class="px-4 py-3 text-right text-gray-700">$1,634</td><td class="px-4 py-3 text-right text-gray-700">1,054</td><td class="px-4 py-3 text-gray-700">Alta</td><td class="px-4 py-3 font-semibold text-emerald-700">Premium</td></tr>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Bebidas y tabaco (312)</td><td class="px-4 py-3 text-right text-gray-700">$7,652</td><td class="px-4 py-3 text-right text-gray-700">5,496</td><td class="px-4 py-3 text-gray-700">Alta</td><td class="px-4 py-3 font-semibold text-emerald-700">Premium</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Productos minerales (327)</td><td class="px-4 py-3 text-right text-gray-700">$12,775</td><td class="px-4 py-3 text-right text-gray-700">4,374</td><td class="px-4 py-3 text-gray-700">Alta</td><td class="px-4 py-3 font-semibold text-emerald-700">Premium</td></tr>
-                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-gray-900">Pl&aacute;stico y hule (326)</td><td class="px-4 py-3 text-right text-gray-700">$7,064</td><td class="px-4 py-3 text-right text-gray-700">4,614</td><td class="px-4 py-3 text-gray-700">Media-alta</td><td class="px-4 py-3 text-gray-700">S&oacute;lido</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-3 font-semibold text-gray-900">Industria alimentaria (311)</td><td class="px-4 py-3 text-right text-gray-700">$59,200</td><td class="px-4 py-3 text-right text-gray-700">33,166</td><td class="px-4 py-3 text-gray-700">Media</td><td class="px-4 py-3 text-gray-700">Operativo</td></tr>
-                            <tr><td class="px-4 py-3 font-semibold text-gray-900">Prendas de vestir (315)</td><td class="px-4 py-3 text-right text-gray-700">$7,467</td><td class="px-4 py-3 text-right text-gray-700">26,142</td><td class="px-4 py-3 text-gray-700">Baja</td><td class="px-4 py-3 text-gray-700">Volumen</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Equipo de c&oacute;mputo (334)</td><td class="px-4 py-3 text-right text-ink/75">$1,339</td><td class="px-4 py-3 text-right text-ink/75">844</td><td class="px-4 py-3 text-ink/75">Alta</td><td class="px-4 py-3 font-semibold text-agro">Premium</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Maquinaria y equipo (333)</td><td class="px-4 py-3 text-right text-ink/75">$1,634</td><td class="px-4 py-3 text-right text-ink/75">1,054</td><td class="px-4 py-3 text-ink/75">Alta</td><td class="px-4 py-3 font-semibold text-agro">Premium</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Bebidas y tabaco (312)</td><td class="px-4 py-3 text-right text-ink/75">$7,652</td><td class="px-4 py-3 text-right text-ink/75">5,496</td><td class="px-4 py-3 text-ink/75">Alta</td><td class="px-4 py-3 font-semibold text-agro">Premium</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Productos minerales (327)</td><td class="px-4 py-3 text-right text-ink/75">$12,775</td><td class="px-4 py-3 text-right text-ink/75">4,374</td><td class="px-4 py-3 text-ink/75">Alta</td><td class="px-4 py-3 font-semibold text-agro">Premium</td></tr>
+                            <tr class="border-b"><td class="px-4 py-3 font-semibold text-ink">Pl&aacute;stico y hule (326)</td><td class="px-4 py-3 text-right text-ink/75">$7,064</td><td class="px-4 py-3 text-right text-ink/75">4,614</td><td class="px-4 py-3 text-ink/75">Media-alta</td><td class="px-4 py-3 text-ink/75">S&oacute;lido</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-3 font-semibold text-ink">Industria alimentaria (311)</td><td class="px-4 py-3 text-right text-ink/75">$59,200</td><td class="px-4 py-3 text-right text-ink/75">33,166</td><td class="px-4 py-3 text-ink/75">Media</td><td class="px-4 py-3 text-ink/75">Operativo</td></tr>
+                            <tr><td class="px-4 py-3 font-semibold text-ink">Prendas de vestir (315)</td><td class="px-4 py-3 text-right text-ink/75">$7,467</td><td class="px-4 py-3 text-right text-ink/75">26,142</td><td class="px-4 py-3 text-ink/75">Baja</td><td class="px-4 py-3 text-ink/75">Volumen</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     <strong>La industria alimentaria genera el mayor volumen pero con margen operativo, no premium.</strong> Los espacios premium (cementos, bebidas, pl&aacute;sticos t&eacute;cnicos) tienen pocos jugadores y m&aacute;rgenes s&oacute;lidos. El equipo de c&oacute;mputo (subsector 334) registra <strong>solo 5 empresas en todo Yucat&aacute;n</strong> &mdash; una m&eacute;trica que para algunos ser&aacute; disuasiva, para otros ser&aacute; una invitaci&oacute;n.
                 </p>
 
                 <!-- RECOMENDACIONES -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Recomendaciones estrat&eacute;gicas</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Recomendaciones estrat&eacute;gicas</h2>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Para inversionistas en manufactura</h3>
-                <p class="text-gray-700 mb-6">
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">Para inversionistas en manufactura</h3>
+                <p class="text-ink/75 mb-6">
                     <strong>Apostar al cintur&oacute;n Kanas&iacute;n-Um&aacute;n</strong>, no al centro de M&eacute;rida. Las m&eacute;tricas de productividad, empleos por unidad y costo de suelo industrial son m&aacute;s favorables. La conectividad log&iacute;stica v&iacute;a Progreso (puerto) y autopista federal hacia el centro del pa&iacute;s est&aacute; consolidada.
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Para empresas en alimentos y bebidas</h3>
-                <p class="text-gray-700 mb-6">
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">Para empresas en alimentos y bebidas</h3>
+                <p class="text-ink/75 mb-6">
                     <strong>Migrar de producci&oacute;n gen&eacute;rica a especializaci&oacute;n regional.</strong> El mercado interno es lo bastante grande para sostener marcas premium con identidad yucateca. Los distribuidores mayoristas (rama 431) ya operan con remuneraciones por encima del promedio sectorial, lo que indica un canal profesionalizado.
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Para empresas de TI, BPO y servicios profesionales</h3>
-                <p class="text-gray-700 mb-6">
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">Para empresas de TI, BPO y servicios profesionales</h3>
+                <p class="text-ink/75 mb-6">
                     <strong>Yucat&aacute;n es una entrada anticipada al mercado del sureste con costos por debajo de Quer&eacute;taro o Guadalajara.</strong> La base laboral es joven, la oferta inmobiliaria de oficinas en M&eacute;rida es amplia, y el ecosistema actual (apenas 91 empresas de software) significa baja competencia por talento. El primer movimiento captura ventaja.
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Para el sector construcci&oacute;n</h3>
-                <p class="text-gray-700 mb-6">
+                <h3 class="text-2xl font-bold text-ink mt-8 mb-3">Para el sector construcci&oacute;n</h3>
+                <p class="text-ink/75 mb-6">
                     <strong>El boom yucateco no termina con el Tren Maya.</strong> La demanda residencial premium en M&eacute;rida, la conversi&oacute;n de haciendas a hospedaje boutique y la inversi&oacute;n tur&iacute;stica en Riviera Maya garantizan tuber&iacute;a de proyectos por al menos 5 a&ntilde;os. La oportunidad est&aacute; en empresas especializadas (acabados, restauraci&oacute;n, certificaci&oacute;n sustentable), no en constructoras generalistas.
                 </p>
 
                 <!-- DATOS TÉCNICOS -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Datos t&eacute;cnicos</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Datos t&eacute;cnicos</h2>
 
-                <p class="text-gray-700 mb-4"><strong>C&oacute;digos SCIAN analizados:</strong></p>
-                <ul class="text-gray-700 mb-6 space-y-1 list-disc pl-6">
+                <p class="text-ink/75 mb-4"><strong>C&oacute;digos SCIAN analizados:</strong></p>
+                <ul class="text-ink/75 mb-6 space-y-1 list-disc pl-6">
                     <li>11 (Agricultura), 21 (Miner&iacute;a), 22 (Energ&iacute;a)</li>
                     <li>23 (Construcci&oacute;n), 236, 237, 238</li>
                     <li>31-33 (Manufactura), 311, 312, 315, 316, 321, 326, 327, 331-339</li>
@@ -417,41 +430,41 @@
                     <li>61 (Educaci&oacute;n), 62 (Salud), 71 (Esparcimiento), 72 (Alojamiento)</li>
                 </ul>
 
-                <p class="text-gray-700 mb-6"><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Tabulados estatales, municipales y comparativos con capitales medias.</p>
+                <p class="text-ink/75 mb-6"><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Tabulados estatales, municipales y comparativos con capitales medias.</p>
 
-                <p class="text-gray-700 mb-6"><strong>Comparativos:</strong> Quer&eacute;taro, Aguascalientes, San Luis Potos&iacute; (estados y capitales). Quintana Roo, Tabasco, Campeche, Chiapas (sureste).</p>
+                <p class="text-ink/75 mb-6"><strong>Comparativos:</strong> Quer&eacute;taro, Aguascalientes, San Luis Potos&iacute; (estados y capitales). Quintana Roo, Tabasco, Campeche, Chiapas (sureste).</p>
 
                 <!-- CONCLUSIÓN -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Conclusi&oacute;n</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Conclusi&oacute;n</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El mercado yucateco de $336 mil MDP no es el Baj&iacute;o y no aspira a serlo. Es un mercado regional de consumo con una manufactura ligera consolidada (alimentaria, textil-confecci&oacute;n), una industria pesada de nicho (cemento y materiales), un sector de construcci&oacute;n din&aacute;mico por proyectos federales y privados, y un ecosistema de servicios profesionales todav&iacute;a incipiente.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Para el inversionista, la pregunta no es si Yucat&aacute;n es atractivo en absoluto, sino qu&eacute; eslab&oacute;n de qu&eacute; cadena tiene mejor relaci&oacute;n entre demanda, competencia y costo de entrada. Los datos del Censo 2024 sugieren tres apuestas claras: cintur&oacute;n industrial conurbado a M&eacute;rida para manufactura ligera, premiumizaci&oacute;n en alimentos y bebidas, y servicios profesionales-tecnol&oacute;gicos donde la competencia local es de los m&aacute;s bajos del pa&iacute;s.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     <strong>Quien llegue primero al Yucat&aacute;n correcto, no esperar&aacute; la consolidaci&oacute;n del mercado &mdash; la construir&aacute;.</strong>
                 </p>
 
-                <p class="text-sm text-gray-500 italic mt-8">
+                <p class="text-sm text-ink/50 italic mt-8">
                     An&aacute;lisis basado en el Censo Econ&oacute;mico 2024 del INEGI. Datos: 130,438 unidades econ&oacute;micas, 574,909 empleos, $336,146 MDP de producci&oacute;n en Yucat&aacute;n. C&oacute;digos SCIAN: 11-81 a nivel sector, 311-562 a nivel subsector seleccionado, 5411-5417 a nivel rama. Para an&aacute;lisis sectoriales y territoriales con datos oficiales integrados a tu informaci&oacute;n interna, visita lokusdata.com
                 </p>
 
             </div>
 
             <!-- Article footer -->
-            <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="mt-12 pt-8 border-t border-ink/10">
                 <div class="flex items-center justify-between">
-                    <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary transition">
+                    <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink transition">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                         </svg>
                         Volver al blog
                     </a>
-                    <div class="text-sm text-gray-500">
+                    <div class="text-sm text-ink/50">
                         Compartir en redes sociales proximamente
                     </div>
                 </div>
@@ -461,22 +474,22 @@
     </article>
 
     <!-- CTA Section -->
-    <section class="bg-gradient-to-r from-emerald-600 to-teal-800 py-16">
+    <section class="bg-ink topo py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">
+            <h2 class="text-3xl font-bold text-paper mb-4">
                 Analiza datos INEGI con inteligencia artificial
             </h2>
-            <p class="text-xl text-emerald-100 mb-8">
+            <p class="text-xl text-paper/80 mb-8">
                 LokusAnalytics te permite hacer consultas personalizadas sobre el Censo Econ&oacute;mico, ENIGH, CONAPO, Censos y m&aacute;s
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://app.lokusdata.com/register"
                    target="_blank"
-                   class="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                   class="bg-biz text-ink px-8 py-4 rounded-lg font-semibold text-lg hover:bg-bone transition">
                     Registrarse Gratis
                 </a>
                 <a href="../../index.html#contacto"
-                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition">
+                   class="border border-paper/25 text-paper px-8 py-4 rounded-lg font-semibold text-lg hover:bg-paper/10 hover:text-paper transition">
                     Solicitar Demo
                 </a>
             </div>
@@ -484,41 +497,52 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
+    <footer class="bg-ink text-paper/70 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
+                    <h3 class="text-paper text-lg font-bold mb-4">Lokus Data</h3>
                     <p class="text-sm">
                         Transformamos datos en decisiones estrategicas
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <h4 class="text-paper font-semibold mb-4">Servicios</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../../index.html#servicios" class="hover:text-white transition">Consultoria</a></li>
-                        <li><a href="../../index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
+                        <li><a href="../../index.html#servicios" class="hover:text-paper transition">Consultoria</a></li>
+                        <li><a href="../../index.html#lokusanalytics" class="hover:text-paper transition">LokusAnalytics</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <h4 class="text-paper font-semibold mb-4">Recursos</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../../blog.html" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="../../index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                        <li><a href="../../blog.html" class="hover:text-paper transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-paper transition">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <h4 class="text-paper font-semibold mb-4">Contacto</h4>
                     <ul class="space-y-2 text-sm">
                         <li>analytics@lokusdata.com</li>
                         <li>+52 55 2281 3975</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+            <div class="border-t border-paper/10 mt-8 pt-8 text-center text-sm">
                 <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+    <!-- Mobile menu script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link =>
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+            );
+        }
+    </script>
 </body>
 </html>

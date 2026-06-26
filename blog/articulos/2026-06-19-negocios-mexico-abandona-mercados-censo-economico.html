@@ -6,21 +6,14 @@
     <title>Los negocios que México está abandonando — y los mercados que eso abre - Lokus Data</title>
     <meta name="description" content="20 años de Censos Económicos del INEGI (2004-2024) revelan tres patrones: extinción tecnológica, consolidación de mercado y economía de proximidad. Dónde queda espacio para entrar y dónde la puerta ya se cerró.">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#1e40af',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Estilos compilados (Tailwind CLI + sistema cartográfico) -->
+    <link rel="stylesheet" href="../../assets/styles.css">
+
     <!-- LOKUS-SEO-V1 -->
     <link rel="canonical" href="https://lokusdata.com/blog/articulos/2026-06-19-negocios-mexico-abandona-mercados-censo-economico.html">
     <meta property="og:type" content="article">
@@ -71,28 +64,48 @@
 }
     </script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-paper text-ink antialiased">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="../../index.html" class="flex items-center space-x-2">
-                        <img src="../../images/lokus-logo.png" alt="Lokus Data Logo" class="h-10 w-10">
-                        <span class="text-2xl font-bold text-primary">
-                            Lokus<span class="text-gray-900">Data</span>
-                        </span>
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <img src="../../images/lokus-logo.png" alt="Lokus Data" class="h-9 w-9">
+                    <span class="text-xl font-display font-bold tracking-tight">
+                        Lokus<span class="text-biz">Data</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="../../index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="../../index.html#motor" class="hover:text-ink transition">El motor</a>
+                    <a href="../../blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="../../index.html#servicios" class="hover:text-ink transition">A medida</a>
+                    <a href="../../index.html#contacto" class="hover:text-ink transition">Contacto</a>
+                    <a href="../../index.html#productos"
+                       class="bg-ink text-paper px-5 py-2 rounded-full hover:bg-ink2 transition font-semibold">
+                        Entrar
                     </a>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../../index.html" class="text-gray-700 hover:text-primary transition">Inicio</a>
-                    <a href="../../index.html#servicios" class="text-gray-700 hover:text-primary transition">Servicios</a>
-                    <a href="../../index.html#lokusanalytics" class="text-gray-700 hover:text-primary transition">LokusAnalytics</a>
-                    <a href="../../blog.html" class="text-primary font-semibold">Blog</a>
-                    <a href="../../index.html#contacto" class="text-gray-700 hover:text-primary transition">Contacto</a>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-ink" aria-label="Menú">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="../../index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="../../index.html#motor" class="block px-3 py-2 rounded hover:bg-bone">El motor</a>
+                <a href="../../blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="../../index.html#servicios" class="block px-3 py-2 rounded hover:bg-bone">A medida</a>
+                <a href="../../index.html#contacto" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
             </div>
         </div>
     </nav>
@@ -102,7 +115,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Back to blog -->
-            <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary mb-8 transition">
+            <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink mb-8 transition">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
@@ -111,7 +124,7 @@
 
             <!-- Article metadata -->
             <div class="mb-8">
-                <div class="flex items-center text-sm text-gray-500 mb-4">
+                <div class="flex items-center text-sm text-ink/50 mb-4">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
                     </svg>
@@ -120,21 +133,21 @@
                     <span>9 min de lectura</span>
                 </div>
 
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-ink mb-4">
                     Los negocios que México está abandonando &mdash; y los mercados que eso abre
                 </h1>
 
-                <p class="text-xl text-gray-600">
+                <p class="text-xl text-ink/60">
                     20 años de Censos Económicos revelan dónde hay espacio para entrar &mdash;y dónde la consolidación ya cerró la puerta.
                 </p>
-                <p class="text-lg text-emerald-700 font-semibold mt-2">
+                <p class="text-lg text-agro font-semibold mt-2">
                     Análisis | Mercado | Tendencia &mdash; Junio 2026
                 </p>
             </div>
 
             <!-- Featured Image Placeholder -->
-            <div class="mb-8 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-xl h-96 flex items-center justify-center">
-                <div class="text-white text-center px-6">
+            <div class="mb-8 bg-ink topo rounded-xl h-96 flex items-center justify-center">
+                <div class="text-paper text-center px-6">
                     <div class="text-8xl mb-4">&#128202;</div>
                     <p class="text-2xl font-bold">Tres patrones, tres estrategias distintas</p>
                     <p class="text-lg opacity-80">Censo Económico INEGI 2004-2024 | Extinción, consolidación y proximidad</p>
@@ -145,151 +158,151 @@
             <div class="prose prose-lg max-w-none">
 
                 <!-- INTRO -->
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Cada vez que un negocio cierra, algo pasa con su mercado. A veces desaparece con él. A veces lo absorbe un competidor más grande. Y a veces &mdash;esto es lo interesante para un inversionista&mdash; queda flotando, sin dueño claro, esperando a quien lo tome.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El Censo Económico 2024 del INEGI, comparado con los cuatro censos anteriores (2004, 2009, 2014, 2019), ofrece el mapa más completo disponible de esa dinámica en México: qué negocios perdió el país en dos décadas, cuáles ganó, y &mdash;la pregunta que importa&mdash; qué significa eso para quien busca dónde operar hoy.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Los datos revelan tres patrones distintos. Cada uno tiene implicaciones estratégicas diferentes.
                 </p>
 
                 <!-- PATRÓN 1 -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Patrón 1: Extinción tecnológica &mdash; el mercado ya no existe</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Patrón 1: Extinción tecnológica &mdash; el mercado ya no existe</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El primer grupo son negocios cuyo mercado simplemente se evaporó. No los absorbió un competidor: los reemplazó una tecnología.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El caso más ilustrativo no es el que parece. Las casetas telefónicas (SCIAN 561421) pasaron de 4,157 unidades en 2004 a apenas 271 en 2024, una caída del <strong>93.5%</strong>. Predecible. Pero los cibercafés (561432) cuentan una historia más compleja: tenían 23,798 establecimientos en 2004, crecieron hasta 59,971 en 2014 &mdash;su boom llegó una década después de que todos los daban por muertos&mdash; y luego colapsaron a 22,205 en 2024. Una parábola completa de auge y caída en veinte años.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El revelado fotográfico (812910) cayó 71.6%, de 4,803 a 1,366 establecimientos. Las tiendas de grabaciones en medios físicos &mdash;discos, DVDs (465211)&mdash; perdieron 58.6% de sus unidades.
                 </p>
 
-                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg mb-6">
-                    <p class="text-emerald-900 font-semibold">La lección del timing</p>
-                    <p class="text-emerald-800">¿Qué oportunidad hay aquí? Poca, en estos giros específicos. Pero el patrón de los cibercafés es una lección: cuando un sector "ya murió" en el discurso público, puede estar viviendo su mayor expansión en los datos. Vale la pena revisar qué sectores están hoy donde los cibercafés estaban en 2009.</p>
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">La lección del timing</p>
+                    <p class="text-ink">¿Qué oportunidad hay aquí? Poca, en estos giros específicos. Pero el patrón de los cibercafés es una lección: cuando un sector "ya murió" en el discurso público, puede estar viviendo su mayor expansión en los datos. Vale la pena revisar qué sectores están hoy donde los cibercafés estaban en 2009.</p>
                 </div>
 
                 <!-- PATRÓN 2 -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Patrón 2: Consolidación &mdash; el mercado existe, pero ya tiene dueño</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Patrón 2: Consolidación &mdash; el mercado existe, pero ya tiene dueño</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El segundo grupo es el más relevante para decisiones de inversión &mdash;y el más fácil de malinterpretar.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Hay sectores donde el número de empresas colapsó, pero la actividad económica explotó. No es destrucción: es concentración de mercado.
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Sector</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empresas 2004</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Empresas 2024</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Cambio UE</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Cambio producción</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Sector</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empresas 2004</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Empresas 2024</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Cambio UE</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Cambio producción</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-gray-900">Panificación industrial (311811)</td><td class="px-4 py-2 text-right text-gray-700">3,504</td><td class="px-4 py-2 text-right text-gray-700">59</td><td class="px-4 py-2 text-right text-red-600">-98.3%</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+420%</td></tr>
-                            <tr class="border-b bg-gray-50"><td class="px-4 py-2 font-semibold text-gray-900">Materiales construcción autoservicio (467116)</td><td class="px-4 py-2 text-right text-gray-700">3,311</td><td class="px-4 py-2 text-right text-gray-700">204</td><td class="px-4 py-2 text-right text-red-600">-93.8%</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+1,003%</td></tr>
-                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-gray-900">Autotransporte foráneo de carga (484129)</td><td class="px-4 py-2 text-right text-gray-700">7,339</td><td class="px-4 py-2 text-right text-gray-700">2,974</td><td class="px-4 py-2 text-right text-red-600">-59.5%</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+283%</td></tr>
-                            <tr class="bg-gray-50"><td class="px-4 py-2 font-semibold text-gray-900">Mensajería y paquetería foránea (492110)</td><td class="px-4 py-2 text-right text-gray-700">2,636</td><td class="px-4 py-2 text-right text-gray-700">445</td><td class="px-4 py-2 text-right text-red-600">-83.1%</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+257%</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-ink">Panificación industrial (311811)</td><td class="px-4 py-2 text-right text-ink/75">3,504</td><td class="px-4 py-2 text-right text-ink/75">59</td><td class="px-4 py-2 text-right text-red-600">-98.3%</td><td class="px-4 py-2 text-right font-bold text-agro">+420%</td></tr>
+                            <tr class="border-b bg-bone/50"><td class="px-4 py-2 font-semibold text-ink">Materiales construcción autoservicio (467116)</td><td class="px-4 py-2 text-right text-ink/75">3,311</td><td class="px-4 py-2 text-right text-ink/75">204</td><td class="px-4 py-2 text-right text-red-600">-93.8%</td><td class="px-4 py-2 text-right font-bold text-agro">+1,003%</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-ink">Autotransporte foráneo de carga (484129)</td><td class="px-4 py-2 text-right text-ink/75">7,339</td><td class="px-4 py-2 text-right text-ink/75">2,974</td><td class="px-4 py-2 text-right text-red-600">-59.5%</td><td class="px-4 py-2 text-right font-bold text-agro">+283%</td></tr>
+                            <tr class="bg-bone/50"><td class="px-4 py-2 font-semibold text-ink">Mensajería y paquetería foránea (492110)</td><td class="px-4 py-2 text-right text-ink/75">2,636</td><td class="px-4 py-2 text-right text-ink/75">445</td><td class="px-4 py-2 text-right text-red-600">-83.1%</td><td class="px-4 py-2 text-right font-bold text-agro">+257%</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-sm text-gray-500 italic mb-6">
+                <p class="text-sm text-ink/50 italic mb-6">
                     Fuente: Censo Económico 2004 y 2024, INEGI. Producción bruta total (PBT) en pesos corrientes de cada año.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Los supermercados (462111) son el caso extremo: pasaron de 2,398 a 4,597 unidades &mdash;crecieron en número&mdash; pero su producción se multiplicó 6.6 veces, de $58,769 a $389,023 MDP. Pocas empresas, enormes. El mercado creció; las entradas independientes, no.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     En mensajería, el empleo cuenta la historia completa: las empresas bajaron 83%, pero los trabajadores del sector aumentaron 250% &mdash;de 25,553 a 89,533 personas. FedEx, DHL, J&amp;T y sus competidores concentraron la actividad que antes hacían miles de operadores pequeños.
                 </p>
 
-                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg mb-6">
-                    <p class="text-emerald-900 font-semibold">La señal real</p>
-                    <p class="text-emerald-800">En estos sectores, la puerta para un operador independiente de escala media está cerrada o es muy estrecha. La oportunidad es ser proveedor especializado de los consolidadores, no competidor frontal: logística de última milla, insumos para panificación industrial, servicios auxiliares de transporte &mdash;los eslabones que los gigantes no quieren integrar verticalmente.</p>
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">La señal real</p>
+                    <p class="text-ink">En estos sectores, la puerta para un operador independiente de escala media está cerrada o es muy estrecha. La oportunidad es ser proveedor especializado de los consolidadores, no competidor frontal: logística de última milla, insumos para panificación industrial, servicios auxiliares de transporte &mdash;los eslabones que los gigantes no quieren integrar verticalmente.</p>
                 </div>
 
                 <!-- PATRÓN 3 -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Patrón 3: Economía de proximidad &mdash; el mercado que ningún algoritmo ha podido tomar</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Patrón 3: Economía de proximidad &mdash; el mercado que ningún algoritmo ha podido tomar</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Aquí está el hallazgo más contraintuitivo de los datos.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Los cinco sectores con mayor crecimiento absoluto de unidades económicas en veinte años no son tecnología, no son e-commerce, no son servicios digitales. Son esto:
                 </p>
 
                 <div class="overflow-x-auto mb-6">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
-                        <thead class="bg-emerald-50">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-bone">
                             <tr>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-700 border-b">Sector</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">UE 2004</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">UE 2024</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-700 border-b">Nuevas unidades</th>
+                                <th class="px-4 py-3 text-left font-semibold text-ink/75 border-b">Sector</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">UE 2004</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">UE 2024</th>
+                                <th class="px-4 py-3 text-right font-semibold text-ink/75 border-b">Nuevas unidades</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b bg-amber-50"><td class="px-4 py-2 font-semibold text-gray-900">Salones de belleza y peluquerías (812110)</td><td class="px-4 py-2 text-right text-gray-700">95,756</td><td class="px-4 py-2 text-right text-gray-700">275,618</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+179,862</td></tr>
-                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-gray-900">Abarrotes y misceláneas (461110)</td><td class="px-4 py-2 text-right text-gray-700">496,841</td><td class="px-4 py-2 text-right text-gray-700">655,641</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+158,800</td></tr>
-                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-gray-900">Ropa (463211)</td><td class="px-4 py-2 text-right text-gray-700">106,616</td><td class="px-4 py-2 text-right text-gray-700">167,474</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+60,858</td></tr>
-                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-gray-900">Papelería (465311)</td><td class="px-4 py-2 text-right text-gray-700">79,214</td><td class="px-4 py-2 text-right text-gray-700">126,633</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+47,419</td></tr>
-                            <tr><td class="px-4 py-2 font-semibold text-gray-900">Tortillerías (311830)</td><td class="px-4 py-2 text-right text-gray-700">63,459</td><td class="px-4 py-2 text-right text-gray-700">107,963</td><td class="px-4 py-2 text-right font-bold text-emerald-700">+44,504</td></tr>
+                            <tr class="border-b bg-bone"><td class="px-4 py-2 font-semibold text-ink">Salones de belleza y peluquerías (812110)</td><td class="px-4 py-2 text-right text-ink/75">95,756</td><td class="px-4 py-2 text-right text-ink/75">275,618</td><td class="px-4 py-2 text-right font-bold text-agro">+179,862</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-ink">Abarrotes y misceláneas (461110)</td><td class="px-4 py-2 text-right text-ink/75">496,841</td><td class="px-4 py-2 text-right text-ink/75">655,641</td><td class="px-4 py-2 text-right font-bold text-agro">+158,800</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-ink">Ropa (463211)</td><td class="px-4 py-2 text-right text-ink/75">106,616</td><td class="px-4 py-2 text-right text-ink/75">167,474</td><td class="px-4 py-2 text-right font-bold text-agro">+60,858</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-semibold text-ink">Papelería (465311)</td><td class="px-4 py-2 text-right text-ink/75">79,214</td><td class="px-4 py-2 text-right text-ink/75">126,633</td><td class="px-4 py-2 text-right font-bold text-agro">+47,419</td></tr>
+                            <tr><td class="px-4 py-2 font-semibold text-ink">Tortillerías (311830)</td><td class="px-4 py-2 text-right text-ink/75">63,459</td><td class="px-4 py-2 text-right text-ink/75">107,963</td><td class="px-4 py-2 text-right font-bold text-agro">+44,504</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="text-sm text-gray-500 italic mb-6">
+                <p class="text-sm text-ink/50 italic mb-6">
                     Fuente: Censo Económico 2004 y 2024, INEGI. Crecimiento absoluto de unidades económicas (UE).
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Los salones de belleza y peluquerías son el negocio de mayor crecimiento absoluto en México en dos décadas. <strong>179,862 establecimientos nuevos</strong> &mdash;más que cualquier sector que aparece en los titulares de innovación. Para 2024, hay 275,618 salones de belleza en el país: uno por cada 456 habitantes.
                 </p>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     El patrón común de estos cinco sectores es que son intrínsecamente locales, intensivos en contacto humano y resistentes a la sustitución digital. No se puede pedir un corte de pelo por Amazon. No se puede reemplazar la tortillería de la esquina con una app. El abarrote sobrevivió a Walmart, al OXXO y a los supermercados de membresía porque opera en un nicho que los formatos grandes no pueden atender con la misma flexibilidad.
                 </p>
 
-                <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg mb-6">
-                    <p class="text-emerald-900 font-semibold">Dónde está realmente la oportunidad</p>
-                    <p class="text-emerald-800">No en abrir más del mismo negocio &mdash;el mercado ya tiene alta densidad de competidores en la mayoría de las zonas urbanas. Está en la cadena de valor que los abastece: insumos para salones de belleza, distribución capilar de productos para abarrotes, equipo para tortillerías. O en identificar las zonas donde la densidad todavía es baja &mdash;municipios en crecimiento demográfico donde estos servicios aún no llegan con suficiente cobertura.</p>
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">Dónde está realmente la oportunidad</p>
+                    <p class="text-ink">No en abrir más del mismo negocio &mdash;el mercado ya tiene alta densidad de competidores en la mayoría de las zonas urbanas. Está en la cadena de valor que los abastece: insumos para salones de belleza, distribución capilar de productos para abarrotes, equipo para tortillerías. O en identificar las zonas donde la densidad todavía es baja &mdash;municipios en crecimiento demográfico donde estos servicios aún no llegan con suficiente cobertura.</p>
                 </div>
 
                 <!-- MAPA COMPLETO -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">El mapa completo: tres preguntas antes de entrar a cualquier sector</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El mapa completo: tres preguntas antes de entrar a cualquier sector</h2>
 
-                <p class="text-gray-700 mb-6">
+                <p class="text-ink/75 mb-6">
                     Los veinte años de datos del Censo Económico sugieren tres preguntas que vale hacerse antes de cualquier decisión de inversión sectorial:
                 </p>
 
-                <ol class="text-gray-700 mb-6 space-y-4 list-decimal pl-6">
+                <ol class="text-ink/75 mb-6 space-y-4 list-decimal pl-6">
                     <li><strong>¿Es extinción o consolidación?</strong> Si el número de empresas cae pero la producción sube, hay un consolidador ganando. Buscar si hay espacio en la cadena de valor, no en competencia directa.</li>
                     <li><strong>¿En qué punto del ciclo está el sector?</strong> Los cibercafés estaban en su boom cuando ya los daban por muertos. Revisar la trayectoria censal completa &mdash;no solo el punto de llegada.</li>
                     <li><strong>¿Es digitalizable?</strong> Los sectores de mayor crecimiento en veinte años son los que menos se pueden digitalizar. El comercio de proximidad y los servicios personales tienen una resiliencia estructural que los datos confirman censo tras censo.</li>
                 </ol>
 
                 <!-- DATOS TÉCNICOS -->
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">Fuentes y notas técnicas</h2>
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Fuentes y notas técnicas</h2>
 
-                <ul class="text-gray-700 mb-6 space-y-2 list-disc pl-6">
+                <ul class="text-ink/75 mb-6 space-y-2 list-disc pl-6">
                     <li><strong>Fuente:</strong> Censo Económico 2024, 2019, 2014, 2009 y 2004 &mdash; INEGI.</li>
                     <li><strong>Tabla:</strong> ce_nacional_actividad_v2, nivel de agregación: Clase SCIAN.</li>
                     <li><strong>Cifras monetarias:</strong> millones de pesos corrientes de cada año (no ajustadas por inflación &mdash;para comparación de estructura, no de valor real).</li>
@@ -297,22 +310,22 @@
                     <li><strong>Fecha de análisis:</strong> Junio 2026.</li>
                 </ul>
 
-                <p class="text-sm text-gray-500 italic mt-8">
+                <p class="text-sm text-ink/50 italic mt-8">
                     Análisis basado en los Censos Económicos 2004-2024 del INEGI. Metodología propia de comparación intercensal por clase SCIAN. Para análisis sectoriales y territoriales con datos oficiales integrados a tu información interna, visita lokusdata.com
                 </p>
 
             </div>
 
             <!-- Article footer -->
-            <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="mt-12 pt-8 border-t border-ink/10">
                 <div class="flex items-center justify-between">
-                    <a href="../../blog.html" class="inline-flex items-center text-primary hover:text-secondary transition">
+                    <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink transition">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                         </svg>
                         Volver al blog
                     </a>
-                    <div class="text-sm text-gray-500">
+                    <div class="text-sm text-ink/50">
                         Compartir en redes sociales proximamente
                     </div>
                 </div>
@@ -322,22 +335,22 @@
     </article>
 
     <!-- CTA Section -->
-    <section class="bg-gradient-to-r from-emerald-600 to-teal-800 py-16">
+    <section class="bg-ink topo py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">
+            <h2 class="text-3xl font-bold text-paper mb-4">
                 Analiza datos INEGI con inteligencia artificial
             </h2>
-            <p class="text-xl text-emerald-100 mb-8">
+            <p class="text-xl text-paper/80 mb-8">
                 LokusAnalytics te permite hacer consultas personalizadas sobre el Censo Económico, ENIGH, CONAPO, Censos y más
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://app.lokusdata.com/register"
                    target="_blank"
-                   class="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                   class="bg-biz text-ink px-8 py-4 rounded-lg font-semibold text-lg hover:bg-bone transition">
                     Registrarse Gratis
                 </a>
                 <a href="../../index.html#contacto"
-                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition">
+                   class="border border-paper/25 text-paper px-8 py-4 rounded-lg font-semibold text-lg hover:bg-paper/10 hover:text-paper transition">
                     Solicitar Demo
                 </a>
             </div>
@@ -345,41 +358,52 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
+    <footer class="bg-ink text-paper/70 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white text-lg font-bold mb-4">Lokus Data</h3>
+                    <h3 class="text-paper text-lg font-bold mb-4">Lokus Data</h3>
                     <p class="text-sm">
                         Transformamos datos en decisiones estrategicas
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Servicios</h4>
+                    <h4 class="text-paper font-semibold mb-4">Servicios</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../../index.html#servicios" class="hover:text-white transition">Consultoria</a></li>
-                        <li><a href="../../index.html#lokusanalytics" class="hover:text-white transition">LokusAnalytics</a></li>
+                        <li><a href="../../index.html#servicios" class="hover:text-paper transition">Consultoria</a></li>
+                        <li><a href="../../index.html#lokusanalytics" class="hover:text-paper transition">LokusAnalytics</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <h4 class="text-paper font-semibold mb-4">Recursos</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../../blog.html" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="../../index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+                        <li><a href="../../blog.html" class="hover:text-paper transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-paper transition">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <h4 class="text-paper font-semibold mb-4">Contacto</h4>
                     <ul class="space-y-2 text-sm">
                         <li>analytics@lokusdata.com</li>
                         <li>+52 55 2281 3975</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+            <div class="border-t border-paper/10 mt-8 pt-8 text-center text-sm">
                 <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+    <!-- Mobile menu script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link =>
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+            );
+        }
+    </script>
 </body>
 </html>
