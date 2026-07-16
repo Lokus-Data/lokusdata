@@ -31,6 +31,8 @@ function buildSitemap(posts) {
   const staticPages = [
     { loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly', lastmod: today },
     { loc: `${SITE}/blog.html`, priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { loc: `${SITE}/privacidad.html`, priority: '0.3', changefreq: 'yearly', lastmod: today },
+    { loc: `${SITE}/terminos.html`, priority: '0.3', changefreq: 'yearly', lastmod: today },
   ];
   const postUrls = posts.map(p => ({
     loc: `${SITE}/${p.url}`,
