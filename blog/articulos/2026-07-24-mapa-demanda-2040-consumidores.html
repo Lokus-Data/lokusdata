@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El mapa de la demanda 2040: dónde llegarán 5 millones de consumidores antes que la competencia - Lokus Data</title>
+    <meta name="description" content="Veinte municipios concentrarán 5.15 millones de nuevos habitantes rumbo a 2040 según CONAPO: García, Pesquería, Kanasín, Tlajomulco, Playa del Carmen. En esas periferias la densidad de negocios es de la mitad a un tercio que en los núcleos urbanos. El mapa para decidir dónde abrir con quince años de visibilidad.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Estilos compilados (Tailwind CLI + sistema cartográfico) -->
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <!-- LOKUS-SEO-V1 -->
+    <link rel="canonical" href="https://lokusdata.com/blog/articulos/2026-07-24-mapa-demanda-2040-consumidores.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="El mapa de la demanda 2040: dónde llegarán 5 millones de consumidores antes que la competencia">
+    <meta property="og:description" content="Veinte municipios concentrarán 5.15 millones de nuevos habitantes rumbo a 2040. En García, Pesquería o Kanasín la gente llega antes que los negocios: densidad comercial de la mitad a un tercio de la de los núcleos urbanos. Proyecciones CONAPO + DENUE.">
+    <meta property="og:url" content="https://lokusdata.com/blog/articulos/2026-07-24-mapa-demanda-2040-consumidores.html">
+    <meta property="og:site_name" content="Lokus Data">
+    <meta property="og:image" content="https://lokusdata.com/images/2026-07-24-og-mapa-demanda.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="El mapa de la demanda 2040: dónde llegarán 5 millones de consumidores antes que la competencia">
+    <meta name="twitter:description" content="20 municipios sumarán 5.15 millones de habitantes al 2040. En esas periferias la densidad de negocios es la mitad que en los núcleos. Dónde abrir con 15 años de visibilidad. CONAPO + DENUE.">
+    <meta name="twitter:image" content="https://lokusdata.com/images/2026-07-24-og-mapa-demanda.png">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCQHS6GXFE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VCQHS6GXFE');
+      gtag('config', 'AW-17620097832');
+    </script>
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "El mapa de la demanda 2040: dónde llegarán 5 millones de consumidores antes que la competencia",
+  "description": "Veinte municipios concentrarán 5.15 millones de nuevos habitantes rumbo a 2040 según la proyección de CONAPO. En esas periferias en expansión la densidad de negocios es de la mitad a un tercio de la de los núcleos urbanos consolidados: la gente llega antes que la oferta. El mapa territorial de la demanda para decidir dónde abrir, con datos de CONAPO y DENUE.",
+  "datePublished": "2026-07-24",
+  "dateModified": "2026-07-24",
+  "author": {
+    "@type": "Person",
+    "name": "Juan Heriberto Rosas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lokus Data",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lokusdata.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lokusdata.com/blog/articulos/2026-07-24-mapa-demanda-2040-consumidores.html"
+  },
+  "articleSection": "Mercado"
+}
+    </script>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <img src="../../images/lokus-logo.png" alt="Lokus Data" class="h-9 w-9">
+                    <span class="text-xl font-display font-bold tracking-tight">
+                        Lokus<span class="text-biz">Data</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="../../index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="../../index.html#motor" class="hover:text-ink transition">El motor</a>
+                    <a href="../../blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="../../index.html#servicios" class="hover:text-ink transition">A medida</a>
+                    <a href="../../index.html#contacto" class="hover:text-ink transition">Contacto</a>
+                    <a href="../../index.html#productos"
+                       class="bg-ink text-paper px-5 py-2 rounded-full hover:bg-ink2 transition font-semibold">
+                        Entrar
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-ink" aria-label="Menú">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="../../index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="../../index.html#motor" class="block px-3 py-2 rounded hover:bg-bone">El motor</a>
+                <a href="../../blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="../../index.html#servicios" class="block px-3 py-2 rounded hover:bg-bone">A medida</a>
+                <a href="../../index.html#contacto" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back to blog -->
+            <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink mb-8 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver al blog
+            </a>
+
+            <!-- Article metadata -->
+            <div class="mb-8">
+                <div class="mono coord uppercase text-biz text-xs mb-4">Mercado · Expansión Territorial</div>
+                <div class="flex items-center text-sm text-ink/50 mb-4">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    24 de julio de 2026
+                    <span class="mx-2">&bull;</span>
+                    <span>10 min de lectura</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold text-ink mb-4">
+                    El mapa de la demanda 2040: dónde llegarán 5 millones de consumidores antes que la competencia
+                </h1>
+
+                <p class="text-xl text-ink/60">
+                    Veinte municipios concentrarán 5.15 millones de nuevos habitantes rumbo a 2040 según la proyección de CONAPO — y casi todos son periferias industriales donde la densidad de negocios es de la mitad a un tercio de la de los núcleos urbanos. La gente está llegando antes que la oferta. Ese desfase es la ventana.
+                </p>
+            </div>
+
+            <!-- Featured chart -->
+            <figure class="mb-8">
+                <img src="../../images/2026-07-24-mapa-demanda-hero.png"
+                     alt="Los 12 municipios que más población sumarán 2025-2040: Tijuana +512 mil encabeza, seguido de Querétaro y García"
+                     class="w-full rounded-xl border border-ink/10 bg-white">
+                <figcaption class="text-sm text-ink/50 mt-2 text-center">Ganancia proyectada de habitantes 2025→2040, 12 primeros municipios. Fuente: Proyecciones de población, CONAPO.</figcaption>
+            </figure>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none">
+
+                <!-- PANORAMA -->
+                <h2 class="text-3xl font-bold text-ink mt-4 mb-4">El mercado mexicano no está creciendo: se está mudando</h2>
+
+                <p class="text-ink/75 mb-6">
+                    México sumará <strong>11.4 millones de habitantes entre 2025 y 2040</strong> (de 132.8 a 144.2 millones, proyección CONAPO). Visto así, parece un mercado que crece 8.6% y ya. Pero el agregado esconde el dato que importa para cualquier decisión de expansión: <strong>1,094 de los 2,475 municipios del país — el 44% — van a perder población</strong>, mientras la ganancia se concentra en unas cuantas periferias urbanas. <strong>Los 20 municipios que más crecen absorberán 5.15 millones de personas: el 36.5% de todo el crecimiento municipal del país.</strong>
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    Para quien decide dónde abrir una sucursal, un punto de venta, una clínica o un desarrollo, esto cambia la pregunta. No es "¿cuánto crece México?" sino <strong>"¿en qué municipios va a estar la demanda que hoy no está — y quién va a llegar primero?"</strong>. La proyección da algo que casi ningún dato de mercado ofrece: <strong>quince años de visibilidad</strong> sobre dónde se forma el volumen.
+                </p>
+
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">La primera lectura de negocio</p>
+                    <p class="text-ink/80">El censo de clientes de 2040 ya está escrito en la proyección demográfica. Tijuana sumará 512 mil habitantes; García, 345 mil; Playa del Carmen, 241 mil. Quien dimensione su plan de expansión con la foto de hoy está optimizando para un mapa que va a dejar de existir.</p>
+                </div>
+
+                <p class="text-sm text-ink/50 italic mb-6">
+                    Fuente: Proyecciones de población CONAPO, niveles nacional, estatal y municipal. Toda cifra a 2040 es proyección.
+                </p>
+
+                <!-- MAPA -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Dónde se forma el volumen: el top de municipios ganadores</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Ordenamos el universo completo de municipios por ganancia absoluta de habitantes. El podio mezcla dos tipos de mercado: <strong>ciudades completas que siguen sumando volumen</strong> (Tijuana, Querétaro, León, Puebla, Ciudad Juárez, Saltillo) y <strong>periferias que están literalmente naciendo</strong> — García (+69.6%), Juárez NL (+49.9%), Tlajomulco (+33.2%), Playa del Carmen (+58.8%) —, donde el mercado de 2040 será entre un tercio y dos tercios más grande que el actual.
+                </p>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-ink text-paper">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold">Municipio</th>
+                                <th class="px-4 py-3 text-right font-semibold">Población 2025</th>
+                                <th class="px-4 py-3 text-right font-semibold">Población 2040</th>
+                                <th class="px-4 py-3 text-right font-semibold">Nuevos habitantes</th>
+                                <th class="px-4 py-3 text-right font-semibold">Cambio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-ink/10">
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">Tijuana, BC</td><td class="px-4 py-3 text-right">2,151,740</td><td class="px-4 py-3 text-right">2,663,508</td><td class="px-4 py-3 text-right font-bold">+511,768</td><td class="px-4 py-3 text-right">+23.8%</td></tr>
+                            <tr><td class="px-4 py-3">Querétaro, Qro.</td><td class="px-4 py-3 text-right">1,215,147</td><td class="px-4 py-3 text-right">1,591,547</td><td class="px-4 py-3 text-right font-bold">+376,400</td><td class="px-4 py-3 text-right">+31.0%</td></tr>
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">García, NL</td><td class="px-4 py-3 text-right">495,731</td><td class="px-4 py-3 text-right">840,854</td><td class="px-4 py-3 text-right font-bold">+345,123</td><td class="px-4 py-3 text-right">+69.6%</td></tr>
+                            <tr><td class="px-4 py-3">León, Gto.</td><td class="px-4 py-3 text-right">1,877,296</td><td class="px-4 py-3 text-right">2,210,528</td><td class="px-4 py-3 text-right font-bold">+333,232</td><td class="px-4 py-3 text-right">+17.8%</td></tr>
+                            <tr><td class="px-4 py-3">Puebla, Pue.</td><td class="px-4 py-3 text-right">1,837,080</td><td class="px-4 py-3 text-right">2,128,792</td><td class="px-4 py-3 text-right font-bold">+291,712</td><td class="px-4 py-3 text-right">+15.9%</td></tr>
+                            <tr><td class="px-4 py-3">Apodaca, NL</td><td class="px-4 py-3 text-right">747,838</td><td class="px-4 py-3 text-right">1,029,872</td><td class="px-4 py-3 text-right font-bold">+282,034</td><td class="px-4 py-3 text-right">+37.7%</td></tr>
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">Juárez, NL</td><td class="px-4 py-3 text-right">560,836</td><td class="px-4 py-3 text-right">840,851</td><td class="px-4 py-3 text-right font-bold">+280,015</td><td class="px-4 py-3 text-right">+49.9%</td></tr>
+                            <tr><td class="px-4 py-3">Zapopan, Jal.</td><td class="px-4 py-3 text-right">1,597,906</td><td class="px-4 py-3 text-right">1,876,674</td><td class="px-4 py-3 text-right font-bold">+278,768</td><td class="px-4 py-3 text-right">+17.4%</td></tr>
+                            <tr><td class="px-4 py-3">Tlajomulco, Jal.</td><td class="px-4 py-3 text-right">829,928</td><td class="px-4 py-3 text-right">1,105,538</td><td class="px-4 py-3 text-right font-bold">+275,610</td><td class="px-4 py-3 text-right">+33.2%</td></tr>
+                            <tr><td class="px-4 py-3">Ciudad Juárez, Chih.</td><td class="px-4 py-3 text-right">1,661,295</td><td class="px-4 py-3 text-right">1,935,351</td><td class="px-4 py-3 text-right font-bold">+274,056</td><td class="px-4 py-3 text-right">+16.5%</td></tr>
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">Playa del Carmen, Q. Roo</td><td class="px-4 py-3 text-right">409,849</td><td class="px-4 py-3 text-right">650,718</td><td class="px-4 py-3 text-right font-bold">+240,869</td><td class="px-4 py-3 text-right">+58.8%</td></tr>
+                            <tr><td class="px-4 py-3">Saltillo, Coah.</td><td class="px-4 py-3 text-right">979,001</td><td class="px-4 py-3 text-right">1,202,353</td><td class="px-4 py-3 text-right font-bold">+223,352</td><td class="px-4 py-3 text-right">+22.8%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-sm text-ink/50 italic mb-6">
+                    Fuente: Proyecciones de población CONAPO, 2025→2040. Universo completo de 2,475 municipios; se muestran los 12 con mayor ganancia absoluta. Filas sombreadas: mercados que crecen más de 23% — expansión acelerada.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    Y entre los municipios de más de 50 mil habitantes, los de crecimiento relativo más explosivo son todos periferias de clústeres industriales: <strong>Huehuetoca (+78.7%)</strong> en el Arco Norte del Valle de México, <strong>Pesquería (+74.0%)</strong> y <strong>Ciénega de Flores (+67.3%)</strong> en el anillo manufacturero de Monterrey, <strong>Kanasín (+72.1%)</strong> junto a Mérida, <strong>Cuautlancingo (+71.0%)</strong> pegado al clúster automotriz de Puebla y <strong>El Salto (+61.5%)</strong> en el corredor industrial de Guadalajara. El empleo industrial ancla la vivienda, y la vivienda trae al consumidor.
+                </p>
+
+                <!-- GAP DE OFERTA -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">La gente llega antes que los negocios</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Aquí está el hallazgo accionable. Cruzamos la proyección con la densidad comercial actual del DENUE (unidades económicas por cada 1,000 habitantes). En los municipios que van a estallar, <strong>la oferta instalada es de la mitad a un tercio de la de los núcleos consolidados</strong>: Pesquería tiene 19 negocios por cada mil habitantes y García 22, contra 48 de Iztapalapa, 52 de Querétaro o 66 de San Pedro Garza García.
+                </p>
+
+                <figure class="mb-6">
+                    <img src="../../images/2026-07-24-densidad-negocios-periferias.png"
+                         alt="Negocios por cada mil habitantes: periferias en crecimiento entre 19 y 40 contra núcleos consolidados entre 43 y 66"
+                         class="w-full rounded-xl border border-ink/10 bg-white">
+                    <figcaption class="text-sm text-ink/50 mt-2 text-center">Densidad de negocios: periferias de alto crecimiento vs núcleos consolidados. Fuente: DENUE 2025, INEGI.</figcaption>
+                </figure>
+
+                <p class="text-ink/75 mb-6">
+                    La combinación es poco frecuente en un mercado maduro: <strong>demanda futura garantizada por proyección oficial + oferta actual baja</strong>. García tendrá 841 mil habitantes en 2040 — el tamaño del León de hace unos años — con la densidad comercial de hoy dimensionada para un municipio de la mitad de ese tamaño. Cada punto porcentual de ese crecimiento es demanda de abarrote, farmacia, servicios de salud, educación privada, banca, gimnasios, restaurantes y vivienda que alguien va a capturar.
+                </p>
+
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">Mercados subatendidos por construcción</p>
+                    <p class="text-ink/80">Un núcleo urbano con densidad de 50+ negocios por mil habitantes compite por un consumidor que ya no crece. Una periferia con densidad de 20 y crecimiento proyectado de 70% es un mercado donde la competencia todavía no llega — y donde el costo de suelo y renta aún no incorpora la demanda que viene.</p>
+                </div>
+
+                <!-- NUCLEOS QUE ENCOGEN -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El otro lado del mapa: los mercados que van a encoger</h2>
+
+                <p class="text-ink/75 mb-6">
+                    El mismo reacomodo tiene cara B. <strong>Iztapalapa perderá 184 mil habitantes; Gustavo A. Madero, 122 mil; el municipio de Guadalajara, 68 mil; Naucalpan, 59 mil.</strong> La Ciudad de México completa perderá 560 mil personas y llegará a 2040 con edad mediana de 44 años. Son mercados enormes que seguirán siéndolo — Iztapalapa tendrá 1.6 millones de habitantes —, pero su vector cambió: <strong>menos volumen, más edad</strong>.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    Eso no significa salir de ellos; significa cambiar la tesis. En un mercado que encoge y envejece, el crecimiento por apertura de puntos nuevos deja de funcionar y el juego pasa a ser <strong>participación de mercado, conversión del punto existente y reconversión de la oferta</strong> hacia el consumidor senior — salud, conveniencia, entrega a domicilio, formatos de proximidad. El caso extremo es San Pedro Garza García: la proyección le quita 57% de población pero le deja una estructura única — uno de cada tres habitantes tendrá 65 años o más en 2040 —, un mercado que se achica en personas y se especializa en el segmento senior.
+                </p>
+
+                <!-- INSIGHTS -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Insights para la acción</h2>
+
+                <ol class="list-decimal pl-6 text-ink/75 mb-6 space-y-3">
+                    <li><strong>Dimensiona la expansión con el mapa de 2040, no con el de hoy:</strong> la proyección municipal de CONAPO es el único dato de demanda con quince años de visibilidad. Úsala como capa base de cualquier plan de aperturas 2026-2030.</li>
+                    <li><strong>Prioriza las periferias industriales con densidad comercial baja:</strong> García, Pesquería, Ciénega de Flores, Huehuetoca, Kanasín y El Salto combinan crecimiento proyectado de 61% a 79% con apenas 19-40 negocios por mil habitantes. Ahí el primero que llega fija el estándar de la categoría.</li>
+                    <li><strong>En volumen puro, Tijuana es el premio mayor:</strong> +512 mil habitantes, más nuevos habitantes que cualquier otro municipio del país. Querétaro (+376 mil) es el que más rápido crece (+31%) entre los municipios centrales del top.</li>
+                    <li><strong>Cambia la tesis en los núcleos que encogen:</strong> en Iztapalapa, GAM, Guadalajara centro o Naucalpan el juego es participación y reconversión senior, no apertura. Y cuidado con proyectos dimensionados a población creciente en municipios que ya la están perdiendo.</li>
+                </ol>
+
+                <!-- CONCLUSIÓN -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Conclusión</h2>
+
+                <p class="text-ink/75 mb-6">
+                    El crecimiento de México dejó de ser una marea pareja: es un reacomodo con ganadores y perdedores definidos, y ya está proyectado municipio por municipio. Cinco millones de consumidores van a concentrarse en veinte lugares; el 44% de los municipios va a encoger. La ventaja competitiva no está en el dato — es público — sino en usarlo antes: hoy el suelo, las rentas y la competencia de García, Kanasín o Huehuetoca todavía están a precio del mapa viejo. En quince años, el que haya leído la proyección a tiempo va a parecer visionario. Solo leyó a CONAPO.
+                </p>
+
+                <p class="text-sm text-ink/50 italic mt-8">
+                    Análisis basado en las Proyecciones de la Población de México y de las Entidades Federativas de CONAPO (serie anual, niveles nacional, estatal y municipal; 2,475 municipios) — toda cifra a 2040 es proyección, no medición — y en el DENUE 2025 del INEGI para densidad de unidades económicas (clasificación SCIAN 2023). Son metodologías distintas y se observan por separado. Ventana de análisis 2025→2040; fecha de análisis: 24 de julio de 2026. Los municipios de creación reciente en Chiapas muestran tasas extremas de extrapolación y se excluyeron de los rankings. Para dimensionar la demanda futura, la densidad de competencia y el perfil de cualquier municipio con datos oficiales integrados, visita lokusdata.com
+                </p>
+
+            </div>
+
+            <!-- Article footer -->
+            <div class="mt-12 pt-8 border-t border-ink/10">
+                <div class="flex items-center justify-between">
+                    <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink transition">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Volver al blog
+                    </a>
+                    <div class="text-sm text-ink/50">
+                        Compartir en redes sociales proximamente
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="bg-ink topo py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-paper mb-4">
+                Mide la demanda futura de cualquier municipio antes de abrir
+            </h2>
+            <p class="text-xl text-paper/80 mb-8">
+                Lokus Data integra las proyecciones de CONAPO, el DENUE y el Censo Económico para dimensionar mercado futuro, densidad de competencia y perfil del consumidor en cada estado y municipio
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.lokusdata.com/register?utm_source=blog&utm_medium=cta&utm_campaign=20260724_demanda2040"
+                   target="_blank"
+                   class="bg-biz text-ink px-8 py-4 rounded-lg font-semibold text-lg hover:bg-bone transition">
+                    Probar la plataforma
+                </a>
+                <a href="../../index.html#contacto"
+                   class="border border-paper/25 text-paper px-8 py-4 rounded-lg font-semibold text-lg hover:bg-paper/10 hover:text-paper transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-paper/70 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-paper text-lg font-bold mb-4">Lokus Data</h3>
+                    <p class="text-sm">
+                        Transformamos datos en decisiones estrategicas
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html#servicios" class="hover:text-paper transition">Consultoria</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../blog.html" class="hover:text-paper transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-paper transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>analytics@lokusdata.com</li>
+                        <li>+52 55 2281 3975</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-paper/10 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Mobile menu script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link =>
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+            );
+        }
+    </script>
+</body>
+</html>
