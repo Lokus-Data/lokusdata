@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El termómetro fiscal: dónde los municipios se pagan solos — y qué revela sobre los mercados más sólidos de México - Lokus Data</title>
+    <meta name="description" content="Cancún, El Marqués, Los Cabos y Zapopan financian más de la mitad de su gobierno local con recaudación propia: predial, derechos, licencias. Ese dato delata dónde la propiedad vale y el consumo formal tiene músculo. San Pedro Garza García recauda $12,402 por habitante solo en impuestos. El mapa fiscal como señal de mercado, con EFIPEM 2024.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Estilos compilados (Tailwind CLI + sistema cartográfico) -->
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <!-- LOKUS-SEO-V1 -->
+    <link rel="canonical" href="https://lokusdata.com/blog/articulos/2026-07-31-termometro-fiscal-municipios-mercados-solidos.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="El termómetro fiscal: dónde los municipios se pagan solos — y qué revela sobre los mercados más sólidos de México">
+    <meta property="og:description" content="Cancún, El Marqués, Los Cabos y Zapopan financian más de la mitad de su gobierno local con predial, derechos y licencias — la huella fiscal del valor inmobiliario y el consumo formal. El mapa completo con EFIPEM 2024.">
+    <meta property="og:url" content="https://lokusdata.com/blog/articulos/2026-07-31-termometro-fiscal-municipios-mercados-solidos.html">
+    <meta property="og:site_name" content="Lokus Data">
+    <meta property="og:image" content="https://lokusdata.com/images/2026-07-31-og-termometro-fiscal.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="El termómetro fiscal: dónde los municipios se pagan solos">
+    <meta name="twitter:description" content="La recaudación local delata dónde la propiedad vale y el consumo formal tiene músculo: playa, nave industrial y suburbio premium. San Pedro recauda 12,402 pesos por habitante en impuestos. EFIPEM 2024.">
+    <meta name="twitter:image" content="https://lokusdata.com/images/2026-07-31-og-termometro-fiscal.png">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCQHS6GXFE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VCQHS6GXFE');
+      gtag('config', 'AW-17620097832');
+    </script>
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "El termómetro fiscal: dónde los municipios se pagan solos — y qué revela sobre los mercados más sólidos de México",
+  "description": "Los municipios que financian más de la mitad de su gobierno local con recaudación propia son tres tipos de mercado: playa turística, corredor industrial y suburbio premium. El indicador fiscal como proxy de valor inmobiliario y consumo formal, con el universo completo de 2,380 municipios de EFIPEM 2024.",
+  "datePublished": "2026-07-31",
+  "dateModified": "2026-07-31",
+  "author": {
+    "@type": "Person",
+    "name": "Juan Heriberto Rosas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lokus Data",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lokusdata.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lokusdata.com/blog/articulos/2026-07-31-termometro-fiscal-municipios-mercados-solidos.html"
+  },
+  "articleSection": "Análisis"
+}
+    </script>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <img src="../../images/lokus-logo.png" alt="Lokus Data" class="h-9 w-9">
+                    <span class="text-xl font-display font-bold tracking-tight">
+                        Lokus<span class="text-biz">Data</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="../../index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="../../index.html#motor" class="hover:text-ink transition">El motor</a>
+                    <a href="../../blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="../../index.html#servicios" class="hover:text-ink transition">A medida</a>
+                    <a href="../../index.html#contacto" class="hover:text-ink transition">Contacto</a>
+                    <a href="../../index.html#productos"
+                       class="bg-ink text-paper px-5 py-2 rounded-full hover:bg-ink2 transition font-semibold">
+                        Entrar
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-ink" aria-label="Menú">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="../../index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="../../index.html#motor" class="block px-3 py-2 rounded hover:bg-bone">El motor</a>
+                <a href="../../blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="../../index.html#servicios" class="block px-3 py-2 rounded hover:bg-bone">A medida</a>
+                <a href="../../index.html#contacto" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back to blog -->
+            <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink mb-8 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver al blog
+            </a>
+
+            <!-- Article metadata -->
+            <div class="mb-8">
+                <div class="mono coord uppercase text-biz text-xs mb-4">Análisis · Inteligencia Territorial</div>
+                <div class="flex items-center text-sm text-ink/50 mb-4">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    31 de julio de 2026
+                    <span class="mx-2">&bull;</span>
+                    <span>9 min de lectura</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold text-ink mb-4">
+                    El termómetro fiscal: dónde los municipios se pagan solos — y qué revela sobre los mercados más sólidos de México
+                </h1>
+
+                <p class="text-xl text-ink/60">
+                    Hay un indicador público, municipio por municipio, que resume cuánto vale la propiedad y cuánto músculo tiene la economía formal de una plaza: la proporción del gobierno local que se financia con predial, derechos y licencias. Los que se pagan solos son tres tipos de mercado — playa, nave industrial y suburbio premium. Y casi nadie lo consulta antes de decidir dónde abrir.
+                </p>
+            </div>
+
+            <!-- Featured chart -->
+            <figure class="mb-8">
+                <img src="../../images/2026-07-31-termometro-fiscal-hero.png"
+                     alt="Los 14 municipios de más de 50 mil habitantes con mayor autonomía fiscal 2024: El Marqués 68.4% encabeza, seguido de Cancún, Corregidora y Querétaro"
+                     class="w-full rounded-xl border border-ink/10 bg-white">
+                <figcaption class="text-sm text-ink/50 mt-2 text-center">Autonomía fiscal 2024, municipios de más de 50 mil habitantes. Fuente: EFIPEM, INEGI (capa Oro Lokus).</figcaption>
+            </figure>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none">
+
+                <!-- PANORAMA -->
+                <h2 class="text-3xl font-bold text-ink mt-4 mb-4">Un indicador que casi nadie mira — y que resume todo un mercado</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Cada año el INEGI publica, para cada municipio del país, cuánto de su ingreso genera la propia plaza: impuestos — el predial ante todo —, derechos, licencias, aprovechamientos. A esa proporción se le llama <strong>autonomía fiscal</strong>, y en 2024 el agregado de los 2,380 municipios con registro fue de <strong>24.5%</strong>: de cada 100 pesos que ejerce un gobierno local mexicano, 24.5 salen de la economía de su propio territorio.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    ¿Por qué debería importarle ese número a un director de expansión o a un inversionista inmobiliario? Porque <strong>la recaudación local es un espejo agregado de tres cosas que cuestan mucho medir por separado</strong>: el valor real de la propiedad (el predial se cobra sobre catastro), el tamaño de la economía formal (las licencias y derechos se cobran a negocios establecidos) y la capacidad del municipio para sostener servicios urbanos sin depender de recursos que no controla. Es, en una sola cifra pública y comparable, un termómetro de solidez de mercado.
+                </p>
+
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">La lectura de negocio</p>
+                    <p class="text-ink/80">Donde la autonomía fiscal supera 50%, hay propiedad valiosa, actividad formal densa y un gobierno local con ingresos para banquetas, seguridad y permisos ágiles. Donde no llega a 5% — la mitad de los municipios del país —, la economía formal gravable es tan delgada que el mercado opera en otra lógica: efectivo, micronegocio y canal tradicional.</p>
+                </div>
+
+                <!-- MAPA -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El mapa: playa, nave industrial y suburbio premium</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Ordenamos el universo completo de municipios por autonomía fiscal. Entre los de más de 50 mil habitantes, el top no tiene ningún misterio geográfico — tiene tres arquetipos de mercado perfectamente definidos:
+                </p>
+
+                <ul class="list-disc pl-6 text-ink/75 mb-6 space-y-2">
+                    <li><strong>La playa:</strong> Cancún (63.0%), Playa del Carmen (59.1%), Bahía de Banderas (58.9%), Puerto Peñasco (56.7%), Los Cabos (53.5%) y Progreso (51.2%). Hoteles y segunda vivienda son base catastral de alto valor — y el turismo paga derechos todo el año.</li>
+                    <li><strong>La nave industrial:</strong> El Marqués (68.4%, el máximo nacional entre municipios grandes), Querétaro capital (60.0%), Ramos Arizpe (59.8%) y Ciénega de Flores (52.3%). Los parques industriales son contribuyentes gigantes y estables.</li>
+                    <li><strong>El suburbio premium:</strong> Huixquilucan (56.9%), Corregidora (61.4%), Tlajomulco (51.9%) y Zapopan (50.8%) — vivienda residencial de alta plusvalía que sostiene la caja local.</li>
+                </ul>
+
+                <p class="text-ink/75 mb-6">
+                    Nótese lo que <em>no</em> aparece: ni los grandes centros históricos del Bajío tradicional, ni las capitales del sur, ni la mayoría de las ciudades medias del interior. El mapa de los municipios que se pagan solos es, casi punto por punto, <strong>el mapa de los mercados donde la propiedad se aprecia y la economía formal crece</strong>: los mismos corredores turísticos e industriales que aparecen una y otra vez en nuestros análisis de expansión.
+                </p>
+
+                <!-- PREDIAL PER CAPITA -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El predial per cápita: dónde la propiedad realmente vale</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Si la autonomía es el termómetro, la recaudación de impuestos por habitante es el grado exacto de la fiebre. Entre los municipios de más de 100 mil habitantes, la tabla la encabeza — por mucho — <strong>San Pedro Garza García: $12,402 pesos por habitante al año solo en impuestos municipales</strong>, más del triple que Querétaro capital. El top 10 es una lista de precios del suelo mexicano:
+                </p>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="min-w-full bg-paper border border-ink/10 rounded-lg text-sm">
+                        <thead class="bg-ink text-paper">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold">Municipio</th>
+                                <th class="px-4 py-3 text-right font-semibold">Impuestos por habitante 2024</th>
+                                <th class="px-4 py-3 text-right font-semibold">Autonomía fiscal</th>
+                                <th class="px-4 py-3 text-left font-semibold">Tipo de mercado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-ink/10">
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">San Pedro Garza García, NL</td><td class="px-4 py-3 text-right font-bold">$12,402</td><td class="px-4 py-3 text-right">48.4%</td><td class="px-4 py-3">Suburbio premium</td></tr>
+                            <tr><td class="px-4 py-3">El Marqués, Qro.</td><td class="px-4 py-3 text-right font-bold">$10,218</td><td class="px-4 py-3 text-right">68.4%</td><td class="px-4 py-3">Corredor industrial</td></tr>
+                            <tr><td class="px-4 py-3">Los Cabos, BCS</td><td class="px-4 py-3 text-right font-bold">$5,651</td><td class="px-4 py-3 text-right">53.5%</td><td class="px-4 py-3">Turismo</td></tr>
+                            <tr><td class="px-4 py-3">Huixquilucan, Méx.</td><td class="px-4 py-3 text-right font-bold">$5,557</td><td class="px-4 py-3 text-right">56.9%</td><td class="px-4 py-3">Suburbio premium</td></tr>
+                            <tr><td class="px-4 py-3">Corregidora, Qro.</td><td class="px-4 py-3 text-right font-bold">$4,688</td><td class="px-4 py-3 text-right">61.4%</td><td class="px-4 py-3">Suburbio / industrial</td></tr>
+                            <tr><td class="px-4 py-3">Playa del Carmen, Q. Roo</td><td class="px-4 py-3 text-right font-bold">$4,325</td><td class="px-4 py-3 text-right">59.1%</td><td class="px-4 py-3">Turismo</td></tr>
+                            <tr><td class="px-4 py-3">Bahía de Banderas, Nay.</td><td class="px-4 py-3 text-right font-bold">$4,261</td><td class="px-4 py-3 text-right">58.9%</td><td class="px-4 py-3">Turismo</td></tr>
+                            <tr><td class="px-4 py-3">Ramos Arizpe, Coah.</td><td class="px-4 py-3 text-right font-bold">$3,550</td><td class="px-4 py-3 text-right">59.8%</td><td class="px-4 py-3">Corredor industrial</td></tr>
+                            <tr><td class="px-4 py-3">Querétaro, Qro.</td><td class="px-4 py-3 text-right font-bold">$3,257</td><td class="px-4 py-3 text-right">60.0%</td><td class="px-4 py-3">Metrópoli industrial</td></tr>
+                            <tr><td class="px-4 py-3">San Miguel de Allende, Gto.</td><td class="px-4 py-3 text-right font-bold">$2,981</td><td class="px-4 py-3 text-right">37.3%</td><td class="px-4 py-3">Turismo residencial</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-sm text-ink/50 italic mb-6">
+                    Impuestos municipales recaudados por habitante, municipios de más de 100 mil habitantes, 2024. Fuente: EFIPEM 2024, INEGI; población del Censo 2020. La clasificación de tipo de mercado es analítica de Lokus.
+                </p>
+
+                <!-- ESCALERA -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">La escalera del tamaño: el volumen construye músculo fiscal</h2>
+
+                <figure class="mb-6">
+                    <img src="../../images/2026-07-31-autonomia-tamano.png"
+                         alt="Autonomía fiscal ponderada por tamaño de municipio 2024: 4.7% en municipios de menos de 5 mil habitantes y 35.6% en los de 500 mil o más"
+                         class="w-full rounded-xl border border-ink/10 bg-white">
+                    <figcaption class="text-sm text-ink/50 mt-2 text-center">Autonomía fiscal ponderada por tamaño de municipio, 2024. Fuente: EFIPEM, INEGI; población Censo 2020.</figcaption>
+                </figure>
+
+                <p class="text-ink/75 mb-6">
+                    La relación entre tamaño de mercado y solidez fiscal es una escalera casi perfecta: <strong>4.7% de autonomía en municipios de menos de 5 mil habitantes, 16.9% entre 50 y 100 mil, 35.6% arriba de 500 mil</strong>. La escala urbana concentra propiedad formal, comercio establecido y servicios — exactamente lo que un gobierno local puede gravar y lo que una marca puede atender. Pero los arquetipos del top rompen la escalera hacia arriba: El Marqués (232 mil habitantes) o Puerto Morelos (27 mil, 68.4% de autonomía, la máxima del país) rinden como metrópolis fiscales siendo mercados medianos. Eso es señal pura: <strong>ahí el valor por habitante — de la propiedad, del turismo, de la industria — es extraordinariamente alto para su tamaño</strong>.
+                </p>
+
+                <!-- OTRO EXTREMO -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El otro extremo del termómetro: los mercados de efectivo</h2>
+
+                <p class="text-ink/75 mb-6">
+                    La mitad de los municipios del país — <strong>1,178 de 2,380</strong> — genera menos de 5% de su ingreso localmente, y <strong>596 no llegan ni a 2%</strong>. Agregado por estado, los municipios de Chiapas promedian 5.1% de autonomía; los de Oaxaca y Tabasco, 9.1%. Y no todos son pueblos pequeños: <strong>37 municipios de más de 50 mil habitantes están debajo de 5%</strong>, incluidos mercados de 100 a 235 mil personas como Ocosingo, Las Margaritas o Chamula, en Chiapas.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    Para una decisión de expansión, ese dato no dice "no hay mercado": dice <strong>qué tipo de mercado hay</strong>. Una plaza donde el gobierno local casi no recauda predial ni licencias es una plaza donde la propiedad formal registrada es escasa y el grueso de la actividad ocurre en micronegocio y efectivo — el territorio del canal tradicional, la tiendita y la venta por catálogo, no del formato anclado en ticket promedio alto. Es la misma geografía que vimos en nuestro análisis del mercado informal: los dos indicadores se confirman mutuamente desde fuentes distintas.
+                </p>
+
+                <!-- INSIGHTS -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Insights para la acción</h2>
+
+                <ol class="list-decimal pl-6 text-ink/75 mb-6 space-y-3">
+                    <li><strong>Usa la autonomía fiscal como filtro de screening territorial:</strong> es pública, anual, cubre 2,380 municipios y resume valor inmobiliario + formalidad + capacidad de servicios en un solo número. Arriba de 40%, plaza sólida; debajo de 10%, mercado de efectivo y canal tradicional.</li>
+                    <li><strong>El predial per cápita es un avalúo gratuito:</strong> la lista de municipios que más impuestos recaudan por habitante — San Pedro, El Marqués, Los Cabos, Huixquilucan — es una lista de dónde el suelo vale y se aprecia. Para inversión inmobiliaria o formatos premium, ahí está el shortlist.</li>
+                    <li><strong>Los sobrecalificados fiscales son las joyas del mapa:</strong> municipios medianos que recaudan como metrópolis — Puerto Morelos, El Marqués, Ramos Arizpe, Bahía de Banderas — tienen más valor económico por habitante del que su tamaño sugiere. Suelen ser mercados donde la demanda de servicios de calidad va por delante de la oferta.</li>
+                    <li><strong>En el extremo bajo, adapta el modelo en lugar de descartar la plaza:</strong> 15 millones de personas viven en los municipios con autonomía menor a 5% (Censo 2020). Ahí ganan los formatos de proximidad, precio bajo, efectivo y distribución capilar — no el retail de centro comercial.</li>
+                </ol>
+
+                <!-- CONCLUSIÓN -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Conclusión</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Los estados financieros de los gobiernos locales son, leídos con ojos de mercado, uno de los datasets de inteligencia territorial más subutilizados de México. Nadie elige dónde abrir mirando cuánto predial cobra el municipio — y sin embargo esa cifra condensa el valor de la propiedad, la densidad de la economía formal y la calidad del entorno operativo mejor que la mayoría de los estudios de plaza. El termómetro ya está puesto: playa, nave industrial y suburbio premium marcan 50 grados y subiendo; la mitad del país marca menos de 5. La ventaja no está en el dato — es público desde hace veinte años —, está en ser de los primeros en leerlo.
+                </p>
+
+                <p class="text-sm text-ink/50 italic mt-8">
+                    Análisis basado en la Estadística de Finanzas Públicas Estatales y Municipales (EFIPEM) del INEGI, ejercicio 2024 (2,380 municipios con registro; serie 2003-2024), consultada en la capa de datos validada de Lokus. Autonomía fiscal = ingresos generados localmente (impuestos, derechos, productos, aprovechamientos y contribuciones de mejoras) entre ingreso total; los agregados son ponderados por ingresos. Población: Censo de Población y Vivienda 2020, INEGI (metodología distinta, usada solo como denominador). Montos en pesos corrientes 2024. Las 16 alcaldías de la CDMX operan bajo un régimen presupuestal distinto y quedan fuera del comparativo. Fecha de análisis: 31 de julio de 2026. Para dimensionar el mercado, la competencia y el perfil de cualquier municipio con datos oficiales integrados, visita lokusdata.com
+                </p>
+
+            </div>
+
+            <!-- Article footer -->
+            <div class="mt-12 pt-8 border-t border-ink/10">
+                <div class="flex items-center justify-between">
+                    <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink transition">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Volver al blog
+                    </a>
+                    <div class="text-sm text-ink/50">
+                        Compartir en redes sociales proximamente
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="bg-ink topo py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-paper mb-4">
+                Lee el termómetro completo de cualquier municipio antes de abrir
+            </h2>
+            <p class="text-xl text-paper/80 mb-8">
+                Lokus Data integra las finanzas municipales, el Censo Económico, el DENUE y la demografía para dimensionar solidez de mercado, competencia y perfil del consumidor en cada estado y municipio
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.lokusdata.com/register?utm_source=blog&utm_medium=cta&utm_campaign=20260731_termometrofiscal"
+                   target="_blank"
+                   class="bg-biz text-ink px-8 py-4 rounded-lg font-semibold text-lg hover:bg-bone transition">
+                    Probar la plataforma
+                </a>
+                <a href="../../index.html#contacto"
+                   class="border border-paper/25 text-paper px-8 py-4 rounded-lg font-semibold text-lg hover:bg-paper/10 hover:text-paper transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-paper/70 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-paper text-lg font-bold mb-4">Lokus Data</h3>
+                    <p class="text-sm">
+                        Transformamos datos en decisiones estrategicas
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html#servicios" class="hover:text-paper transition">Consultoria</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../blog.html" class="hover:text-paper transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-paper transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>analytics@lokusdata.com</li>
+                        <li>+52 55 2281 3975</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-paper/10 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Mobile menu script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link =>
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+            );
+        }
+    </script>
+</body>
+</html>
