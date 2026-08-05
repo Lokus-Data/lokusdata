@@ -31,6 +31,9 @@ function buildSitemap(posts) {
   const staticPages = [
     { loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly', lastmod: today },
     { loc: `${SITE}/blog.html`, priority: '0.9', changefreq: 'weekly', lastmod: today },
+    // Pilares SEO evergreen (2026-08-05): 'estudio de mercado' (~13k/mes) y 'cuantas empresas hay en mexico'
+    { loc: `${SITE}/estudio-de-mercado/`, priority: '0.9', changefreq: 'monthly', lastmod: today },
+    { loc: `${SITE}/cuantas-empresas-hay-en-mexico/`, priority: '0.9', changefreq: 'monthly', lastmod: today },
     { loc: `${SITE}/privacidad.html`, priority: '0.3', changefreq: 'yearly', lastmod: today },
     { loc: `${SITE}/terminos.html`, priority: '0.3', changefreq: 'yearly', lastmod: today },
   ];
