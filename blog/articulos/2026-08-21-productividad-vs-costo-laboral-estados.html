@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productividad alta no significa mano de obra cara: el mapa cruzado de las 32 entidades - Lokus Data</title>
+    <meta name="description" content="El valor agregado por persona y el ingreso laboral casi no se relacionan entre los estados de México: correlación de 0.096. Doce entidades caen en un cuadrante cruzado y el salto promedio entre un ranking y el otro es de 7.6 lugares. El mapa completo para decidir dónde expandir operaciones, con el Censo Económico 2024 y la ENOE 1T2026 del INEGI.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Estilos compilados (Tailwind CLI + sistema cartográfico) -->
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <!-- LOKUS-SEO-V1 -->
+    <link rel="canonical" href="https://lokusdata.com/blog/articulos/2026-08-21-productividad-vs-costo-laboral-estados.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Productividad alta no significa mano de obra cara: el mapa cruzado de las 32 entidades">
+    <meta property="og:description" content="La correlación entre productividad e ingreso laboral por estado es de 0.096. Doce entidades caen en un cuadrante cruzado. Dónde el talento cuesta menos de lo que su productividad sugeriría y dónde el ingreso sostiene el consumo formal. Censo Económico 2024 y ENOE 1T2026, INEGI.">
+    <meta property="og:url" content="https://lokusdata.com/blog/articulos/2026-08-21-productividad-vs-costo-laboral-estados.html">
+    <meta property="og:site_name" content="Lokus Data">
+    <meta property="og:image" content="https://lokusdata.com/images/2026-08-21-og-productividad-costo-laboral.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Productividad alta no significa mano de obra cara">
+    <meta name="twitter:description" content="El mapa cruzado de las 32 entidades: productividad frente a costo laboral e informalidad. Doce estados rompen la intuición. Censo Económico 2024 y ENOE 1T2026.">
+    <meta name="twitter:image" content="https://lokusdata.com/images/2026-08-21-og-productividad-costo-laboral.png">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCQHS6GXFE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VCQHS6GXFE');
+      gtag('config', 'AW-17620097832');
+    </script>
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Productividad alta no significa mano de obra cara: el mapa cruzado de las 32 entidades",
+  "description": "Cruce del Censo Económico 2024 con la ENOE 1T2026 para las 32 entidades: la correlación entre valor agregado por persona e ingreso laboral es de 0.096, doce estados caen en un cuadrante cruzado y la participación de las remuneraciones en el valor agregado bajó en 27 de 32 entidades entre 2014 y 2024.",
+  "datePublished": "2026-08-21",
+  "dateModified": "2026-08-21",
+  "author": {
+    "@type": "Person",
+    "name": "Juan Heriberto Rosas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lokus Data",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lokusdata.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lokusdata.com/blog/articulos/2026-08-21-productividad-vs-costo-laboral-estados.html"
+  },
+  "articleSection": "Análisis"
+}
+    </script>
+
+    <!-- JSON-LD FAQ Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿En qué estados de México la mano de obra es más cara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por ingreso promedio mensual del ocupado en la ENOE del primer trimestre de 2026: Baja California Sur (16,327 pesos), Nuevo León (14,786), Baja California (14,632), Ciudad de México (14,336) y Chihuahua (13,449). En el extremo opuesto están Chiapas (7,309), Veracruz (8,293), Oaxaca (8,386) y Puebla (8,445)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La productividad de un estado predice cuánto cuesta contratar ahí?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Casi nada. La correlación entre el valor agregado por persona del Censo Económico 2024 y el ingreso laboral de la ENOE 1T2026 es de 0.096 entre las 32 entidades. Doce estados caen en un cuadrante cruzado y el salto promedio de posición entre ambos rankings es de 7.6 lugares. Retirando Campeche y Tabasco, dos enclaves petroleros, la correlación sube a 0.535."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué proporción del valor agregado se va en remuneraciones en México?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El 22.2% del valor agregado censal bruto nacional en 2024, frente a 23.3% en 2014 y 24.8% en 2004. La proporción varía mucho por entidad: Baja California 34.8% y Chihuahua 33.6% en el extremo alto, Chiapas 16.5%, Tabasco 6.9% y Campeche 6.4% en el bajo. Bajó en 27 de las 32 entidades entre los censos 2014 y 2024."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo afecta la informalidad al tamaño del mercado formal de un estado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La informalidad es la variable que mejor explica el ingreso laboral de una entidad: la correlación entre ambas es de −0.907 en la ENOE 1T2026. En Oaxaca el 79.9% de los ocupados es informal y en Coahuila el 34.2%. El Censo Económico lo confirma desde otro ángulo: en Oaxaca el 53.4% del personal ocupado en establecimientos no recibe pago, contra 9.0% en Nuevo León."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <img src="../../images/lokus-logo.png" alt="Lokus Data" class="h-9 w-9">
+                    <span class="text-xl font-display font-bold tracking-tight">
+                        Lokus<span class="text-biz">Data</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="../../index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="../../index.html#motor" class="hover:text-ink transition">El motor</a>
+                    <a href="../../blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="../../index.html#servicios" class="hover:text-ink transition">A medida</a>
+                    <a href="../../index.html#contacto" class="hover:text-ink transition">Contacto</a>
+                    <a href="../../index.html#productos"
+                       class="bg-ink text-paper px-5 py-2 rounded-full hover:bg-ink2 transition font-semibold">
+                        Entrar
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-ink" aria-label="Menú">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="../../index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="../../index.html#motor" class="block px-3 py-2 rounded hover:bg-bone">El motor</a>
+                <a href="../../blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="../../index.html#servicios" class="block px-3 py-2 rounded hover:bg-bone">A medida</a>
+                <a href="../../index.html#contacto" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back to blog -->
+            <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink mb-8 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver al blog
+            </a>
+
+            <!-- Article metadata -->
+            <div class="mb-8">
+                <div class="mono coord uppercase text-biz text-xs mb-4">Análisis · Inteligencia de Mercado</div>
+                <div class="flex items-center text-sm text-ink/50 mb-4">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    21 de agosto de 2026
+                    <span class="mx-2">&bull;</span>
+                    <span>9 min de lectura</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold text-ink mb-4">
+                    Productividad alta no significa mano de obra cara: el mapa cruzado de las 32 entidades
+                </h1>
+
+                <p class="text-xl text-ink/60">
+                    La correlación entre el valor que genera la economía de un estado y lo que ahí gana un trabajador es de 0.096: prácticamente ninguna. Doce entidades caen en un cuadrante cruzado y el salto promedio entre un ranking y el otro es de 7.6 lugares. Para quien evalúa dónde abrir planta, oficina o punto de venta, eso significa que dos variables que suelen darse por atadas se pueden elegir por separado.
+                </p>
+            </div>
+
+            <!-- Featured chart -->
+            <figure class="mb-8">
+                <img src="../../images/2026-08-21-ranking-cruzado-hero.png"
+                     alt="Gráfica de pendiente que conecta la posición de cada entidad en productividad (Censo Económico 2024) con su posición en ingreso laboral (ENOE 1T2026): Baja California Sur sube 16 lugares y Tabasco cae 23"
+                     class="w-full rounded-xl border border-ink/10 bg-white">
+                <figcaption class="text-sm text-ink/50 mt-2 text-center">Posición de cada entidad en valor agregado por persona (CE 2024) y en ingreso mensual del ocupado (ENOE 1T2026). Fuente: INEGI (capa Oro Lokus).</figcaption>
+            </figure>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none">
+
+                <!-- PANORAMA -->
+                <h2 class="text-3xl font-bold text-ink mt-4 mb-4">El panorama: dos métricas que no van tomadas de la mano</h2>
+
+                <p class="text-ink/75 mb-6">
+                    El Censo Económico 2024 contabiliza <strong>5,468,180 unidades económicas, 27,965,433 personas ocupadas y $15.67 billones de pesos de valor agregado</strong>: <strong>$560,263 por persona ocupada al año</strong> en el promedio nacional. La ENOE del primer trimestre de 2026 pone el otro lado del tablero: <strong>59,552,660 personas ocupadas</strong> y un ingreso promedio que va de <strong>$16,327 mensuales en Baja California Sur a $7,309 en Chiapas</strong>. Al ordenar las 32 entidades por ambas métricas, la relación entre ellas es de <strong>0.096</strong>. En otras palabras: saber cuánto valor genera por persona un estado no te dice casi nada sobre cuánto cuesta contratar ahí.
+                </p>
+
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">La lectura de negocio</p>
+                    <p class="text-ink/80">La intuición dominante al planear una expansión es que los estados productivos son caros y los baratos son improductivos, y que hay que elegir entre eficiencia y costo. Los datos dicen que ese trade-off no existe como regla: <strong>doce de las 32 entidades caen en un cuadrante cruzado</strong> y catorce se mueven ocho o más lugares entre un ranking y el otro. Ahí es donde vive el arbitraje territorial.</p>
+                </div>
+
+                <!-- ENCLAVES -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Los dos primeros lugares no son mercados: son enclaves</h2>
+
+                <p class="text-ink/75 mb-6">
+                    <strong>Campeche encabeza el país con $1,765,839 de valor agregado por persona y Tabasco le sigue con $1,699,293</strong>, más del triple del promedio nacional. Y sin embargo aparecen en los lugares <strong>19 y 25</strong> de ingreso laboral. El detalle sectorial explica por qué en una línea: <strong>en Campeche, 15 unidades económicas de minería (SCIAN 21) generan el 84.6% del valor agregado del estado con el 6.2% de su personal ocupado; en Tabasco, 61 unidades generan el 80.7% con el 6.7% del personal</strong>. La minería es la actividad con mayor valor por persona del país —<strong>$6,609,653 anuales</strong> a nivel nacional— y opera con una plantilla mínima.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    Para dimensionar un mercado, esta distinción es decisiva. Un estado con valor agregado altísimo concentrado en pocas unidades <strong>no tiene una masa salarial proporcional a su tamaño económico</strong>: el dinero no circula localmente en la escala que sugiere la cifra agregada. Retirando esos dos casos, la correlación entre productividad e ingreso sube a <strong>0.535</strong> — real, pero explica menos de un tercio de la variación entre entidades.
+                </p>
+
+                <!-- COSTO LABORAL -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Cuánto del valor generado se va en nómina, estado por estado</h2>
+
+                <figure class="mb-6">
+                    <img src="../../images/2026-08-21-participacion-laboral-estados.png"
+                         alt="Gráfica de mancuernas con la participación de las remuneraciones en el valor agregado por entidad en 2014 y 2024: Baja California 34.8% arriba, Campeche 6.4% abajo, con caída en 27 de 32 estados"
+                         class="w-full rounded-xl border border-ink/10 bg-white">
+                    <figcaption class="text-sm text-ink/50 mt-2 text-center">Remuneraciones pagadas como porcentaje del valor agregado censal bruto, censos 2014 y 2024. Fuente: Censos Económicos, INEGI (capa Oro Lokus).</figcaption>
+                </figure>
+
+                <p class="text-ink/75 mb-6">
+                    La métrica más útil para planear costos no es el salario nominal sino <strong>cuánto pesa la nómina dentro del valor que genera la operación</strong>. A nivel nacional, las remuneraciones equivalen al <strong>22.2% del valor agregado en 2024</strong>, contra 23.3% en 2014 y 24.8% en 2004. El rango entre entidades es enorme: <strong>Baja California 34.8% y Chihuahua 33.6%</strong> en el extremo alto —estructura maquiladora, intensiva en personal remunerado— frente a <strong>Chiapas 16.5%, Tabasco 6.9% y Campeche 6.4%</strong> en el bajo.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    Y la tendencia es de una sola dirección: <strong>la participación bajó en 27 de las 32 entidades</strong> entre 2014 y 2024. El caso extremo es <strong>Aguascalientes: el mayor salto de productividad del país (+257.0% en valor por persona) acompañado de la mayor caída en participación laboral, de 33.6% a 18.7%</strong>. En el largo plazo la brecha es la misma historia: entre 2004 y 2024 el valor por persona se multiplicó por <strong>2.70</strong> y la remuneración media por persona remunerada por <strong>2.12</strong>, ambas en pesos corrientes, de modo que la distancia entre las dos series no depende de la inflación.
+                </p>
+
+                <!-- MAPA CRUZADO -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El mapa cruzado: quién sube y quién baja al cambiar de métrica</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Los movimientos más grandes del ranking son los que interesan a una decisión de expansión. <strong>Baja California Sur salta del lugar 17 en productividad al 1 en ingreso</strong> ($16,327 mensuales): mercado turístico con ingreso alto y baja productividad censal, es decir, mano de obra cara en un tejido de unidades pequeñas. <strong>Quintana Roo sube 13 lugares y Sinaloa 13; Nayarit, 15.</strong> En sentido contrario, <strong>Veracruz cae 18 lugares</strong> (12 en productividad, 30 en ingreso) y <strong>Guanajuato 12</strong> (10 en productividad, 22 en ingreso, con 54.8% de informalidad): territorios con base productiva sólida donde el ingreso laboral promedio sigue por debajo de la mediana.
+                </p>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="w-full text-sm border border-ink/10 rounded-lg overflow-hidden bg-white">
+                        <thead class="bg-ink text-paper">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold">Entidad</th>
+                                <th class="px-4 py-3 text-right font-semibold">Valor agregado por persona</th>
+                                <th class="px-4 py-3 text-center font-semibold">Lugar</th>
+                                <th class="px-4 py-3 text-right font-semibold">Ingreso mensual del ocupado</th>
+                                <th class="px-4 py-3 text-center font-semibold">Lugar</th>
+                                <th class="px-4 py-3 text-right font-semibold">Informalidad</th>
+                                <th class="px-4 py-3 text-right font-semibold">Nómina / valor agregado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-ink/10">
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">Campeche</td><td class="px-4 py-3 text-right">$1,765,839</td><td class="px-4 py-3 text-center">1</td><td class="px-4 py-3 text-right">$10,366</td><td class="px-4 py-3 text-center">19</td><td class="px-4 py-3 text-right">60.3%</td><td class="px-4 py-3 text-right">6.4%</td></tr>
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">Tabasco</td><td class="px-4 py-3 text-right">$1,699,293</td><td class="px-4 py-3 text-center">2</td><td class="px-4 py-3 text-right">$8,835</td><td class="px-4 py-3 text-center">25</td><td class="px-4 py-3 text-right">66.2%</td><td class="px-4 py-3 text-right">6.9%</td></tr>
+                            <tr><td class="px-4 py-3">Ciudad de México</td><td class="px-4 py-3 text-right">$996,344</td><td class="px-4 py-3 text-center">3</td><td class="px-4 py-3 text-right">$14,336</td><td class="px-4 py-3 text-center">4</td><td class="px-4 py-3 text-right">44.2%</td><td class="px-4 py-3 text-right">19.2%</td></tr>
+                            <tr><td class="px-4 py-3">Nuevo León</td><td class="px-4 py-3 text-right">$690,053</td><td class="px-4 py-3 text-center">5</td><td class="px-4 py-3 text-right">$14,786</td><td class="px-4 py-3 text-center">2</td><td class="px-4 py-3 text-right">34.9%</td><td class="px-4 py-3 text-right">24.6%</td></tr>
+                            <tr><td class="px-4 py-3">Querétaro</td><td class="px-4 py-3 text-right">$581,075</td><td class="px-4 py-3 text-center">8</td><td class="px-4 py-3 text-right">$11,697</td><td class="px-4 py-3 text-center">13</td><td class="px-4 py-3 text-right">39.0%</td><td class="px-4 py-3 text-right">25.1%</td></tr>
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">Guanajuato</td><td class="px-4 py-3 text-right">$572,330</td><td class="px-4 py-3 text-center">10</td><td class="px-4 py-3 text-right">$9,987</td><td class="px-4 py-3 text-center">22</td><td class="px-4 py-3 text-right">54.8%</td><td class="px-4 py-3 text-right">20.5%</td></tr>
+                            <tr><td class="px-4 py-3">Baja California</td><td class="px-4 py-3 text-right">$472,068</td><td class="px-4 py-3 text-center">11</td><td class="px-4 py-3 text-right">$14,632</td><td class="px-4 py-3 text-center">3</td><td class="px-4 py-3 text-right">37.6%</td><td class="px-4 py-3 text-right">34.8%</td></tr>
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">Veracruz</td><td class="px-4 py-3 text-right">$471,004</td><td class="px-4 py-3 text-center">12</td><td class="px-4 py-3 text-right">$8,293</td><td class="px-4 py-3 text-center">30</td><td class="px-4 py-3 text-right">68.9%</td><td class="px-4 py-3 text-right">19.1%</td></tr>
+                            <tr class="bg-biz/10"><td class="px-4 py-3 font-semibold">Baja California Sur</td><td class="px-4 py-3 text-right">$415,042</td><td class="px-4 py-3 text-center">17</td><td class="px-4 py-3 text-right">$16,327</td><td class="px-4 py-3 text-center">1</td><td class="px-4 py-3 text-right">38.9%</td><td class="px-4 py-3 text-right">25.8%</td></tr>
+                            <tr><td class="px-4 py-3">Oaxaca</td><td class="px-4 py-3 text-right">$238,014</td><td class="px-4 py-3 text-center">31</td><td class="px-4 py-3 text-right">$8,386</td><td class="px-4 py-3 text-center">29</td><td class="px-4 py-3 text-right">79.9%</td><td class="px-4 py-3 text-right">22.0%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-ink/50 mb-8">Valor agregado censal bruto por persona ocupada, Censo Económico 2024 (cifras nominales). Ingreso promedio mensual del ocupado y tasa de informalidad, ENOE 1T2026. Nómina / valor agregado = remuneraciones totales ÷ valor agregado censal bruto, Censo Económico 2024. Nacional: $560,263 · 54.78% de informalidad · 22.2%. Fuente: INEGI.</p>
+
+                <!-- CONSUMIDOR -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">El perfil del consumidor: la informalidad manda</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Si la productividad no explica el ingreso, ¿qué lo explica? Una sola variable, y con una fuerza inusual: <strong>la correlación entre la tasa de informalidad y el ingreso promedio del ocupado es de −0.907</strong>. Oaxaca, con 79.9% de informalidad, tiene el segundo ingreso más bajo del país; Coahuila, con 34.2%, la informalidad mínima nacional, llega a $12,425 mensuales. El Censo Económico lo confirma desde un ángulo totalmente independiente: el porcentaje de <strong>personal no remunerado</strong> dentro de los establecimientos censados correlaciona en <strong>0.953</strong> con la informalidad de la ENOE. <strong>En Oaxaca el 53.4% del personal ocupado en establecimientos no recibe pago; en Guerrero el 53.0%; en Nuevo León el 9.0%.</strong>
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    Para quien vende, ese par de cifras define casi todo: la proporción del ingreso que pasa por nómina bancarizada, la viabilidad del crédito al consumo, el peso del efectivo en el punto de venta y el tamaño real del mercado direccionable formal. Un estado con 70% de informalidad y otro con 35% pueden tener poblaciones parecidas y comportarse como mercados completamente distintos. Lo desarrollamos con el universo completo en <a href="2026-07-17-mercado-informal-32-millones-fuera-del-ticket.html" class="text-analytics hover:underline">el mapa de los 32.6 millones que no pasan por el ticket</a>.
+                </p>
+
+                <!-- ACCION -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Insights para la acción</h2>
+
+                <p class="text-ink/75 mb-6">
+                    <strong>1. Separa las dos variables en tu matriz de sitio.</strong> Productividad territorial y costo laboral no vienen empaquetadas: con una correlación de 0.096, tratarlas como una sola dimensión descarta opciones sin razón. Guanajuato y San Luis Potosí ofrecen productividad por encima de la mediana (lugares 10 y 9) con ingreso laboral por debajo (22 y 18); Baja California Sur y Quintana Roo, lo contrario.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    <strong>2. Usa la nómina sobre valor agregado, no el salario nominal.</strong> Baja California paga el tercer ingreso más alto del país y a la vez destina 34.8% de su valor agregado a remuneraciones; Campeche paga poco y destina 6.4%. Son dos estructuras de costos incomparables entre sí, y el ratio lo dice mejor que el salario suelto. Es el número que hay que llevar al modelo financiero de una planta.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    <strong>3. Trata la informalidad como variable de canal, no como ruido.</strong> Con −0.907 de correlación contra el ingreso, la informalidad es el mejor predictor disponible del poder de compra formal de una plaza. Define distribución, medios de pago y ticket promedio antes que cualquier estimación de población.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    <strong>4. Desconfía del valor agregado agregado.</strong> Antes de leer la cifra estatal, revisa cuántas unidades la generan. Campeche y Tabasco son el recordatorio de que 15 y 61 establecimientos pueden mover el promedio de un estado entero. Ese chequeo de concentración toma una consulta y evita dimensionar un mercado que no existe; es el mismo principio que aplicamos al <a href="2026-08-15-piramide-empresarial-9747-gigantes.html" class="text-analytics hover:underline">mapa por tamaño de empresa</a> y el primer paso de cualquier <a href="../../estudio-de-mercado/" class="text-analytics hover:underline">estudio de mercado</a> serio.
+                </p>
+
+                <!-- CONCLUSION -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Conclusión</h2>
+
+                <p class="text-ink/75 mb-6">
+                    México no tiene un mapa económico: tiene dos, y no coinciden. El del valor lo encabezan Campeche y Tabasco; el del ingreso, Baja California Sur y Nuevo León. Entre uno y otro, el estado promedio se mueve 7.6 lugares y catorce se mueven ocho o más. Para una empresa que decide dónde poner la siguiente operación, esa falta de coincidencia es la oportunidad: significa que se puede buscar productividad y costo laboral por separado, en vez de aceptar el paquete que sugiere la intuición. Y el dato que amarra ambos mapas —la informalidad, con −0.907 contra el ingreso— está publicado cada trimestre. La ventaja no está en tener la cifra: está en leerla antes que la competencia.
+                </p>
+
+                <!-- FAQ -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Preguntas frecuentes</h2>
+
+                <div class="space-y-4 mb-8">
+                    <div class="bg-paper border border-ink/10 rounded-lg p-5">
+                        <p class="text-ink font-semibold mb-1">¿En qué estados de México la mano de obra es más cara?</p>
+                        <p class="text-ink/75">Por ingreso promedio mensual del ocupado (ENOE 1T2026): Baja California Sur ($16,327), Nuevo León ($14,786), Baja California ($14,632), CDMX ($14,336) y Chihuahua ($13,449). En el extremo bajo: Chiapas ($7,309), Veracruz ($8,293), Oaxaca ($8,386) y Puebla ($8,445).</p>
+                    </div>
+                    <div class="bg-paper border border-ink/10 rounded-lg p-5">
+                        <p class="text-ink font-semibold mb-1">¿La productividad de un estado predice cuánto cuesta contratar ahí?</p>
+                        <p class="text-ink/75">Casi nada: la correlación es de 0.096 entre las 32 entidades. Doce caen en un cuadrante cruzado y el salto promedio entre ambos rankings es de 7.6 lugares. Retirando Campeche y Tabasco sube a 0.535.</p>
+                    </div>
+                    <div class="bg-paper border border-ink/10 rounded-lg p-5">
+                        <p class="text-ink font-semibold mb-1">¿Qué proporción del valor agregado se va en remuneraciones?</p>
+                        <p class="text-ink/75">22.2% a nivel nacional en 2024, contra 23.3% en 2014. Por entidad va de 34.8% en Baja California y 33.6% en Chihuahua a 6.9% en Tabasco y 6.4% en Campeche. Bajó en 27 de las 32 entidades entre ambos censos.</p>
+                    </div>
+                    <div class="bg-paper border border-ink/10 rounded-lg p-5">
+                        <p class="text-ink font-semibold mb-1">¿Cómo afecta la informalidad al mercado formal de un estado?</p>
+                        <p class="text-ink/75">Es la variable que mejor explica el ingreso laboral: correlación de −0.907. Va de 79.9% en Oaxaca a 34.2% en Coahuila. El censo lo confirma: en Oaxaca el 53.4% del personal en establecimientos no recibe pago, contra 9.0% en Nuevo León.</p>
+                    </div>
+                </div>
+
+                <p class="text-sm text-ink/50 italic mt-8">
+                    Análisis basado en el Censo Económico 2024 del INEGI (y la serie 2004-2024 para los comparativos temporales) y en la Encuesta Nacional de Ocupación y Empleo del primer trimestre de 2026, ambos consultados en la capa de datos validada de Lokus. Universo completo: las 32 entidades federativas, sin preselección. Definiciones: valor agregado por persona = valor agregado censal bruto ÷ personal ocupado total; remuneración media = remuneraciones totales ÷ personal remunerado; nómina sobre valor agregado = remuneraciones totales ÷ valor agregado censal bruto del mismo censo. El Censo Económico y la ENOE son fuentes independientes, con universos distintos —establecimientos frente a hogares— y periodos de referencia distintos: aquí se comparan en paralelo y nunca se combinan dentro de un mismo cociente. Los censos no cubren la actividad agropecuaria salvo pesca y acuicultura, ni el trabajo sin establecimiento; la ENOE no tiene desagregación municipal. Todas las cifras monetarias del censo son nominales, en pesos corrientes del año de referencia. SCIAN citado: sector 21, Minería. Correlaciones de Pearson sobre las 32 entidades. Fecha de análisis: 21 de agosto de 2026. Para dimensionar el mercado, la competencia y el perfil laboral de cualquier estado o municipio con datos oficiales integrados, visita lokusdata.com
+                </p>
+
+            </div>
+
+            <!-- Article footer -->
+            <div class="mt-12 pt-8 border-t border-ink/10">
+                <div class="flex items-center justify-between">
+                    <a href="../../blog.html" class="inline-flex items-center text-analytics hover:text-ink transition">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Volver al blog
+                    </a>
+                    <div class="text-sm text-ink/50">
+                        Compartir en redes sociales proximamente
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="bg-ink topo py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-paper mb-4">
+                ¿Cuánto cuesta realmente operar en tu plaza objetivo?
+            </h2>
+            <p class="text-xl text-paper/80 mb-8">
+                Lokus Data integra el Censo Económico, el DENUE, la ENOE y la demografía para dimensionar el mercado, la competencia y el perfil laboral de cualquier estado o municipio de México
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.lokusdata.com/register?utm_source=blog&utm_medium=cta&utm_campaign=20260821_costolaboral"
+                   target="_blank"
+                   class="bg-biz text-ink px-8 py-4 rounded-lg font-semibold text-lg hover:bg-bone transition">
+                    Probar la plataforma
+                </a>
+                <a href="../../index.html#contacto"
+                   class="border border-paper/25 text-paper px-8 py-4 rounded-lg font-semibold text-lg hover:bg-paper/10 hover:text-paper transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-paper/70 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-paper text-lg font-bold mb-4">Lokus Data</h3>
+                    <p class="text-sm">
+                        Transformamos datos en decisiones estrategicas
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html#servicios" class="hover:text-paper transition">Consultoria</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../blog.html" class="hover:text-paper transition">Blog</a></li>
+                        <li><a href="../../index.html#contacto" class="hover:text-paper transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-paper font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>analytics@lokusdata.com</li>
+                        <li>+52 55 2281 3975</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-paper/10 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 Lokus Data. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Mobile menu script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link =>
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+            );
+        }
+    </script>
+</body>
+</html>
