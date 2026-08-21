@@ -89,6 +89,14 @@
     },
     {
       "@type": "Question",
+      "name": "¿El resultado se debe solo a que Campeche y Tabasco son estados petroleros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo en parte. Restando el sector minería (SCIAN 21) a las 32 entidades, Campeche cae del lugar 1 al 30 en valor agregado por persona y Tabasco del 2 al 23, y la correlación entre productividad e ingreso sube de 0.096 a 0.557. Aun depurada, la productividad explica cerca de un tercio de la variación del ingreso entre entidades, frente a −0.907 de la informalidad. En ocho entidades el Censo Económico reserva los montos del sector minero por confidencialidad, por lo que la depuración es conservadora."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Qué proporción del valor agregado se va en remuneraciones en México?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -201,7 +209,7 @@
                 <h2 class="text-3xl font-bold text-ink mt-4 mb-4">El panorama: dos métricas que no van tomadas de la mano</h2>
 
                 <p class="text-ink/75 mb-6">
-                    El Censo Económico 2024 contabiliza <strong>5,468,180 unidades económicas, 27,965,433 personas ocupadas y $15.67 billones de pesos de valor agregado</strong>: <strong>$560,263 por persona ocupada al año</strong> en el promedio nacional. La ENOE del primer trimestre de 2026 pone el otro lado del tablero: <strong>59,552,660 personas ocupadas</strong> y un ingreso promedio que va de <strong>$16,327 mensuales en Baja California Sur a $7,309 en Chiapas</strong>. Al ordenar las 32 entidades por ambas métricas, la relación entre ellas es de <strong>0.096</strong>. En otras palabras: saber cuánto valor genera por persona un estado no te dice casi nada sobre cuánto cuesta contratar ahí.
+                    El Censo Económico 2024 contabiliza <strong>5,468,180 unidades económicas, 27,965,433 personas ocupadas y $15.67 billones de pesos de valor agregado</strong>: <strong>$560,263 por persona al año</strong> en el promedio nacional. La ENOE del primer trimestre de 2026 pone el otro lado: <strong>59,552,660 ocupados</strong> y un ingreso que va de <strong>$16,327 mensuales en Baja California Sur a $7,309 en Chiapas</strong>. Ordenadas las 32 entidades por ambas métricas, la relación es de <strong>0.096</strong>: saber cuánto valor genera por persona un estado no dice casi nada sobre cuánto cuesta contratar ahí.
                 </p>
 
                 <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
@@ -217,7 +225,7 @@
                 </p>
 
                 <p class="text-ink/75 mb-6">
-                    Para dimensionar un mercado, esta distinción es decisiva. Un estado con valor agregado altísimo concentrado en pocas unidades <strong>no tiene una masa salarial proporcional a su tamaño económico</strong>: el dinero no circula localmente en la escala que sugiere la cifra agregada. Retirando esos dos casos, la correlación entre productividad e ingreso sube a <strong>0.535</strong> — real, pero explica menos de un tercio de la variación entre entidades.
+                    Para dimensionar un mercado la distinción es decisiva: un estado con valor agregado altísimo concentrado en pocas unidades <strong>no tiene una masa salarial proporcional a su tamaño económico</strong>. El dinero no circula localmente en la escala que sugiere la cifra agregada.
                 </p>
 
                 <!-- COSTO LABORAL -->
@@ -298,6 +306,26 @@
                 </div>
                 <p class="text-sm text-ink/50 mb-8">Las 32 entidades ordenadas por valor agregado censal bruto por persona ocupada (Censo Económico 2024, cifras nominales). Ingreso promedio mensual del ocupado y tasa de informalidad, ENOE 1T2026. Personal sin pago = personal no remunerado ÷ personal ocupado total; nómina ÷ valor agregado = remuneraciones totales ÷ valor agregado censal bruto, ambos del Censo Económico 2024. En color, las 12 entidades del cuadrante cruzado. Fuente: INEGI.</p>
 
+                <!-- ROBUSTEZ -->
+                <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Prueba de robustez: el mismo mapa sin minería</h2>
+
+                <p class="text-ink/75 mb-6">
+                    Si todo el desacople viniera de la renta petrolera, quitarla debería ordenar el mapa. Lo comprobamos restando el sector minería (SCIAN 21) a las 32 entidades. <strong>A nivel nacional la minería aporta el 6.4% del valor agregado con el 0.54% del personal ocupado —150,262 personas en 2,960 unidades económicas—</strong> y el valor por persona del país baja de $560,263 a $527,229.
+                </p>
+
+                <p class="text-ink/75 mb-6">
+                    El reordenamiento es fuerte donde debía serlo: <strong>Campeche cae del lugar 1 al 30 (de $1,765,839 a $290,151 por persona) y Tabasco del 2 al 23 (a $351,757)</strong>; el primer lugar pasa a la Ciudad de México. También se mueven <strong>Zacatecas —24.3% de su valor estatal es minería, con el 8.5% del personal— del 14 al 19, Veracruz del 12 al 16 y Sonora del 7 al 8</strong>. Si evalúas una plaza minera, este es el chequeo obligado: el valor agregado estatal publicado puede estar describiendo una operación extractiva que no comparte cadena de valor, proveeduría ni masa salarial con el resto del tejido local.
+                </p>
+
+                <div class="bg-bone border-l-4 border-biz p-6 rounded-r-lg mb-6">
+                    <p class="text-ink font-semibold">Lo que sobrevive a la depuración</p>
+                    <p class="text-ink/80">Sin minería, la correlación entre productividad e ingreso sube de <strong>0.096 a 0.557</strong> (de 0.468 a 0.661 comparando posiciones en vez de montos). La renta extractiva explica buena parte del desacople, pero no todo: aun depurada, la productividad da cuenta de cerca de un tercio de la variación del ingreso entre entidades, mientras la informalidad se mantiene en <strong>−0.907</strong>. El arbitraje entre productividad y costo laboral sigue existiendo fuera de los estados petroleros.</p>
+                </div>
+
+                <p class="text-ink/75 mb-6">
+                    Una salvedad de fuente: <strong>en ocho entidades —Baja California Sur, Chiapas, Michoacán, Morelos, Nayarit, Oaxaca, San Luis Potosí y Tamaulipas— el Censo Económico reserva por confidencialidad los montos del sector minero</strong> (publica entre 19 y 121 unidades económicas, sin cifras), de modo que ahí no fue posible descontarlo. La depuración es conservadora: con esos datos disponibles el efecto sería mayor, no menor.
+                </p>
+
                 <!-- GRUPOS -->
                 <h2 class="text-3xl font-bold text-ink mt-12 mb-4">Los cuatro tipos de plaza que salen del cruce</h2>
 
@@ -343,7 +371,7 @@
                 </p>
 
                 <p class="text-ink/75 mb-6">
-                    <strong>4. Desconfía del valor agregado agregado.</strong> Antes de leer la cifra estatal, revisa cuántas unidades la generan. Campeche y Tabasco son el recordatorio de que 15 y 61 establecimientos pueden mover el promedio de un estado entero. Ese chequeo de concentración toma una consulta y evita dimensionar un mercado que no existe; es el mismo principio que aplicamos al <a href="2026-08-15-piramide-empresarial-9747-gigantes.html" class="text-analytics hover:underline">mapa por tamaño de empresa</a> y el primer paso de cualquier <a href="../../estudio-de-mercado/" class="text-analytics hover:underline">estudio de mercado</a> serio.
+                    <strong>4. Revisa la concentración antes de creerle al promedio estatal.</strong> Quince establecimientos mueven el promedio de Campeche entero. Ese chequeo toma una consulta y evita dimensionar un mercado que no existe; es el mismo principio del <a href="2026-08-15-piramide-empresarial-9747-gigantes.html" class="text-analytics hover:underline">mapa por tamaño de empresa</a> y el primer paso de cualquier <a href="../../estudio-de-mercado/" class="text-analytics hover:underline">estudio de mercado</a> serio.
                 </p>
 
                 <!-- CONCLUSION -->
@@ -366,6 +394,10 @@
                         <p class="text-ink/75">Casi nada: la correlación es de 0.096 entre las 32 entidades. Doce caen en un cuadrante cruzado y el salto promedio entre ambos rankings es de 7.6 lugares. Retirando Campeche y Tabasco sube a 0.535.</p>
                     </div>
                     <div class="bg-paper border border-ink/10 rounded-lg p-5">
+                        <p class="text-ink font-semibold mb-1">¿El resultado se debe solo a que Campeche y Tabasco son petroleros?</p>
+                        <p class="text-ink/75">Solo en parte. Restando el sector minería a las 32 entidades, Campeche cae del lugar 1 al 30 y Tabasco del 2 al 23, y la correlación sube de 0.096 a 0.557. Aun depurada, la productividad explica cerca de un tercio de la variación del ingreso, contra −0.907 de la informalidad. En ocho entidades el censo reserva los montos de minería por confidencialidad, así que la depuración es conservadora.</p>
+                    </div>
+                    <div class="bg-paper border border-ink/10 rounded-lg p-5">
                         <p class="text-ink font-semibold mb-1">¿Qué proporción del valor agregado se va en remuneraciones?</p>
                         <p class="text-ink/75">22.2% a nivel nacional en 2024, contra 23.3% en 2014. Por entidad va de 34.8% en Baja California y 33.6% en Chihuahua a 6.9% en Tabasco y 6.4% en Campeche. Bajó en 27 de las 32 entidades entre ambos censos.</p>
                     </div>
@@ -376,7 +408,7 @@
                 </div>
 
                 <p class="text-sm text-ink/50 italic mt-8">
-                    Análisis basado en el Censo Económico 2024 del INEGI (y la serie 2004-2024 para los comparativos temporales) y en la Encuesta Nacional de Ocupación y Empleo del primer trimestre de 2026, ambos consultados en la capa de datos validada de Lokus. Universo completo: las 32 entidades federativas, sin preselección. Definiciones: valor agregado por persona = valor agregado censal bruto ÷ personal ocupado total; remuneración media = remuneraciones totales ÷ personal remunerado; nómina sobre valor agregado = remuneraciones totales ÷ valor agregado censal bruto del mismo censo. El Censo Económico y la ENOE son fuentes independientes, con universos distintos —establecimientos frente a hogares— y periodos de referencia distintos: aquí se comparan en paralelo y nunca se combinan dentro de un mismo cociente. Los censos no cubren la actividad agropecuaria salvo pesca y acuicultura, ni el trabajo sin establecimiento; la ENOE no tiene desagregación municipal. Todas las cifras monetarias del censo son nominales, en pesos corrientes del año de referencia. SCIAN citado: sector 21, Minería. Correlaciones de Pearson sobre las 32 entidades. Fecha de análisis: 21 de agosto de 2026. Para dimensionar el mercado, la competencia y el perfil laboral de cualquier estado o municipio con datos oficiales integrados, visita lokusdata.com
+                    Análisis basado en el Censo Económico 2024 del INEGI (y la serie 2004-2024 para los comparativos temporales) y en la Encuesta Nacional de Ocupación y Empleo del primer trimestre de 2026, ambos consultados en la capa de datos validada de Lokus. Universo completo: las 32 entidades federativas, sin preselección. Definiciones: valor agregado por persona = valor agregado censal bruto ÷ personal ocupado total; remuneración media = remuneraciones totales ÷ personal remunerado; nómina sobre valor agregado = remuneraciones totales ÷ valor agregado censal bruto del mismo censo. El Censo Económico y la ENOE son fuentes independientes, con universos distintos —establecimientos frente a hogares— y periodos de referencia distintos: aquí se comparan en paralelo y nunca se combinan dentro de un mismo cociente. Los censos no cubren la actividad agropecuaria salvo pesca y acuicultura, ni el trabajo sin establecimiento; la ENOE no tiene desagregación municipal. Todas las cifras monetarias del censo son nominales, en pesos corrientes del año de referencia. SCIAN citado: sector 21, Minería. Prueba de robustez: el ejercicio sin minería resta el sector 21 del valor agregado y del personal ocupado de cada entidad sobre el agregado estatal validado; en ocho entidades (Baja California Sur, Chiapas, Michoacán, Morelos, Nayarit, Oaxaca, San Luis Potosí y Tamaulipas) el censo publica las unidades económicas del sector pero reserva sus montos por confidencialidad, por lo que ahí no pudo descontarse y el resultado es conservador. Correlaciones de Pearson sobre las 32 entidades. Fecha de análisis: 21 de agosto de 2026. Para dimensionar el mercado, la competencia y el perfil laboral de cualquier estado o municipio con datos oficiales integrados, visita lokusdata.com
                 </p>
 
             </div>
