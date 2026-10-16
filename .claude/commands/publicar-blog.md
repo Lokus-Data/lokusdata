@@ -22,14 +22,20 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
 
 - **Nombre del archivo:** `YYYY-MM-DD-slug-del-titulo.html`
 - **Ubicación:** `blog/articulos/`
-- **Usar como plantilla:** Cualquier artículo existente en esa carpeta
-- **Colores por categoría:**
-  - Economía: `from-blue-600 to-indigo-800`
-  - Análisis: `from-emerald-600 to-teal-800`
-  - Tecnología: `from-indigo-500 to-purple-700`
-  - Demografía: `from-purple-500 to-purple-700`
-  - Social: `from-red-500 to-red-700`
-  - Educación: `from-yellow-500 to-yellow-700`
+- **Usar como plantilla:** Cualquier artículo existente en esa carpeta (todos ya usan el sistema cartográfico nuevo). El mejor ejemplo: `2026-06-26-consolidacion-tequila-779-179-empresas.html`.
+
+**SISTEMA DE DISEÑO (cartográfico, igual que la landing/blog.html) — NO usar el viejo:**
+- **NO** uses Tailwind CDN ni `tailwind.config` inline. El `<head>` carga las fuentes de Google (Space Grotesk + Inter + JetBrains Mono) y `<link rel="stylesheet" href="../../assets/styles.css">`.
+- **Tokens de color** (definidos en `tailwind.config.js`): `ink` `#0A1626`, `ink2` `#0F2238`, `paper` `#F6F3EC`, `bone` `#EDE8DD`, `biz` (ámbar) `#E8A33D`, `analytics` (azul) `#3B82F6`, `agro` (verde) `#2FA86A`.
+- **body:** `bg-paper text-ink antialiased`. **nav y footer:** copiar los de `blog.html` (con rutas `../../`).
+- **Hero de portada y CTA:** sección oscura `bg-ink topo` (no gradientes de colores). Botón principal `bg-biz text-ink`; botón secundario `border border-paper/25 text-paper`.
+- **Kicker / etiqueta de categoría:** `mono coord uppercase text-biz` (estilo de la landing).
+- **Tablas:** `thead` con `bg-bone`; filas alternas `bg-bone/50`; fila/dato destacado en `text-agro` (verde = positivo). Cifras **negativas** en `text-red-600`.
+- **Callouts:** `bg-bone border-l-4 border-biz`, título `text-ink`, cuerpo `text-ink/80`.
+- **Texto cuerpo:** `text-ink/75`; títulos `text-ink`; links `text-analytics`.
+- Acento por categoría (opcional, solo en el kicker): Economía/Análisis/Industria → mantener `text-biz`; temas agro/verde → `text-agro`.
+
+> Si por error un post sale con el diseño viejo (CDN/azul/emerald), correr `node scripts/restyle-articles.js` para migrarlo, y luego `npm run build:css`.
 
 ### 2. Actualizar posts.json
 
@@ -141,15 +147,16 @@ Después de actualizar `posts.json` y crear el HTML, ejecutar:
 ```bash
 cd "C:\paginas\LOKUSDATA"
 node scripts/inject-tracking.js   # inyecta GA4 + Ads + JSON-LD en el post nuevo
+npm run build:css                 # recompila assets/styles.css con las clases del post nuevo
 node scripts/seo-build.js         # SOLO regenera sitemap.xml (sin ping todavía)
-node scripts/google-ads-publish.js   # crea el anuncio en Google Ads (NO ocultar stderr)
+# google-ads-publish.js: RETIRADO (decisión del dueño, 2026-08-05) — NO correrlo
 ```
 
 Esto:
 - Mete tracking de GA4 (G-VCQHS6GXFE) y Google Ads (AW-17620097832) en el HTML
+- Recompila el CSS cartográfico (`assets/styles.css`) para que cualquier clase nueva del post quede incluida (el `tailwind.config.js` escanea `blog/articulos/**/*.html`)
 - Inyecta JSON-LD Article schema (rich snippets)
 - Regenera `sitemap.xml`
-- Crea Responsive Search Ad + keywords en Google Ads
 
 **El ping de IndexNow se hace DESPUÉS del push (paso 7).** Antes del push el post
 nuevo aún no está desplegado en GitHub Pages (responde 404), y avisarle a los
@@ -157,7 +164,7 @@ buscadores de una URL muerta resta SEO. `seo-build.js --ping <url>` ahora verifi
 que la URL responda HTTP 200 (reintentando hasta ~30s mientras despliega) antes de
 pingear; las que no respondan 200 se omiten con un `⚠️`.
 
-**IMPORTANTE — Google Ads (no repetir errores pasados):**
+**Google Ads — RETIRADO (decisión del dueño, 2026-08-05):** las campañas quedaron pausadas definitivamente y los blogs se publican SIN pauta. NO correr `google-ads-publish.js` ni ningún otro script de ads. Las notas siguientes quedan solo como histórico:
 - **NUNCA** uses `2>/dev/null` ni `|| echo` al correr `google-ads-publish.js`. Eso oculta los errores reales de la API. Corre el comando limpio y LEE la salida completa.
 - El script termina con `🎯 Resumen: X OK, Y fallos`. Si `Y > 0`, **NO está hecho** — hay que ver el error y resolverlo, no darlo por omitido.
 - Si falta `.env`, el script lo dice explícitamente (`❌ Faltan variables en .env`). Solo en ese caso es "omitido"; cualquier otro fallo se arregla.
@@ -170,7 +177,7 @@ pingear; las que no respondan 200 se omiten con un `⚠️`.
 cd "C:\paginas\LOKUSDATA"
 # Agregar SOLO los archivos del post — NO usar `git add .` ni `git add -A`:
 # eso arrastra basura como .claude/worktrees/ (repos embebidos) al commit.
-git add blog/ index.html sitemap.xml social-drafts/ scripts/.ads-published.json
+git add blog/ index.html sitemap.xml social-drafts/ assets/styles.css
 git status   # verificar que NO se cuele nada de .claude/ antes de commitear
 git commit -m "Nuevo post: [Título del artículo]"
 git push origin main
@@ -192,7 +199,8 @@ node scripts/seo-build.js --ping https://lokusdata.com/blog/articulos/YYYY-MM-DD
 - [ ] index.html actualizado (3 artículos, nuevo primero)
 - [ ] `node scripts/inject-tracking.js` ejecutado
 - [ ] `node scripts/seo-build.js` ejecutado (regenera sitemap antes del commit)
-- [ ] `node scripts/google-ads-publish.js` ejecutado y terminó en `X OK, 0 fallos` (sin `2>/dev/null`)
+- [ ] `npm run build:css` ejecutado y `assets/styles.css` incluido en el commit
+- [ ] `google-ads-publish.js` NO ejecutado (Google Ads retirado 2026-08-05)
 - [ ] Borrador LinkedIn con emojis y 15+ hashtags
 - [ ] Borrador Twitter/X UN solo tweet
 - [ ] `git status` revisado: nada de `.claude/` en el commit
